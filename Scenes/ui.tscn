@@ -1,0 +1,91 @@
+[gd_scene load_steps=19 format=3 uid="uid://coo3gvcxegtbs"]
+
+[ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
+[ext_resource type="Texture2D" uid="uid://bmu2vlftmndox" path="res://Shotgun/2.png" id="2_b4fel"]
+[ext_resource type="Texture2D" uid="uid://bovclgljydlh8" path="res://Shotgun/3.png" id="3_0461s"]
+[ext_resource type="Texture2D" uid="uid://5egupj8i2x26" path="res://Shotgun/4.png" id="4_du587"]
+[ext_resource type="Texture2D" uid="uid://c46q506mhbon4" path="res://Shotgun/5.png" id="5_10eyw"]
+[ext_resource type="Texture2D" uid="uid://mmfdfd8rq0ay" path="res://Shotgun/6.png" id="6_p3ujf"]
+[ext_resource type="Texture2D" uid="uid://bi6ld0iapt2mu" path="res://Shotgun/7.png" id="7_5y7eq"]
+[ext_resource type="Texture2D" uid="uid://b7gqj4h6vdb77" path="res://Shotgun/8.png" id="8_fhkxf"]
+[ext_resource type="Texture2D" uid="uid://fcq8gca4x1p0" path="res://Shotgun/9.png" id="9_l7dty"]
+[ext_resource type="Texture2D" uid="uid://cqrafabxqso4s" path="res://Shotgun/10.png" id="10_m5glw"]
+[ext_resource type="Texture2D" uid="uid://c5rhhofwensvr" path="res://Shotgun/11.png" id="11_0psn2"]
+[ext_resource type="Texture2D" uid="uid://10b2lumhpwy4" path="res://Shotgun/12.png" id="12_vk2bq"]
+[ext_resource type="Texture2D" uid="uid://cj7ysor3b5w16" path="res://Shotgun/13.png" id="13_cylda"]
+[ext_resource type="Texture2D" uid="uid://c8lwqa2ciuspy" path="res://Shotgun/14.png" id="14_c5u27"]
+[ext_resource type="Texture2D" uid="uid://dk4qbcxbvpksw" path="res://Shotgun/15.png" id="15_7ch2c"]
+[ext_resource type="AudioStream" uid="uid://nd142yssaxwm" path="res://Shotgun/shotgun-fx_168bpm.wav" id="16_egsms"]
+[ext_resource type="AudioStream" uid="uid://bcwyiub5ik3m0" path="res://Shotgun/old-school-shotgun-reload.wav" id="17_dijy2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4qwv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xrb6w")
+}],
+"loop": false,
+"name": &"shotgun_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_b4fel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_0461s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_du587")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_10eyw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p3ujf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_5y7eq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_fhkxf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l7dty")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m5glw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0psn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vk2bq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cylda")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_c5u27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_7ch2c")
+}],
+"loop": false,
+"name": &"shotgun_shoot",
+"speed": 16.0
+}]
+
+[node name="ui" type="CanvasLayer"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1018, 815)
+sprite_frames = SubResource("SpriteFrames_v4qwv")
+animation = &"shotgun_shoot"
+autoplay = "shotgun_idle"
+
+[node name="Shoot" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16_egsms")
+
+[node name="Reload" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17_dijy2")

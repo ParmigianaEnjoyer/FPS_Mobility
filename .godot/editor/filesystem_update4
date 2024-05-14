@@ -1,0 +1,4 @@
+res://Scenes/ui.tscn
+res://Scripts/Player.gd
+res://Scenes/ui.gd
+res://Scenes/World.tscn
