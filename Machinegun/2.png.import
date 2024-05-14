@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbssli3j7afsg"
-path="res://.godot/imported/shotgun_animation-removebg 1.png-406c75fbbcefd843b1801f0c38420906.ctex"
+uid="uid://bs15ceuilmnm"
+path="res://.godot/imported/2.png-edca32daca0bca013917b37b53c196e0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://shotgun_animation-removebg 1.png"
-dest_files=["res://.godot/imported/shotgun_animation-removebg 1.png-406c75fbbcefd843b1801f0c38420906.ctex"]
+source_file="res://Machinegun/2.png"
+dest_files=["res://.godot/imported/2.png-edca32daca0bca013917b37b53c196e0.ctex"]
 
 [params]
 

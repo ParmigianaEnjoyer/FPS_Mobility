@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=32 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
 [ext_resource type="Texture2D" uid="uid://bmu2vlftmndox" path="res://Shotgun/2.png" id="2_b4fel"]
@@ -17,6 +17,11 @@
 [ext_resource type="Texture2D" uid="uid://dk4qbcxbvpksw" path="res://Shotgun/15.png" id="15_7ch2c"]
 [ext_resource type="AudioStream" uid="uid://nd142yssaxwm" path="res://Shotgun/shotgun-fx_168bpm.wav" id="16_egsms"]
 [ext_resource type="AudioStream" uid="uid://bcwyiub5ik3m0" path="res://Shotgun/old-school-shotgun-reload.wav" id="17_dijy2"]
+[ext_resource type="Texture2D" uid="uid://bckkp48w56o7a" path="res://CrosshairPack2.png" id="18_ydo1h"]
+[ext_resource type="Texture2D" uid="uid://chwpjln36kap5" path="res://Machinegun/1.png" id="19_hy7tt"]
+[ext_resource type="Texture2D" uid="uid://bs15ceuilmnm" path="res://Machinegun/2.png" id="20_j2l3c"]
+[ext_resource type="Texture2D" uid="uid://cn13kt5yse20" path="res://Machinegun/3.png" id="21_21lpv"]
+[ext_resource type="Texture2D" uid="uid://cdy4lr222n0hb" path="res://Machinegun/4.png" id="22_cl17l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v4qwv"]
 animations = [{
@@ -76,12 +81,102 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bkgdj"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(175, 102, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mgeyk"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(210, 102, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al6ph"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(175, 102, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uchug"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(315, 102, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5r5yt"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(245, 170, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2f7qx"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(175, 170, 35, 34)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lnmat"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bkgdj")
+}],
+"loop": true,
+"name": &"machinegun_crosshair",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mgeyk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_al6ph")
+}],
+"loop": true,
+"name": &"machinegun_crosshair_hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uchug")
+}],
+"loop": false,
+"name": &"shotgun_crosshair",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5r5yt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2f7qx")
+}],
+"loop": false,
+"name": &"shotgun_crosshair_hit",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkl46"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_hy7tt")
+}],
+"loop": false,
+"name": &"machinegun_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_j2l3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_21lpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cl17l")
+}],
+"loop": true,
+"name": &"machinegun_shoot",
+"speed": 16.0
+}]
+
 [node name="ui" type="CanvasLayer"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1018, 815)
+position = Vector2(1150, 815)
 sprite_frames = SubResource("SpriteFrames_v4qwv")
-animation = &"shotgun_shoot"
+animation = &"shotgun_idle"
 autoplay = "shotgun_idle"
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
@@ -89,3 +184,16 @@ stream = ExtResource("16_egsms")
 
 [node name="Reload" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_dijy2")
+
+[node name="weapon_crosshair" type="AnimatedSprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lnmat")
+animation = &"machinegun_crosshair_hit"
+autoplay = "shotgun_crosshair"
+
+[node name="machinegun_ui" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(815, 840)
+sprite_frames = SubResource("SpriteFrames_bkl46")
+animation = &"machinegun_shoot"
