@@ -1,8 +1,8 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1715701443
+::res://::1715704109
 CrosshairPack2.png::CompressedTexture2D::2548077680542606672::1715697712::1715697712::1::::<><>::
 icon.svg::CompressedTexture2D::8788810445164620394::1715622190::1715622218::1::::<><>::
-::res://Machinegun/::1715702754
+::res://Machinegun/::1715702834
 1.png::CompressedTexture2D::5310507009631705756::1715700877::1715700885::1::::<><>::
 2.png::CompressedTexture2D::108979970985947086::1715700877::1715700885::1::::<><>::
 3.png::CompressedTexture2D::168843798100740175::1715700877::1715700885::1::::<><>::
@@ -13,10 +13,10 @@ Blue.tres::StandardMaterial3D::1109378511400077276::1715622190::0::1::::<><>::
 Green.tres::StandardMaterial3D::4460615660192160260::1715622190::0::1::::<><>::
 Pink.tres::StandardMaterial3D::3002083277062480744::1715622190::0::1::::<><>::
 Red.tres::StandardMaterial3D::4268741505349743764::1715622190::0::1::::<><>::
-::res://Scenes/::1715702591
-ui.gd::GDScript::-1::1715702591::0::1::::<>CanvasLayer<>::
-ui.tscn::PackedScene::5786098364566962512::1715702591::0::1::::<><>::uid://cmj5krura2vs3::::res://Shotgun/1.png<>uid://bmu2vlftmndox::::res://Shotgun/2.png<>uid://bovclgljydlh8::::res://Shotgun/3.png<>uid://5egupj8i2x26::::res://Shotgun/4.png<>uid://c46q506mhbon4::::res://Shotgun/5.png<>uid://mmfdfd8rq0ay::::res://Shotgun/6.png<>uid://bi6ld0iapt2mu::::res://Shotgun/7.png<>uid://b7gqj4h6vdb77::::res://Shotgun/8.png<>uid://fcq8gca4x1p0::::res://Shotgun/9.png<>uid://cqrafabxqso4s::::res://Shotgun/10.png<>uid://c5rhhofwensvr::::res://Shotgun/11.png<>uid://10b2lumhpwy4::::res://Shotgun/12.png<>uid://cj7ysor3b5w16::::res://Shotgun/13.png<>uid://c8lwqa2ciuspy::::res://Shotgun/14.png<>uid://dk4qbcxbvpksw::::res://Shotgun/15.png<>uid://nd142yssaxwm::::res://Shotgun/shotgun-fx_168bpm.wav<>uid://bcwyiub5ik3m0::::res://Shotgun/old-school-shotgun-reload.wav<>uid://bckkp48w56o7a::::res://CrosshairPack2.png<>uid://chwpjln36kap5::::res://Machinegun/1.png<>uid://bs15ceuilmnm::::res://Machinegun/2.png<>uid://cn13kt5yse20::::res://Machinegun/3.png<>uid://cdy4lr222n0hb::::res://Machinegun/4.png
-World.tscn::PackedScene::7285665154832654338::1715702558::0::1::::<><>::res://Scripts/Player.gd<>uid://b4s0xnt1f6lia::::res://Materials/Green.tres<>uid://bi1h4xe7msjwi::::res://Materials/Pink.tres<>uid://b122sws3pt7w7::::res://Materials/Red.tres<>uid://p2nkjd3ge3qm::::res://Materials/Blue.tres<>uid://coo3gvcxegtbs::::res://Scenes/ui.tscn<>res://Scenes/ui.gd
+::res://Scenes/::1715703265
+ui.gd::GDScript::-1::1715703115::0::1::::<>CanvasLayer<>::
+ui.tscn::PackedScene::5786098364566962512::1715703265::0::1::::<><>::uid://cmj5krura2vs3::::res://Shotgun/1.png<>uid://bmu2vlftmndox::::res://Shotgun/2.png<>uid://bovclgljydlh8::::res://Shotgun/3.png<>uid://5egupj8i2x26::::res://Shotgun/4.png<>uid://c46q506mhbon4::::res://Shotgun/5.png<>uid://mmfdfd8rq0ay::::res://Shotgun/6.png<>uid://bi6ld0iapt2mu::::res://Shotgun/7.png<>uid://b7gqj4h6vdb77::::res://Shotgun/8.png<>uid://fcq8gca4x1p0::::res://Shotgun/9.png<>uid://cqrafabxqso4s::::res://Shotgun/10.png<>uid://c5rhhofwensvr::::res://Shotgun/11.png<>uid://10b2lumhpwy4::::res://Shotgun/12.png<>uid://cj7ysor3b5w16::::res://Shotgun/13.png<>uid://c8lwqa2ciuspy::::res://Shotgun/14.png<>uid://dk4qbcxbvpksw::::res://Shotgun/15.png<>uid://nd142yssaxwm::::res://Shotgun/shotgun-fx_168bpm.wav<>uid://bcwyiub5ik3m0::::res://Shotgun/old-school-shotgun-reload.wav<>uid://bckkp48w56o7a::::res://CrosshairPack2.png<>uid://chwpjln36kap5::::res://Machinegun/1.png<>uid://bs15ceuilmnm::::res://Machinegun/2.png<>uid://cn13kt5yse20::::res://Machinegun/3.png<>uid://cdy4lr222n0hb::::res://Machinegun/4.png
+World.tscn::PackedScene::7285665154832654338::1715703265::0::1::::<><>::res://Scripts/Player.gd<>uid://b4s0xnt1f6lia::::res://Materials/Green.tres<>uid://bi1h4xe7msjwi::::res://Materials/Pink.tres<>uid://b122sws3pt7w7::::res://Materials/Red.tres<>uid://p2nkjd3ge3qm::::res://Materials/Blue.tres<>uid://coo3gvcxegtbs::::res://Scenes/ui.tscn<>res://Scenes/ui.gd
 ::res://Scripts/::1715686687
 Player.gd::GDScript::-1::1715686687::0::1::::<>CharacterBody3D<>::
 ::res://Shotgun/::1715685037

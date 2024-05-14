@@ -30,8 +30,9 @@ func _process(delta):
 			$machinegun_ui.play("machinegun_shoot")
 			if !($Shoot.playing):
 				$Shoot.play()
-		if Input.is_action_just_released("shoot"):
+		if Input.is_action_just_released("shoot") and $machinegun_ui.is_playing():
 			$machinegun_ui.play("machinegun_idle")
+			$Shoot.stop()
 			time_since_last_shot = 0.0
 	
 	if Input.is_action_just_pressed("select_machinegun"):
