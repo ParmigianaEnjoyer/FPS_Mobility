@@ -176,7 +176,7 @@ animations = [{
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1150, 815)
 sprite_frames = SubResource("SpriteFrames_v4qwv")
-animation = &"shotgun_idle"
+animation = &"shotgun_shoot"
 autoplay = "shotgun_idle"
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
@@ -194,6 +194,7 @@ autoplay = "shotgun_crosshair"
 
 [node name="machinegun_ui" type="AnimatedSprite2D" parent="."]
 visible = false
-position = Vector2(815, 840)
+position = Vector2(730, 735)
+scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_bkl46")
 animation = &"machinegun_shoot"
