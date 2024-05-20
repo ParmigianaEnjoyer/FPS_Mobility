@@ -1,11 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=15 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_1d73w"]
 [ext_resource type="Material" uid="uid://b4s0xnt1f6lia" path="res://Materials/Green.tres" id="1_o5nrg"]
 [ext_resource type="Material" uid="uid://bi1h4xe7msjwi" path="res://Materials/Pink.tres" id="3_irgfk"]
 [ext_resource type="Material" uid="uid://b122sws3pt7w7" path="res://Materials/Red.tres" id="4_nuwel"]
 [ext_resource type="Material" uid="uid://p2nkjd3ge3qm" path="res://Materials/Blue.tres" id="5_te4rd"]
+[ext_resource type="PackedScene" uid="uid://dvumw5weyd5rb" path="res://radial_menu.tscn" id="6_6y52b"]
 [ext_resource type="PackedScene" uid="uid://coo3gvcxegtbs" path="res://Scenes/ui.tscn" id="6_o1lg6"]
+[ext_resource type="Script" path="res://RadialMenu.gd" id="7_08j5t"]
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="7_k6b25"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
@@ -85,6 +87,10 @@ shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="."]
 script = ExtResource("1_1d73w")
+
+[node name="RadialMenu" parent="Player" instance=ExtResource("6_6y52b")]
+process_mode = 3
+script = ExtResource("7_08j5t")
 
 [node name="ui" parent="Player" instance=ExtResource("6_o1lg6")]
 script = ExtResource("7_k6b25")

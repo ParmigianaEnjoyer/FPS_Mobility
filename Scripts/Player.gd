@@ -18,6 +18,7 @@ const FOV_CHANGE = 1.5
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = 9.8
 
+
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
 

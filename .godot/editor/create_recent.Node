@@ -1,3 +1,8 @@
+AnimationPlayer
+Sprite2D
+Control
+TextureButton
+Panel
 AnimatedSprite2D
 AudioStreamPlayer
 CanvasLayer

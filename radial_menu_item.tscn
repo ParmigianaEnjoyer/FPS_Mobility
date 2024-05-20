@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx7i2dmmx1exm"]
+
+[ext_resource type="Script" path="res://radial_menu_item.gd" id="1_jwyij"]
+[ext_resource type="Texture2D" uid="uid://du6i2kmhxds2y" path="res://RadilMenu/radial_menu.png" id="1_lpdfa"]
+[ext_resource type="Texture2D" uid="uid://dpxy463xixinf" path="res://RadilMenu/radial_menu_hover.png" id="2_gjut1"]
+
+[node name="0" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_jwyij")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -120.0
+offset_top = -268.0
+offset_right = 121.0
+offset_bottom = -90.0
+grow_horizontal = 2
+grow_vertical = 0
+texture_normal = ExtResource("1_lpdfa")
+texture_pressed = ExtResource("1_lpdfa")
+texture_hover = ExtResource("2_gjut1")
+
+[connection signal="mouse_entered" from="TextureButton" to="." method="_on_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="." method="_on_texture_button_mouse_exited"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="TextureButton" method="_on_pressed"]

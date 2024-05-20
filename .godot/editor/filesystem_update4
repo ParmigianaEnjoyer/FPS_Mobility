@@ -1,3 +1,6 @@
-res://Scenes/ui.tscn
+res://radial_menu_item.tscn
+res://radial_menu_item.gd
 res://Scenes/World.tscn
-res://Scenes/ui.gd
+res://Scenes/ui.tscn
+res://radial_menu.tscn
+res://RadialMenu.gd

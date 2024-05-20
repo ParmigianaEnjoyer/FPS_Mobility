@@ -197,4 +197,4 @@ visible = false
 position = Vector2(730, 735)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_bkl46")
-animation = &"machinegun_shoot"
+animation = &"machinegun_idle"

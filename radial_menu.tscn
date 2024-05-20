@@ -1,0 +1,164 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvumw5weyd5rb"]
+
+[ext_resource type="PackedScene" uid="uid://cx7i2dmmx1exm" path="res://radial_menu_item.tscn" id="1_8kuqf"]
+[ext_resource type="Texture2D" uid="uid://dim7u16ok25l7" path="res://RadilMenu/pistol_icon.png" id="2_p06v0"]
+[ext_resource type="Texture2D" uid="uid://cxn4rnpcp15cb" path="res://RadilMenu/rifle_icon.png" id="3_nuoqa"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbcy5"]
+bg_color = Color(0, 0, 0, 0.647059)
+
+[sub_resource type="Animation" id="Animation_aevru"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.6, 0.6)]
+}
+
+[sub_resource type="Animation" id="Animation_jat2h"]
+resource_name = "zoom"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Circle:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 0.287175),
+"update": 0,
+"values": [Vector2(0.6, 0.6), Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r13du"]
+_data = {
+"RESET": SubResource("Animation_aevru"),
+"zoom": SubResource("Animation_jat2h")
+}
+
+[node name="RadialMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_tbcy5")
+
+[node name="Circle" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+
+[node name="0" parent="Circle" instance=ExtResource("1_8kuqf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1" parent="Circle" instance=ExtResource("1_8kuqf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.0612
+
+[node name="2" parent="Circle" instance=ExtResource("1_8kuqf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 2.1119
+
+[node name="3" parent="Circle" instance=ExtResource("1_8kuqf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 3.14318
+
+[node name="4" parent="Circle" instance=ExtResource("1_8kuqf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 4.19141
+
+[node name="5" parent="Circle" instance=ExtResource("1_8kuqf")]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.04066
+
+[node name="Icons" type="Control" parent="Circle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="pistol_icon" type="Sprite2D" parent="Circle/Icons"]
+position = Vector2(-1, -183)
+texture = ExtResource("2_p06v0")
+
+[node name="rifle_ico" type="Sprite2D" parent="Circle/Icons"]
+position = Vector2(163, -86)
+texture = ExtResource("3_nuoqa")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r13du")
+}
