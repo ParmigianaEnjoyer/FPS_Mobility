@@ -62,19 +62,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tbcy5")
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r13du")
+}
+
 [node name="Circle" type="Control" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
+anchors_preset = 0
+offset_left = 960.0
+offset_top = 540.0
+offset_right = 960.0
+offset_bottom = 540.0
 scale = Vector2(0.6, 0.6)
 
 [node name="0" parent="Circle" instance=ExtResource("1_8kuqf")]
@@ -174,8 +173,3 @@ texture = ExtResource("4_cht1b")
 position = Vector2(-401.667, -6.66671)
 scale = Vector2(0.6, 0.548)
 texture = ExtResource("5_i0736")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_r13du")
-}

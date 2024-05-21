@@ -3,8 +3,11 @@ extends CharacterBody3D
 var speed
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
-const JUMP_VELOCITY = 4.8
+#const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
+
+@export var jump_height: float = 1.0
+@export var fall_multiplier: float = 2.5
 
 #bob variables
 const BOB_FREQ = 2.4
@@ -16,7 +19,7 @@ const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = 9.8
+var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 
 @onready var head = $Head
@@ -37,11 +40,14 @@ func _unhandled_input(event):
 func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		if velocity.y >= 0:
+			velocity.y -= gravity * delta
+		else:
+			velocity.y -= gravity * delta * fall_multiplier		#quando sto cadendo dal salto vado più veloce
 
 	# Handle Jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+		velocity.y = sqrt(jump_height * 2.0 * gravity)
 	
 	# Handle Sprint.
 	if Input.is_action_pressed("sprint"):

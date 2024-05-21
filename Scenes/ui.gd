@@ -59,7 +59,7 @@ func switch_weapon(to):
 		$AnimatedSprite2D.stop()
 		$machinegun_ui.visible = true
 		$machinegun_ui.play(current_weapon + "_idle")
-		$weapon_crosshair.play(current_weapon + "_crosshair")
+		$Control/weapon_crosshair.play(current_weapon + "_crosshair")
 	else: if to == 1:
 		current_weapon = "shotgun"
 		$Shoot.stream = preload("res://Shotgun/shotgun-fx_168bpm.wav")
@@ -67,4 +67,4 @@ func switch_weapon(to):
 		$machinegun_ui.stop()
 		$AnimatedSprite2D.visible = true
 		$AnimatedSprite2D.play(current_weapon + "_idle")
-		$weapon_crosshair.play(current_weapon + "_crosshair")
+		$Control/weapon_crosshair.play(current_weapon + "_crosshair")

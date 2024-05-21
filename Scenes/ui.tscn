@@ -81,6 +81,31 @@ animations = [{
 "speed": 16.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_bkl46"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_hy7tt")
+}],
+"loop": false,
+"name": &"machinegun_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_j2l3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_21lpv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cl17l")
+}],
+"loop": true,
+"name": &"machinegun_shoot",
+"speed": 16.0
+}]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkgdj"]
 atlas = ExtResource("18_ydo1h")
 region = Rect2(175, 102, 35, 34)
@@ -146,31 +171,6 @@ animations = [{
 "speed": 3.0
 }]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_bkl46"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("19_hy7tt")
-}],
-"loop": false,
-"name": &"machinegun_idle",
-"speed": 1.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_j2l3c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_21lpv")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_cl17l")
-}],
-"loop": true,
-"name": &"machinegun_shoot",
-"speed": 16.0
-}]
-
 [node name="ui" type="CanvasLayer"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -185,16 +185,27 @@ stream = ExtResource("16_egsms")
 [node name="Reload" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_dijy2")
 
-[node name="weapon_crosshair" type="AnimatedSprite2D" parent="."]
-position = Vector2(960, 540)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_lnmat")
-animation = &"machinegun_crosshair_hit"
-autoplay = "shotgun_crosshair"
-
 [node name="machinegun_ui" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(730, 735)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_bkl46")
 animation = &"machinegun_idle"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+
+[node name="weapon_crosshair" type="AnimatedSprite2D" parent="Control"]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_lnmat")
+animation = &"shotgun_crosshair"
+autoplay = "shotgun_crosshair"

@@ -1,6 +1,9 @@
+Control
+CSGBox3D
+Node2D
+CenterContainer
 AnimationPlayer
 Sprite2D
-Control
 TextureButton
 Panel
 AnimatedSprite2D
