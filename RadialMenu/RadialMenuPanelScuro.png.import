@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du6i2kmhxds2y"
-path="res://.godot/imported/radial_menu.png-0bee2211f45b8e15ede9d74f409a42e2.ctex"
+uid="uid://dnw1xaawfgdp0"
+path="res://.godot/imported/RadialMenuPanelScuro.png-da64d1d59008eb065416e00f4e504dd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RadilMenu/radial_menu.png"
-dest_files=["res://.godot/imported/radial_menu.png-0bee2211f45b8e15ede9d74f409a42e2.ctex"]
+source_file="res://RadialMenu/RadialMenuPanelScuro.png"
+dest_files=["res://.godot/imported/RadialMenuPanelScuro.png-da64d1d59008eb065416e00f4e504dd8.ctex"]
 
 [params]
 

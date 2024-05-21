@@ -52,7 +52,7 @@ func _process(delta):
 
 
 func switch_weapon(to):
-	if to == 1:
+	if to == 2:
 		current_weapon = "machinegun"
 		$Shoot.stream = preload("res://Machinegun/ak47-machine-gun-spray-fx_D_major.wav")
 		$AnimatedSprite2D.visible = false
@@ -60,7 +60,7 @@ func switch_weapon(to):
 		$machinegun_ui.visible = true
 		$machinegun_ui.play(current_weapon + "_idle")
 		$weapon_crosshair.play(current_weapon + "_crosshair")
-	else: if to == 0:
+	else: if to == 1:
 		current_weapon = "shotgun"
 		$Shoot.stream = preload("res://Shotgun/shotgun-fx_168bpm.wav")
 		$machinegun_ui.visible = false

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxn4rnpcp15cb"
-path="res://.godot/imported/rifle_icon.png-c04179b01859a08afacd277cf0b503cd.ctex"
+uid="uid://d111tognquk2o"
+path="res://.godot/imported/RadialMenuPanel.png-089b88f1392e5e635cd9ab496d6d9d46.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RadilMenu/rifle_icon.png"
-dest_files=["res://.godot/imported/rifle_icon.png-c04179b01859a08afacd277cf0b503cd.ctex"]
+source_file="res://RadialMenu/RadialMenuPanel.png"
+dest_files=["res://.godot/imported/RadialMenuPanel.png-089b88f1392e5e635cd9ab496d6d9d46.ctex"]
 
 [params]
 

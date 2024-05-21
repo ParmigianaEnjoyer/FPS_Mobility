@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dim7u16ok25l7"
-path="res://.godot/imported/pistol_icon.png-872943482311a1653409e6a448052a22.ctex"
+uid="uid://cxn4rnpcp15cb"
+path="res://.godot/imported/rifle_icon.png-181c4284361f8bbe89b4161e008a0c67.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RadilMenu/pistol_icon.png"
-dest_files=["res://.godot/imported/pistol_icon.png-872943482311a1653409e6a448052a22.ctex"]
+source_file="res://RadialMenu/rifle_icon.png"
+dest_files=["res://.godot/imported/rifle_icon.png-181c4284361f8bbe89b4161e008a0c67.ctex"]
 
 [params]
 

@@ -1,8 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dvumw5weyd5rb"]
+[gd_scene load_steps=10 format=3 uid="uid://dvumw5weyd5rb"]
 
 [ext_resource type="PackedScene" uid="uid://cx7i2dmmx1exm" path="res://radial_menu_item.tscn" id="1_8kuqf"]
-[ext_resource type="Texture2D" uid="uid://dim7u16ok25l7" path="res://RadilMenu/pistol_icon.png" id="2_p06v0"]
-[ext_resource type="Texture2D" uid="uid://cxn4rnpcp15cb" path="res://RadilMenu/rifle_icon.png" id="3_nuoqa"]
+[ext_resource type="Texture2D" uid="uid://cll5wv3bap8i0" path="res://RadialMenu/cartoons-looney-tunes-yosemite-sam-and-pistol-pack.png" id="2_k7v1i"]
+[ext_resource type="Texture2D" uid="uid://dy7smtlscesai" path="res://RadialMenu/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png" id="3_infv3"]
+[ext_resource type="Texture2D" uid="uid://covipb6od6lq" path="res://RadialMenu/ddd77234556339caf227a92fd1d06e8f.png" id="4_cht1b"]
+[ext_resource type="Texture2D" uid="uid://1v7jadly4hnl" path="res://RadialMenu/Default_draw_a_weapon_a_nailed_club_with_a_mushroom_on_top_dra_1.png" id="5_i0736"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tbcy5"]
 bg_color = Color(0, 0, 0, 0.647059)
@@ -34,7 +36,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.4),
 "transitions": PackedFloat32Array(1, 0.287175),
 "update": 0,
-"values": [Vector2(0.6, 0.6), Vector2(3, 3)]
+"values": [Vector2(0.5, 0.5), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r13du"]
@@ -84,6 +86,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+rotation = -0.011969
 
 [node name="1" parent="Circle" instance=ExtResource("1_8kuqf")]
 layout_mode = 1
@@ -94,7 +97,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 1.0612
+rotation = 1.55726
 
 [node name="2" parent="Circle" instance=ExtResource("1_8kuqf")]
 layout_mode = 1
@@ -105,7 +108,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 2.1119
+rotation = 3.11808
 
 [node name="3" parent="Circle" instance=ExtResource("1_8kuqf")]
 layout_mode = 1
@@ -116,9 +119,10 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
-rotation = 3.14318
+rotation = 4.68418
 
 [node name="4" parent="Circle" instance=ExtResource("1_8kuqf")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -130,6 +134,7 @@ grow_vertical = 2
 rotation = 4.19141
 
 [node name="5" parent="Circle" instance=ExtResource("1_8kuqf")]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -151,12 +156,24 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="pistol_icon" type="Sprite2D" parent="Circle/Icons"]
-position = Vector2(-1, -183)
-texture = ExtResource("2_p06v0")
+position = Vector2(161.667, -406.667)
+scale = Vector2(1.2, 1.096)
+texture = ExtResource("2_k7v1i")
 
 [node name="rifle_ico" type="Sprite2D" parent="Circle/Icons"]
-position = Vector2(163, -86)
-texture = ExtResource("3_nuoqa")
+position = Vector2(9.99998, 408.333)
+scale = Vector2(0.5, 0.526)
+texture = ExtResource("3_infv3")
+
+[node name="shotgun_icon" type="Sprite2D" parent="Circle/Icons"]
+position = Vector2(561.667, -6.66669)
+scale = Vector2(1, 0.913)
+texture = ExtResource("4_cht1b")
+
+[node name="stick_icon" type="Sprite2D" parent="Circle/Icons"]
+position = Vector2(-401.667, -6.66671)
+scale = Vector2(0.6, 0.548)
+texture = ExtResource("5_i0736")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

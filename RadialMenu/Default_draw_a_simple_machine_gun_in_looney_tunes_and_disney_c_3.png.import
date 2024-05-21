@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b84ns6daljlkh"
-path="res://.godot/imported/radial_menu_click_mask.bmp-3eb4700c8a40101f03af5dc8eb7e2102.ctex"
+uid="uid://dy7smtlscesai"
+path="res://.godot/imported/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png-db82fcebb3cae98f0431729a9e68a1d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://RadilMenu/radial_menu_click_mask.bmp"
-dest_files=["res://.godot/imported/radial_menu_click_mask.bmp-3eb4700c8a40101f03af5dc8eb7e2102.ctex"]
+source_file="res://RadialMenu/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png"
+dest_files=["res://.godot/imported/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png-db82fcebb3cae98f0431729a9e68a1d0.ctex"]
 
 [params]
 
