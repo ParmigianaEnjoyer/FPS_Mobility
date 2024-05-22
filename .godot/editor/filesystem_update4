@@ -1,9 +1,4 @@
-res://Scenes/ui.tscn
 res://Scenes/World.tscn
+res://Scenes/ui.tscn
 res://radial_menu.tscn
 res://radial_menu_item.tscn
-res://radial_menu_item.gd
-res://RadialMenu.gd
-res://Scripts/Player.gd
-res://Scenes/ui.gd
-res://Materials/Green.tres
