@@ -1,0 +1,34 @@
+[gd_scene load_steps=8 format=3 uid="uid://bq5ymk6t7cbxd"]
+
+[ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upafr"]
+[ext_resource type="PackedScene" uid="uid://coo3gvcxegtbs" path="res://Scenes/ui.tscn" id="2_effl7"]
+[ext_resource type="Script" path="res://Scenes/ui.gd" id="3_cr11r"]
+[ext_resource type="PackedScene" uid="uid://dvumw5weyd5rb" path="res://radial_menu.tscn" id="4_efhl6"]
+[ext_resource type="Script" path="res://RadialMenu.gd" id="5_pm6co"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_upafr")
+
+[node name="ui" parent="." instance=ExtResource("2_effl7")]
+script = ExtResource("3_cr11r")
+
+[node name="RadialMenu" parent="." instance=ExtResource("4_efhl6")]
+process_mode = 3
+script = ExtResource("5_pm6co")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_xc2g5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_wydro")
+
+[node name="Head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Head"]
