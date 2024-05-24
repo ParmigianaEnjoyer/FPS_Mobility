@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=41 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
 [ext_resource type="Texture2D" uid="uid://bmu2vlftmndox" path="res://Shotgun/2.png" id="2_b4fel"]
@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://bs15ceuilmnm" path="res://Machinegun/2.png" id="20_j2l3c"]
 [ext_resource type="Texture2D" uid="uid://cn13kt5yse20" path="res://Machinegun/3.png" id="21_21lpv"]
 [ext_resource type="Texture2D" uid="uid://cdy4lr222n0hb" path="res://Machinegun/4.png" id="22_cl17l"]
+[ext_resource type="Texture2D" uid="uid://cnqx30166d3n7" path="res://Pistol/Pistol_animations_frames.png" id="23_jemns"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v4qwv"]
 animations = [{
@@ -118,6 +119,18 @@ region = Rect2(210, 102, 35, 34)
 atlas = ExtResource("18_ydo1h")
 region = Rect2(175, 102, 35, 34)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_m5b2i"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(140, 245, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryu1a"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(210, 245, 35, 35)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkd36"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(140, 245, 35, 35)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_uchug"]
 atlas = ExtResource("18_ydo1h")
 region = Rect2(315, 102, 35, 34)
@@ -136,9 +149,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bkgdj")
 }],
-"loop": true,
+"loop": false,
 "name": &"machinegun_crosshair",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -147,9 +160,28 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_al6ph")
 }],
-"loop": true,
+"loop": false,
 "name": &"machinegun_crosshair_hit",
-"speed": 5.0
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m5b2i")
+}],
+"loop": false,
+"name": &"pistol_crosshair",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryu1a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkd36")
+}],
+"loop": false,
+"name": &"pistol_crosshair_hit",
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -169,6 +201,50 @@ animations = [{
 "loop": false,
 "name": &"shotgun_crosshair_hit",
 "speed": 3.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_donwa"]
+atlas = ExtResource("23_jemns")
+region = Rect2(0, 0, 630, 627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u4ing"]
+atlas = ExtResource("23_jemns")
+region = Rect2(630, 0, 630, 627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_omkll"]
+atlas = ExtResource("23_jemns")
+region = Rect2(1260, 0, 630, 627)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iyiod"]
+atlas = ExtResource("23_jemns")
+region = Rect2(0, 631, 630, 631)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4v53"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_donwa")
+}],
+"loop": false,
+"name": &"pistol_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u4ing")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_omkll")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iyiod")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_donwa")
+}],
+"loop": false,
+"name": &"pistol_shoot",
+"speed": 12.0
 }]
 
 [node name="ui" type="CanvasLayer"]
@@ -194,7 +270,7 @@ scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_bkl46")
 animation = &"machinegun_idle"
 
-[node name="Control" type="Control" parent="."]
+[node name="Crosshair" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -206,8 +282,27 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 6
 
-[node name="weapon_crosshair" type="AnimatedSprite2D" parent="Control"]
+[node name="weapon_crosshair" type="AnimatedSprite2D" parent="Crosshair"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_lnmat")
-animation = &"shotgun_crosshair"
+animation = &"machinegun_crosshair_hit"
 autoplay = "shotgun_crosshair"
+
+[node name="Weapon" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_right = -20.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Pistol_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
+visible = false
+position = Vector2(374, -247)
+scale = Vector2(0.8, 0.8)
+sprite_frames = SubResource("SpriteFrames_o4v53")
+animation = &"pistol_shoot"
