@@ -6,6 +6,8 @@ const SPRINT_SPEED = 8.0
 #const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
+#prova
+
 @export var jump_height: float = 1.0
 @export var fall_multiplier: float = 2.5
 
