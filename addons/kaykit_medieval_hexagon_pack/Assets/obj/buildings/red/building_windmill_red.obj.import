@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://gipkmhywe866"
+path="res://.godot/imported/building_windmill_red.obj-24f79ca4a61ac7092d22ec4fffb80940.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_windmill_red.obj-24f79ca4a61ac7092d22ec4fffb80940.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/red/building_windmill_red.obj"
+dest_files=["res://.godot/imported/building_windmill_red.obj-24f79ca4a61ac7092d22ec4fffb80940.mesh", "res://.godot/imported/building_windmill_red.obj-24f79ca4a61ac7092d22ec4fffb80940.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

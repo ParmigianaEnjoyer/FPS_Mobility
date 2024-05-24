@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cqdohtycfqwon"
+path="res://.godot/imported/target.obj-46cee330c5ae4f79ad526a104ed02c45.mesh"
+
+[deps]
+
+files=["res://.godot/imported/target.obj-46cee330c5ae4f79ad526a104ed02c45.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/target.obj"
+dest_files=["res://.godot/imported/target.obj-46cee330c5ae4f79ad526a104ed02c45.mesh", "res://.godot/imported/target.obj-46cee330c5ae4f79ad526a104ed02c45.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

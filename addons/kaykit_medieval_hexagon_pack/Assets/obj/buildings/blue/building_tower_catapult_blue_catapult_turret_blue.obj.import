@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cthd2kwavh57a"
+path="res://.godot/imported/building_tower_catapult_blue_catapult_turret_blue.obj-b40d34708920d3832e2f2708b30ff5e5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_tower_catapult_blue_catapult_turret_blue.obj-b40d34708920d3832e2f2708b30ff5e5.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/blue/building_tower_catapult_blue_catapult_turret_blue.obj"
+dest_files=["res://.godot/imported/building_tower_catapult_blue_catapult_turret_blue.obj-b40d34708920d3832e2f2708b30ff5e5.mesh", "res://.godot/imported/building_tower_catapult_blue_catapult_turret_blue.obj-b40d34708920d3832e2f2708b30ff5e5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

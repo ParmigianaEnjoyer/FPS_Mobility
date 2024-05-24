@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d32t4g3n2eses"
+path="res://.godot/imported/cliff_blockSlopeHalfWalls_stone.obj-a5e66f3514e2e50ffb5f20a6e572e72c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cliff_blockSlopeHalfWalls_stone.obj-a5e66f3514e2e50ffb5f20a6e572e72c.mesh"]
+
+source_file="res://Models/OBJ format/cliff_blockSlopeHalfWalls_stone.obj"
+dest_files=["res://.godot/imported/cliff_blockSlopeHalfWalls_stone.obj-a5e66f3514e2e50ffb5f20a6e572e72c.mesh", "res://.godot/imported/cliff_blockSlopeHalfWalls_stone.obj-a5e66f3514e2e50ffb5f20a6e572e72c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

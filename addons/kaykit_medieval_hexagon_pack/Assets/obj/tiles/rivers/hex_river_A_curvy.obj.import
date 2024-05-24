@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dvlttoacgkvkw"
+path="res://.godot/imported/hex_river_A_curvy.obj-46f4c2dd53963b3f3a75d3332f46a7cc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_river_A_curvy.obj-46f4c2dd53963b3f3a75d3332f46a7cc.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/rivers/hex_river_A_curvy.obj"
+dest_files=["res://.godot/imported/hex_river_A_curvy.obj-46f4c2dd53963b3f3a75d3332f46a7cc.mesh", "res://.godot/imported/hex_river_A_curvy.obj-46f4c2dd53963b3f3a75d3332f46a7cc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dhrqp5w1gt78y"
+path="res://.godot/imported/building_lumbermill_yellow.obj-f83991d22bcba231cf3dc74cd0b7385e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_lumbermill_yellow.obj-f83991d22bcba231cf3dc74cd0b7385e.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/yellow/building_lumbermill_yellow.obj"
+dest_files=["res://.godot/imported/building_lumbermill_yellow.obj-f83991d22bcba231cf3dc74cd0b7385e.mesh", "res://.godot/imported/building_lumbermill_yellow.obj-f83991d22bcba231cf3dc74cd0b7385e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

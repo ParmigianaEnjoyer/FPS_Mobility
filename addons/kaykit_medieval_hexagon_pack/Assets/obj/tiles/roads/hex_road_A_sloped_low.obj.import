@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tldpghp6575n"
+path="res://.godot/imported/hex_road_A_sloped_low.obj-f1b6c709208b6b02affccf6a426641df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_road_A_sloped_low.obj-f1b6c709208b6b02affccf6a426641df.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_A_sloped_low.obj"
+dest_files=["res://.godot/imported/hex_road_A_sloped_low.obj-f1b6c709208b6b02affccf6a426641df.mesh", "res://.godot/imported/hex_road_A_sloped_low.obj-f1b6c709208b6b02affccf6a426641df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbd6fg6ion56j"
+path="res://.godot/imported/crops_leafsStageA.obj-7eadd2811e882acac399d8ae6945381d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crops_leafsStageA.obj-7eadd2811e882acac399d8ae6945381d.mesh"]
+
+source_file="res://Models/OBJ format/crops_leafsStageA.obj"
+dest_files=["res://.godot/imported/crops_leafsStageA.obj-7eadd2811e882acac399d8ae6945381d.mesh", "res://.godot/imported/crops_leafsStageA.obj-7eadd2811e882acac399d8ae6945381d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

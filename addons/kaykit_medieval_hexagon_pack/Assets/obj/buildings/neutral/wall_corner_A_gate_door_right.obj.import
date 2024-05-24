@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bffv33adisp1p"
+path="res://.godot/imported/wall_corner_A_gate_door_right.obj-68aa3e2e1fb8ea3ce2ee9542bfa70c5e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/wall_corner_A_gate_door_right.obj-68aa3e2e1fb8ea3ce2ee9542bfa70c5e.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_corner_A_gate_door_right.obj"
+dest_files=["res://.godot/imported/wall_corner_A_gate_door_right.obj-68aa3e2e1fb8ea3ce2ee9542bfa70c5e.mesh", "res://.godot/imported/wall_corner_A_gate_door_right.obj-68aa3e2e1fb8ea3ce2ee9542bfa70c5e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

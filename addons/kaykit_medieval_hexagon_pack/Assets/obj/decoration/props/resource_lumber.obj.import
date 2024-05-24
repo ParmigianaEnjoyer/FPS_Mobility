@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgcnbt5g274fg"
+path="res://.godot/imported/resource_lumber.obj-5e3ea76a7033b80ec6faafce7b71f475.mesh"
+
+[deps]
+
+files=["res://.godot/imported/resource_lumber.obj-5e3ea76a7033b80ec6faafce7b71f475.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/resource_lumber.obj"
+dest_files=["res://.godot/imported/resource_lumber.obj-5e3ea76a7033b80ec6faafce7b71f475.mesh", "res://.godot/imported/resource_lumber.obj-5e3ea76a7033b80ec6faafce7b71f475.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

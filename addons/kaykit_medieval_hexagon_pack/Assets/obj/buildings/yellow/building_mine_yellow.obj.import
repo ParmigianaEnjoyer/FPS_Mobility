@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c8mu884ft01fp"
+path="res://.godot/imported/building_mine_yellow.obj-71769aef6cf6ba3fa3c7571295673a74.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_mine_yellow.obj-71769aef6cf6ba3fa3c7571295673a74.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/yellow/building_mine_yellow.obj"
+dest_files=["res://.godot/imported/building_mine_yellow.obj-71769aef6cf6ba3fa3c7571295673a74.mesh", "res://.godot/imported/building_mine_yellow.obj-71769aef6cf6ba3fa3c7571295673a74.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -181,9 +181,11 @@ autoplay = "shotgun_idle"
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_egsms")
+volume_db = -20.0
 
 [node name="Reload" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("17_dijy2")
+volume_db = -20.0
 
 [node name="machinegun_ui" type="AnimatedSprite2D" parent="."]
 visible = false

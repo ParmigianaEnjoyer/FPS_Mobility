@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddb3luw66571s"
+path="res://.godot/imported/building_castle_blue.obj-961ddf77e5927c323e3682e08ce876ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_castle_blue.obj-961ddf77e5927c323e3682e08ce876ea.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/blue/building_castle_blue.obj"
+dest_files=["res://.godot/imported/building_castle_blue.obj-961ddf77e5927c323e3682e08ce876ea.mesh", "res://.godot/imported/building_castle_blue.obj-961ddf77e5927c323e3682e08ce876ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

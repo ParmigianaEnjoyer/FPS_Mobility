@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://mmucgg330pr"
+path="res://.godot/imported/building_home_B_red.obj-0e3c9ad9969089051f6a19d4b615f0c7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_home_B_red.obj-0e3c9ad9969089051f6a19d4b615f0c7.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/red/building_home_B_red.obj"
+dest_files=["res://.godot/imported/building_home_B_red.obj-0e3c9ad9969089051f6a19d4b615f0c7.mesh", "res://.godot/imported/building_home_B_red.obj-0e3c9ad9969089051f6a19d4b615f0c7.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

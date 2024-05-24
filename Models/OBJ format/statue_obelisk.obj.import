@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bg6du5ixok1kv"
+path="res://.godot/imported/statue_obelisk.obj-ca45ddf6425990187ba716cc4eabaaee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/statue_obelisk.obj-ca45ddf6425990187ba716cc4eabaaee.mesh"]
+
+source_file="res://Models/OBJ format/statue_obelisk.obj"
+dest_files=["res://.godot/imported/statue_obelisk.obj-ca45ddf6425990187ba716cc4eabaaee.mesh", "res://.godot/imported/statue_obelisk.obj-ca45ddf6425990187ba716cc4eabaaee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

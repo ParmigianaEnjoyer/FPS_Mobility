@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bm8fq3g47tq5u"
+path="res://.godot/imported/building_barracks_green.obj-6d3e7b1227f08f40c4e0f3d033652906.mesh"
+
+[deps]
+
+files=["res://.godot/imported/building_barracks_green.obj-6d3e7b1227f08f40c4e0f3d033652906.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/green/building_barracks_green.obj"
+dest_files=["res://.godot/imported/building_barracks_green.obj-6d3e7b1227f08f40c4e0f3d033652906.mesh", "res://.godot/imported/building_barracks_green.obj-6d3e7b1227f08f40c4e0f3d033652906.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

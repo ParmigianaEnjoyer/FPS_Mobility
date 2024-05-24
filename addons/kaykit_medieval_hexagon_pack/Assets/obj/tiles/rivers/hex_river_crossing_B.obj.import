@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdvog6txk7ils"
+path="res://.godot/imported/hex_river_crossing_B.obj-33756e59db1cbb7101fc8dfe1aa075d3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_river_crossing_B.obj-33756e59db1cbb7101fc8dfe1aa075d3.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/rivers/hex_river_crossing_B.obj"
+dest_files=["res://.godot/imported/hex_river_crossing_B.obj-33756e59db1cbb7101fc8dfe1aa075d3.mesh", "res://.godot/imported/hex_river_crossing_B.obj-33756e59db1cbb7101fc8dfe1aa075d3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

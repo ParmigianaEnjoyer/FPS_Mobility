@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://div5iaf4wdfgw"
+path="res://.godot/imported/hex_road_E.obj-889af7457bb2d777f7a0f3c4dc7ee3fe.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hex_road_E.obj-889af7457bb2d777f7a0f3c4dc7ee3fe.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/roads/hex_road_E.obj"
+dest_files=["res://.godot/imported/hex_road_E.obj-889af7457bb2d777f7a0f3c4dc7ee3fe.mesh", "res://.godot/imported/hex_road_E.obj-889af7457bb2d777f7a0f3c4dc7ee3fe.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

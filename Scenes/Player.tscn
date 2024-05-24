@@ -13,12 +13,12 @@
 [node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_upafr")
 
-[node name="ui" parent="." instance=ExtResource("2_effl7")]
-script = ExtResource("3_cr11r")
-
 [node name="RadialMenu" parent="." instance=ExtResource("4_efhl6")]
 process_mode = 3
 script = ExtResource("5_pm6co")
+
+[node name="ui" parent="." instance=ExtResource("2_effl7")]
+script = ExtResource("3_cr11r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

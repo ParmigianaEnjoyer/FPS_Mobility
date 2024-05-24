@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ct28up33xo0jd"
+path="res://.godot/imported/waterplant_C.obj-20d08ada2c57632ffbcc3a56bc07e8dd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/waterplant_C.obj-20d08ada2c57632ffbcc3a56bc07e8dd.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/waterplant_C.obj"
+dest_files=["res://.godot/imported/waterplant_C.obj-20d08ada2c57632ffbcc3a56bc07e8dd.mesh", "res://.godot/imported/waterplant_C.obj-20d08ada2c57632ffbcc3a56bc07e8dd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

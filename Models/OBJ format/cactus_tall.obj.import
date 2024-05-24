@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://duhbsm7wpw3ac"
+path="res://.godot/imported/cactus_tall.obj-4ac159a1f102dd846cf140730779589e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cactus_tall.obj-4ac159a1f102dd846cf140730779589e.mesh"]
+
+source_file="res://Models/OBJ format/cactus_tall.obj"
+dest_files=["res://.godot/imported/cactus_tall.obj-4ac159a1f102dd846cf140730779589e.mesh", "res://.godot/imported/cactus_tall.obj-4ac159a1f102dd846cf140730779589e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

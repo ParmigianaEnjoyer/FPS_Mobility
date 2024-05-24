@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drpeq4nxcg1ao"
+path="res://.godot/imported/ground_riverCross.obj-d4e70c0a483ae38c246d9e5949422469.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_riverCross.obj-d4e70c0a483ae38c246d9e5949422469.mesh"]
+
+source_file="res://Models/OBJ format/ground_riverCross.obj"
+dest_files=["res://.godot/imported/ground_riverCross.obj-d4e70c0a483ae38c246d9e5949422469.mesh", "res://.godot/imported/ground_riverCross.obj-d4e70c0a483ae38c246d9e5949422469.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

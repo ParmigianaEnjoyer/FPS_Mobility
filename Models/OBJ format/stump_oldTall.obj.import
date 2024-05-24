@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cicwo704nummr"
+path="res://.godot/imported/stump_oldTall.obj-6cac653de3f07d2e8644fc4179218edc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/stump_oldTall.obj-6cac653de3f07d2e8644fc4179218edc.mesh"]
+
+source_file="res://Models/OBJ format/stump_oldTall.obj"
+dest_files=["res://.godot/imported/stump_oldTall.obj-6cac653de3f07d2e8644fc4179218edc.mesh", "res://.godot/imported/stump_oldTall.obj-6cac653de3f07d2e8644fc4179218edc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

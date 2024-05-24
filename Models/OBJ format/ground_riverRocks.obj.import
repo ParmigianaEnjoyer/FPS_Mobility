@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dsr7nle0qm5hx"
+path="res://.godot/imported/ground_riverRocks.obj-77bef2c85cc5c75ddb47977086b7717c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ground_riverRocks.obj-77bef2c85cc5c75ddb47977086b7717c.mesh"]
+
+source_file="res://Models/OBJ format/ground_riverRocks.obj"
+dest_files=["res://.godot/imported/ground_riverRocks.obj-77bef2c85cc5c75ddb47977086b7717c.mesh", "res://.godot/imported/ground_riverRocks.obj-77bef2c85cc5c75ddb47977086b7717c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

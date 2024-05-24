@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2dp4x38quh6j"
+path="res://.godot/imported/bucket_arrows.obj-56e43b73a3f2202596080121d2bfe3ac.mesh"
+
+[deps]
+
+files=["res://.godot/imported/bucket_arrows.obj-56e43b73a3f2202596080121d2bfe3ac.mesh"]
+
+source_file="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/bucket_arrows.obj"
+dest_files=["res://.godot/imported/bucket_arrows.obj-56e43b73a3f2202596080121d2bfe3ac.mesh", "res://.godot/imported/bucket_arrows.obj-56e43b73a3f2202596080121d2bfe3ac.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
