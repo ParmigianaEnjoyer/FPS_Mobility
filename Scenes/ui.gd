@@ -13,25 +13,25 @@ func _ready():
 	match current_weapon:
 		"shotgun":
 			fire_rate = 5.0
-			$AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
-			$AnimatedSprite2D.play("shotgun_idle")
+			$Weapon/Shotgun_AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
+			$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_idle")
 		"machinegun":
 			fire_rate = 10.0
-			$machinegun_ui.animation_finished.connect(_on_AnimatedSprite2D_animation_finished())
-			$machinegun_ui.play("machinegun_idle")
+			$Weapon/machinegun_ui.animation_finished.connect(_on_AnimatedSprite2D_animation_finished())
+			$Weapon/machinegun_ui.play("machinegun_idle")
 		"pistol":
 			fire_rate = 7.0
 			$Weapon/Pistol_AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished())
 			$Weapon/Pistol_AnimatedSprite2D.play("machinegun_idle")
 
 #func _on_machinegun_ui_animation_finished():
-#	$machinegun_ui.play(current_weapon + "_idle")
+#	$Weapon/machinegun_ui.play(current_weapon + "_idle")
 
 func _on_AnimatedSprite2D_animation_finished():
-	$AnimatedSprite2D.play(current_weapon + "_idle")
+	$Weapon/Shotgun_AnimatedSprite2D.play(current_weapon + "_idle")
 	
 #func _on_AnimatedSprite2D_animation_finished():
-#	$AnimatedSprite2D.play(current_weapon + "_idle")
+#	$Weapon/Shotgun_AnimatedSprite2D.play(current_weapon + "_idle")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -41,17 +41,17 @@ func _process(delta):
 	if !radial_menu:
 		if Input.is_action_pressed("shoot") and can_shoot and  current_weapon == "shotgun":
 			if !($Shoot.playing or $Reload.playing):
-				$AnimatedSprite2D.play("shotgun_shoot")
+				$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
 				$Shoot.play()
 				$Reload.play()
 				time_since_last_shot = 0.0
 		else: 
 			if Input.is_action_pressed("shoot") and can_shoot and current_weapon == "machinegun":
-				$machinegun_ui.play("machinegun_shoot")
+				$Weapon/machinegun_ui.play("machinegun_shoot")
 				if !($Shoot.playing):
 					$Shoot.play()
-			if Input.is_action_just_released("shoot") and $machinegun_ui.is_playing():
-				$machinegun_ui.play("machinegun_idle")
+			if Input.is_action_just_released("shoot") and $Weapon/machinegun_ui.is_playing():
+				$Weapon/machinegun_ui.play("machinegun_idle")
 				$Shoot.stop()
 				time_since_last_shot = 0.0
 		if Input.is_action_pressed("shoot") and can_shoot and current_weapon == "pistol":
@@ -67,12 +67,12 @@ func switch_weapon(to):
 		current_weapon = "pistol"
 		$Shoot.stream = preload("res://Pistol/gunshot-fast-[AudioTrimmer.com].wav")
 		
-		if $AnimatedSprite2D.visible:
-			$AnimatedSprite2D.visible = false
-			$AnimatedSprite2D.stop()
-		else: if $machinegun_ui.visible:
-			$machinegun_ui.visible = false
-			$machinegun_ui.stop()
+		if $Weapon/Shotgun_AnimatedSprite2D.visible:
+			$Weapon/Shotgun_AnimatedSprite2D.visible = false
+			$Weapon/Shotgun_AnimatedSprite2D.stop()
+		else: if $Weapon/machinegun_ui.visible:
+			$Weapon/machinegun_ui.visible = false
+			$Weapon/machinegun_ui.stop()
 		else: if $Stick_AnimatedSprite2D.visible:
 			$Stick_AnimatedSprite2D.visible = true
 			$Stick_AnimatedSprite2D.stop()
@@ -89,15 +89,15 @@ func switch_weapon(to):
 		if $Weapon/Pistol_AnimatedSprite2D.visible:
 			$Weapon/Pistol_AnimatedSprite2D.visible = false
 			$Weapon/Pistol_AnimatedSprite2D.stop()
-		else: if $AnimatedSprite2D.visible:
-			$AnimatedSprite2D.visible = false
-			$AnimatedSprite2D.stop()
+		else: if $Weapon/Shotgun_AnimatedSprite2D.visible:
+			$Weapon/Shotgun_AnimatedSprite2D.visible = false
+			$Weapon/Shotgun_AnimatedSprite2D.stop()
 		else: if $Stick_AnimatedSprite2D.visible:
 			$Stick_AnimatedSprite2D.visible = true
 			$Stick_AnimatedSprite2D.stop()
 			
-		$machinegun_ui.visible = true
-		$machinegun_ui.play(current_weapon + "_idle")
+		$Weapon/machinegun_ui.visible = true
+		$Weapon/machinegun_ui.play(current_weapon + "_idle")
 		$Crosshair/weapon_crosshair.play(current_weapon + "_crosshair")
 		
 	#Shotgun animation on
@@ -108,13 +108,13 @@ func switch_weapon(to):
 		if $Weapon/Pistol_AnimatedSprite2D.visible:
 			$Weapon/Pistol_AnimatedSprite2D.visible = false
 			$Weapon/Pistol_AnimatedSprite2D.stop()
-		else: if $machinegun_ui.visible:
-			$machinegun_ui.visible = false
-			$machinegun_ui.stop()
+		else: if $Weapon/machinegun_ui.visible:
+			$Weapon/machinegun_ui.visible = false
+			$Weapon/machinegun_ui.stop()
 		else: if $Stidddck_AnimatedSprite2D.visible:
 			$Stick_AnimatedSprite2D.visible = true
 			$Stick_AnimatedSprite2D.stop()
 		
-		$AnimatedSprite2D.visible = true
-		$AnimatedSprite2D.play(current_weapon + "_idle")
+		$Weapon/Shotgun_AnimatedSprite2D.visible = true
+		$Weapon/Shotgun_AnimatedSprite2D.play(current_weapon + "_idle")
 		$Crosshair/weapon_crosshair.play(current_weapon + "_crosshair")
