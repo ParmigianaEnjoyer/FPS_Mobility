@@ -13,6 +13,7 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("radial_menu"):
 		$AnimationPlayer.play("zoom")
+		get_node("../ui/Weapon").visible = false
 		
 		time_scale_target = 0.0
 		interpolation = 0.0
@@ -24,6 +25,7 @@ func _input(event):
 		show()
 		
 	if event.is_action_released("radial_menu"):
+		get_node("../ui/Weapon").visible = true
 		radial_menu_off()
 		print(current_item)
 

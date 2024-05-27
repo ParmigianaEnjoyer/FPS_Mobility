@@ -1,5 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=52 format=3 uid="uid://coo3gvcxegtbs"]
 
+[ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
 [ext_resource type="Texture2D" uid="uid://bmu2vlftmndox" path="res://Shotgun/2.png" id="2_b4fel"]
 [ext_resource type="Texture2D" uid="uid://bovclgljydlh8" path="res://Shotgun/3.png" id="3_0461s"]
@@ -15,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://cj7ysor3b5w16" path="res://Shotgun/13.png" id="13_cylda"]
 [ext_resource type="Texture2D" uid="uid://c8lwqa2ciuspy" path="res://Shotgun/14.png" id="14_c5u27"]
 [ext_resource type="Texture2D" uid="uid://dk4qbcxbvpksw" path="res://Shotgun/15.png" id="15_7ch2c"]
-[ext_resource type="AudioStream" uid="uid://nd142yssaxwm" path="res://Shotgun/shotgun-fx_168bpm.wav" id="16_egsms"]
 [ext_resource type="AudioStream" uid="uid://bcwyiub5ik3m0" path="res://Shotgun/old-school-shotgun-reload.wav" id="17_dijy2"]
 [ext_resource type="Texture2D" uid="uid://bckkp48w56o7a" path="res://CrosshairPack2.png" id="18_ydo1h"]
 [ext_resource type="Texture2D" uid="uid://chwpjln36kap5" path="res://Machinegun/1.png" id="19_hy7tt"]
@@ -23,6 +23,19 @@
 [ext_resource type="Texture2D" uid="uid://cn13kt5yse20" path="res://Machinegun/3.png" id="21_21lpv"]
 [ext_resource type="Texture2D" uid="uid://cdy4lr222n0hb" path="res://Machinegun/4.png" id="22_cl17l"]
 [ext_resource type="Texture2D" uid="uid://cnqx30166d3n7" path="res://Pistol/Pistol_animations_frames.png" id="23_jemns"]
+[ext_resource type="Texture2D" uid="uid://diou6f1266xft" path="res://Hammer/acme-2024-05-27-14_04_08.png" id="24_yitgt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en4ot"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(210, 170, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dxen"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(420, 170, 35, 34)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eunrh"]
+atlas = ExtResource("18_ydo1h")
+region = Rect2(210, 170, 35, 34)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkgdj"]
 atlas = ExtResource("18_ydo1h")
@@ -62,6 +75,25 @@ region = Rect2(175, 170, 35, 34)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lnmat"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en4ot")
+}],
+"loop": false,
+"name": &"hammer_crosshair",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1dxen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eunrh")
+}],
+"loop": false,
+"name": &"hammer_crosshair_hit",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bkgdj")
@@ -241,16 +273,77 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_7ch2c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_xrb6w")
 }],
 "loop": false,
 "name": &"shotgun_shoot",
 "speed": 16.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xq447"]
+atlas = ExtResource("24_yitgt")
+region = Rect2(0, 0, 419, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3opjf"]
+atlas = ExtResource("24_yitgt")
+region = Rect2(419, 0, 419, 417)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6t2w"]
+atlas = ExtResource("24_yitgt")
+region = Rect2(0, 422, 419, 408)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yl3w"]
+atlas = ExtResource("24_yitgt")
+region = Rect2(419, 423, 419, 417)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3niyj"]
+atlas = ExtResource("24_yitgt")
+region = Rect2(419, 0, 419, 420)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejnas"]
+atlas = ExtResource("24_yitgt")
+region = Rect2(0, 0, 419, 420)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7mnnd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xq447")
+}],
+"loop": false,
+"name": &"hammer_idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3opjf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6t2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yl3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6t2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3niyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejnas")
+}],
+"loop": false,
+"name": &"hammer_shoot",
+"speed": 12.0
+}]
+
 [node name="ui" type="CanvasLayer"]
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("16_egsms")
+stream = ExtResource("1_a5q3o")
 volume_db = -20.0
 
 [node name="Reload" type="AudioStreamPlayer" parent="."]
@@ -272,8 +365,8 @@ size_flags_vertical = 6
 [node name="weapon_crosshair" type="AnimatedSprite2D" parent="Crosshair"]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_lnmat")
-animation = &"machinegun_crosshair_hit"
-autoplay = "shotgun_crosshair"
+animation = &"hammer_crosshair"
+autoplay = "hammer_crosshair"
 
 [node name="Weapon" type="Control" parent="."]
 layout_mode = 3
@@ -294,7 +387,7 @@ scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_o4v53")
 animation = &"pistol_shoot"
 
-[node name="machinegun_ui" type="AnimatedSprite2D" parent="Weapon"]
+[node name="Machinegun_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
 visible = false
 position = Vector2(-210, -345)
 scale = Vector2(1.5, 1.5)
@@ -302,7 +395,15 @@ sprite_frames = SubResource("SpriteFrames_bkl46")
 animation = &"machinegun_idle"
 
 [node name="Shotgun_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
+visible = false
 position = Vector2(210, -265)
 sprite_frames = SubResource("SpriteFrames_v4qwv")
 animation = &"shotgun_shoot"
 autoplay = "shotgun_idle"
+
+[node name="Hammer_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
+position = Vector2(0, -515)
+scale = Vector2(2.5, 2.5)
+sprite_frames = SubResource("SpriteFrames_7mnnd")
+animation = &"hammer_shoot"
+autoplay = "hammer_idle"
