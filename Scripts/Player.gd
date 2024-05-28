@@ -1,12 +1,16 @@
 extends CharacterBody3D
 
+var player_health = 100	#la vita del giocatore
+
+@onready var ray = $Head/Camera3D/RayCast3D
+var hit = false
+
 var speed
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 8.0
 #const JUMP_VELOCITY = 4.8
 const SENSITIVITY = 0.004
 
-#prova
 
 @export var jump_height: float = 1.0
 @export var fall_multiplier: float = 2.5
@@ -22,7 +26,6 @@ const FOV_CHANGE = 1.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
@@ -83,7 +86,11 @@ func _physics_process(delta):
 	#close the game if press escape
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
-		
+	
+	if Input.is_action_pressed("shoot"):
+		if $ui.can_shoot:
+			shoot()
+	
 	move_and_slide()
 
 
@@ -93,3 +100,7 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
 	
+func shoot():
+	#Per cambiare la z in base all'arma selezionata (es. il martello ha range 2)
+	#$Head/Camera3D/RayCast3D.target_position.z = -2
+	print(ray.get_collider(), $Head/Camera3D/RayCast3D.target_position)

@@ -10,7 +10,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_upafr")
 
 [node name="ui" parent="." instance=ExtResource("2_effl7")]
@@ -32,3 +32,6 @@ shape = SubResource("CapsuleShape3D_wydro")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+target_position = Vector3(0, 0, -100)

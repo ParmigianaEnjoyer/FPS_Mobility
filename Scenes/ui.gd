@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var current_weapon = "hammer"
+@export var current_weapon = "hammer"
 var time_since_last_shot = 0.0
 var fire_rate = 10.0
 var can_shoot = true
