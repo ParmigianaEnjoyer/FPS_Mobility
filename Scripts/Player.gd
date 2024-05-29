@@ -1,8 +1,12 @@
 extends CharacterBody3D
+class_name Player
 
-var player_health = 100	#la vita del giocatore
-
-@onready var ray = $Head/Camera3D/RayCast3D
+@export var max_player_health = 200	#la vita del giocatore
+var player_health = max_player_health:
+	set(value):
+		player_health = value
+		if player_health <= 0:		#aggiorna la vita, se arriva a 0 o meno chiude il gioco
+			get_tree().quit()
 var hit = false
 
 var speed
@@ -20,7 +24,7 @@ const BOB_FREQ = 2.4
 const BOB_AMP = 0.08
 var t_bob = 0.0
 
-#fov variables
+#fov variablesw
 const BASE_FOV = 75.0
 const FOV_CHANGE = 1.5
 
@@ -87,10 +91,6 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	
-	if Input.is_action_pressed("shoot"):
-		if $ui.can_shoot:
-			shoot()
-	
 	move_and_slide()
 
 
@@ -100,12 +100,3 @@ func _headbob(time) -> Vector3:
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
 	
-func shoot():
-	var collider = ray.get_collider()
-	#LA GESTIONE DEL DANNO VA FATTA IN ui.gd
-	#Per cambiare la z in base all'arma selezionata (es. il martello ha range 2)
-	#$Head/Camera3D/RayCast3D.target_position.z = -2
-	#print(ray.get_collider(), $Head/Camera3D/RayCast3D.target_position)
-	#if collider is Enemy:
-		#collider.hitpoints -= $ui.weapon_damage
-		#printt(collider.hitpoints, $ui.weapon_damage)

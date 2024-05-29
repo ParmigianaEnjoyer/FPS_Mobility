@@ -122,9 +122,19 @@ sprite_frames = SubResource("SpriteFrames_ed35f")
 animation = &"shoot"
 autoplay = "default"
 
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1wgqk")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52043, 0)
+target_position = Vector3(0, 0, -10)
+collision_mask = 3
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true

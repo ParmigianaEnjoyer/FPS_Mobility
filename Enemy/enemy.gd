@@ -2,7 +2,9 @@ extends CharacterBody3D
 class_name Enemy
 
 @export var max_hitpoints := 100
+@export var fire_rate = 2.0 		#numero di colpi sparati in un secondo
 @export var attack_range = 10.0
+@export var damage = 10
 
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
@@ -12,15 +14,20 @@ const AGGRO_RANGE = 40.0
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var navigation_agent_3d = $NavigationAgent3D
 
+@onready var ray = $RayCast3D
+@onready var timer = $CooldownTimer
+
 var player
 var provoked = false		#l'enemy è stato provocato? 
 var attacking = false
+
 var hitpoints = max_hitpoints:
 	set(value):
 		hitpoints = value
 		if hitpoints <= 0:
 			queue_free()
 		provoked = true
+
 
 func _ready() -> void:
 	$AnimatedSprite3D.play("default")
@@ -37,6 +44,7 @@ func _process(_delta):
 
 func _physics_process(delta):
 	var next_position = navigation_agent_3d.get_next_path_position()
+	ray.look_at(player.global_position)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -45,20 +53,17 @@ func _physics_process(delta):
 	#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		#velocity.y = JUMP_VELOCITY
 	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	#var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	#var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
 	var direction = global_position.direction_to(next_position)
 	var distance = global_position.distance_to(player.global_position)
 	
+		
 	if distance <= AGGRO_RANGE:
 		provoked = true
 		
 	if provoked and distance <= attack_range:
 		attacking = true
-		attack()
+		if ray.is_colliding() and ray.get_collider() is Player:
+			attack()
 	else:
 		attacking = false
 	
@@ -68,11 +73,22 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
-
+	
 	if !attacking: 
 		move_and_slide()
 
 
 func attack():
-	#print("enemy attack!")
-	$AnimatedSprite3D.play("shoot")
+	if timer.is_stopped():
+		timer.start(1.0)
+		ray.get_collider().player_health -= damage
+		print(ray.get_collider().player_health)
+
+
+
+
+#func die():
+	#dead = true  # Corrected variable scope
+	#$AnimatedSprite3D.play("die")
+	#$CollisionShape3D.disabled = true		#disattivo le collisioni così posso attraversarlo quando muore
+	#Global.player_score += 100

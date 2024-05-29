@@ -2,8 +2,9 @@ extends CanvasLayer
 
 #CARATTERISTICHE DELL'ARMA
 @export var current_weapon = "hammer"		#nome dell'arma utilizata
-@export var weapon_damage = 35		#danno di un'arma
+@export var weapon_damage = 50		#danno di un'arma
 @export var fire_rate = 1.0			#numero di volte in cui l'arma spara in un secondo
+@export var fire_range = -2.0			#range dell'arma
 
 var shooted_count = 0 		#variabile che conta i colpi sparati
 
@@ -14,9 +15,13 @@ var can_shoot = true
 #check if radial menu is on or not
 var radial_menu = false
 
+@onready var ray = $"../Head/Camera3D/RayCast3D"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
+	
+#func _ready():
 #	match current_weapon:
 #		"shotgun":
 #			fire_rate = 5.0
@@ -45,6 +50,7 @@ func _ready():
 #func _on_AnimatedSprite2D_animation_finished():
 #	$Weapon/Shotgun_AnimatedSprite2D.play(current_weapon + "_idle")
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	time_since_last_shot += delta
@@ -58,21 +64,25 @@ func _process(delta):
 					cooldown_timer.start(1.0 / fire_rate)
 					$Weapon/Hammer_AnimatedSprite2D.play("hammer_shoot")
 					$Shoot.play()
+					shoot(current_weapon)
 			"pistol":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
 					cooldown_timer.start(1.0 / fire_rate)	
 					$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
 					$Shoot.play()
+					shoot(current_weapon)
 			"shotgun":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
 					cooldown_timer.start(1.0 / fire_rate)
 					$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
 					$Shoot.play()
 					$Reload.play()
+					shoot(current_weapon)
 			"machinegun":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
 					cooldown_timer.start(1.0 / fire_rate)
 					shooted_count += 1
+					#si alternano tre suoni differenti per la machinegun
 					match shooted_count % 3:
 						0:
 							$Shoot.stream = preload("res://Machinegun/minigun.ogg")
@@ -82,6 +92,7 @@ func _process(delta):
 							$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
 					$Shoot.play()
+					shoot(current_weapon)
 				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
 					shooted_count = 0
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
@@ -125,6 +136,8 @@ func switch_weapon(to):
 	if to == 0 and current_weapon != "pistol":
 		current_weapon = "pistol"
 		fire_rate = 1.8
+		fire_range = -20
+		weapon_damage = 10
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Pistol/gunshot-fast-[AudioTrimmer.com].wav")
 		
@@ -146,6 +159,8 @@ func switch_weapon(to):
 	else: if to == 2 and current_weapon != "machinegun":
 		current_weapon = "machinegun"
 		fire_rate = 5
+		fire_range = -20
+		weapon_damage = 10
 		$Shoot.stream = preload("res://Machinegun/minigun.ogg")
 		$Shoot.volume_db = -30.0
 		
@@ -166,7 +181,9 @@ func switch_weapon(to):
 	#SET SHOTGUN'S ANIMATION
 	else: if to == 1 and current_weapon != "shotgun":
 		current_weapon = "shotgun"
+		fire_range = -5
 		fire_rate = 0.75
+		weapon_damage = 30
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Shotgun/shotgun-fx_168bpm.wav")
 		
@@ -187,7 +204,9 @@ func switch_weapon(to):
 	#SET HAMMER'S ANIMATION
 	else: if to == 3 and current_weapon != "hammer":
 		current_weapon = "hammer"
+		fire_range = -2
 		fire_rate = 1.0
+		weapon_damage = 50
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav")
 		
@@ -210,9 +229,30 @@ func _input(event):
 	if event.is_action_pressed("radial_menu"):
 		get_node("Weapon/" + capitalizza_prima_lettera(current_weapon) + "_AnimatedSprite2D").play(current_weapon + "_idle")
 
-func capitalizza_prima_lettera(testo):
+
+func capitalizza_prima_lettera(testo):		#funzione di servizio, mette la prima lettera di una parola in maiusolo
 	if testo.length() == 0:
 		return testo  # Restituisce la stringa vuota se il testo è vuoto
 	var prima_lettera = testo[0].to_upper()  # Prende la prima lettera e la converte in maiuscolo
 	var resto_stringa = testo.substr(1, testo.length() - 1)  # Prende il resto della stringa
 	return prima_lettera + resto_stringa  # Concatenazione della prima lettera maiuscola con il resto della stringa
+
+
+#FUNZIONE CHE GESTISCE IL RAGGIO E IL DANNO DI UN'ARMA QUANDO SPARA E HITTA UN ENEMY
+func shoot(_weapon) -> void:
+	var collider = ray.get_collider()
+	
+	$"../Head/Camera3D/RayCast3D".target_position.z = fire_range		#Il range viene modificato in base al range dell'arma attuale
+	
+	if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+		collider.hitpoints -= weapon_damage
+		
+	#match weapon:
+		#"hammer":
+			#pass
+		#"pistol":
+			#pass
+		#"shotgun":
+			#pass
+		#"machinegun":
+			#pass
