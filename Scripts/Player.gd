@@ -101,6 +101,11 @@ func _headbob(time) -> Vector3:
 	return pos
 	
 func shoot():
+	var collider = ray.get_collider()
+	#LA GESTIONE DEL DANNO VA FATTA IN ui.gd
 	#Per cambiare la z in base all'arma selezionata (es. il martello ha range 2)
 	#$Head/Camera3D/RayCast3D.target_position.z = -2
-	print(ray.get_collider(), $Head/Camera3D/RayCast3D.target_position)
+	#print(ray.get_collider(), $Head/Camera3D/RayCast3D.target_position)
+	#if collider is Enemy:
+		#collider.hitpoints -= $ui.weapon_damage
+		#printt(collider.hitpoints, $ui.weapon_damage)

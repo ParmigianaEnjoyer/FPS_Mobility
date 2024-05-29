@@ -1,11 +1,12 @@
 extends CharacterBody3D
+class_name Enemy
 
+@export var max_hitpoints := 100
+@export var attack_range = 10.0
 
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 40.0
-
-@export var attack_range = 10.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -14,7 +15,12 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 var player
 var provoked = false		#l'enemy è stato provocato? 
 var attacking = false
-
+var hitpoints = max_hitpoints:
+	set(value):
+		hitpoints = value
+		if hitpoints <= 0:
+			queue_free()
+		provoked = true
 
 func _ready() -> void:
 	$AnimatedSprite3D.play("default")

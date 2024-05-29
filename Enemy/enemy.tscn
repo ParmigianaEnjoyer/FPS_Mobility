@@ -121,8 +121,6 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_ed35f")
 animation = &"shoot"
 autoplay = "default"
-frame = 1
-frame_progress = 1.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

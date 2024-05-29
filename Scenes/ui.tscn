@@ -407,3 +407,6 @@ scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_7mnnd")
 animation = &"hammer_shoot"
 autoplay = "hammer_idle"
+
+[node name="CooldownTimer" type="Timer" parent="Weapon"]
+one_shot = true
