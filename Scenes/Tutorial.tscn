@@ -1,30 +1,30 @@
 [gd_scene load_steps=55 format=3 uid="uid://db2h3t17k37pe"]
 
-[ext_resource type="ArrayMesh" uid="uid://bkff13a3xll23" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass_bottom.obj" id="1_pl1ps"]
-[ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="2_4k81r"]
-[ext_resource type="ArrayMesh" uid="uid://dawcfc3hmqcrg" path="res://Models/OBJ format/mushroom_red.obj" id="2_tsf5k"]
-[ext_resource type="ArrayMesh" uid="uid://biu32ggrgola" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight.obj" id="3_dqt4x"]
-[ext_resource type="ArrayMesh" uid="uid://bdrvbjrtm2u6w" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/red/building_tower_A_red.obj" id="3_u8cca"]
-[ext_resource type="ArrayMesh" uid="uid://c4ml1jomxgaw7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight_gate.obj" id="4_lhp47"]
-[ext_resource type="ArrayMesh" uid="uid://w1f7pg1h881m" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/red/building_well_red.obj" id="5_528s2"]
-[ext_resource type="ArrayMesh" uid="uid://iyshewo8q468" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/fence_wood_straight_gate_fence_wood_straight_door.obj" id="5_px45w"]
-[ext_resource type="ArrayMesh" uid="uid://b7kcb3a06db4j" path="res://Models/OBJ format/mushroom_redGroup.obj" id="5_x2anr"]
-[ext_resource type="ArrayMesh" uid="uid://4ek5eg7jgksn" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/weaponrack.obj" id="7_8mgcf"]
-[ext_resource type="ArrayMesh" uid="uid://b6k8vklt6sh6n" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight_gate_door_right.obj" id="7_s77y3"]
-[ext_resource type="ArrayMesh" uid="uid://ckapobtdgpet2" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_medium.obj" id="8_b3xko"]
-[ext_resource type="ArrayMesh" uid="uid://dwk0x5g2tavqf" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight_gate_door_left.obj" id="8_jwdd6"]
-[ext_resource type="ArrayMesh" uid="uid://0sm2nm8pogt8" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_C_grass_trees.obj" id="9_5vhmo"]
-[ext_resource type="ArrayMesh" uid="uid://djh0ij2lymuq1" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/wheelbarrow.obj" id="10_76bes"]
-[ext_resource type="ArrayMesh" uid="uid://b0igsbtye4b24" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_B_grass_trees.obj" id="10_nywvu"]
-[ext_resource type="ArrayMesh" uid="uid://dg8b1b64mgeo6" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/bucket_water.obj" id="11_mn8wq"]
-[ext_resource type="ArrayMesh" uid="uid://d2ctx20igjbte" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_A_big.obj" id="12_y0x77"]
-[ext_resource type="ArrayMesh" uid="uid://cvbxtrys3kkf7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_open.obj" id="13_31dxu"]
-[ext_resource type="ArrayMesh" uid="uid://bgcnbt5g274fg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/resource_lumber.obj" id="14_1yiuh"]
-[ext_resource type="PackedScene" uid="uid://bq5ymk6t7cbxd" path="res://Scenes/Player.tscn" id="14_48t6c"]
-[ext_resource type="ArrayMesh" uid="uid://bqxdow8ca61cg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_long_C.obj" id="15_guffg"]
-[ext_resource type="ArrayMesh" uid="uid://b8cm1v3gbprrl" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_long_empty.obj" id="16_rxr5m"]
-[ext_resource type="ArrayMesh" uid="uid://c57tqi248q6e0" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/ladder.obj" id="18_eu8xj"]
-[ext_resource type="ArrayMesh" uid="uid://dctdnrwpp4s5c" path="res://Models/OBJ format/ground_pathOpen.obj" id="18_xt7mp"]
+[ext_resource type="PackedScene" uid="uid://bq5ymk6t7cbxd" path="res://Scenes/Player.tscn" id="1_gai3q"]
+[ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="2_t7qx0"]
+[ext_resource type="ArrayMesh" uid="uid://biu32ggrgola" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight.obj" id="3_jr28v"]
+[ext_resource type="ArrayMesh" uid="uid://c4ml1jomxgaw7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight_gate.obj" id="4_duct8"]
+[ext_resource type="ArrayMesh" uid="uid://bdrvbjrtm2u6w" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/red/building_tower_A_red.obj" id="5_ysp3m"]
+[ext_resource type="ArrayMesh" uid="uid://dawcfc3hmqcrg" path="res://Models/OBJ format/mushroom_red.obj" id="6_23h1l"]
+[ext_resource type="ArrayMesh" uid="uid://4ek5eg7jgksn" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/weaponrack.obj" id="7_55sdv"]
+[ext_resource type="ArrayMesh" uid="uid://iyshewo8q468" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/fence_wood_straight_gate_fence_wood_straight_door.obj" id="8_y708k"]
+[ext_resource type="ArrayMesh" uid="uid://b7kcb3a06db4j" path="res://Models/OBJ format/mushroom_redGroup.obj" id="9_qccox"]
+[ext_resource type="ArrayMesh" uid="uid://w1f7pg1h881m" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/red/building_well_red.obj" id="10_mawna"]
+[ext_resource type="ArrayMesh" uid="uid://b6k8vklt6sh6n" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight_gate_door_right.obj" id="11_xonfc"]
+[ext_resource type="ArrayMesh" uid="uid://dwk0x5g2tavqf" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight_gate_door_left.obj" id="12_kuht5"]
+[ext_resource type="ArrayMesh" uid="uid://djh0ij2lymuq1" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/wheelbarrow.obj" id="13_q7wem"]
+[ext_resource type="ArrayMesh" uid="uid://dg8b1b64mgeo6" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/bucket_water.obj" id="14_gvw8e"]
+[ext_resource type="ArrayMesh" uid="uid://d2ctx20igjbte" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_A_big.obj" id="15_sniq2"]
+[ext_resource type="ArrayMesh" uid="uid://cvbxtrys3kkf7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_open.obj" id="16_p5n1s"]
+[ext_resource type="ArrayMesh" uid="uid://bgcnbt5g274fg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/resource_lumber.obj" id="17_i03ga"]
+[ext_resource type="ArrayMesh" uid="uid://bqxdow8ca61cg" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_long_C.obj" id="18_qeo7l"]
+[ext_resource type="ArrayMesh" uid="uid://b8cm1v3gbprrl" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/crate_long_empty.obj" id="19_7ertv"]
+[ext_resource type="ArrayMesh" uid="uid://c57tqi248q6e0" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/props/ladder.obj" id="20_k6gbb"]
+[ext_resource type="ArrayMesh" uid="uid://bkff13a3xll23" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass_bottom.obj" id="21_jcus8"]
+[ext_resource type="ArrayMesh" uid="uid://dctdnrwpp4s5c" path="res://Models/OBJ format/ground_pathOpen.obj" id="22_mt2si"]
+[ext_resource type="ArrayMesh" uid="uid://ckapobtdgpet2" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_medium.obj" id="23_k3wpn"]
+[ext_resource type="ArrayMesh" uid="uid://0sm2nm8pogt8" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_C_grass_trees.obj" id="24_6ho14"]
+[ext_resource type="ArrayMesh" uid="uid://b0igsbtye4b24" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_B_grass_trees.obj" id="25_bh0nj"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -118,9 +118,9 @@ size = Vector3(1.0128, 1.05461, 1.04391)
 [sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ssbt4"]
 data = PackedVector3Array(0, -1, -1.1547, 0, 0, -1.1547, -1, -1, -0.5774, -1, -1, -0.5774, 0, 0, -1.1547, -1, 0, -0.5774, 1, -1, 0.5774, 1, 0, 0.5774, 1, -1, -0.5774, 1, -1, -0.5774, 1, 0, 0.5774, 1, 0, -0.5774, -1, -1, -0.5774, -1, 0, -0.5774, -1, -1, 0.5774, -1, -1, 0.5774, -1, 0, -0.5774, -1, 0, 0.5774, 0, -1, 1.1547, 0, 0, 1.1547, 1, -1, 0.5774, 1, -1, 0.5774, 0, 0, 1.1547, 1, 0, 0.5774, -1, -1, 0.5774, -1, 0, 0.5774, 0, -1, 1.1547, 0, -1, 1.1547, -1, 0, 0.5774, 0, 0, 1.1547, 1, -1, -0.5774, 1, 0, -0.5774, 0, -1, -1.1547, 0, -1, -1.1547, 1, 0, -0.5774, 0, 0, -1.1547, 0, 0, -1.1547, 1, 0, -0.5774, -1, 0, -0.5774, -1, 0, -0.5774, 1, 0, -0.5774, -1, 0, 0.5774, -1, 0, 0.5774, 1, 0, -0.5774, 0, 0, 1.1547, 0, 0, 1.1547, 1, 0, -0.5774, 1, 0, 0.5774, 1, -1, 0.5774, 1, -1, -0.5774, 0, -1, 1.1547, 0, -1, 1.1547, 1, -1, -0.5774, -1, -1, 0.5774, -1, -1, 0.5774, 1, -1, -0.5774, -1, -1, -0.5774, -1, -1, -0.5774, 1, -1, -0.5774, 0, -1, -1.1547)
 
-[node name="World" type="Node3D"]
+[node name="Tutorial" type="Node3D"]
 
-[node name="Player" parent="." instance=ExtResource("14_48t6c")]
+[node name="Player" parent="." instance=ExtResource("1_gai3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9934, 8.98291, 0)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -130,7 +130,7 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g2h84")
 
-[node name="Enemy" parent="." instance=ExtResource("2_4k81r")]
+[node name="Enemy" parent="." instance=ExtResource("2_t7qx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.8893, 8.92274, 4.57598)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
@@ -146,7 +146,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144.137, 0, 0)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-7.43094e-07, 0, 17, 0, 17, 0, -17, 0, -7.43094e-07, 186.84, 8.93665, -29.0709)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D5"]
@@ -156,7 +156,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-7.43094e-07, 0, 17, 0, 17, 0, -17, 0, -7.43094e-07, 186.84, 8.937, 0.551894)
-mesh = ExtResource("4_lhp47")
+mesh = ExtResource("4_duct8")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D6"]
@@ -166,7 +166,7 @@ shape = SubResource("ConcavePolygonShape3D_rfhkp")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-7.43094e-07, 0, 17, 0, 17, 0, -17, 0, -7.43094e-07, 186.84, 8.93665, 30.1633)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D7"]
@@ -176,7 +176,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-17, 0, -2.56693e-06, 0, 17, 0, 2.56693e-06, 0, -17, 163.156, 8.93665, -53.2579)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D8"]
@@ -186,7 +186,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(15.5563, 0, -15.5563, 0, 22, 0, 15.5563, 0, 15.5563, 185.29, 7.74223, -51.6386)
-mesh = ExtResource("3_u8cca")
+mesh = ExtResource("5_ysp3m")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D2"]
 
@@ -195,7 +195,7 @@ shape = SubResource("ConcavePolygonShape3D_gtxg5")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-15.5563, 0, -15.5563, 0, 22, 0, 15.5563, 0, -15.5563, 185.29, 7.74223, 53.106)
-mesh = ExtResource("3_u8cca")
+mesh = ExtResource("5_ysp3m")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D3"]
 
@@ -204,7 +204,7 @@ shape = SubResource("ConcavePolygonShape3D_gtxg5")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 163.156, 8.93665, 54.5648)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D9"]
@@ -214,7 +214,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 129.156, 8.93665, 54.5648)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D10"]
@@ -224,7 +224,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 95.3719, 8.93665, 54.5648)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D11"]
@@ -234,7 +234,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-17, 0, -2.56693e-06, 0, 17, 0, 2.56693e-06, 0, -17, 129.148, 8.93665, -53.2579)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D12"]
@@ -244,7 +244,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-17, 0, -2.56693e-06, 0, 17, 0, 2.56693e-06, 0, -17, 95.2021, 8.93665, -53.2579)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D13"]
@@ -254,7 +254,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(15.5563, 0, 15.5563, 0, 22, 0, -15.5563, 0, 15.5563, 72.7817, 7.74223, -51.6386)
-mesh = ExtResource("3_u8cca")
+mesh = ExtResource("5_ysp3m")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D4"]
 
@@ -263,7 +263,7 @@ shape = SubResource("ConcavePolygonShape3D_gtxg5")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-15.5563, 0, 15.5563, 0, 22, 0, -15.5563, 0, -15.5563, 72.7817, 7.74223, 53.0461)
-mesh = ExtResource("3_u8cca")
+mesh = ExtResource("5_ysp3m")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D14"]
 
@@ -272,7 +272,7 @@ shape = SubResource("ConcavePolygonShape3D_gtxg5")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-7.43094e-07, 0, -17, 0, 17, 0, 17, 0, -7.43094e-07, 71.0105, 8.93665, -29.0709)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D15"]
@@ -282,7 +282,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-7.43094e-07, 0, -17, 0, 17, 0, 17, 0, -7.43094e-07, 71.011, 8.937, 30.163)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D16"]
@@ -292,7 +292,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura"]
 transform = Transform3D(-7.43094e-07, 0, -17, 0, 17, 0, 17, 0, -7.43094e-07, 71.011, 8.937, 0)
-mesh = ExtResource("3_dqt4x")
+mesh = ExtResource("3_jr28v")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Mura/MeshInstance3D17"]
@@ -304,7 +304,7 @@ shape = SubResource("ConcavePolygonShape3D_o2o7q")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case"]
 transform = Transform3D(90, 0, 0, 0, 90, 0, 0, 0, 90, 125.385, 8.76674, -15.2311)
-mesh = ExtResource("2_tsf5k")
+mesh = ExtResource("6_23h1l")
 skeleton = NodePath("../../..")
 
 [node name="Finestra" type="Node3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D2"]
@@ -312,7 +312,7 @@ transform = Transform3D(0.0111111, 0, 0, 0, 0.0111111, 0, 0, 0, 0.0111111, 0.047
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D2/Finestra"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D2/Finestra/MeshInstance3D"]
@@ -322,7 +322,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D2/Finestra"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D2/Finestra/MeshInstance3D7"]
@@ -337,7 +337,7 @@ shape = SubResource("ConcavePolygonShape3D_67ncl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D2"]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0.000204548, 0.00281006, 0.146669)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D2/MeshInstance3D"]
@@ -347,7 +347,7 @@ shape = SubResource("ConcavePolygonShape3D_fd6pq")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case"]
 transform = Transform3D(110, 0, 0, 0, 110, 0, 0, 0, 110, 140.984, 8.30105, -33.0184)
-mesh = ExtResource("2_tsf5k")
+mesh = ExtResource("6_23h1l")
 skeleton = NodePath("../../..")
 
 [node name="Finestra2" type="Node3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D3"]
@@ -355,7 +355,7 @@ transform = Transform3D(0.011, 0, 0, 0, 0.011, 0, 0, 0, 0.011, 0.0456364, 0.0685
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D3/Finestra2"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D3/Finestra2/MeshInstance3D"]
@@ -365,7 +365,7 @@ shape = SubResource("ConcavePolygonShape3D_an81u")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D3/Finestra2"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D3/Finestra2/MeshInstance3D7"]
@@ -380,7 +380,7 @@ shape = SubResource("ConcavePolygonShape3D_67ncl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D3"]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0.000204548, 0.00281006, 0.146669)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D3/MeshInstance3D"]
@@ -390,7 +390,7 @@ shape = SubResource("ConcavePolygonShape3D_fd6pq")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 164.405, 8.26192, -22.8803)
-mesh = ExtResource("2_tsf5k")
+mesh = ExtResource("6_23h1l")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D4"]
@@ -400,7 +400,7 @@ shape = SubResource("ConcavePolygonShape3D_67ncl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D4"]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0.000204548, 0.00281006, 0.146669)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D4/MeshInstance3D"]
@@ -413,7 +413,7 @@ transform = Transform3D(0.0111111, 0, 0, 0, 0.0111111, 0, 0, 0, 0.0111111, 0.047
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D4/Finestra"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D4/Finestra/MeshInstance3D"]
@@ -423,7 +423,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D4/Finestra"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D4/Finestra/MeshInstance3D7"]
@@ -433,7 +433,7 @@ shape = SubResource("ConcavePolygonShape3D_xta70")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case"]
 transform = Transform3D(130, 0, 0, 0, 130, 0, 0, 0, 130, 150.389, 8.51947, 27.424)
-mesh = ExtResource("5_x2anr")
+mesh = ExtResource("9_qccox")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13"]
@@ -443,7 +443,7 @@ shape = SubResource("ConcavePolygonShape3D_mgcxq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13"]
 transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 0.000204548, 0.00281006, 0.0881235)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/MeshInstance3D"]
@@ -453,7 +453,7 @@ shape = SubResource("ConcavePolygonShape3D_fd6pq")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13"]
 transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, -0.066144, 0.00281006, -0.0257592)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/MeshInstance3D2"]
@@ -463,7 +463,7 @@ shape = SubResource("ConcavePolygonShape3D_fd6pq")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13"]
 transform = Transform3D(-3.0598e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -3.0598e-09, 0.0740988, 0.00281006, -0.0196032)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/MeshInstance3D3"]
@@ -476,7 +476,7 @@ transform = Transform3D(-0.009, 0, -1.35896e-09, 0, 0.009, 0, 1.35896e-09, 0, -0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra/MeshInstance3D"]
@@ -486,7 +486,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra/MeshInstance3D7"]
@@ -499,7 +499,7 @@ transform = Transform3D(-3.49691e-10, 0, 0.008, 0, 0.008, 0, -0.008, 0, -3.49691
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra2"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra2/MeshInstance3D"]
@@ -509,7 +509,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra2"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D13/Finestra2/MeshInstance3D7"]
@@ -519,7 +519,7 @@ shape = SubResource("ConcavePolygonShape3D_xta70")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case"]
 transform = Transform3D(91.9239, 0, 91.9239, 0, 130, 0, -91.9239, 0, 91.9239, 103.559, 8.41185, -18.1765)
-mesh = ExtResource("5_x2anr")
+mesh = ExtResource("9_qccox")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14"]
@@ -529,7 +529,7 @@ shape = SubResource("ConcavePolygonShape3D_mgcxq")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14"]
 transform = Transform3D(-7.45058e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -7.45058e-09, -0.000651106, 0.00281003, 0.13911)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/MeshInstance3D"]
@@ -539,7 +539,7 @@ shape = SubResource("ConcavePolygonShape3D_fd6pq")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14"]
 transform = Transform3D(-7.45058e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -7.45058e-09, -0.0661052, 0.00281003, 0.0407203)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/MeshInstance3D2"]
@@ -549,7 +549,7 @@ shape = SubResource("ConcavePolygonShape3D_fd6pq")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14"]
 transform = Transform3D(-7.45058e-09, 0, -0.07, 0, 0.07, 0, 0.07, 0, -7.45058e-09, 0.0739558, 0.00281003, 0.0498151)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/MeshInstance3D3"]
@@ -562,7 +562,7 @@ transform = Transform3D(0.009, 0, 0, 0, 0.009, 0, 0, 0, 0.009, 0.108111, 0.04770
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra/MeshInstance3D"]
@@ -572,7 +572,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra/MeshInstance3D7"]
@@ -585,7 +585,7 @@ transform = Transform3D(-9.31323e-10, 0, -0.008, 0, 0.008, 0, 0.008, 0, -9.31323
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra2"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra2/MeshInstance3D"]
@@ -595,7 +595,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra2"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D14/Finestra2/MeshInstance3D7"]
@@ -605,7 +605,7 @@ shape = SubResource("ConcavePolygonShape3D_xta70")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case"]
 transform = Transform3D(110, 0, 0, 0, 110, 0, 0, 0, 110, 97.2533, 8.4018, 12.3536)
-mesh = ExtResource("2_tsf5k")
+mesh = ExtResource("6_23h1l")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D5"]
@@ -615,7 +615,7 @@ shape = SubResource("ConcavePolygonShape3D_67ncl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D5"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.146041, 0.00624533, -0.00251434)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D5/MeshInstance3D"]
@@ -628,7 +628,7 @@ transform = Transform3D(-4.85682e-10, 0, 0.0111111, 0, 0.0111111, 0, -0.0111111,
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D5/Finestra"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D5/Finestra/MeshInstance3D"]
@@ -638,7 +638,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D5/Finestra"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D5/Finestra/MeshInstance3D7"]
@@ -648,7 +648,7 @@ shape = SubResource("ConcavePolygonShape3D_xta70")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case"]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 118.902, 8.50375, 25.8122)
-mesh = ExtResource("2_tsf5k")
+mesh = ExtResource("6_23h1l")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D6"]
@@ -658,7 +658,7 @@ shape = SubResource("ConcavePolygonShape3D_67ncl")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D6"]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0.000204504, 0.00281006, 0.0542566)
-mesh = ExtResource("5_px45w")
+mesh = ExtResource("8_y708k")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D6/MeshInstance3D"]
@@ -671,7 +671,7 @@ transform = Transform3D(-0.0111111, 0, -9.71363e-10, 0, 0.0111111, 0, 9.71363e-1
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D6/Finestra"]
 transform = Transform3D(1.91069e-14, 4.37114e-07, 10, 10, -4.37114e-07, 0, 4.37114e-07, 10, -4.37114e-07, -0.264465, 0.567581, -1.46674)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D6/Finestra/MeshInstance3D"]
@@ -681,7 +681,7 @@ shape = SubResource("ConcavePolygonShape3D_nyiue")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D6/Finestra"]
 transform = Transform3D(1.91069e-14, -4.37114e-07, 10, -10, -4.37114e-07, 0, 4.37114e-07, -10, -4.37114e-07, -0.264465, 0.567581, 1.37713)
-mesh = ExtResource("7_8mgcf")
+mesh = ExtResource("7_55sdv")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Case/MeshInstance3D6/Finestra/MeshInstance3D7"]
@@ -693,7 +693,7 @@ shape = SubResource("ConcavePolygonShape3D_xta70")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti"]
 transform = Transform3D(11, 0, 0, 0, 11, 0, 0, 0, 11, 147.825, 8.592, -4.53513)
-mesh = ExtResource("5_528s2")
+mesh = ExtResource("10_mawna")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/MeshInstance3D12"]
@@ -703,7 +703,7 @@ shape = SubResource("ConcavePolygonShape3D_fhrwd")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti"]
 transform = Transform3D(-12.0208, 0, -12.0208, 0, 17, 0, 12.0208, 0, -12.0208, 181.771, 8.84268, -0.891683)
-mesh = ExtResource("7_s77y3")
+mesh = ExtResource("11_xonfc")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/MeshInstance3D"]
 
@@ -717,7 +717,7 @@ shape = SubResource("ConcavePolygonShape3D_va6p3")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti"]
 transform = Transform3D(-7.43094e-07, -17, 7.43094e-07, 0, -7.43094e-07, -17, 17, -7.43094e-07, 3.24817e-14, 187.783, 8.843, 0.541)
-mesh = ExtResource("8_jwdd6")
+mesh = ExtResource("12_kuht5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/MeshInstance3D2"]
 
@@ -726,7 +726,7 @@ shape = SubResource("ConcavePolygonShape3D_1enw8")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti"]
 transform = Transform3D(3.53553, 0, 3.53553, 0, 5, 0, -3.53553, 0, 3.53553, 106.228, 8.9, 0.812809)
-mesh = ExtResource("10_76bes")
+mesh = ExtResource("13_q7wem")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/MeshInstance3D3"]
 
@@ -735,7 +735,7 @@ shape = SubResource("ConcavePolygonShape3D_wy46k")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti"]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 150.328, 8.90759, -1.33353)
-mesh = ExtResource("11_mn8wq")
+mesh = ExtResource("14_gvw8e")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/MeshInstance3D4"]
 
@@ -746,7 +746,7 @@ shape = SubResource("ConcavePolygonShape3D_ovd43")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse"]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 106.559, 8.97029, 33.0877)
-mesh = ExtResource("12_y0x77")
+mesh = ExtResource("15_sniq2")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse/MeshInstance3D5"]
@@ -756,7 +756,7 @@ shape = SubResource("ConcavePolygonShape3D_eohsa")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse"]
 transform = Transform3D(5.65685, 0, -5.65685, 0, 8, 0, 5.65685, 0, 5.65685, 104.929, 8.9231, 37.1877)
-mesh = ExtResource("13_31dxu")
+mesh = ExtResource("16_p5n1s")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse/MeshInstance3D6"]
@@ -766,7 +766,7 @@ shape = SubResource("ConcavePolygonShape3D_13mav")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse"]
 transform = Transform3D(6.36396, 0, 6.36396, 0, 9, 0, -6.36396, 0, 6.36396, 104.947, 8.92183, 34.7677)
-mesh = ExtResource("12_y0x77")
+mesh = ExtResource("15_sniq2")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse/MeshInstance3D7"]
@@ -779,7 +779,7 @@ transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse2"]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 106.559, 8.97029, 33.0877)
-mesh = ExtResource("12_y0x77")
+mesh = ExtResource("15_sniq2")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse2/MeshInstance3D5"]
@@ -789,7 +789,7 @@ shape = SubResource("ConcavePolygonShape3D_eohsa")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse2"]
 transform = Transform3D(5.65685, 0, -5.65685, 0, 8, 0, 5.65685, 0, 5.65685, 104.929, 8.9231, 37.1877)
-mesh = ExtResource("13_31dxu")
+mesh = ExtResource("16_p5n1s")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse2/MeshInstance3D6"]
@@ -799,7 +799,7 @@ shape = SubResource("ConcavePolygonShape3D_13mav")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse2"]
 transform = Transform3D(6.36396, 0, 6.36396, 0, 9, 0, -6.36396, 0, 6.36396, 104.947, 8.92183, 34.7677)
-mesh = ExtResource("12_y0x77")
+mesh = ExtResource("15_sniq2")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/InsiemeCasse2/MeshInstance3D7"]
@@ -812,7 +812,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 96.828
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Insieme Legna"]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.427956, -1.54366, -1.32651)
-mesh = ExtResource("14_1yiuh")
+mesh = ExtResource("17_i03ga")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Insieme Legna/MeshInstance3D5"]
@@ -822,7 +822,7 @@ shape = SubResource("ConcavePolygonShape3D_1e4yl")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Insieme Legna"]
 transform = Transform3D(-8, 0, -6.99382e-07, 0, 8, 0, 6.99382e-07, 0, -8, 0.427956, -1.54366, 1.35959)
-mesh = ExtResource("14_1yiuh")
+mesh = ExtResource("17_i03ga")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Insieme Legna/MeshInstance3D6"]
@@ -832,7 +832,7 @@ shape = SubResource("ConcavePolygonShape3D_1e4yl")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Insieme Legna"]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.427956, 0.0870686, 0.0899239)
-mesh = ExtResource("14_1yiuh")
+mesh = ExtResource("17_i03ga")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Insieme Legna/MeshInstance3D7"]
@@ -845,7 +845,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.06, 9.12431, -1.90084)
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Casse cibo"]
 transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.07547, -0.247004, -0.943615)
-mesh = ExtResource("12_y0x77")
+mesh = ExtResource("15_sniq2")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Casse cibo/MeshInstance3D5"]
@@ -855,7 +855,7 @@ shape = SubResource("ConcavePolygonShape3D_4l3hb")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Casse cibo"]
 transform = Transform3D(5.65685, 0, 5.65685, 0, 8, 0, -5.65685, 0, 5.65685, -0.204193, 1.37643, -1.11031)
-mesh = ExtResource("15_guffg")
+mesh = ExtResource("18_qeo7l")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Casse cibo/MeshInstance3D6"]
@@ -865,7 +865,7 @@ shape = SubResource("ConcavePolygonShape3D_7oxid")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Casse cibo"]
 transform = Transform3D(-3.49691e-07, 0, 8, 0, 8, 0, -8, 0, -3.49691e-07, -0.271027, -0.182096, 1.56926)
-mesh = ExtResource("16_rxr5m")
+mesh = ExtResource("19_7ertv")
 skeleton = NodePath("../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/Casse cibo/MeshInstance3D7"]
@@ -875,7 +875,7 @@ shape = SubResource("ConcavePolygonShape3D_kphnu")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti"]
 transform = Transform3D(21.2132, 23.2562, -6.04612, 0, 11.9707, 23.4923, 21.2132, -23.2562, 6.04612, 120.35, 8.45537, 40.682)
-mesh = ExtResource("18_eu8xj")
+mesh = ExtResource("20_k6gbb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Altri oggetti/MeshInstance3D5"]
 
@@ -887,7 +887,7 @@ shape = SubResource("BoxShape3D_xw8qm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 143.872, 8.92274, 0)
-mesh = ExtResource("1_pl1ps")
+mesh = ExtResource("21_jcus8")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/MeshInstance3D"]
@@ -897,7 +897,7 @@ shape = SubResource("ConcavePolygonShape3D_ssbt4")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 179.951, 8.92274, 0)
-mesh = ExtResource("1_pl1ps")
+mesh = ExtResource("21_jcus8")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/MeshInstance3D8"]
@@ -907,7 +907,7 @@ shape = SubResource("ConcavePolygonShape3D_ssbt4")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 143.872, 8.92274, -53.7803)
-mesh = ExtResource("1_pl1ps")
+mesh = ExtResource("21_jcus8")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/MeshInstance3D9"]
@@ -917,7 +917,7 @@ shape = SubResource("ConcavePolygonShape3D_ssbt4")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 143.872, 8.92274, 50.444)
-mesh = ExtResource("1_pl1ps")
+mesh = ExtResource("21_jcus8")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/MeshInstance3D10"]
@@ -927,7 +927,7 @@ shape = SubResource("ConcavePolygonShape3D_ssbt4")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 93.8658, 8.92274, 0.649879)
-mesh = ExtResource("1_pl1ps")
+mesh = ExtResource("21_jcus8")
 skeleton = NodePath("../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/MeshInstance3D11"]
@@ -940,179 +940,179 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.652, 9.23373, 0)
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 73.8052, -0.310994, 0)
-mesh = ExtResource("1_pl1ps")
+mesh = ExtResource("21_jcus8")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 117.253, -0.310994, 0)
-mesh = ExtResource("1_pl1ps")
+mesh = ExtResource("21_jcus8")
 skeleton = NodePath("../../../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(36.5434, 0, 0, 0, 20, 0, 0, 0, 10.1116, 31.092, 0.703907, 0.754757)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(36.5434, 0, 0, 0, 20, 0, 0, 0, 10.1116, -5.21393, 0.703907, 0.754757)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-6.53065e-07, 0, 3.38991, 0, 20, 0, -14.9404, 0, -1.48178e-07, 30.7638, 0.703907, -11.732)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-6.53065e-07, 0, 3.38991, 0, 20, 0, -14.9404, 0, -1.48178e-07, 26.1895, 0.703907, 11.7221)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-6.53065e-07, 0, 3.38991, 0, 20, 0, -14.9404, 0, -1.48178e-07, 8.08365, 0.703907, 11.7221)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-1.53589e-06, 0, 3.38991, 0, 20, 0, -35.1371, 0, -1.48178e-07, 16.7242, 0.703907, 14.0199)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-1.15924e-06, 0, 3.38991, 0, 20, 0, -26.5202, 0, -1.48178e-07, 7.46854, 0.703907, -17.2696)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-6.53065e-07, 0, 3.38991, 0, 20, 0, -14.9404, 0, -1.48178e-07, -8.2632, 0.703907, -4.58728)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-7.78653e-07, 0, 3.38991, 0, 20, 0, -17.8135, 0, -1.48178e-07, -14.6716, 0.703907, 13.0353)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(14.9404, 0, 0, 0, 20, 0, 0, 0, 3.38991, -27.6002, 0.703907, 12.0905)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-6.53065e-07, 0, 3.38991, 0, 20, 0, -14.9404, 0, -1.48178e-07, -21.8115, 0.703907, 6.22334)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-10.5644, 0, 2.39703, 0, 20, 0, -10.5644, 0, -2.39703, -20.0724, 0.703907, -8.09899)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(12.8322, 0, 0, 0, 20, 0, 0, 0, 10.1116, -29.3519, 0.703907, 0.754757)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-5.60915e-07, 0, 10.1116, 0, 20, 0, -12.8322, 0, -4.41993e-07, -30.6642, 0.703907, -0.945175)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(12.8322, 0, 0, 0, 20, 0, 0, 0, 10.1116, 13.222, 0.704, -4.556)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D19" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-10.5644, 0, 2.39703, 0, 20, 0, -10.5644, 0, -2.39703, -35.2695, 0.703907, -11.0026)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D20" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-7.37206, 0, -1.75812, 0, 20, 0, 7.37206, 0, -1.75812, -17.7404, 0.703907, -11.6674)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D21" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-10.3785, 0, 2.4385, 0, 20, 0, -10.7472, 0, -2.35483, -20.0913, 0.703907, -21.5971)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D22" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
 transform = Transform3D(-7.37206, 0, -1.75812, 0, 20, 0, 7.37206, 0, -1.75812, -16.5125, 0.703907, -12.871)
-mesh = ExtResource("18_xt7mp")
+mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="Fuori mura" type="Node3D" parent="NavigationRegion3D/Map/MappaTutorial"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 214.582, 9.03094, -22.6983)
-mesh = ExtResource("8_b3xko")
+mesh = ExtResource("23_k3wpn")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(14.7224, 0, 8.5, 0, 17, 0, -8.5, 0, 14.7224, 214.582, 9.03094, 21.1175)
-mesh = ExtResource("8_b3xko")
+mesh = ExtResource("23_k3wpn")
 
 [node name="MeshInstance3D3" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(17, 0, 0, 0, 17, 0, 0, 0, 17, 245.157, 9.03094, 13.4252)
-mesh = ExtResource("8_b3xko")
+mesh = ExtResource("23_k3wpn")
 
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(14.7224, 0, 8.5, 0, 17, 0, -8.5, 0, 14.7224, 246.13, 9.03094, -20.1262)
-mesh = ExtResource("8_b3xko")
+mesh = ExtResource("23_k3wpn")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 30, 0, -30, 0, -1.31134e-06, 104.44, 8.53871, 111.715)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
 
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(21.2132, 0, 21.2132, 0, 30, 0, -21.2132, 0, 21.2132, 152.712, 8.53871, 111.715)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
 
 [node name="MeshInstance3D7" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 30, 0, -30, 0, -1.31134e-06, 24.1915, 8.53871, -40.7793)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 30, 0, -30, 0, -1.31134e-06, 168.217, 8.53871, -108.441)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
 
 [node name="MeshInstance3D9" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 113.984, 0, -123.488)
-mesh = ExtResource("10_nywvu")
+mesh = ExtResource("25_bh0nj")
 
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 22.1893, 0, 0.487228)
-mesh = ExtResource("10_nywvu")
+mesh = ExtResource("25_bh0nj")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 224.869, 0, 84.0138)
-mesh = ExtResource("10_nywvu")
+mesh = ExtResource("25_bh0nj")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(25.9808, 0, 15, 0, 30, 0, -15, 0, 25.9808, 49.6969, 0, -113.319)
-mesh = ExtResource("10_nywvu")
+mesh = ExtResource("25_bh0nj")
 
 [node name="MeshInstance3D13" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(-19.2836, 0, 22.9813, 0, 30, 0, -22.9813, 0, -19.2836, 301.013, 8.53871, 44.7731)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
 
 [node name="MeshInstance3D14" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(10.2606, 0, 28.1908, 0, 30, 0, -28.1908, 0, 10.2606, 269.066, 8.53871, -57.0609)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
 
 [node name="MeshInstance3D15" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(13, 0, 0, 0, 13, 0, 0, 0, 13, 287.394, 9.03094, 1.85444)
-mesh = ExtResource("8_b3xko")
+mesh = ExtResource("23_k3wpn")
 
 [node name="MeshInstance3D16" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(11.2583, 0, 6.5, 0, 13, 0, -6.5, 0, 11.2583, 297.42, 9.03094, -23.9632)
-mesh = ExtResource("8_b3xko")
+mesh = ExtResource("23_k3wpn")
 
 [node name="MeshInstance3D17" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(-28.1908, 0, -10.2606, 0, 30, 0, 10.2606, 0, -28.1908, 303.149, 8.53871, 112.263)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
 
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 30, 0, -30, 0, -1.31134e-06, 234.261, 8.53871, -104.978)
-mesh = ExtResource("9_5vhmo")
+mesh = ExtResource("24_6ho14")
