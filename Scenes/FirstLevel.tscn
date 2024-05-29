@@ -274,6 +274,60 @@ mesh = ExtResource("2_3jae3")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Forest/MeshInstance3D24/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_excf3")
 
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Map/FirstLevel/Forest"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 88.9249, 10.9752, -4.916)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Forest/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Forest/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Map/FirstLevel/Forest"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 85.8703, 10.9752, 12.2698)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Forest/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Forest/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D25" type="MeshInstance3D" parent="Map/FirstLevel/Forest"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 75.141, 10.9752, 0.0451469)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Forest/MeshInstance3D25"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Forest/MeshInstance3D25/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Map/FirstLevel/Forest"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 49.7309, 10.9752, 0.849007)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Forest/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Forest/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Map/FirstLevel/Forest"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 24.7518, 10.9752, -5.29141)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Forest/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Forest/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D26" type="MeshInstance3D" parent="Map/FirstLevel/Forest"]
+transform = Transform3D(19.6396, 0, -3.77951, 0, 20, 0, 3.77951, 0, 19.6396, 35.4576, 10.9752, 1.00761)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Forest/MeshInstance3D26"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Forest/MeshInstance3D26/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
 [node name="Ground" type="Node3D" parent="Map/FirstLevel"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/FirstLevel/Ground"]
@@ -479,7 +533,7 @@ shape = SubResource("BoxShape3D_5hqas")
 [node name="Central Trees" type="Node3D" parent="Map/FirstLevel"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
-transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 137.166, 10.9752, 30.184)
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 144.686, 10.9752, 30.0223)
 mesh = ExtResource("2_3jae3")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D"]
@@ -494,6 +548,96 @@ mesh = ExtResource("2_3jae3")
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D2"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D2/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 169.151, 10.9752, -18.2894)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D3"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D3/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 152.329, 10.9752, -23.8797)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D4"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D4/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 136.49, 10.9752, -18.0767)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D5"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D5/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(26.7589, 0, -13.5632, 0, 30, 0, 13.5632, 0, 26.7589, 120.894, 10.9752, -16.981)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D6"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D6/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 171.428, 10.9752, 41.2875)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D7"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D7/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 134.27, 10.9752, 43.7132)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D8/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 121.285, 10.9752, 26.4545)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D9"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D9/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 107.095, 10.9752, 34.5423)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D10"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D10/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 183.275, 10.9752, 7.15181)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D11"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D11/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_excf3")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="Map/FirstLevel/Central Trees"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 104.309, 29.4645, -36.7417)
+mesh = ExtResource("2_3jae3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D12"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/FirstLevel/Central Trees/MeshInstance3D12/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_excf3")
 
 [node name="LevelEntry" type="MeshInstance3D" parent="Map/FirstLevel"]
