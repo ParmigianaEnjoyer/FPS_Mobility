@@ -130,7 +130,6 @@ data = PackedVector3Array(0, -1, -1.1547, 0, 0, -1.1547, -1, -1, -0.5774, -1, -1
 [node name="Player" parent="." instance=ExtResource("1_gai3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9934, 8.98291, 0)
 collision_layer = 3
-collision_mask = 3
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.75, -0.43301, 0.0190125, 10.8765, -0.0692024)
