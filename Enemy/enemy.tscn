@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyo2lshl3153j"]
+[gd_scene load_steps=18 format=3 uid="uid://cyo2lshl3153j"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_2fivp"]
 [ext_resource type="Texture2D" uid="uid://d04egsjdk2uog" path="res://Enemy/guard.png" id="2_jhm3f"]
+[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="3_8l4c8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s26xv"]
 atlas = ExtResource("2_jhm3f")
@@ -130,11 +131,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_1wgqk")
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("3_8l4c8")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52043, 0)
 target_position = Vector3(0, 0, -10)
 collision_mask = 3
+debug_shape_thickness = 5
 
 [node name="CooldownTimer" type="Timer" parent="."]
 one_shot = true

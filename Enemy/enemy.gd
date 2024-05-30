@@ -84,7 +84,8 @@ func attack():
 		ray.get_collider().player_health -= damage
 		print(ray.get_collider().player_health)
 
-
+func take_damage():
+	$Voice.play()
 
 
 #func die():
