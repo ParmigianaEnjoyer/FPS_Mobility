@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bq5ymk6t7cbxd"]
+[gd_scene load_steps=13 format=3 uid="uid://bq5ymk6t7cbxd"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upafr"]
 [ext_resource type="PackedScene" uid="uid://coo3gvcxegtbs" path="res://Scenes/ui.tscn" id="2_effl7"]
@@ -9,6 +9,29 @@
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcjg1"]
+emission_enabled = true
+emission = Color(1, 0.988235, 0.494118, 1)
+emission_energy_multiplier = 3.0
+
+[sub_resource type="Curve" id="Curve_2nfd5"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 1, Vector2(1, 0.5), 0.0, 0.0, 1, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_k8ois"]
+curve = SubResource("Curve_2nfd5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ro7q5"]
+direction = Vector3(0, 0, -20)
+spread = 0.0
+initial_velocity_min = 100.0
+initial_velocity_max = 100.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_k8ois")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2b2k7"]
+size = Vector3(0.1, 0.1, 0.5)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_mask = 3
@@ -23,6 +46,7 @@ script = ExtResource("5_pm6co")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+cast_shadow = 0
 mesh = SubResource("CapsuleMesh_xc2g5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -35,4 +59,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" groups=["enemy"]]
-target_position = Vector3(0, 0, -100)
+target_position = Vector3(0, 0, -20)
+
+[node name="ProjectileParticles" type="GPUParticles3D" parent="Head/Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 0.999877, -0.0157073, 0, 0.0157073, 0.999877, 0, -0.35, 1)
+material_override = SubResource("StandardMaterial3D_wcjg1")
+cast_shadow = 0
+emitting = false
+lifetime = 0.2
+one_shot = true
+explosiveness = 1.0
+fixed_fps = 60
+visibility_aabb = AABB(-4, -3.88721, -4, 8, 8, 8)
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_ro7q5")
+draw_pass_1 = SubResource("BoxMesh_2b2k7")

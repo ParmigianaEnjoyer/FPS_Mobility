@@ -27,7 +27,6 @@ func _input(event):
 	if event.is_action_released("radial_menu"):
 		get_node("../ui/Weapon").visible = true
 		radial_menu_off()
-		print(current_item)
 
 
 func radial_menu_off():
