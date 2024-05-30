@@ -19,41 +19,10 @@ var radial_menu = false		#check if radial menu is on or not
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
-	
-#func _ready():
-#	match current_weapon:
-#		"shotgun":
-#			fire_rate = 5.0
-#			$Weapon/Shotgun_AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
-#			$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_idle")
-#		"machinegun":
-#			fire_rate = 10.0
-#			$Weapon/Machinegun_AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished())
-#			$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
-#		"pistol":
-#			fire_rate = 7.0
-#			$Weapon/Pistol_AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished())
-#			$Weapon/Pistol_AnimatedSprite2D.play("machinegun_idle")
-#		"hammer":
-#			fire_rate = 2.0
-#			$Weapon/Hammer_AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished())
-##			$Weapon/Hammer_AnimatedSprite2D.animation_finished.connect(_on_AnimatedSprite2D_animation_finished())
-#			$Weapon/Hammer_AnimatedSprite2D.play("hammer_idle")
-
-#func _on_Machinegun_AnimatedSprite2D_animation_finished():
-#	$Weapon/Machinegun_AnimatedSprite2D.play(current_weapon + "_idle")
-
-#func _on_AnimatedSprite2D_animation_finished():
-#	$Weapon/Hammer_AnimatedSprite2D.play(current_weapon + "_idle")
-	
-#func _on_AnimatedSprite2D_animation_finished():
-#	$Weapon/Shotgun_AnimatedSprite2D.play(current_weapon + "_idle")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	#time_since_last_shot += delta
-	#can_shoot = time_since_last_shot >= (1.0 / fire_rate)
 	
 	if !radial_menu:
 		
@@ -97,46 +66,17 @@ func _process(delta):
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 					$Shoot.stop()
 
-		#if Input.is_action_pressed("shoot") and can_shoot and  current_weapon == "shotgun":
-			#if !($Shoot.playing or $Reload.playing):
-				#$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
-				#$Shoot.play()
-				#$Reload.play()
-				#time_since_last_shot = 0.0
-		#else: 
-			#if Input.is_action_pressed("shoot") and can_shoot and current_weapon == "machinegun":
-				#$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
-				#if !($Shoot.playing):
-					#$Shoot.play()
-			#if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
-				#$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
-				#$Shoot.stop()
-				#time_since_last_shot = 0.0
-		#if Input.is_action_pressed("shoot") and can_shoot and current_weapon == "pistol":
-			#if !$Shoot.playing:
-				#$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
-				#$Shoot.play()
-				#time_since_last_shot = 0.0
-		#if Input.is_action_pressed("shoot") and can_shoot and current_weapon == "hammer":
-			#if !$Weapon/Hammer_AnimatedSprite2D.is_playing():
-				#$Weapon/Hammer_AnimatedSprite2D.play("hammer_shoot")
-				#$Shoot.play()
-				
-				#var collider = $"../Head/Camera3D/RayCast3D".get_collider()
-				#if collider is Enemy:
-					#collider.hitpoints -= weapon_damage
-					#printt(collider.hitpoints, weapon_damage)
-					
-				#time_since_last_shot = 0.0
-
 
 func switch_weapon(to):
 	#SET PISTOL'S ANIMATION
 	if to == 0 and current_weapon != "pistol":
 		current_weapon = "pistol"
 		fire_rate = 1.8
-		fire_range = -20
-		weapon_damage = 10
+		fire_range = -20.0
+		weapon_damage = 10.0
+		
+		set_projectile_particles(0.35, -0.35, 1.0, 0.015, 0.015, 0.0, fire_range, (1 / fire_rate), 100.0, 100.0, 0.0)
+		
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Pistol/gunshot-fast-[AudioTrimmer.com].wav")
 		
@@ -157,9 +97,11 @@ func switch_weapon(to):
 	#SET MACHINEGUN'S ANIMATION
 	else: if to == 2 and current_weapon != "machinegun":
 		current_weapon = "machinegun"
-		fire_rate = 5
-		fire_range = -20
-		weapon_damage = 10
+		fire_rate = 5.0
+		fire_range = -30.0
+		weapon_damage = 10.0
+		set_projectile_particles(0.0, -0.35, 1.0, 0.015, 0.0, 0.0, fire_range, (1 / fire_rate), 100.0, 100.0, 0.0)
+		
 		$Shoot.stream = preload("res://Machinegun/minigun.ogg")
 		$Shoot.volume_db = -30.0
 		
@@ -177,20 +119,15 @@ func switch_weapon(to):
 		$Weapon/Machinegun_AnimatedSprite2D.play(current_weapon + "_idle")
 		$Crosshair/weapon_crosshair.play(current_weapon + "_crosshair")
 		
-		projectile_particles.position.y = -0.35
-		projectile_particles.position.z = 1.0
-		projectile_particles.rotation.x = 0.015
-		projectile_particles.process_material.direction.z = fire_range
-		projectile_particles.lifetime = 1.0 / fire_rate
-		projectile_particles.process_material.initial_velocity_min = 100
-		projectile_particles.process_material.initial_velocity_max = 100
-		
 	#SET SHOTGUN'S ANIMATION
 	else: if to == 1 and current_weapon != "shotgun":
 		current_weapon = "shotgun"
-		fire_range = -5
+		fire_range = -11
 		fire_rate = 0.75
-		weapon_damage = 30
+		weapon_damage = 15
+		
+		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, 0.15 , 100.0, 100.0, 5.0)
+		
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Shotgun/shotgun-fx_168bpm.wav")
 		
@@ -216,6 +153,7 @@ func switch_weapon(to):
 		weapon_damage = 50
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav")
+		projectile_particles.visible = false
 		
 		if $Weapon/Pistol_AnimatedSprite2D.visible:
 			$Weapon/Pistol_AnimatedSprite2D.visible = false
@@ -245,8 +183,23 @@ func capitalizza_prima_lettera(testo):		#funzione di servizio, mette la prima le
 	return prima_lettera + resto_stringa  # Concatenazione della prima lettera maiuscola con il resto della stringa
 
 
+func set_projectile_particles(pos_x, pos_y, pos_z, rot_x, rot_y, rot_z, f_range, lifetime, v_min, v_max, spread):
+		projectile_particles.visible = true
+		projectile_particles.position.x = pos_x
+		projectile_particles.position.y = pos_y
+		projectile_particles.position.z = pos_z
+		projectile_particles.rotation.x = rot_x
+		projectile_particles.rotation.y = rot_y
+		projectile_particles.rotation.z = rot_z
+		projectile_particles.process_material.direction.z = f_range
+		projectile_particles.lifetime = lifetime
+		projectile_particles.process_material.initial_velocity_min = v_min
+		projectile_particles.process_material.initial_velocity_max = v_max
+		projectile_particles.process_material.spread = spread
+
+
 #FUNZIONE CHE GESTISCE IL RAGGIO E IL DANNO DI UN'ARMA QUANDO SPARA E HITTA UN ENEMY
-func shoot(_weapon) -> void:
+func shoot(_weapon):
 	projectile_particles.restart()
 	var collider = ray.get_collider()
 	
@@ -254,12 +207,4 @@ func shoot(_weapon) -> void:
 	
 	if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
 		collider.hitpoints -= weapon_damage
-	#match weapon:
-		#"hammer":
-			#pass
-		#"pistol":
-			#pass
-		#"shotgun":
-			#pass
-		#"machinegun":
-			#pass
+		collider.take_damage()

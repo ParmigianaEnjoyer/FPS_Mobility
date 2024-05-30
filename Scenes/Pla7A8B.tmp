@@ -67,7 +67,6 @@ material_override = SubResource("StandardMaterial3D_wcjg1")
 cast_shadow = 0
 emitting = false
 lifetime = 0.1
-one_shot = true
 explosiveness = 1.0
 fixed_fps = 60
 visibility_aabb = AABB(-4, -3.88721, -4, 8, 8, 8)
