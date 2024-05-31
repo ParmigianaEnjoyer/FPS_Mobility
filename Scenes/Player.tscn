@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bq5ymk6t7cbxd"]
+[gd_scene load_steps=14 format=3 uid="uid://bq5ymk6t7cbxd"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_upafr"]
 [ext_resource type="PackedScene" uid="uid://coo3gvcxegtbs" path="res://Scenes/ui.tscn" id="2_effl7"]
 [ext_resource type="Script" path="res://Scenes/ui.gd" id="3_cr11r"]
 [ext_resource type="PackedScene" uid="uid://dvumw5weyd5rb" path="res://radial_menu.tscn" id="4_efhl6"]
 [ext_resource type="Script" path="res://RadialMenu.gd" id="5_pm6co"]
+[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="6_wbh8e"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
 
@@ -109,3 +110,6 @@ target_position = Vector3(0, 0, -11)
 
 [node name="RayCast3D10" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
 target_position = Vector3(0, 0, -11)
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("6_wbh8e")
