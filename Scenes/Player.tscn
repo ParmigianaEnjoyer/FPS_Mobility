@@ -11,15 +11,16 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wydro"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcjg1"]
+albedo_color = Color(1, 0.988235, 0.494118, 1)
 emission_enabled = true
-emission = Color(1, 0.988235, 0.494118, 1)
+emission = Color(1, 0.988235, 0, 1)
 emission_energy_multiplier = 3.0
 
 [sub_resource type="Curve" id="Curve_j7lta"]
 _data = [Vector2(0, 0.5), 0.0, 0.0, 0, 1, Vector2(1, 0.5), 0.0, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_k8ois"]
+[sub_resource type="CurveTexture" id="CurveTexture_p1q64"]
 curve = SubResource("Curve_j7lta")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ro7q5"]
@@ -28,7 +29,7 @@ spread = 5.0
 initial_velocity_min = 100.0
 initial_velocity_max = 100.0
 gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_k8ois")
+scale_curve = SubResource("CurveTexture_p1q64")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2b2k7"]
 size = Vector3(0.1, 0.1, 0.5)

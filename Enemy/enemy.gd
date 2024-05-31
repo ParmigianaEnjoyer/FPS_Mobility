@@ -12,10 +12,12 @@ const AGGRO_RANGE = 40.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-@onready var navigation_agent_3d = $NavigationAgent3D
 
+@onready var navigation_agent_3d = $NavigationAgent3D
 @onready var ray = $RayCast3D
 @onready var timer = $CooldownTimer
+@onready var d_timer = $DamageTimer
+@onready var projectile_particles = $Enemy_ProjectileParticles
 
 var player
 var provoked = false		#l'enemy è stato provocato? 
@@ -30,6 +32,7 @@ var hitpoints = max_hitpoints:
 
 
 func _ready() -> void:
+	#set_projectile_particles(0.0, -0.35, 1.0, 0.015, 0.0, 0.0, attack_range, (1 / fire_rate), 100.0, 100.0, 0.0)
 	$AnimatedSprite3D.play("default")
 	player = get_tree().get_first_node_in_group("player")
 
@@ -38,13 +41,14 @@ func _process(_delta):
 	if provoked and !attacking:
 		$AnimatedSprite3D.play("walk")
 		navigation_agent_3d.target_position = player.global_position
-	else: if attacking:
-		$AnimatedSprite3D.play("shoot")
+	#else: if attacking:
+		#$AnimatedSprite3D.play("shoot")
 
 
 func _physics_process(delta):
 	var next_position = navigation_agent_3d.get_next_path_position()
 	ray.look_at(player.global_position)
+	projectile_particles.look_at(player.global_position)
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
@@ -81,8 +85,15 @@ func _physics_process(delta):
 func attack():
 	if timer.is_stopped():
 		timer.start(1.0)
-		ray.get_collider().player_health -= damage
-		print(ray.get_collider().player_health)
+		$AnimatedSprite3D.play("shoot")
+		projectile_particles.restart()		#animazione del proiettile
+		if d_timer.is_stopped():
+			d_timer.start(0.1)
+			ray.force_raycast_update()
+			if ray.is_colliding() and randi() % 100 < 70:	#70% di possibilità di fare danno
+				ray.get_collider().player_health -= damage
+				print(ray.get_collider().player_health)
+
 
 func take_damage():
 	$Voice.play()
@@ -93,3 +104,18 @@ func take_damage():
 	#$AnimatedSprite3D.play("die")
 	#$CollisionShape3D.disabled = true		#disattivo le collisioni così posso attraversarlo quando muore
 	#Global.player_score += 100
+
+
+func set_projectile_particles(pos_x, pos_y, pos_z, rot_x, rot_y, rot_z, f_range, lifetime, v_min, v_max, spread):
+		projectile_particles.visible = true
+		projectile_particles.position.x = pos_x
+		projectile_particles.position.y = pos_y
+		projectile_particles.position.z = pos_z
+		projectile_particles.rotation.x = rot_x
+		projectile_particles.rotation.y = rot_y
+		projectile_particles.rotation.z = rot_z
+		projectile_particles.process_material.direction.z = f_range
+		projectile_particles.lifetime = lifetime
+		projectile_particles.process_material.initial_velocity_min = v_min
+		projectile_particles.process_material.initial_velocity_max = v_max
+		projectile_particles.process_material.spread = spread
