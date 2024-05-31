@@ -1,8 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://cyo2lshl3153j"]
+[gd_scene load_steps=24 format=3 uid="uid://cyo2lshl3153j"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_2fivp"]
 [ext_resource type="Texture2D" uid="uid://d04egsjdk2uog" path="res://Enemy/guard.png" id="2_jhm3f"]
 [ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="3_8l4c8"]
+[ext_resource type="PackedScene" uid="uid://bg6br2yvio8pi" path="res://Enemy/bullet.tscn" id="4_ycsmr"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s26xv"]
 atlas = ExtResource("2_jhm3f")
@@ -143,11 +144,12 @@ script = ExtResource("1_2fivp")
 transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.3, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_ed35f")
-animation = &"shoot"
+animation = &"die"
 autoplay = "default"
+frame = 4
+frame_progress = 1.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-debug_enabled = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -181,3 +183,5 @@ visibility_aabb = AABB(-4, -3.88721, -4, 8, 8, 8)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_hmm6i")
 draw_pass_1 = SubResource("BoxMesh_wil87")
+
+[node name="Bullet" parent="." instance=ExtResource("4_ycsmr")]
