@@ -208,6 +208,7 @@ func set_projectile_particles(pos_x, pos_y, pos_z, rot_x, rot_y, rot_z, f_range,
 func shoot(_weapon):
 	projectile_particles.restart()		#animazione del proiettile
 	var collider
+	var enemy_hit = false
 	
 	if _weapon == "shotgun":		#se l'arma selezionata è uno shotgun vengono randomizzati i raycast
 		var spread = 1.5
@@ -219,9 +220,14 @@ func shoot(_weapon):
 			if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
 				collider.hitpoints -= weapon_damage
 				collider.take_damage()
+				enemy_hit = true
 	else:
 		ray.force_raycast_update()
 		collider = ray.get_collider()
 		if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
 			collider.hitpoints -= weapon_damage
 			collider.take_damage()
+			enemy_hit = true
+	
+	if enemy_hit:
+		$Crosshair/weapon_crosshair.play(_weapon + "_crosshair_hit")

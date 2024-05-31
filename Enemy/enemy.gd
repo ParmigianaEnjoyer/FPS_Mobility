@@ -32,7 +32,6 @@ var hitpoints = max_hitpoints:
 
 
 func _ready() -> void:
-	#set_projectile_particles(0.0, -0.35, 1.0, 0.015, 0.0, 0.0, attack_range, (1 / fire_rate), 100.0, 100.0, 0.0)
 	$AnimatedSprite3D.play("default")
 	player = get_tree().get_first_node_in_group("player")
 
@@ -41,8 +40,6 @@ func _process(_delta):
 	if provoked and !attacking:
 		$AnimatedSprite3D.play("walk")
 		navigation_agent_3d.target_position = player.global_position
-	#else: if attacking:
-		#$AnimatedSprite3D.play("shoot")
 
 
 func _physics_process(delta):
@@ -104,18 +101,3 @@ func take_damage():
 	#$AnimatedSprite3D.play("die")
 	#$CollisionShape3D.disabled = true		#disattivo le collisioni così posso attraversarlo quando muore
 	#Global.player_score += 100
-
-
-func set_projectile_particles(pos_x, pos_y, pos_z, rot_x, rot_y, rot_z, f_range, lifetime, v_min, v_max, spread):
-		projectile_particles.visible = true
-		projectile_particles.position.x = pos_x
-		projectile_particles.position.y = pos_y
-		projectile_particles.position.z = pos_z
-		projectile_particles.rotation.x = rot_x
-		projectile_particles.rotation.y = rot_y
-		projectile_particles.rotation.z = rot_z
-		projectile_particles.process_material.direction.z = f_range
-		projectile_particles.lifetime = lifetime
-		projectile_particles.process_material.initial_velocity_min = v_min
-		projectile_particles.process_material.initial_velocity_max = v_max
-		projectile_particles.process_material.spread = spread
