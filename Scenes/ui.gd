@@ -6,19 +6,19 @@ extends CanvasLayer
 @export var fire_rate = 1.0			#numero di volte in cui l'arma spara in un secondo
 @export var fire_range = -2.0			#range dell'arma
 
-
+@onready var ray_container = $"../Head/Camera3D/RayContainer"
 @onready var ray = $"../Head/Camera3D/RayCast3D"
 @onready var projectile_particles = $"../Head/Camera3D/ProjectileParticles"
 @onready var cooldown_timer = $Weapon/CooldownTimer
 
 #var time_since_last_shot = 0.0
-#var can_shoot = true
 var shooted_count = 0 		#variabile che conta i colpi sparati
 var radial_menu = false		#check if radial menu is on or not
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	randomize()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -70,6 +70,7 @@ func _process(delta):
 func switch_weapon(to):
 	#SET PISTOL'S ANIMATION
 	if to == 0 and current_weapon != "pistol":
+		
 		current_weapon = "pistol"
 		fire_rate = 1.8
 		fire_range = -20.0
@@ -96,6 +97,7 @@ func switch_weapon(to):
 		
 	#SET MACHINEGUN'S ANIMATION
 	else: if to == 2 and current_weapon != "machinegun":
+		
 		current_weapon = "machinegun"
 		fire_rate = 5.0
 		fire_range = -30.0
@@ -121,10 +123,11 @@ func switch_weapon(to):
 		
 	#SET SHOTGUN'S ANIMATION
 	else: if to == 1 and current_weapon != "shotgun":
+		
 		current_weapon = "shotgun"
 		fire_range = -11
 		fire_rate = 0.75
-		weapon_damage = 15
+		weapon_damage = 7	#danno di un singolo proiettile
 		
 		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, 0.15 , 100.0, 100.0, 5.0)
 		
@@ -147,6 +150,7 @@ func switch_weapon(to):
 		
 	#SET HAMMER'S ANIMATION
 	else: if to == 3 and current_weapon != "hammer":
+		
 		current_weapon = "hammer"
 		fire_range = -2
 		fire_rate = 1.0
@@ -168,6 +172,8 @@ func switch_weapon(to):
 		$Weapon/Hammer_AnimatedSprite2D.visible = true
 		$Weapon/Hammer_AnimatedSprite2D.play(current_weapon + "_idle")
 		$Crosshair/weapon_crosshair.play(current_weapon + "_crosshair")
+	
+	ray.target_position.z = fire_range		#Il range viene modificato in base al range dell'arma attuale
 
 
 func _input(event):
@@ -200,11 +206,22 @@ func set_projectile_particles(pos_x, pos_y, pos_z, rot_x, rot_y, rot_z, f_range,
 
 #FUNZIONE CHE GESTISCE IL RAGGIO E IL DANNO DI UN'ARMA QUANDO SPARA E HITTA UN ENEMY
 func shoot(_weapon):
-	projectile_particles.restart()
-	var collider = ray.get_collider()
+	projectile_particles.restart()		#animazione del proiettile
+	var collider
 	
-	$"../Head/Camera3D/RayCast3D".target_position.z = fire_range		#Il range viene modificato in base al range dell'arma attuale
-	
-	if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
-		collider.hitpoints -= weapon_damage
-		collider.take_damage()
+	if _weapon == "shotgun":		#se l'arma selezionata è uno shotgun vengono randomizzati i raycast
+		var spread = 1.5
+		for r in ray_container.get_children():
+			r.target_position.x = randf_range(spread, -spread)
+			r.target_position.y = randf_range(spread, -spread)
+			r.force_raycast_update()
+			collider = r.get_collider()
+			if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+				collider.hitpoints -= weapon_damage
+				collider.take_damage()
+	else:
+		ray.force_raycast_update()
+		collider = ray.get_collider()
+		if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+			collider.hitpoints -= weapon_damage
+			collider.take_damage()

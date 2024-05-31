@@ -59,10 +59,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D" groups=["enemy"]]
+visible = false
 target_position = Vector3(0, 0, -20)
 
 [node name="ProjectileParticles" type="GPUParticles3D" parent="Head/Camera3D"]
 transform = Transform3D(0.999848, 0.000274131, 0.0174503, 0, 0.999877, -0.0157073, -0.0174524, 0.0157049, 0.999724, 0.35, -0.32, 1)
+visible = false
 material_override = SubResource("StandardMaterial3D_wcjg1")
 cast_shadow = 0
 emitting = false
@@ -74,3 +76,35 @@ visibility_aabb = AABB(-4, -3.88721, -4, 8, 8, 8)
 local_coords = true
 process_material = SubResource("ParticleProcessMaterial_ro7q5")
 draw_pass_1 = SubResource("BoxMesh_2b2k7")
+
+[node name="RayContainer" type="Node3D" parent="Head/Camera3D"]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D2" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D3" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D4" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D5" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D6" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D7" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D8" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D9" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
+
+[node name="RayCast3D10" type="RayCast3D" parent="Head/Camera3D/RayContainer"]
+target_position = Vector3(0, 0, -11)
