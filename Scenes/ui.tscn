@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=49 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bds7ce7qccjc0" path="res://Machinegun/machinegun_crosshair_hit.png" id="5_7age5"]
 [ext_resource type="Texture2D" uid="uid://c46q506mhbon4" path="res://Shotgun/5.png" id="5_10eyw"]
 [ext_resource type="Texture2D" uid="uid://mmfdfd8rq0ay" path="res://Shotgun/6.png" id="6_p3ujf"]
+[ext_resource type="PackedScene" uid="uid://cqplncjp6dtx6" path="res://Scenes/blood.tscn" id="6_xpaw8"]
 [ext_resource type="Texture2D" uid="uid://bi6ld0iapt2mu" path="res://Shotgun/7.png" id="7_5y7eq"]
 [ext_resource type="Texture2D" uid="uid://b7gqj4h6vdb77" path="res://Shotgun/8.png" id="8_fhkxf"]
 [ext_resource type="Texture2D" uid="uid://fcq8gca4x1p0" path="res://Shotgun/9.png" id="9_l7dty"]
@@ -357,6 +358,8 @@ offset_left = -20.0
 offset_right = -20.0
 grow_horizontal = 2
 grow_vertical = 0
+
+[node name="Blood" parent="Weapon" instance=ExtResource("6_xpaw8")]
 
 [node name="Pistol_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
 visible = false

@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var ray = $"../Head/Camera3D/RayCast3D"
 @onready var projectile_particles = $"../Head/Camera3D/ProjectileParticles"
 @onready var cooldown_timer = $Weapon/CooldownTimer
+var blood_particles = load("res://Scenes/blood.tscn")
 
 #var time_since_last_shot = 0.0
 var shooted_count = 0 		#variabile che conta i colpi sparati
@@ -217,17 +218,28 @@ func shoot(_weapon):
 			r.target_position.y = randf_range(spread, -spread)
 			r.force_raycast_update()
 			collider = r.get_collider()
-			if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+			if ray.is_colliding() and collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
 				collider.hitpoints -= weapon_damage
 				collider.take_damage()
 				enemy_hit = true
+				show_blood(r)
 	else:
 		ray.force_raycast_update()
 		collider = ray.get_collider()
-		if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+		if ray.is_colliding() and collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
 			collider.hitpoints -= weapon_damage
 			collider.take_damage()
 			enemy_hit = true
+			show_blood(ray)
+	
 	
 	if enemy_hit:
 		$Crosshair/weapon_crosshair.play(_weapon + "_crosshair_hit")
+
+
+func show_blood(ray):
+	var collision_point = ray.get_collision_point()
+	var blood = blood_particles.instantiate()
+	blood.position = collision_point
+	blood.rotation.y = -1 * (get_node("..").rotation.y)
+	add_child(blood)
