@@ -11,6 +11,7 @@ extends CanvasLayer
 @onready var projectile_particles = $"../Head/Camera3D/ProjectileParticles"
 @onready var cooldown_timer = $Weapon/CooldownTimer
 var blood_particles = load("res://Scenes/blood.tscn")
+var sparks_particles = load("res://Scenes/sparks.tscn")
 
 #var time_since_last_shot = 0.0
 var shooted_count = 0 		#variabile che conta i colpi sparati
@@ -77,7 +78,7 @@ func switch_weapon(to):
 		fire_range = -20.0
 		weapon_damage = 10.0
 		
-		set_projectile_particles(0.35, -0.35, 1.0, 0.015, 0.015, 0.0, fire_range, (1 / fire_rate), 100.0, 100.0, 0.0)
+		set_projectile_particles(0.35, -0.35, 1.0, 0.015, 0.015, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100), 100.0, 100.0, 0.0)
 		
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Pistol/gunshot-fast-[AudioTrimmer.com].wav")
@@ -103,7 +104,7 @@ func switch_weapon(to):
 		fire_rate = 5.0
 		fire_range = -30.0
 		weapon_damage = 10.0
-		set_projectile_particles(0.0, -0.35, 1.0, 0.015, 0.0, 0.0, fire_range, (1 / fire_rate), 100.0, 100.0, 0.0)
+		set_projectile_particles(0.0, -0.35, 1.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100), 100.0, 100.0, 0.0)
 		
 		$Shoot.stream = preload("res://Machinegun/minigun.ogg")
 		$Shoot.volume_db = -30.0
@@ -130,7 +131,7 @@ func switch_weapon(to):
 		fire_rate = 0.75
 		weapon_damage = 7	#danno di un singolo proiettile
 		
-		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, 0.15 , 100.0, 100.0, 5.0)
+		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100) , 100.0, 100.0, 5.0)
 		
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Shotgun/shotgun-fx_168bpm.wav")
@@ -223,6 +224,8 @@ func shoot(_weapon):
 				collider.take_damage()
 				enemy_hit = true
 				show_blood(r)
+			else:
+				show_sparks(r)
 	else:
 		ray.force_raycast_update()
 		collider = ray.get_collider()
@@ -231,6 +234,8 @@ func shoot(_weapon):
 			collider.take_damage()
 			enemy_hit = true
 			show_blood(ray)
+		else:
+			show_sparks(ray)
 	
 	
 	if enemy_hit:
@@ -243,3 +248,17 @@ func show_blood(ray):
 	blood.position = collision_point
 	blood.rotation.y = -1 * (get_node("..").rotation.y)
 	add_child(blood)
+
+
+func show_sparks(ray):
+	if !(ray.get_collider() is Enemy):
+		var collision_point = ray.get_collision_point()
+		var sparks = sparks_particles.instantiate()
+		sparks.position = collision_point
+		#sparks.global_transform.basis = get_node("..").global_transform.basis * -1
+		add_child(sparks)
+
+
+func calculate_bullet_lifetime(range, velocity):		#funzione che calcola il tempo di vita del proiettile
+	if velocity != 0:
+		return (-1 * range) / velocity

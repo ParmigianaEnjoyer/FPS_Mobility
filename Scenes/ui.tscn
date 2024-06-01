@@ -316,7 +316,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"hammer_shoot",
-"speed": 6.0
+"speed": 10.0
 }]
 
 [node name="ui" type="CanvasLayer"]

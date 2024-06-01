@@ -9,7 +9,7 @@ albedo_color = Color(0.588235, 0, 0, 1)
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.175824), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_8r38r"]
+[sub_resource type="CurveTexture" id="CurveTexture_qjxfx"]
 curve = SubResource("Curve_ukjb2")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6hqkx"]
@@ -17,7 +17,7 @@ direction = Vector3(0, 0, 0)
 spread = 20.0
 initial_velocity_min = 2.0
 initial_velocity_max = 5.0
-scale_curve = SubResource("CurveTexture_8r38r")
+scale_curve = SubResource("CurveTexture_qjxfx")
 
 [sub_resource type="BoxMesh" id="BoxMesh_34kim"]
 size = Vector3(0.1, 0.1, 0.1)
