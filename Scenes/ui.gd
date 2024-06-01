@@ -218,24 +218,26 @@ func shoot(_weapon):
 			r.target_position.x = randf_range(spread, -spread)
 			r.target_position.y = randf_range(spread, -spread)
 			r.force_raycast_update()
-			collider = r.get_collider()
-			if ray.is_colliding() and collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+			if r.is_colliding():
+				collider = r.get_collider()
+				if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+					collider.hitpoints -= weapon_damage
+					collider.take_damage()
+					enemy_hit = true
+					show_blood(r)
+				else:
+					show_sparks(r)
+	else:
+		ray.force_raycast_update()
+		if ray.is_colliding():
+			collider = ray.get_collider()
+			if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
 				collider.hitpoints -= weapon_damage
 				collider.take_damage()
 				enemy_hit = true
-				show_blood(r)
+				show_blood(ray)
 			else:
-				show_sparks(r)
-	else:
-		ray.force_raycast_update()
-		collider = ray.get_collider()
-		if ray.is_colliding() and collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
-			collider.hitpoints -= weapon_damage
-			collider.take_damage()
-			enemy_hit = true
-			show_blood(ray)
-		else:
-			show_sparks(ray)
+				show_sparks(ray)
 	
 	
 	if enemy_hit:
@@ -251,12 +253,10 @@ func show_blood(ray):
 
 
 func show_sparks(ray):
-	if !(ray.get_collider() is Enemy):
-		var collision_point = ray.get_collision_point()
-		var sparks = sparks_particles.instantiate()
-		sparks.position = collision_point
-		#sparks.global_transform.basis = get_node("..").global_transform.basis * -1
-		add_child(sparks)
+	var collision_point = ray.get_collision_point()
+	var sparks = sparks_particles.instantiate()
+	sparks.position = collision_point
+	add_child(sparks)
 
 
 func calculate_bullet_lifetime(range, velocity):		#funzione che calcola il tempo di vita del proiettile
