@@ -13,7 +13,7 @@ point_count = 2
 curve = SubResource("Curve_ukjb2")
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6hqkx"]
-direction = Vector3(0, 0, 0)
+direction = Vector3(0, 0, -1)
 spread = 20.0
 initial_velocity_min = 2.0
 initial_velocity_max = 5.0
@@ -38,5 +38,6 @@ draw_pass_1 = SubResource("BoxMesh_34kim")
 [node name="Timer" type="Timer" parent="GPUParticles3D"]
 wait_time = 0.6
 one_shot = true
+autostart = true
 
 [connection signal="timeout" from="GPUParticles3D/Timer" to="." method="_on_timer_timeout"]
