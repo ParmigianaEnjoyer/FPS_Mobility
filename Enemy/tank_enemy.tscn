@@ -1,0 +1,129 @@
+[gd_scene load_steps=22 format=3 uid="uid://cwoblwvdisygl"]
+
+[ext_resource type="Texture2D" uid="uid://c0ib8jrw1rxn8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 1.png" id="1_qkx83"]
+[ext_resource type="Script" path="res://Enemy/tank_enemy.gd" id="1_vp55n"]
+[ext_resource type="Texture2D" uid="uid://bm5eamnupu6ls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 6.png" id="2_ii66y"]
+[ext_resource type="Texture2D" uid="uid://dordi8kghg7qx" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 7.png" id="3_pmpwj"]
+[ext_resource type="Texture2D" uid="uid://cojunuudwfk44" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 8.png" id="4_v21ps"]
+[ext_resource type="Texture2D" uid="uid://cml68yj85j0ur" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 5.png" id="5_jhmw7"]
+[ext_resource type="Texture2D" uid="uid://0ja4wiev5fls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 4.png" id="6_gxikh"]
+[ext_resource type="Texture2D" uid="uid://c1otyfhf5wy5o" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 2.png" id="7_go0b8"]
+[ext_resource type="Texture2D" uid="uid://pqj8n5yfq7x8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 3.png" id="8_767qc"]
+[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="9_0xui4"]
+[ext_resource type="PackedScene" uid="uid://dbfqepa7t1aw" path="res://Enemy/tank_bullet.tscn" id="11_qibie"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_443id"]
+atlas = ExtResource("1_qkx83")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67hhi"]
+atlas = ExtResource("2_ii66y")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr8h7"]
+atlas = ExtResource("3_pmpwj")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2chj7"]
+atlas = ExtResource("4_v21ps")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vhyj"]
+atlas = ExtResource("5_jhmw7")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msh1r"]
+atlas = ExtResource("6_gxikh")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qn82"]
+atlas = ExtResource("7_go0b8")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj63c"]
+atlas = ExtResource("8_767qc")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0twep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_443id")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_67hhi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wr8h7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2chj7")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5vhyj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msh1r")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qn82")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lj63c")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6g2q"]
+radius = 1.59257
+height = 4.5254
+
+[node name="Tank_enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_vp55n")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 4, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_0twep")
+autoplay = "default"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19512, 0)
+shape = SubResource("CapsuleShape3D_g6g2q")
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("9_0xui4")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.369942, 2.36064, 0)
+target_position = Vector3(0, 0, -11)
+collision_mask = 3
+debug_shape_thickness = 5
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Tank_bullet" parent="." instance=ExtResource("11_qibie")]

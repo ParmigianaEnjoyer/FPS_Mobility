@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
+
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 40.0
-const ATTACK_RANGE = 20.0
+const ATTACK_RANGE = 10.0
 
-@export var max_hitpoints := 100
+@export var max_hitpoints := 400
 @export var fire_rate = 2.0 		#numero di colpi sparati in un secondo
 @export var damage = 10
 
@@ -24,7 +25,7 @@ var attacking = false
 var dead = false
 var stop = false
 
-var bullet = load("res://Enemy/bullet.tscn")
+var bullet = load("res://Enemy/tank_bullet.tscn")
 var instance
 
 var hitpoints = max_hitpoints:
