@@ -24,7 +24,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	
 	if !radial_menu:
 		
@@ -244,21 +244,21 @@ func shoot(_weapon):
 		$Crosshair/weapon_crosshair.play(_weapon + "_crosshair_hit")
 
 
-func show_blood(ray):
-	var collision_point = ray.get_collision_point()
+func show_blood(raycast):
+	var collision_point = raycast.get_collision_point()
 	var blood = blood_particles.instantiate()
 	blood.position = collision_point
 	blood.rotation.y = -1 * (get_node("..").rotation.y)
 	add_child(blood)
 
 
-func show_sparks(ray):
-	var collision_point = ray.get_collision_point()
+func show_sparks(raycast):
+	var collision_point = raycast.get_collision_point()
 	var sparks = sparks_particles.instantiate()
 	sparks.position = collision_point
 	add_child(sparks)
 
 
-func calculate_bullet_lifetime(range, velocity):		#funzione che calcola il tempo di vita del proiettile
+func calculate_bullet_lifetime(the_range, velocity):		#funzione che calcola il tempo di vita del proiettile
 	if velocity != 0:
-		return (-1 * range) / velocity
+		return (-1 * the_range) / velocity

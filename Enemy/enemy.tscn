@@ -1,63 +1,54 @@
-[gd_scene load_steps=24 format=3 uid="uid://cyo2lshl3153j"]
+[gd_scene load_steps=22 format=3 uid="uid://cyo2lshl3153j"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_2fivp"]
-[ext_resource type="Texture2D" uid="uid://d04egsjdk2uog" path="res://Enemy/guard.png" id="2_jhm3f"]
+[ext_resource type="Texture2D" uid="uid://c0ib8jrw1rxn8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 1.png" id="2_32s2d"]
+[ext_resource type="Texture2D" uid="uid://bm5eamnupu6ls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 6.png" id="3_3hfdf"]
 [ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="3_8l4c8"]
+[ext_resource type="Texture2D" uid="uid://dordi8kghg7qx" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 7.png" id="4_2cskc"]
+[ext_resource type="Texture2D" uid="uid://c1otyfhf5wy5o" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 2.png" id="4_4p2gh"]
+[ext_resource type="Texture2D" uid="uid://cml68yj85j0ur" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 5.png" id="4_db2o4"]
 [ext_resource type="PackedScene" uid="uid://bg6br2yvio8pi" path="res://Enemy/bullet.tscn" id="4_ycsmr"]
+[ext_resource type="Texture2D" uid="uid://pqj8n5yfq7x8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 3.png" id="5_6fmn6"]
+[ext_resource type="Texture2D" uid="uid://0ja4wiev5fls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 4.png" id="5_7ioyl"]
+[ext_resource type="Texture2D" uid="uid://cojunuudwfk44" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 8.png" id="5_r7or4"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s26xv"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(0, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_443id"]
+atlas = ExtResource("2_32s2d")
+region = Rect2(0, 10, 800, 1057)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xfkxb"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(128, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_67hhi"]
+atlas = ExtResource("3_3hfdf")
+region = Rect2(0, 10, 800, 1057)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f11pt"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(192, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr8h7"]
+atlas = ExtResource("4_2cskc")
+region = Rect2(0, 10, 800, 1057)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_046tx"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(256, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2chj7"]
+atlas = ExtResource("5_r7or4")
+region = Rect2(0, 10, 800, 1057)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbw0r"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(320, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vhyj"]
+atlas = ExtResource("4_db2o4")
+region = Rect2(0, 10, 800, 1057)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ysvv"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(384, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_msh1r"]
+atlas = ExtResource("5_7ioyl")
+region = Rect2(0, 10, 800, 1057)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hx6h"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(64, 64, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qn82"]
+atlas = ExtResource("4_4p2gh")
+region = Rect2(0, 10, 800, 1057)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_778l2"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(0, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxao2"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_huwh2"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kn3e"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysumu"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(256, 0, 64, 64)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj63c"]
+atlas = ExtResource("5_6fmn6")
+region = Rect2(0, 10, 800, 1057)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ed35f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s26xv")
+"texture": SubResource("AtlasTexture_443id")
 }],
 "loop": false,
 "name": &"default",
@@ -65,30 +56,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xfkxb")
+"texture": SubResource("AtlasTexture_67hhi")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f11pt")
+"texture": SubResource("AtlasTexture_wr8h7")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_046tx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qbw0r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ysvv")
+"texture": SubResource("AtlasTexture_2chj7")
 }],
 "loop": false,
 "name": &"die",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7hx6h")
+"texture": SubResource("AtlasTexture_5vhyj")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_778l2")
+"texture": SubResource("AtlasTexture_msh1r")
 }],
 "loop": false,
 "name": &"shoot",
@@ -96,71 +81,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yxao2")
+"texture": SubResource("AtlasTexture_2qn82")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_huwh2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6kn3e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysumu")
+"texture": SubResource("AtlasTexture_lj63c")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1wgqk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exmj5"]
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 3.0
-
-[sub_resource type="Curve" id="Curve_prh4t"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 1, Vector2(1, 0.5), 0.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_k8ois"]
-curve = SubResource("Curve_prh4t")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hmm6i"]
-direction = Vector3(0, 0, -10)
-spread = 0.0
-initial_velocity_min = 100.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_k8ois")
-
-[sub_resource type="BoxMesh" id="BoxMesh_wil87"]
-size = Vector3(0.1, 0.1, 0.5)
+height = 1.8165
 
 [node name="Enemy" type="CharacterBody3D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_2fivp")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.3, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.59595, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_ed35f")
-animation = &"die"
+animation = &"walk"
 autoplay = "default"
-frame = 4
-frame_progress = 1.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911801, 0)
 shape = SubResource("CapsuleShape3D_1wgqk")
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
+visible = false
 stream = ExtResource("3_8l4c8")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52043, 0)
-target_position = Vector3(0, 0, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192542, 0.98435, 0)
+target_position = Vector3(0, 0, -11)
 collision_mask = 3
 debug_shape_thickness = 5
 
@@ -170,18 +128,5 @@ one_shot = true
 [node name="DamageTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Enemy_ProjectileParticles" type="GPUParticles3D" parent="."]
-transform = Transform3D(0.999848, 0.000274131, 0.0174503, 0, 0.999877, -0.0157073, -0.0174524, 0.0157049, 0.999724, -0.00562349, 1.43194, 0.0404987)
-material_override = SubResource("StandardMaterial3D_exmj5")
-cast_shadow = 0
-emitting = false
-amount = 1
-lifetime = 0.09
-one_shot = true
-fixed_fps = 60
-visibility_aabb = AABB(-4, -3.88721, -4, 8, 8, 8)
-local_coords = true
-process_material = SubResource("ParticleProcessMaterial_hmm6i")
-draw_pass_1 = SubResource("BoxMesh_wil87")
-
 [node name="Bullet" parent="." instance=ExtResource("4_ycsmr")]
+visible = false
