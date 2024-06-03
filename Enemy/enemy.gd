@@ -1,14 +1,15 @@
 extends CharacterBody3D
 class_name Enemy
 
-@export var max_hitpoints := 100
-@export var fire_rate = 2.0 		#numero di colpi sparati in un secondo
-@export var attack_range = 10.0
-@export var damage = 10
-
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 40.0
+const ATTACK_RANGE = 20.0
+
+@export var max_hitpoints := 100
+@export var fire_rate = 2.0 		#numero di colpi sparati in un secondo
+@export var damage = 10
+
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -36,6 +37,7 @@ var hitpoints = max_hitpoints:
 
 
 func _ready() -> void:
+	ray.target_position.z = (ATTACK_RANGE * -1) - 1
 	$AnimatedSprite3D.play("default")
 	player = get_tree().get_first_node_in_group("player")
 
@@ -70,7 +72,7 @@ func _physics_process(delta):
 		if distance <= AGGRO_RANGE:
 			provoked = true
 			
-		if provoked and distance <= attack_range:
+		if provoked and distance <= ATTACK_RANGE:
 			attacking = true
 			if ray.is_colliding() and ray.get_collider() is Player:
 				attack()
