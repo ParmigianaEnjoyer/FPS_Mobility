@@ -4,11 +4,14 @@ const SPEED = 100.0
 
 @onready var mesh = $MeshInstance3D
 @onready var ray = $RayCast3D
-var damage = 10
+@onready var lifetime = $Timer
 
+var damage = 10
+var bullet_range = 20
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	lifetime.start(calculate_bullet_lifetime(bullet_range))
 	mesh.visible = true
 
 
@@ -27,3 +30,8 @@ func _process(delta):
 
 func _on_timer_timeout():
 	queue_free()
+
+
+func calculate_bullet_lifetime(bullet_range):
+	if SPEED != 0:
+		return bullet_range / SPEED
