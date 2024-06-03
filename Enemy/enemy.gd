@@ -17,7 +17,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var ray = $RayCast3D
 @onready var timer = $CooldownTimer
 @onready var d_timer = $DamageTimer
-@onready var projectile_particles = $Enemy_ProjectileParticles
 
 var player
 var provoked = false		#l'enemy è stato provocato? 
@@ -56,7 +55,6 @@ func _physics_process(delta):
 	if !dead:
 		var next_position = navigation_agent_3d.get_next_path_position()
 		ray.look_at(player.global_position)
-		projectile_particles.look_at(player.global_position)
 		# Add the gravity.
 		if not is_on_floor():
 			velocity.y -= gravity * delta
@@ -98,13 +96,6 @@ func attack():
 		instance.position = ray.global_position
 		instance.transform.basis = ray.global_transform.basis
 		get_parent().add_child(instance)
-		#projectile_particles.restart()		#animazione del proiettile
-		#if d_timer.is_stopped():
-			#d_timer.start(0.1)
-			#ray.force_raycast_update()
-			#if ray.is_colliding() and randi() % 100 < 70:	#70% di possibilità di fare danno
-				#ray.get_collider().player_health -= damage
-				#print(ray.get_collider().player_health)
 
 
 func take_damage():

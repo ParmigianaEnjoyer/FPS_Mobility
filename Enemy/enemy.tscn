@@ -1,13 +1,12 @@
-[gd_scene load_steps=24 format=3 uid="uid://cyo2lshl3153j"]
+[gd_scene load_steps=17 format=3 uid="uid://cyo2lshl3153j"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_2fivp"]
+[ext_resource type="Texture2D" uid="uid://c0ib8jrw1rxn8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 1.png" id="2_32s2d"]
 [ext_resource type="Texture2D" uid="uid://d04egsjdk2uog" path="res://Enemy/guard.png" id="2_jhm3f"]
 [ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="3_8l4c8"]
+[ext_resource type="Texture2D" uid="uid://c1otyfhf5wy5o" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 2.png" id="4_4p2gh"]
 [ext_resource type="PackedScene" uid="uid://bg6br2yvio8pi" path="res://Enemy/bullet.tscn" id="4_ycsmr"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s26xv"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(0, 0, 64, 64)
+[ext_resource type="Texture2D" uid="uid://pqj8n5yfq7x8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 3.png" id="5_6fmn6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xfkxb"]
 atlas = ExtResource("2_jhm3f")
@@ -37,27 +36,11 @@ region = Rect2(64, 64, 64, 64)
 atlas = ExtResource("2_jhm3f")
 region = Rect2(0, 64, 64, 64)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_yxao2"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_huwh2"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6kn3e"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysumu"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(256, 0, 64, 64)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_ed35f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s26xv")
+"texture": ExtResource("2_32s2d")
 }],
 "loop": false,
 "name": &"default",
@@ -96,16 +79,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yxao2")
+"texture": ExtResource("4_4p2gh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_huwh2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6kn3e")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysumu")
+"texture": ExtResource("5_6fmn6")
 }],
 "loop": true,
 "name": &"walk",
@@ -113,49 +90,25 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1wgqk"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_exmj5"]
-emission_enabled = true
-emission = Color(1, 1, 1, 1)
-emission_energy_multiplier = 3.0
-
-[sub_resource type="Curve" id="Curve_prh4t"]
-_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 1, Vector2(1, 0.5), 0.0, 0.0, 1, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_k8ois"]
-curve = SubResource("Curve_prh4t")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hmm6i"]
-direction = Vector3(0, 0, -10)
-spread = 0.0
-initial_velocity_min = 100.0
-initial_velocity_max = 100.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_k8ois")
-
-[sub_resource type="BoxMesh" id="BoxMesh_wil87"]
-size = Vector3(0.1, 0.1, 0.5)
+height = 1.8165
 
 [node name="Enemy" type="CharacterBody3D"]
 script = ExtResource("1_2fivp")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 1.3, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.59595, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_ed35f")
-animation = &"die"
 autoplay = "default"
-frame = 4
-frame_progress = 1.0
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911801, 0)
 shape = SubResource("CapsuleShape3D_1wgqk")
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
+visible = false
 stream = ExtResource("3_8l4c8")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
@@ -170,18 +123,5 @@ one_shot = true
 [node name="DamageTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Enemy_ProjectileParticles" type="GPUParticles3D" parent="."]
-transform = Transform3D(0.999848, 0.000274131, 0.0174503, 0, 0.999877, -0.0157073, -0.0174524, 0.0157049, 0.999724, -0.00562349, 1.43194, 0.0404987)
-material_override = SubResource("StandardMaterial3D_exmj5")
-cast_shadow = 0
-emitting = false
-amount = 1
-lifetime = 0.09
-one_shot = true
-fixed_fps = 60
-visibility_aabb = AABB(-4, -3.88721, -4, 8, 8, 8)
-local_coords = true
-process_material = SubResource("ParticleProcessMaterial_hmm6i")
-draw_pass_1 = SubResource("BoxMesh_wil87")
-
 [node name="Bullet" parent="." instance=ExtResource("4_ycsmr")]
+visible = false
