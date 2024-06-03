@@ -147,8 +147,6 @@ environment = SubResource("Environment_g2h84")
 
 [node name="Enemy" parent="." instance=ExtResource("2_t7qx0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10608, 8.92274, 0.251575)
-collision_layer = 5
-collision_mask = 5
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0332985, -1.90735e-06, -0.104948)
