@@ -107,4 +107,5 @@ func die():
 	if !dead:
 		dead = true  # Corrected variable scope
 		$Voice.play()
-		#$CollisionShape3D.disabled = true		#disattivo le collisioni così posso attraversarlo quando muore
+		set_collision_layer_value(1, false)
+		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore

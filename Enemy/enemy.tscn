@@ -1,40 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://cyo2lshl3153j"]
+[gd_scene load_steps=14 format=3 uid="uid://cyo2lshl3153j"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_2fivp"]
 [ext_resource type="Texture2D" uid="uid://c0ib8jrw1rxn8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 1.png" id="2_32s2d"]
-[ext_resource type="Texture2D" uid="uid://d04egsjdk2uog" path="res://Enemy/guard.png" id="2_jhm3f"]
+[ext_resource type="Texture2D" uid="uid://bm5eamnupu6ls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 6.png" id="3_3hfdf"]
 [ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="3_8l4c8"]
+[ext_resource type="Texture2D" uid="uid://dordi8kghg7qx" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 7.png" id="4_2cskc"]
 [ext_resource type="Texture2D" uid="uid://c1otyfhf5wy5o" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 2.png" id="4_4p2gh"]
+[ext_resource type="Texture2D" uid="uid://cml68yj85j0ur" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 5.png" id="4_db2o4"]
 [ext_resource type="PackedScene" uid="uid://bg6br2yvio8pi" path="res://Enemy/bullet.tscn" id="4_ycsmr"]
 [ext_resource type="Texture2D" uid="uid://pqj8n5yfq7x8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 3.png" id="5_6fmn6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xfkxb"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(128, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f11pt"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(192, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_046tx"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(256, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qbw0r"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(320, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ysvv"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(384, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7hx6h"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(64, 64, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_778l2"]
-atlas = ExtResource("2_jhm3f")
-region = Rect2(0, 64, 64, 64)
+[ext_resource type="Texture2D" uid="uid://0ja4wiev5fls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 4.png" id="5_7ioyl"]
+[ext_resource type="Texture2D" uid="uid://cojunuudwfk44" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 8.png" id="5_r7or4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ed35f"]
 animations = [{
@@ -48,30 +24,24 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xfkxb")
+"texture": ExtResource("3_3hfdf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f11pt")
+"texture": ExtResource("4_2cskc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_046tx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qbw0r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ysvv")
+"texture": ExtResource("5_r7or4")
 }],
 "loop": false,
 "name": &"die",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7hx6h")
+"texture": ExtResource("4_db2o4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_778l2")
+"texture": ExtResource("5_7ioyl")
 }],
 "loop": false,
 "name": &"shoot",
@@ -86,19 +56,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"walk",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1wgqk"]
 height = 1.8165
 
 [node name="Enemy" type="CharacterBody3D"]
+collision_layer = 5
+collision_mask = 5
 script = ExtResource("1_2fivp")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.59595, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_ed35f")
+animation = &"die"
 autoplay = "default"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -112,7 +85,7 @@ visible = false
 stream = ExtResource("3_8l4c8")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52043, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192542, 0.98435, 0)
 target_position = Vector3(0, 0, -10)
 collision_mask = 3
 debug_shape_thickness = 5
