@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cyo2lshl3153j"]
+[gd_scene load_steps=22 format=3 uid="uid://cyo2lshl3153j"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_2fivp"]
 [ext_resource type="Texture2D" uid="uid://c0ib8jrw1rxn8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 1.png" id="2_32s2d"]
@@ -12,11 +12,43 @@
 [ext_resource type="Texture2D" uid="uid://0ja4wiev5fls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 4.png" id="5_7ioyl"]
 [ext_resource type="Texture2D" uid="uid://cojunuudwfk44" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 8.png" id="5_r7or4"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_443id"]
+atlas = ExtResource("2_32s2d")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_67hhi"]
+atlas = ExtResource("3_3hfdf")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wr8h7"]
+atlas = ExtResource("4_2cskc")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2chj7"]
+atlas = ExtResource("5_r7or4")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5vhyj"]
+atlas = ExtResource("4_db2o4")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msh1r"]
+atlas = ExtResource("5_7ioyl")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qn82"]
+atlas = ExtResource("4_4p2gh")
+region = Rect2(0, 10, 800, 1057)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lj63c"]
+atlas = ExtResource("5_6fmn6")
+region = Rect2(0, 10, 800, 1057)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_ed35f"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_32s2d")
+"texture": SubResource("AtlasTexture_443id")
 }],
 "loop": false,
 "name": &"default",
@@ -24,13 +56,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_3hfdf")
+"texture": SubResource("AtlasTexture_67hhi")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_2cskc")
+"texture": SubResource("AtlasTexture_wr8h7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_r7or4")
+"texture": SubResource("AtlasTexture_2chj7")
 }],
 "loop": false,
 "name": &"die",
@@ -38,10 +70,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_db2o4")
+"texture": SubResource("AtlasTexture_5vhyj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_7ioyl")
+"texture": SubResource("AtlasTexture_msh1r")
 }],
 "loop": false,
 "name": &"shoot",
@@ -49,12 +81,12 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_4p2gh")
+"texture": SubResource("AtlasTexture_2qn82")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_6fmn6")
+"texture": SubResource("AtlasTexture_lj63c")
 }],
-"loop": true,
+"loop": false,
 "name": &"walk",
 "speed": 3.0
 }]
@@ -71,7 +103,7 @@ script = ExtResource("1_2fivp")
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.59595, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_ed35f")
-animation = &"die"
+animation = &"walk"
 autoplay = "default"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -86,7 +118,7 @@ stream = ExtResource("3_8l4c8")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.192542, 0.98435, 0)
-target_position = Vector3(0, 0, -10)
+target_position = Vector3(0, 0, -11)
 collision_mask = 3
 debug_shape_thickness = 5
 
