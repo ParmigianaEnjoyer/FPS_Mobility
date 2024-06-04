@@ -4,9 +4,10 @@ const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 40.0
 const ATTACK_RANGE = 20.0
+const ATTACK_COOLDOWN = 0.4	#secondi che separano un attacco dall'altro
 
 @export var max_hitpoints := 100
-@export var fire_rate = 2.0 		#numero di colpi sparati in un secondo
+@export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
 @export var damage = 10
 
 
@@ -91,7 +92,7 @@ func _physics_process(delta):
 
 func attack():
 	if timer.is_stopped():
-		timer.start(1.0)
+		timer.start(ATTACK_COOLDOWN)
 		$AnimatedSprite3D.play("shoot")
 		instance = bullet.instantiate()
 		instance.position = ray.global_position

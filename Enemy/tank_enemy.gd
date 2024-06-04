@@ -4,7 +4,8 @@ extends CharacterBody3D
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 40.0
-const ATTACK_RANGE = 10.0
+const ATTACK_RANGE = 20.0
+const ATTACK_COOLDOWN = 0.5	#secondi che separano un attacco dall'altro
 
 @export var max_hitpoints := 400
 @export var fire_rate = 2.0 		#numero di colpi sparati in un secondo
@@ -92,7 +93,7 @@ func _physics_process(delta):
 
 func attack():
 	if timer.is_stopped():
-		timer.start(1.0)
+		timer.start(0.5)
 		$AnimatedSprite3D.play("shoot")
 		instance = bullet.instantiate()
 		instance.position = ray.global_position
@@ -111,3 +112,6 @@ func die():
 		$Voice.play()
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
+
+func get_range():
+	return ATTACK_RANGE
