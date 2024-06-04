@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=54 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
@@ -157,6 +157,11 @@ animations = [{
 "loop": false,
 "name": &"pistol_idle",
 "speed": 1.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"pistol_reload",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -327,6 +332,44 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_6sym6"]
+resource_name = "machinegun_reload"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon/Machinegun_AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-210, -345), Vector2(-210, -225), Vector2(-210, -225), Vector2(-210, -345)]
+}
+
+[sub_resource type="Animation" id="Animation_eyi0s"]
+resource_name = "pistol_reload"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Weapon/Pistol_AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(374, -247), Vector2(374, -57), Vector2(374, -57), Vector2(374, -247)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_napdt"]
+_data = {
+"machinegun_reload": SubResource("Animation_6sym6"),
+"pistol_reload": SubResource("Animation_eyi0s")
+}
+
 [node name="ui" type="CanvasLayer"]
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
@@ -372,18 +415,17 @@ grow_vertical = 0
 [node name="Blood" parent="Weapon" instance=ExtResource("6_xpaw8")]
 
 [node name="Pistol_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
-visible = false
 position = Vector2(374, -247)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_o4v53")
-animation = &"pistol_shoot"
+animation = &"pistol_idle"
 
 [node name="Machinegun_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
 visible = false
 position = Vector2(-210, -345)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_bkl46")
-animation = &"machinegun_idle"
+animation = &"machinegun_shoot"
 
 [node name="Shotgun_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
 visible = false
@@ -393,6 +435,7 @@ animation = &"shotgun_shoot"
 autoplay = "shotgun_idle"
 
 [node name="Hammer_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
+visible = false
 position = Vector2(0, -515)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_7mnnd")
@@ -401,3 +444,13 @@ autoplay = "hammer_idle"
 
 [node name="CooldownTimer" type="Timer" parent="Weapon"]
 one_shot = true
+
+[node name="ReloadTime" type="Timer" parent="Weapon"]
+one_shot = true
+
+[node name="NoAmmo" type="AudioStreamPlayer3D" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_napdt")
+}
