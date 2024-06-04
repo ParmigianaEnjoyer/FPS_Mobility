@@ -75,7 +75,7 @@ func _physics_process(delta):
 			
 		if provoked and distance <= ATTACK_RANGE:
 			attacking = true
-			if ray.is_colliding() and ray.get_collider() is Player:
+			if ray.is_colliding() and ray.get_collider().is_in_group("player"):
 				attack()
 		else:
 			attacking = false

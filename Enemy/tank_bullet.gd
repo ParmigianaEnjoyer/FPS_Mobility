@@ -20,7 +20,7 @@ func _process(delta):
 	position += transform.basis * Vector3(0, 0, -SPEED) * delta
 	ray.force_raycast_update()
 
-	if ray.is_colliding() and ray.get_collider() is Player:
+	if ray.is_colliding() and ray.get_collider().is_in_group("player"):
 		mesh.visible = false
 		ray.get_collider().player_health -= damage
 		ray.get_collider().take_damage()
@@ -32,6 +32,6 @@ func _on_timer_timeout():
 	queue_free()
 
 
-func calculate_bullet_lifetime(bullet_range):
+func calculate_bullet_lifetime(the_bullet_range):
 	if SPEED != 0:
-		return bullet_range / SPEED
+		return the_bullet_range / SPEED

@@ -1,5 +1,4 @@
 extends CharacterBody3D
-class_name Player
 
 @export var max_player_health = 200	#la vita del giocatore
 var player_health = max_player_health:
