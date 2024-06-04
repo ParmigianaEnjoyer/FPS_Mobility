@@ -67,7 +67,6 @@ func _process(_delta):
 				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
 					shooted_count = 0
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
-					$Shoot.stop()
 
 
 func switch_weapon(to):
