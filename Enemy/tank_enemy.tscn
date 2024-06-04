@@ -1,0 +1,98 @@
+[gd_scene load_steps=14 format=3 uid="uid://cwoblwvdisygl"]
+
+[ext_resource type="Script" path="res://Enemy/tank_enemy.gd" id="1_vp55n"]
+[ext_resource type="Texture2D" uid="uid://3vdv8ekt7cle" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 1.png" id="2_8ts7m"]
+[ext_resource type="Texture2D" uid="uid://klp11hifeu05" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 6.png" id="3_ktbix"]
+[ext_resource type="Texture2D" uid="uid://y3bjdp4yur8m" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 7.png" id="4_sy7kf"]
+[ext_resource type="Texture2D" uid="uid://bb4nuwqoi2r13" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 8.png" id="5_ngk00"]
+[ext_resource type="Texture2D" uid="uid://blexphfsne2ah" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 5.png" id="6_gt6wo"]
+[ext_resource type="Texture2D" uid="uid://cth6dmoco3kmk" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 4.png" id="7_xtxm1"]
+[ext_resource type="Texture2D" uid="uid://d5vu77rxaa5" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 2.png" id="8_xxnpq"]
+[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="9_0xui4"]
+[ext_resource type="Texture2D" uid="uid://bxe5ffh50vk83" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 3.png" id="9_6kpvb"]
+[ext_resource type="PackedScene" uid="uid://dbfqepa7t1aw" path="res://Enemy/tank_bullet.tscn" id="11_qibie"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0twep"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8ts7m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ktbix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_sy7kf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ngk00")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_gt6wo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xtxm1")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_xxnpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6kpvb")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g6g2q"]
+radius = 1.59257
+height = 4.5254
+
+[node name="Tank_enemy" type="CharacterBody3D" groups=["enemy"]]
+script = ExtResource("1_vp55n")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 4, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_0twep")
+animation = &"walk"
+autoplay = "default"
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19512, 0)
+shape = SubResource("CapsuleShape3D_g6g2q")
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("9_0xui4")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.601929, 2.03143, 0)
+target_position = Vector3(0, 0, -11)
+collision_mask = 3
+debug_shape_thickness = 5
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Tank_bullet" parent="." instance=ExtResource("11_qibie")]

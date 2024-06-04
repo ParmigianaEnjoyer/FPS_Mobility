@@ -220,7 +220,7 @@ func shoot(_weapon):
 			r.force_raycast_update()
 			if r.is_colliding():
 				collider = r.get_collider()
-				if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+				if collider.is_in_group("enemy"):		#Se l'oggetto collisionato è un nemico allora gli togli vita
 					collider.hitpoints -= weapon_damage
 					collider.take_damage()
 					enemy_hit = true
@@ -231,7 +231,7 @@ func shoot(_weapon):
 		ray.force_raycast_update()
 		if ray.is_colliding():
 			collider = ray.get_collider()
-			if collider is Enemy:		#Se l'oggetto collisionato è un nemico allora gli togli vita
+			if collider.is_in_group("enemy"):		#Se l'oggetto collisionato è un nemico allora gli togli vita
 				collider.hitpoints -= weapon_damage
 				collider.take_damage()
 				enemy_hit = true
