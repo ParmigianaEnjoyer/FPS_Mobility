@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=51 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
@@ -262,35 +262,39 @@ animations = [{
 "speed": 16.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xq447"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_s3vta"]
 atlas = ExtResource("24_yitgt")
-region = Rect2(0, 0, 419, 420)
+region = Rect2(0, 0, 419, 410)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3opjf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8uste"]
 atlas = ExtResource("24_yitgt")
-region = Rect2(419, 0, 419, 417)
+region = Rect2(419, 0, 419, 410)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h6t2w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndikv"]
 atlas = ExtResource("24_yitgt")
-region = Rect2(0, 422, 419, 408)
+region = Rect2(0, 430, 419, 410)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8yl3w"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bd80w"]
 atlas = ExtResource("24_yitgt")
-region = Rect2(419, 423, 419, 417)
+region = Rect2(419, 430, 419, 410)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_3niyj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8sboh"]
 atlas = ExtResource("24_yitgt")
-region = Rect2(419, 0, 419, 420)
+region = Rect2(419, 430, 419, 410)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejnas"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0agm"]
 atlas = ExtResource("24_yitgt")
-region = Rect2(0, 0, 419, 420)
+region = Rect2(0, 430, 419, 410)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2y4i0"]
+atlas = ExtResource("24_yitgt")
+region = Rect2(419, 0, 419, 410)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7mnnd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_xq447")
+"texture": SubResource("AtlasTexture_s3vta")
 }],
 "loop": false,
 "name": &"hammer_idle",
@@ -298,22 +302,25 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3opjf")
+"texture": SubResource("AtlasTexture_8uste")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h6t2w")
+"texture": SubResource("AtlasTexture_ndikv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8yl3w")
+"texture": SubResource("AtlasTexture_bd80w")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h6t2w")
+"texture": SubResource("AtlasTexture_8sboh")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_3niyj")
+"texture": SubResource("AtlasTexture_t0agm")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ejnas")
+"texture": SubResource("AtlasTexture_2y4i0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3vta")
 }],
 "loop": false,
 "name": &"hammer_shoot",
