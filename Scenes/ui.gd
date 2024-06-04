@@ -2,7 +2,7 @@ extends CanvasLayer
 
 #CARATTERISTICHE DELL'ARMA
 @export var current_weapon = "hammer"		#nome dell'arma utilizata
-@export var weapon_damage = 50		#danno di un'arma
+@export var weapon_damage = 50		#danno dell'arma
 @export var fire_rate = 1.0			#numero di volte in cui l'arma spara in un secondo
 @export var fire_range = -2.0			#range dell'arma
 
@@ -21,6 +21,7 @@ var radial_menu = false		#check if radial menu is on or not
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
+	switch_weapon(3)		#all'inizio viene impostato il martello come arma
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
