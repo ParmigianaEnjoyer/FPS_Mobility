@@ -10,12 +10,25 @@ extends CanvasLayer
 @onready var ray = $"../Head/Camera3D/RayCast3D"
 @onready var projectile_particles = $"../Head/Camera3D/ProjectileParticles"
 @onready var cooldown_timer = $Weapon/CooldownTimer
+
 var blood_particles = load("res://Scenes/blood.tscn")
 var sparks_particles = load("res://Scenes/sparks.tscn")
 
-#var time_since_last_shot = 0.0
 var shooted_count = 0 		#variabile che conta i colpi sparati
 var radial_menu = false		#check if radial menu is on or not
+
+#VARIABILI PER LE MUNIZIONI
+enum ammo_type {
+	PISTOL_BULLET, 
+	SHOTGUN_BULLET,
+	MACHINEGUN_BULLET
+}
+
+var ammo_storage := {
+	ammo_type.PISTOL_BULLET: 100,
+	ammo_type.SHOTGUN_BULLET: 10,
+	ammo_type.MACHINEGUN_BULLET: 100
+}
 
 
 # Called when the node enters the scene tree for the first time.
@@ -32,38 +45,50 @@ func _process(_delta):
 		match current_weapon:
 			"hammer":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
-					cooldown_timer.start(1.0 / fire_rate)
-					$Weapon/Hammer_AnimatedSprite2D.play("hammer_shoot")
-					$Shoot.play()
-					shoot(current_weapon)
+						cooldown_timer.start(1.0 / fire_rate)
+						$Weapon/Hammer_AnimatedSprite2D.play("hammer_shoot")
+						$Shoot.play()
+						shoot(current_weapon)
 			"pistol":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
-					cooldown_timer.start(1.0 / fire_rate)	
-					$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
-					$Shoot.play()
-					shoot(current_weapon)
+					if has_ammo(ammo_type.PISTOL_BULLET):
+						use_ammo(ammo_type.PISTOL_BULLET)
+						cooldown_timer.start(1.0 / fire_rate)	
+						$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
+						$Shoot.play()
+						shoot(current_weapon)
+					else:
+						pass
 			"shotgun":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
-					cooldown_timer.start(1.0 / fire_rate)
-					$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
-					$Shoot.play()
-					$Reload.play()
-					shoot(current_weapon)
+					if has_ammo(ammo_type.SHOTGUN_BULLET):
+						use_ammo(ammo_type.SHOTGUN_BULLET)
+						cooldown_timer.start(1.0 / fire_rate)
+						$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
+						$Shoot.play()
+						$Reload.play()
+						shoot(current_weapon)
+					else:
+						pass
 			"machinegun":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
-					cooldown_timer.start(1.0 / fire_rate)
-					shooted_count += 1
-					#si alternano tre suoni differenti per la machinegun
-					match shooted_count % 3:
-						0:
-							$Shoot.stream = preload("res://Machinegun/minigun.ogg")
-						1:
-							$Shoot.stream = preload("res://Machinegun/minigun2.ogg")
-						2:
-							$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
-					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
-					$Shoot.play()
-					shoot(current_weapon)
+					if has_ammo(ammo_type.MACHINEGUN_BULLET):
+						use_ammo(ammo_type.MACHINEGUN_BULLET)
+						cooldown_timer.start(1.0 / fire_rate)
+						shooted_count += 1
+						#si alternano tre suoni differenti per la machinegun
+						match shooted_count % 3:
+							0:
+								$Shoot.stream = preload("res://Machinegun/minigun.ogg")
+							1:
+								$Shoot.stream = preload("res://Machinegun/minigun2.ogg")
+							2:
+								$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
+						$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
+						$Shoot.play()
+						shoot(current_weapon)
+					else:
+						pass
 				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
 					shooted_count = 0
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
@@ -262,3 +287,15 @@ func show_sparks(raycast):
 func calculate_bullet_lifetime(the_range, velocity):		#funzione che calcola il tempo di vita del proiettile
 	if velocity != 0:
 		return (-1 * the_range) / velocity
+
+
+
+#GESTIONE DELLE MUNIZIONI-----------------------------------------------------------------------------------------
+func has_ammo(type: ammo_type):
+	return ammo_storage[type] > 0
+
+
+func use_ammo(type: ammo_type):
+	if has_ammo(type):
+		ammo_storage[type] -= 1
+		print(ammo_storage[type])
