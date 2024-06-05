@@ -1,0 +1,64 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhkobmng3regd"]
+
+[ext_resource type="Script" path="res://MenuPrincipale/difficoltà.gd" id="1_vcun8"]
+[ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="2_7404x"]
+[ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="3_kiu5e"]
+
+[node name="Difficoltà" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vcun8")
+
+[node name="Sfondo" type="Node2D" parent="."]
+position = Vector2(831, 353)
+scale = Vector2(2, 2)
+
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
+position = Vector2(353.5, 30.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_7404x")
+
+[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
+position = Vector2(-295, 184.5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_kiu5e")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -187.0
+offset_right = 6.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Facile" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Facile"
+
+[node name="Medio" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Medio"
+
+[node name="Difficile" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Difficile"
+
+[node name="Indietro" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Indietro"
+
+[connection signal="pressed" from="VBoxContainer/Facile" to="." method="_on_facile_pressed"]
+[connection signal="pressed" from="VBoxContainer/Medio" to="." method="_on_medio_pressed"]
+[connection signal="pressed" from="VBoxContainer/Difficile" to="." method="_on_difficile_pressed"]
+[connection signal="pressed" from="VBoxContainer/Indietro" to="." method="_on_indietro_pressed"]

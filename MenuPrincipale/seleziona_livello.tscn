@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://vqlr2ybj600k"]
+
+[ext_resource type="Script" path="res://MenuPrincipale/seleziona_livello.gd" id="1_e846b"]
+[ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="2_n20ms"]
+[ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="3_qb52n"]
+
+[node name="SelezionaLivello" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e846b")
+
+[node name="Sfondo" type="Node2D" parent="."]
+position = Vector2(826, 231.5)
+scale = Vector2(2, 2)
+
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
+position = Vector2(352.5, 90.25)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_n20ms")
+
+[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
+position = Vector2(-295, 184.5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_qb52n")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -187.0
+offset_right = 6.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Tutorial_Livello0" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Tutorial - Livello 0"
+
+[node name="Livello1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 1"
+
+[node name="Livello2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 2"
+
+[node name="Livello3" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 3"
+
+[node name="Livello4" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 4"
+
+[node name="Livello5" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 5"
+
+[node name="Livello6" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 6"
+
+[node name="Livello7" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 7"
+
+[node name="Livello8" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 8"
+
+[node name="Livello9" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 9"
+
+[node name="Livello10" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Livello 10"
+
+[node name="Indietro" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Indietro"
+
+[connection signal="pressed" from="VBoxContainer/Tutorial_Livello0" to="." method="_on_tutorial_livello_0_pressed"]
+[connection signal="pressed" from="VBoxContainer/Livello1" to="." method="_on_livello_1_pressed"]
+[connection signal="pressed" from="VBoxContainer/Indietro" to="." method="_on_indietro_pressed"]
