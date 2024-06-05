@@ -1,0 +1,199 @@
+[gd_scene load_steps=3 format=3 uid="uid://cbo5ylnmupkpj"]
+
+[ext_resource type="Script" path="res://MenuPrincipale/Remap.gd" id="1_lcu2s"]
+[ext_resource type="Script" path="res://MenuPrincipale/ActionButton.gd" id="1_yl88g"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lcu2s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -233.0
+offset_right = -153.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Avanti" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Avanti"
+
+[node name="Sinistra" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Sinistra"
+
+[node name="Indietro" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Indietro"
+
+[node name="Destra" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Destra"
+
+[node name="Corri" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Corri"
+
+[node name="Salta" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Salta"
+
+[node name="RuotaArmi" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Ruota delle armi"
+
+[node name="Spara" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Spara"
+
+[node name="EsciDaLivello" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Esci dal livello"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 42.0
+offset_top = -125.0
+offset_right = 82.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.52, 1.52)
+
+[node name="ActionButton" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "up"
+
+[node name="ActionButton2" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "left"
+
+[node name="ActionButton3" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "down"
+
+[node name="ActionButton4" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "right"
+
+[node name="ActionButton5" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "sprint"
+
+[node name="ActionButton6" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "jump"
+
+[node name="ActionButton7" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "radial_menu"
+
+[node name="ActionButton8" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "shoot"
+
+[node name="ActionButton9" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "exit"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -111.0
+offset_top = -278.0
+offset_right = -41.0
+offset_bottom = -238.0
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(1.5, 1.5)
+
+[node name="Indietro" type="Button" parent="VBoxContainer3"]
+layout_mode = 2
+text = "Indietro"
+
+[connection signal="toggled" from="VBoxContainer2/ActionButton" to="VBoxContainer2/ActionButton" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton2" to="VBoxContainer2/ActionButton2" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton3" to="VBoxContainer2/ActionButton3" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton4" to="VBoxContainer2/ActionButton4" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton5" to="VBoxContainer2/ActionButton5" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton6" to="VBoxContainer2/ActionButton6" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton7" to="VBoxContainer2/ActionButton7" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton8" to="VBoxContainer2/ActionButton8" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton9" to="VBoxContainer2/ActionButton9" method="_on_toggled"]
+[connection signal="pressed" from="VBoxContainer3/Indietro" to="." method="_on_indietro_pressed"]
