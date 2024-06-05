@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=51 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
@@ -28,15 +28,6 @@
 [ext_resource type="Texture2D" uid="uid://cdy4lr222n0hb" path="res://Machinegun/4.png" id="22_cl17l"]
 [ext_resource type="Texture2D" uid="uid://cnqx30166d3n7" path="res://Pistol/Pistol_animations_frames.png" id="23_jemns"]
 [ext_resource type="Texture2D" uid="uid://diou6f1266xft" path="res://Hammer/acme-2024-05-27-14_04_08.png" id="24_yitgt"]
-[ext_resource type="AudioStream" uid="uid://b5q8k1im65i2k" path="res://Machinegun/outofammo.ogg" id="29_u1or4"]
-[ext_resource type="Texture2D" uid="uid://b5fbpea6qyx3x" path="res://Immagini_hui/photo_2024-06-03_17-24-49.png" id="30_uod3s"]
-[ext_resource type="Texture2D" uid="uid://dk76wka2wjw07" path="res://RadialMenu/vlcsnap-394463.png" id="31_o6ohq"]
-[ext_resource type="Texture2D" uid="uid://cubggfcd6i0ho" path="res://Immagini_hui/Heart_Animation.png" id="31_qauhl"]
-[ext_resource type="Texture2D" uid="uid://ctm0jylh6l6nq" path="res://Immagini_hui/container.png" id="32_jgth6"]
-[ext_resource type="Texture2D" uid="uid://bq08c7vccbltv" path="res://Machinegun/ammo_machinegun.png" id="33_0b2cv"]
-[ext_resource type="Texture2D" uid="uid://cll5wv3bap8i0" path="res://RadialMenu/cartoons-looney-tunes-yosemite-sam-and-pistol-pack.png" id="33_t7tww"]
-[ext_resource type="Texture2D" uid="uid://dy7smtlscesai" path="res://RadialMenu/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png" id="34_by1hv"]
-[ext_resource type="Texture2D" uid="uid://covipb6od6lq" path="res://RadialMenu/ddd77234556339caf227a92fd1d06e8f.png" id="35_6csrc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_en4ot"]
 atlas = ExtResource("18_ydo1h")
@@ -166,11 +157,6 @@ animations = [{
 "loop": false,
 "name": &"pistol_idle",
 "speed": 1.0
-}, {
-"frames": [],
-"loop": true,
-"name": &"pistol_reload",
-"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -341,113 +327,7 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="Animation" id="Animation_6sym6"]
-resource_name = "machinegun_reload"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon/Machinegun_AnimatedSprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(-210, -345), Vector2(-210, -225), Vector2(-210, -225), Vector2(-210, -345)]
-}
-
-[sub_resource type="Animation" id="Animation_eyi0s"]
-resource_name = "pistol_reload"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Weapon/Pistol_AnimatedSprite2D:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(374, -247), Vector2(374, -57), Vector2(374, -57), Vector2(374, -247)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_napdt"]
-_data = {
-"machinegun_reload": SubResource("Animation_6sym6"),
-"pistol_reload": SubResource("Animation_eyi0s")
-}
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7ojtt"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(0, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a1u1u"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(64, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2m7of"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(128, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_g41sr"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(192, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ref5o"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(256, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kb4gc"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(320, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uvm0y"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(384, 0, 64, 64)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nl3cl"]
-atlas = ExtResource("31_qauhl")
-region = Rect2(448, 0, 64, 64)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xvg26"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7ojtt")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a1u1u")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2m7of")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_g41sr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ref5o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kb4gc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uvm0y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nl3cl")
-}],
-"loop": true,
-"name": &"default",
-"speed": 7.0
-}]
-
 [node name="ui" type="CanvasLayer"]
-
-[node name="NoAmmo" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("29_u1or4")
-volume_db = -30.0
 
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_a5q3o")
@@ -496,7 +376,7 @@ visible = false
 position = Vector2(374, -247)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_o4v53")
-animation = &"pistol_idle"
+animation = &"pistol_shoot"
 
 [node name="Machinegun_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
 visible = false
@@ -521,114 +401,3 @@ autoplay = "hammer_idle"
 
 [node name="CooldownTimer" type="Timer" parent="Weapon"]
 one_shot = true
-
-[node name="ReloadTime" type="Timer" parent="Weapon"]
-one_shot = true
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_napdt")
-}
-
-[node name="HUI_hearts" type="TextureRect" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -628.0
-offset_top = -176.0
-offset_right = -534.0
-offset_bottom = -81.0
-grow_horizontal = 0
-grow_vertical = 0
-scale = Vector2(2, 2)
-texture = ExtResource("30_uod3s")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HUI_hearts"]
-position = Vector2(48, 47.5)
-scale = Vector2(0.7, 0.7)
-sprite_frames = SubResource("SpriteFrames_xvg26")
-autoplay = "default"
-frame_progress = 0.915366
-
-[node name="hearts_counter" type="Label" parent="HUI_hearts"]
-layout_mode = 0
-offset_left = 49.0
-offset_top = 47.5
-offset_right = 89.0
-offset_bottom = 70.5
-text = "  0"
-
-[node name="HUI_ammo" type="TextureRect" parent="."]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -13.0
-offset_top = -5.0
-offset_right = 456.0
-offset_bottom = 207.0
-grow_horizontal = 0
-grow_vertical = 0
-rotation = 3.14127
-scale = Vector2(0.9, 0.9)
-texture = ExtResource("32_jgth6")
-
-[node name="ammo_icon" type="Sprite2D" parent="HUI_ammo"]
-position = Vector2(409.949, 160.131)
-rotation = 3.14159
-scale = Vector2(2, 2)
-texture = ExtResource("33_0b2cv")
-
-[node name="pistol_icon" type="Sprite2D" parent="HUI_ammo"]
-visible = false
-position = Vector2(23.3002, 103.341)
-rotation = -3.06697
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("33_t7tww")
-
-[node name="machinegun_icon" type="Sprite2D" parent="HUI_ammo"]
-position = Vector2(91.0777, 104.474)
-rotation = 2.52724
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("34_by1hv")
-
-[node name="shotgun_icon" type="Sprite2D" parent="HUI_ammo"]
-visible = false
-position = Vector2(33.2988, 107.788)
-rotation = 3.14159
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("35_6csrc")
-
-[node name="stick_icon" type="Sprite2D" parent="HUI_ammo"]
-visible = false
-position = Vector2(144.401, 136.713)
-rotation = 3.14159
-scale = Vector2(0.8, 0.8)
-texture = ExtResource("31_o6ohq")
-
-[node name="ammo_magazine" type="Label" parent="HUI_ammo"]
-layout_mode = 0
-offset_left = 312.176
-offset_top = 145.656
-offset_right = 352.176
-offset_bottom = 168.656
-rotation = 3.14159
-scale = Vector2(3, 3)
-text = "25
-"
-horizontal_alignment = 2
-
-[node name="ammo_stroage_total" type="Label" parent="HUI_ammo"]
-modulate = Color(1, 0.698039, 0, 1)
-layout_mode = 0
-offset_left = 314.416
-offset_top = 90.1007
-offset_right = 354.416
-offset_bottom = 113.101
-rotation = 3.14159
-scale = Vector2(3, 3)
-text = "150"
-horizontal_alignment = 2
