@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_controlli_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://MenuPrincipale/Remap.tscn") #va al menu di remap
 
 
 func _on_audio_pressed():
