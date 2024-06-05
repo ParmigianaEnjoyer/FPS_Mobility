@@ -138,9 +138,9 @@ func _process(_delta):
 								use_ammo(current_bullet_type)
 							else:
 								reload(current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
-						if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
-							shooted_count = 0
-							$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
+					shooted_count = 0
+					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 
 
 func switch_weapon(to):
