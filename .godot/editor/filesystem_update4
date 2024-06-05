@@ -1,4 +1,3 @@
-res://MenuPrincipale/menu.tscn
 res://Scenes/ui.tscn
 res://radial_menu.tscn
 res://radial_menu_item.tscn
@@ -10,5 +9,4 @@ res://Scenes/blood.tscn
 res://Scenes/sparks.tscn
 res://Enemy/tank_enemy.tscn
 res://Enemy/tank_bullet.tscn
-res://Scenes/HUI_ammo.gd
-res://Scenes/ui.gd
+res://MenuPrincipale/menu.tscn
