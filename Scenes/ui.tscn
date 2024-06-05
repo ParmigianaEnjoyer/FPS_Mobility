@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=72 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://bqbajjhc6fg6a" path="res://HUI/photo_2024-06-03_17-24-49.png" id="30_sgs38"]
 [ext_resource type="Texture2D" uid="uid://c87ofvvsg3hh0" path="res://HUI/Heart_Animation.png" id="31_7ffci"]
 [ext_resource type="Texture2D" uid="uid://dk76wka2wjw07" path="res://RadialMenu/vlcsnap-394463.png" id="31_o6ohq"]
+[ext_resource type="Texture2D" uid="uid://bq08c7vccbltv" path="res://Machinegun/ammo_machinegun.png" id="33_0b2cv"]
 [ext_resource type="Texture2D" uid="uid://cll5wv3bap8i0" path="res://RadialMenu/cartoons-looney-tunes-yosemite-sam-and-pistol-pack.png" id="33_t7tww"]
 [ext_resource type="Texture2D" uid="uid://dy7smtlscesai" path="res://RadialMenu/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png" id="34_by1hv"]
 [ext_resource type="Texture2D" uid="uid://covipb6od6lq" path="res://RadialMenu/ddd77234556339caf227a92fd1d06e8f.png" id="35_6csrc"]
@@ -444,6 +445,10 @@ animations = [{
 
 [node name="ui" type="CanvasLayer"]
 
+[node name="NoAmmo" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("29_u1or4")
+volume_db = -30.0
+
 [node name="Shoot" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_a5q3o")
 volume_db = -20.0
@@ -498,7 +503,7 @@ visible = false
 position = Vector2(-210, -345)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_bkl46")
-animation = &"machinegun_shoot"
+animation = &"machinegun_idle"
 
 [node name="Shotgun_AnimatedSprite2D" type="AnimatedSprite2D" parent="Weapon"]
 visible = false
@@ -520,21 +525,22 @@ one_shot = true
 [node name="ReloadTime" type="Timer" parent="Weapon"]
 one_shot = true
 
-[node name="NoAmmo" type="AudioStreamPlayer3D" parent="."]
-stream = ExtResource("29_u1or4")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_napdt")
 }
 
 [node name="HUI_hearts" type="TextureRect" parent="."]
-anchors_preset = 2
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -191.0
-offset_right = 94.0
-offset_bottom = -96.0
+offset_left = -628.0
+offset_top = -176.0
+offset_right = -534.0
+offset_bottom = -81.0
+grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(2, 2)
 texture = ExtResource("30_sgs38")
@@ -544,7 +550,7 @@ position = Vector2(48, 47.5)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_xvg26")
 autoplay = "default"
-frame_progress = 0.447235
+frame_progress = 0.915366
 
 [node name="hearts_counter" type="Label" parent="HUI_hearts"]
 layout_mode = 0
@@ -569,6 +575,12 @@ grow_vertical = 0
 rotation = 3.14127
 scale = Vector2(0.9, 0.9)
 texture = ExtResource("30_f7mvt")
+
+[node name="ammo_icon" type="Sprite2D" parent="HUI_ammo"]
+position = Vector2(409.949, 160.131)
+rotation = 3.14159
+scale = Vector2(2, 2)
+texture = ExtResource("33_0b2cv")
 
 [node name="pistol_icon" type="Sprite2D" parent="HUI_ammo"]
 visible = false
@@ -599,22 +611,24 @@ texture = ExtResource("31_o6ohq")
 
 [node name="ammo_magazine" type="Label" parent="HUI_ammo"]
 layout_mode = 0
-offset_left = 249.956
-offset_top = 138.969
-offset_right = 289.956
-offset_bottom = 161.969
+offset_left = 312.176
+offset_top = 145.656
+offset_right = 352.176
+offset_bottom = 168.656
 rotation = 3.14159
 scale = Vector2(3, 3)
 text = "25
 "
+horizontal_alignment = 2
 
 [node name="ammo_stroage_total" type="Label" parent="HUI_ammo"]
 modulate = Color(1, 0.698039, 0, 1)
 layout_mode = 0
-offset_left = 275.527
-offset_top = 88.9772
-offset_right = 315.527
-offset_bottom = 111.977
+offset_left = 314.416
+offset_top = 90.1007
+offset_right = 354.416
+offset_bottom = 113.101
 rotation = 3.14159
 scale = Vector2(3, 3)
 text = "150"
+horizontal_alignment = 2

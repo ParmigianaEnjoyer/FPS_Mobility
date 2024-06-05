@@ -11,6 +11,8 @@ extends CanvasLayer
 @onready var projectile_particles = $"../Head/Camera3D/ProjectileParticles"
 @onready var cooldown_timer = $Weapon/CooldownTimer
 @onready var reload_time = $Weapon/ReloadTime
+@onready var ammo_magazine_label = $HUI_ammo/ammo_magazine
+@onready var ammo_storage_label = $HUI_ammo/ammo_stroage_total
 
 var blood_particles = load("res://Scenes/blood.tscn")
 var sparks_particles = load("res://Scenes/sparks.tscn")
@@ -22,9 +24,9 @@ var radial_menu = false		#check if radial menu is on or not
 #VARIABILI PER LE MUNIZIONI
 #capienza massima delle munizioni totali
 const AMMO_MAX_STORAGE := {
-	ammo_type.PISTOL_BULLET: 100,
-	ammo_type.SHOTGUN_BULLET: 30,
-	ammo_type.MACHINEGUN_BULLET: 150,
+	ammo_type.PISTOL_BULLET: 1,	#100
+	ammo_type.SHOTGUN_BULLET: 1,	#30
+	ammo_type.MACHINEGUN_BULLET: 1,	#150
 }
 
 #capienza massima di caricatori
@@ -37,8 +39,11 @@ const AMMO_MAX_MAGAZINE := {
 enum ammo_type {
 	PISTOL_BULLET, 
 	SHOTGUN_BULLET,
-	MACHINEGUN_BULLET
+	MACHINEGUN_BULLET,
+	HAMMER
 }
+
+var current_bullet_type = ammo_type.HAMMER
 
 #Capienza attuale dei caricatori
 var ammo_magazine := {
@@ -65,6 +70,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	
+	set_HUI_ammo(current_bullet_type)
+	
 	if !radial_menu:
 		
 		match current_weapon:
@@ -76,61 +83,64 @@ func _process(_delta):
 						shoot(current_weapon)
 				
 			"pistol":
-				if !storage_has_ammo(ammo_type.PISTOL_BULLET) and Input.is_action_just_pressed("shoot"):
-					no_ammo_animation(current_weapon, $Weapon/Pistol_AnimatedSprite2D)
-				else:
-					if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped() and reload_time.is_stopped():
-						if magazine_has_ammo(ammo_type.PISTOL_BULLET):
-							use_ammo(ammo_type.PISTOL_BULLET)
-							cooldown_timer.start(1.0 / fire_rate)	
-							$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
-							$Shoot.play()
-							shoot(current_weapon)
-						else:
-							reload(ammo_type.PISTOL_BULLET, $Weapon/Pistol_AnimatedSprite2D)
+				if Input.is_action_pressed("shoot"):
+					if storage_has_ammo(current_bullet_type) == false and magazine_has_ammo(current_bullet_type) == false:
+						no_ammo_animation(current_weapon)
+						$Weapon/Shotgun_AnimatedSprite2D.play("pistol_idle")
+					else:
+						if cooldown_timer.is_stopped() and reload_time.is_stopped():
+							if magazine_has_ammo(current_bullet_type):
+								use_ammo(current_bullet_type)
+								cooldown_timer.start(1.0 / fire_rate)	
+								$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
+								$Shoot.play()
+								shoot(current_weapon)
+							else:
+								reload(current_bullet_type, $Weapon/Pistol_AnimatedSprite2D)
 					
 			"shotgun":
-				if !storage_has_ammo(ammo_type.SHOTGUN_BULLET) and Input.is_action_just_pressed("shoot"):
-					no_ammo_animation(current_weapon, $Weapon/Shotgun_AnimatedSprite2D)
-				else:
-					if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
-						if magazine_has_ammo(ammo_type.SHOTGUN_BULLET):
-							use_ammo(ammo_type.SHOTGUN_BULLET)
+				if Input.is_action_pressed("shoot"):
+					if storage_has_ammo(current_bullet_type) == false and magazine_has_ammo(current_bullet_type) == false:
+						no_ammo_animation(current_weapon)
+						$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_idle")
+					else:
+						if cooldown_timer.is_stopped():
+							use_ammo(current_bullet_type)
 							cooldown_timer.start(1.0 / fire_rate)
 							$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
 							$Shoot.play()
 							shoot(current_weapon)
 							$Reload.play()
-						else:
-							reload(ammo_type.SHOTGUN_BULLET, $Weapon/Shotgun_AnimatedSprite2D)
+							reload(current_bullet_type, $Weapon/Shotgun_AnimatedSprite2D)
 					
 			"machinegun":
-				if !storage_has_ammo(ammo_type.MACHINEGUN_BULLET) and Input.is_action_just_pressed("shoot"):
-					no_ammo_animation(current_weapon, $Weapon/Machinegun_AnimatedSprite2D)
-				else:
-					if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped() and reload_time.is_stopped():
-						if magazine_has_ammo(ammo_type.MACHINEGUN_BULLET):
-							cooldown_timer.start(1.0 / fire_rate)
-							shooted_count += 1
-							#si alternano tre suoni differenti per la machinegun
-							match shooted_count % 3:
-								0:
-									$Shoot.stream = preload("res://Machinegun/minigun.ogg")
-								1:
-									$Shoot.stream = preload("res://Machinegun/minigun2.ogg")
-								2:
-									$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
-									
-							$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
-							$Shoot.play()
-							shoot(current_weapon)
-							use_ammo(ammo_type.MACHINEGUN_BULLET)
-							printt(ammo_storage_total[ammo_type.MACHINEGUN_BULLET], ammo_magazine[ammo_type.MACHINEGUN_BULLET])
-						else:
-							reload(ammo_type.MACHINEGUN_BULLET, $Weapon/Machinegun_AnimatedSprite2D)
-					if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
-						shooted_count = 0
+				if Input.is_action_pressed("shoot"):
+					if storage_has_ammo(current_bullet_type) == false and magazine_has_ammo(current_bullet_type) == false:
+						no_ammo_animation(current_weapon)
 						$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+					else:
+						if cooldown_timer.is_stopped() and reload_time.is_stopped():
+							if magazine_has_ammo(current_bullet_type):
+								cooldown_timer.start(1.0 / fire_rate)
+								shooted_count += 1
+								#si alternano tre suoni differenti per la machinegun
+								match shooted_count % 3:
+									0:
+										$Shoot.stream = preload("res://Machinegun/minigun.ogg")
+									1:
+										$Shoot.stream = preload("res://Machinegun/minigun2.ogg")
+									2:
+										$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
+										
+								$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
+								$Shoot.play()
+								shoot(current_weapon)
+								use_ammo(current_bullet_type)
+							else:
+								reload(current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
+						if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
+							shooted_count = 0
+							$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 
 
 func switch_weapon(to):
@@ -141,6 +151,7 @@ func switch_weapon(to):
 		fire_rate = 1.8
 		fire_range = -20.0
 		weapon_damage = 10.0
+		current_bullet_type = ammo_type.PISTOL_BULLET
 		
 		set_projectile_particles(0.35, -0.35, 1.0, 0.015, 0.015, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100), 100.0, 100.0, 0.0)
 		
@@ -168,6 +179,7 @@ func switch_weapon(to):
 		fire_rate = 5.0
 		fire_range = -30.0
 		weapon_damage = 10.0
+		current_bullet_type = ammo_type.MACHINEGUN_BULLET
 		set_projectile_particles(0.0, -0.35, 1.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100), 100.0, 100.0, 0.0)
 		
 		$Shoot.stream = preload("res://Machinegun/minigun.ogg")
@@ -194,6 +206,7 @@ func switch_weapon(to):
 		fire_range = -11
 		fire_rate = 0.75
 		weapon_damage = 7	#danno di un singolo proiettile
+		current_bullet_type = ammo_type.SHOTGUN_BULLET
 		
 		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100) , 100.0, 100.0, 5.0)
 		
@@ -224,6 +237,7 @@ func switch_weapon(to):
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav")
 		projectile_particles.visible = false
+		current_bullet_type = ammo_type.HAMMER
 		
 		if $Weapon/Pistol_AnimatedSprite2D.visible:
 			$Weapon/Pistol_AnimatedSprite2D.visible = false
@@ -345,8 +359,6 @@ func use_ammo(type: ammo_type):
 func reload(type, animation: AnimatedSprite2D):
 	if storage_has_ammo(type):
 		
-		printt(ammo_storage_total[type], AMMO_MAX_MAGAZINE[type])
-		
 		if ammo_storage_total[type] >= AMMO_MAX_MAGAZINE[type]:
 			ammo_magazine[type] += AMMO_MAX_MAGAZINE[type]
 			ammo_storage_total[type] -= AMMO_MAX_MAGAZINE[type]
@@ -354,7 +366,7 @@ func reload(type, animation: AnimatedSprite2D):
 		if ammo_storage_total[type] < AMMO_MAX_MAGAZINE[type] and ammo_storage_total[type] > 0:
 			ammo_magazine[type] += ammo_storage_total[type]
 			ammo_storage_total[type] = 0
-		
+			
 		if type != ammo_type.SHOTGUN_BULLET:
 			$Reload.play()
 			reload_time.start(1.5)
@@ -366,6 +378,42 @@ func reload_animation(weapon, animation: AnimatedSprite2D):
 	animation.play(weapon + "_idle")
 	$AnimationPlayer.play(weapon + "_reload")
 
-func no_ammo_animation(weapon, animation: AnimatedSprite2D):
-	$NoAmmo.play()
-	$AnimationPlayer.play(weapon + "_idle")
+func no_ammo_animation(weapon):
+	if !$NoAmmo.is_playing():
+		$NoAmmo.play()
+
+func set_HUI_ammo(type):
+	match type:
+		ammo_type.PISTOL_BULLET:
+			$HUI_ammo/pistol_icon.visible = true;
+			$HUI_ammo/machinegun_icon.visible = false;
+			$HUI_ammo/shotgun_icon.visible = false;
+			$HUI_ammo/stick_icon.visible = false;
+			
+		ammo_type.MACHINEGUN_BULLET:
+			$HUI_ammo/pistol_icon.visible = false;
+			$HUI_ammo/machinegun_icon.visible = true;
+			$HUI_ammo/shotgun_icon.visible = false;
+			$HUI_ammo/stick_icon.visible = false;
+			
+		ammo_type.SHOTGUN_BULLET:
+			$HUI_ammo/pistol_icon.visible = false;
+			$HUI_ammo/machinegun_icon.visible = false;
+			$HUI_ammo/shotgun_icon.visible = true;
+			$HUI_ammo/stick_icon.visible = false;
+			
+		ammo_type.HAMMER:
+			$HUI_ammo/pistol_icon.visible = false;
+			$HUI_ammo/machinegun_icon.visible = false;
+			$HUI_ammo/shotgun_icon.visible = false;
+			$HUI_ammo/stick_icon.visible = true;
+			
+	if type != ammo_type.HAMMER:
+		ammo_magazine_label.text = str(ammo_magazine[type])
+		ammo_storage_label.text = str(ammo_storage_total[type])
+		$HUI_ammo/ammo_icon.visible = true
+		$HUI_ammo/ammo_icon.texture = load("res://" + capitalizza_prima_lettera(current_weapon) + "/ammo_" + current_weapon + ".png")
+	else:
+		ammo_magazine_label.text = "\u221E"
+		ammo_storage_label.text = ""
+		$HUI_ammo/ammo_icon.visible = false
