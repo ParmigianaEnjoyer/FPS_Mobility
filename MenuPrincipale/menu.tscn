@@ -12,11 +12,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00166, 1)
 script = ExtResource("1_pv73s")
 
 [node name="Sfondo" type="Node2D" parent="."]
 position = Vector2(831, 353)
-scale = Vector2(2, 2)
+scale = Vector2(1.98931, 2)
 
 [node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
 position = Vector2(353.5, 30.5)

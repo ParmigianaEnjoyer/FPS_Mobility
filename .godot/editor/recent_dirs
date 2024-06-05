@@ -1,4 +1,10 @@
-res://
+res://HUI
+res://MenuPrincipale
 res://Machinegun
-res://Shotgun
+res://Hammer
+res://Enemy
+res://Enemy/soldier_sprites
 res://Scenes
+res://Scripts
+res://
+res://Shotgun
