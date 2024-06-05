@@ -1,0 +1,75 @@
+[gd_scene load_steps=5 format=3 uid="uid://bghqy5yu6oma3"]
+
+[ext_resource type="Script" path="res://MenuPrincipale/menu.gd" id="1_pv73s"]
+[ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="3_bo3hl"]
+[ext_resource type="Texture2D" uid="uid://7q3jqekejjcq" path="res://MenuPrincipale/Immagini/Logi/Logo.png" id="3_s2ukn"]
+[ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="4_lpg0l"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_pv73s")
+
+[node name="Sfondo" type="Node2D" parent="."]
+position = Vector2(831, 353)
+scale = Vector2(2, 2)
+
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
+position = Vector2(353.5, 30.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_bo3hl")
+
+[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
+position = Vector2(-295, 184.5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_lpg0l")
+
+[node name="Logo" type="Sprite2D" parent="Sfondo"]
+position = Vector2(66.5, -72.5)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_s2ukn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_top = -187.0
+offset_right = 6.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Inizia" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Inizia"
+
+[node name="Difficoltà" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Difficoltà"
+
+[node name="SelezionaLivello" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Seleziona Livello"
+
+[node name="Opzioni" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Opzioni"
+
+[node name="Esci" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Esci"
+
+[connection signal="pressed" from="VBoxContainer/Inizia" to="." method="_on_inizia_pressed"]
+[connection signal="pressed" from="VBoxContainer/Difficoltà" to="." method="_on_difficoltà_pressed"]
+[connection signal="pressed" from="VBoxContainer/SelezionaLivello" to="." method="_on_seleziona_livello_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opzioni" to="." method="_on_opzioni_pressed"]
+[connection signal="pressed" from="VBoxContainer/Esci" to="." method="_on_esci_pressed"]

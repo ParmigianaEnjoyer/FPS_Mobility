@@ -6,9 +6,9 @@ const AGGRO_RANGE = 40.0
 const ATTACK_RANGE = 20.0
 const ATTACK_COOLDOWN = 0.4	#secondi che separano un attacco dall'altro
 
-@export var max_hitpoints := 100
+@export var max_hitpoints := 100 * GlobalVar.diff
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
-@export var damage = 10
+@export var damage = 10 * GlobalVar.diff
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
