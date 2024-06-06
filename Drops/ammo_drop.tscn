@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://cspch3ukrvrt"]
+
+[ext_resource type="Script" path="res://Drops/ammo_drop.gd" id="1_88i6m"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wyv5b"]
+radius = 0.778001
+
+[sub_resource type="Animation" id="Animation_xy2r1"]
+resource_name = "floating_item"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0.5, 0), Vector3(0, 0.7, 0), Vector3(0, 0.5, 0), Vector3(0, 0.3, 0), Vector3(0, 0.5, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_txxt1"]
+_data = {
+"floating_item": SubResource("Animation_xy2r1")
+}
+
+[node name="ammo_drop" type="Area3D"]
+script = ExtResource("1_88i6m")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.65677, 0)
+billboard = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.428911, 0)
+shape = SubResource("SphereShape3D_wyv5b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_txxt1")
+}
+autoplay = "floating_item"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=64 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="Script" path="res://Scenes/Tutorial.gd" id="1_2ob7c"]
 [ext_resource type="PackedScene" uid="uid://bq5ymk6t7cbxd" path="res://Scenes/Player.tscn" id="1_gai3q"]
@@ -29,6 +29,7 @@
 [ext_resource type="ArrayMesh" uid="uid://0sm2nm8pogt8" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_C_grass_trees.obj" id="24_6ho14"]
 [ext_resource type="ArrayMesh" uid="uid://b0igsbtye4b24" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_B_grass_trees.obj" id="25_bh0nj"]
 [ext_resource type="PackedScene" uid="uid://cwoblwvdisygl" path="res://Enemy/tank_enemy.tscn" id="28_bjpuj"]
+[ext_resource type="PackedScene" uid="uid://cspch3ukrvrt" path="res://Drops/ammo_drop.tscn" id="30_rs4pe"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1321,3 +1322,6 @@ mesh = ExtResource("24_6ho14")
 
 [node name="Tank_enemy" parent="." instance=ExtResource("28_bjpuj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.7909, 8.86465, 23.0062)
+
+[node name="ammo_drop" parent="." instance=ExtResource("30_rs4pe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.133, 9.27183, 5.58042)
