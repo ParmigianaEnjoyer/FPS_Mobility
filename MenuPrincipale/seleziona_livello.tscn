@@ -13,20 +13,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_e846b")
 
-[node name="Sfondo" type="Node2D" parent="."]
-position = Vector2(826, 231.5)
-scale = Vector2(2, 2)
-
-[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
-position = Vector2(352.5, 90.25)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_n20ms")
-
-[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
-position = Vector2(-295, 184.5)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_qb52n")
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -34,10 +20,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -187.0
-offset_right = 6.0
-offset_bottom = -14.0
+offset_left = -318.0
+offset_top = -183.0
+offset_right = -173.0
+offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -66,30 +52,59 @@ text = "Livello 4"
 layout_mode = 2
 text = "Livello 5"
 
-[node name="Livello6" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-text = "Livello 6"
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 31.0
+offset_top = -183.0
+offset_right = 177.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
 
-[node name="Livello7" type="Button" parent="VBoxContainer"]
+[node name="Livello6" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+text = "         Livello 6         "
+
+[node name="Livello7" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Livello 7"
 
-[node name="Livello8" type="Button" parent="VBoxContainer"]
+[node name="Livello8" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Livello 8"
 
-[node name="Livello9" type="Button" parent="VBoxContainer"]
+[node name="Livello9" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Livello 9"
 
-[node name="Livello10" type="Button" parent="VBoxContainer"]
+[node name="Livello10" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Livello 10"
 
-[node name="Indietro" type="Button" parent="VBoxContainer"]
+[node name="Indietro" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Indietro"
 
+[node name="Sfondo" type="Node2D" parent="."]
+position = Vector2(831, 353)
+scale = Vector2(1.98931, 2)
+
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
+position = Vector2(353.5, 30.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_n20ms")
+
+[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
+position = Vector2(-295, 184.5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_qb52n")
+
 [connection signal="pressed" from="VBoxContainer/Tutorial_Livello0" to="." method="_on_tutorial_livello_0_pressed"]
 [connection signal="pressed" from="VBoxContainer/Livello1" to="." method="_on_livello_1_pressed"]
-[connection signal="pressed" from="VBoxContainer/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="VBoxContainer2/Indietro" to="." method="_on_indietro_pressed"]
