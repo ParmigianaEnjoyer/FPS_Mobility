@@ -30,6 +30,8 @@ var bullet = load("res://Enemy/tank_bullet.tscn")
 var instance
 var ammo = load("res://Drops/ammo_drop.tscn")
 var ammo_instance
+var heart = load("res://Drops/heart_drop.tscn")
+var heart_instance
 
 var hitpoints = max_hitpoints:
 	set(value):
@@ -116,13 +118,24 @@ func die():
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
 	
 	ammo_drop()
+	heart_drop()
+
 
 func get_range():
 	return ATTACK_RANGE
-	
+
+
 func ammo_drop():
 	#DROP DELLE MUNIZIONI
-	ammo_instance = ammo.instantiate()
-	ammo_instance.position = ray.global_position
+	ammo_instance = ammo.instantiate() 
+	ammo_instance.position = $".".global_position
 	#instance.transform.basis = ray.global_transform.basis
 	get_parent().add_child(ammo_instance)
+
+
+func heart_drop():
+	#DROP DEL CUORE (CURA)
+	heart_instance = heart.instantiate()
+	heart_instance.position = ray.global_position
+	#instance.transform.basis = ray.global_transform.basis
+	get_parent().add_child(heart_instance)	

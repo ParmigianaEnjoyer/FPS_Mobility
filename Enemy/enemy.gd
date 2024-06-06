@@ -29,6 +29,8 @@ var bullet = load("res://Enemy/bullet.tscn")
 var instance
 var ammo = load("res://Drops/ammo_drop.tscn")
 var ammo_instance
+var heart = load("res://Drops/heart_drop.tscn")
+var heart_instance
 
 var hitpoints = max_hitpoints:
 	set(value):

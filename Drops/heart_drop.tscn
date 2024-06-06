@@ -64,18 +64,22 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 7.0
+"speed": 10.0
 }]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_i7sr8"]
 
 [node name="heart_drop" type="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5641, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66836, 0)
 script = ExtResource("1_e7jtj")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+billboard = 2
 sprite_frames = SubResource("SpriteFrames_p7qtv")
 autoplay = "default"
+frame_progress = 0.612747
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_i7sr8")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
