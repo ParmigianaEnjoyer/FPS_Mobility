@@ -1,11 +1,6 @@
 extends CharacterBody3D
 
-@export var max_player_health = 200	#la vita del giocatore
-var player_health = max_player_health:
-	set(value):
-		player_health = value
-		if player_health <= 0:		#aggiorna la vita, se arriva a 0 o meno chiude il gioco
-			get_tree().quit()
+
 var hit = false
 
 var speed
@@ -100,5 +95,11 @@ func _headbob(time) -> Vector3:
 	return pos
 
 
-func take_damage():
+func take_damage(damage):
+	GlobalVar.player_health -= damage
 	$Voice.play()
+	
+	$ui/HealthBar.health = GlobalVar.player_health
+	
+	if GlobalVar.player_health <= 0:		#aggiorna la vita, se arriva a 0 o meno chiude il gioco
+		get_tree().quit()
