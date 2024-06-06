@@ -27,6 +27,8 @@ var stop = false
 
 var bullet = load("res://Enemy/bullet.tscn")
 var instance
+var ammo = load("res://Drops/ammo_drop.tscn")
+var ammo_instance
 
 var hitpoints = max_hitpoints:
 	set(value):
@@ -111,3 +113,9 @@ func die():
 		$Voice.play()
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
+		
+	#DROP DELLE MUNIZIONI
+	ammo_instance = ammo.instantiate()
+	ammo_instance.position = ray.global_position
+	#instance.transform.basis = ray.global_transform.basis
+	get_parent().add_child(ammo_instance)
