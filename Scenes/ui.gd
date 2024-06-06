@@ -13,6 +13,7 @@ extends CanvasLayer
 @onready var reload_time = $Weapon/ReloadTime
 @onready var ammo_magazine_label = $HUI_ammo/ammo_magazine
 @onready var ammo_storage_label = $HUI_ammo/ammo_stroage_total
+@onready var healthbar = $HealthBar
 
 var blood_particles = load("res://Scenes/blood.tscn")
 var sparks_particles = load("res://Scenes/sparks.tscn")
@@ -21,50 +22,11 @@ var shooted_count = 0 		#variabile che conta i colpi sparati
 var radial_menu = false		#check if radial menu is on or not
 
 
-##VARIABILI PER LE MUNIZIONI
-##capienza massima delle munizioni totali
-#const AMMO_MAX_STORAGE := {
-	#ammo_type.PISTOL_BULLET: 100,	#100
-	#ammo_type.SHOTGUN_BULLET: 30,	#30
-	#ammo_type.MACHINEGUN_BULLET: 150,	#150
-#}
-#
-##capienza massima di caricatori
-#const AMMO_MAX_MAGAZINE := {
-	#ammo_type.PISTOL_BULLET: 15,
-	#ammo_type.SHOTGUN_BULLET: 1,
-	#ammo_type.MACHINEGUN_BULLET: 25
-#}
-#
-#enum ammo_type {
-	#PISTOL_BULLET, 
-	#SHOTGUN_BULLET,
-	#MACHINEGUN_BULLET,
-	#HAMMER
-#}
-#
-#var current_bullet_type = ammo_type.HAMMER
-#
-##Capienza attuale dei caricatori
-#var ammo_magazine := {
-	#ammo_type.PISTOL_BULLET: AMMO_MAX_MAGAZINE[ammo_type.PISTOL_BULLET],
-	#ammo_type.SHOTGUN_BULLET: AMMO_MAX_MAGAZINE[ammo_type.SHOTGUN_BULLET],
-	#ammo_type.MACHINEGUN_BULLET: AMMO_MAX_MAGAZINE[ammo_type.MACHINEGUN_BULLET]
-#}
-#
-##Capienza attuale delle munizioni totali
-#var ammo_storage_total := {
-	#ammo_type.PISTOL_BULLET: AMMO_MAX_STORAGE[ammo_type.PISTOL_BULLET],
-	#ammo_type.SHOTGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.SHOTGUN_BULLET],
-	#ammo_type.MACHINEGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.MACHINEGUN_BULLET]
-#}
-
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	switch_weapon(3)		#all'inizio viene impostato il martello come arma
+	healthbar.init_health(GlobalVar.player_health)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -208,7 +170,7 @@ func switch_weapon(to):
 		weapon_damage = 7	#danno di un singolo proiettile
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.SHOTGUN_BULLET
 		
-		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100) , 100.0, 100.0, 5.0)
+		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100.0) , 100.0, 100.0, 5.0)
 		
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Shotgun/shotgun-fx_168bpm.wav")
@@ -339,7 +301,7 @@ func show_sparks(raycast):
 
 func calculate_bullet_lifetime(the_range, velocity):		#funzione che calcola il tempo di vita del proiettile
 	if velocity != 0:
-		return (-1 * the_range) / velocity
+		return float(-1 * float(the_range) / float(velocity))
 
 
 

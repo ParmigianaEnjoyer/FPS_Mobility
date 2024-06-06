@@ -1,7 +1,9 @@
 extends Node
 
-var diff := 1  #variabile globale difficoltà
 
+var player_health = 100
+
+var diff := 1  #variabile globale difficoltà
 
 #VARIABILI PER LE MUNIZIONI
 #capienza massima delle munizioni totali

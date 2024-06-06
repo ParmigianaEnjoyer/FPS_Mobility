@@ -6,7 +6,7 @@ const SPEED = 100.0
 @onready var ray = $RayCast3D
 @onready var lifetime = $Timer
 
-var damage = 10
+var damage = 5
 var bullet_range = 20
 
 # Called when the node enters the scene tree for the first time.
@@ -22,9 +22,9 @@ func _process(delta):
 
 	if ray.is_colliding() and ray.get_collider().is_in_group("player"):
 		mesh.visible = false
-		ray.get_collider().player_health -= damage
-		ray.get_collider().take_damage()
-		print(ray.get_collider().player_health)
+		#ray.get_collider().player_health -= damage
+		ray.get_collider().take_damage(damage)
+		print(GlobalVar.player_health)
 		queue_free()
 
 
