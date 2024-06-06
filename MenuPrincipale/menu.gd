@@ -12,7 +12,7 @@ func _process(delta):
 
 
 func _on_inizia_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn") #cambia scena al tutorial
+	get_tree().change_scene_to_file("res://Scenes/schermata_iniziale.tscn") #cambia scena al tutorial
 
 
 func _on_esci_pressed():

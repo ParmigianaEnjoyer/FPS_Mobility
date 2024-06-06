@@ -102,4 +102,5 @@ func take_damage(damage):
 	$ui/HealthBar.health = GlobalVar.player_health
 	
 	if GlobalVar.player_health <= 0:		#aggiorna la vita, se arriva a 0 o meno chiude il gioco
-		get_tree().quit()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		get_tree().change_scene_to_file("res://Scenes/morte.tscn")
