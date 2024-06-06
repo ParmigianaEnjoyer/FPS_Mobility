@@ -1,5 +1,7 @@
 extends Node3D
 
+func _ready():
+	GlobalVar.livello = 0
 
 func _input(event):
 	if Input.is_key_pressed(KEY_ESCAPE):

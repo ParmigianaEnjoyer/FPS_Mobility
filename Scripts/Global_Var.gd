@@ -5,6 +5,8 @@ var player_health = 100
 
 var diff := 1  #variabile globale difficoltà
 
+var livello := 0 #livello attuale
+
 #VARIABILI PER LE MUNIZIONI
 #capienza massima delle munizioni totali
 const AMMO_MAX_STORAGE := {
