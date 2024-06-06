@@ -37,7 +37,7 @@
 [ext_resource type="Texture2D" uid="uid://cll5wv3bap8i0" path="res://RadialMenu/cartoons-looney-tunes-yosemite-sam-and-pistol-pack.png" id="33_t7tww"]
 [ext_resource type="Texture2D" uid="uid://dy7smtlscesai" path="res://RadialMenu/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png" id="34_by1hv"]
 [ext_resource type="Texture2D" uid="uid://covipb6od6lq" path="res://RadialMenu/ddd77234556339caf227a92fd1d06e8f.png" id="35_6csrc"]
-[ext_resource type="PackedScene" uid="uid://ctv8ctxgyrqbw" path="res://Healthbar/healthbar.tscn" id="38_ss4bu"]
+[ext_resource type="PackedScene" uid="uid://ctv8ctxgyrqbw" path="res://Health_Bar/healthbar.tscn" id="38_ss4bu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_en4ot"]
 atlas = ExtResource("18_ydo1h")

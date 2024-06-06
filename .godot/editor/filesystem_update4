@@ -1,12 +1,2 @@
-res://Healthbar/healthbar.tscn
-res://Healthbar/healthbar.gd
-res://Scenes/ui.tscn
-res://Scenes/Player.tscn
-res://Scripts/Global_Var.gd
-res://Scenes/ui.gd
-res://Scripts/player.gd
-res://Enemy/tank_bullet.tscn
-res://Enemy/bullet.gd
-res://Enemy/tank_bullet.gd
-res://Enemy/enemy.tscn
-res://Enemy/bullet.tscn
+res://Drops/heart_drop.tscn
+res://Drops/heart_drop.gd

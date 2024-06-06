@@ -1,0 +1,81 @@
+[gd_scene load_steps=13 format=3 uid="uid://jy003xost4j2"]
+
+[ext_resource type="Texture2D" uid="uid://cubggfcd6i0ho" path="res://Immagini_hui/Heart_Animation.png" id="1_bwoww"]
+[ext_resource type="Script" path="res://Drops/heart_drop.gd" id="1_e7jtj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqb1n"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vck6n"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywosh"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpshv"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jxo3o"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b5msh"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki74h"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lls30"]
+atlas = ExtResource("1_bwoww")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p7qtv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqb1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vck6n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywosh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpshv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jxo3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b5msh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki74h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lls30")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_i7sr8"]
+
+[node name="heart_drop" type="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5641, 0)
+script = ExtResource("1_e7jtj")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+sprite_frames = SubResource("SpriteFrames_p7qtv")
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_i7sr8")
