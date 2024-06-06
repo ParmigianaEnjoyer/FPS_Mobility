@@ -1,5 +1,6 @@
-[gd_scene load_steps=62 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=63 format=3 uid="uid://db2h3t17k37pe"]
 
+[ext_resource type="Script" path="res://Scenes/Tutorial.gd" id="1_2ob7c"]
 [ext_resource type="PackedScene" uid="uid://bq5ymk6t7cbxd" path="res://Scenes/Player.tscn" id="1_gai3q"]
 [ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="2_t7qx0"]
 [ext_resource type="ArrayMesh" uid="uid://biu32ggrgola" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight.obj" id="3_jr28v"]
@@ -134,6 +135,7 @@ size = Vector3(1.39671, 1, 1.01222)
 data = PackedVector3Array(0, -1, -1.1547, 0, 0, -1.1547, -1, -1, -0.5774, -1, -1, -0.5774, 0, 0, -1.1547, -1, 0, -0.5774, 1, -1, 0.5774, 1, 0, 0.5774, 1, -1, -0.5774, 1, -1, -0.5774, 1, 0, 0.5774, 1, 0, -0.5774, -1, -1, -0.5774, -1, 0, -0.5774, -1, -1, 0.5774, -1, -1, 0.5774, -1, 0, -0.5774, -1, 0, 0.5774, 0, -1, 1.1547, 0, 0, 1.1547, 1, -1, 0.5774, 1, -1, 0.5774, 0, 0, 1.1547, 1, 0, 0.5774, -1, -1, 0.5774, -1, 0, 0.5774, 0, -1, 1.1547, 0, -1, 1.1547, -1, 0, 0.5774, 0, 0, 1.1547, 1, -1, -0.5774, 1, 0, -0.5774, 0, -1, -1.1547, 0, -1, -1.1547, 1, 0, -0.5774, 0, 0, -1.1547, 0, 0, -1.1547, 1, 0, -0.5774, -1, 0, -0.5774, -1, 0, -0.5774, 1, 0, -0.5774, -1, 0, 0.5774, -1, 0, 0.5774, 1, 0, -0.5774, 0, 0, 1.1547, 0, 0, 1.1547, 1, 0, -0.5774, 1, 0, 0.5774, 1, -1, 0.5774, 1, -1, -0.5774, 0, -1, 1.1547, 0, -1, 1.1547, 1, -1, -0.5774, -1, -1, 0.5774, -1, -1, 0.5774, 1, -1, -0.5774, -1, -1, -0.5774, -1, -1, -0.5774, 1, -1, -0.5774, 0, -1, -1.1547)
 
 [node name="Tutorial" type="Node3D"]
+script = ExtResource("1_2ob7c")
 
 [node name="Player" parent="." instance=ExtResource("1_gai3q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9934, 8.98291, 0)

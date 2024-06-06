@@ -16,7 +16,7 @@ func _on_controlli_pressed():
 
 
 func _on_audio_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://MenuPrincipale/audio.tscn") #va al menu dell'audio
 
 
 func _on_indietro_pressed():

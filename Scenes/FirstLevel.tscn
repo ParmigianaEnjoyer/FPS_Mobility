@@ -1,6 +1,7 @@
-[gd_scene load_steps=57 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=58 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="ArrayMesh" uid="uid://c553qa57bkh7c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_large.obj" id="1_c1hrc"]
+[ext_resource type="Script" path="res://Scenes/FirstLevel.gd" id="1_k3n5a"]
 [ext_resource type="ArrayMesh" uid="uid://c7x677bsamcj6" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/tree_single_A.obj" id="2_3jae3"]
 [ext_resource type="ArrayMesh" uid="uid://bkff13a3xll23" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass_bottom.obj" id="3_7owqi"]
 [ext_resource type="ArrayMesh" uid="uid://d0ilwmgvcj5hw" path="res://Models/OBJ format/campfire_logs.obj" id="3_jj5cu"]
@@ -120,6 +121,7 @@ data = PackedVector3Array(0.5465, 1.0571, -0.4294, 0.5465, 1.1226, 0.2767, 0.534
 size = Vector3(28.0957, 589.226, 1790.25)
 
 [node name="Level" type="Node3D"]
+script = ExtResource("1_k3n5a")
 
 [node name="Map" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -144.137, 0, 0)
