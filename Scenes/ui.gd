@@ -170,7 +170,7 @@ func switch_weapon(to):
 		weapon_damage = 7	#danno di un singolo proiettile
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.SHOTGUN_BULLET
 		
-		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100) , 100.0, 100.0, 5.0)
+		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100.0) , 100.0, 100.0, 5.0)
 		
 		$Shoot.volume_db = -20.0
 		$Shoot.stream = preload("res://Shotgun/shotgun-fx_168bpm.wav")
@@ -301,7 +301,7 @@ func show_sparks(raycast):
 
 func calculate_bullet_lifetime(the_range, velocity):		#funzione che calcola il tempo di vita del proiettile
 	if velocity != 0:
-		return (-1 * the_range) / velocity
+		return float(-1 * float(the_range) / float(velocity))
 
 
 
