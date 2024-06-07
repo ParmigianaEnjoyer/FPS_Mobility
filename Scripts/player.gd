@@ -81,9 +81,7 @@ func _physics_process(delta):
 	var target_fov = BASE_FOV + FOV_CHANGE * velocity_clamped
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
-	#close the game if press escape
-	if Input.is_action_just_pressed("exit"):
-		get_tree().quit()
+	
 	
 	move_and_slide()
 
