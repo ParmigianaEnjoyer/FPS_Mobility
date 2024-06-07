@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://ctv8ctxgyrqbw"]
+[gd_scene load_steps=8 format=3 uid="uid://ctv8ctxgyrqbw"]
 
 [ext_resource type="Script" path="res://Health_Bar/healthbar.gd" id="1_ryhjt"]
+[ext_resource type="Texture2D" uid="uid://cw3mubiv3tcq4" path="res://Health_Bar/health-red 32px.png" id="2_y2vas"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8brms"]
 bg_color = Color(0.568627, 0, 0, 1)
@@ -75,5 +76,18 @@ one_shot = true
 libraries = {
 "": SubResource("AnimationLibrary_dhoip")
 }
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -74.0
+offset_top = -39.0
+offset_right = -34.0
+offset_bottom = 1.0
+grow_vertical = 2
+scale = Vector2(2, 2)
+texture = ExtResource("2_y2vas")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

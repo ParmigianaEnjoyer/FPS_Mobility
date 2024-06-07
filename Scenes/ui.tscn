@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=74 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
@@ -38,6 +38,7 @@
 [ext_resource type="Texture2D" uid="uid://dy7smtlscesai" path="res://RadialMenu/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png" id="34_by1hv"]
 [ext_resource type="Texture2D" uid="uid://covipb6od6lq" path="res://RadialMenu/ddd77234556339caf227a92fd1d06e8f.png" id="35_6csrc"]
 [ext_resource type="PackedScene" uid="uid://ctv8ctxgyrqbw" path="res://Health_Bar/healthbar.tscn" id="38_ss4bu"]
+[ext_resource type="PackedScene" uid="uid://yjs2gyvqd1hm" path="res://Rage_Bar/rage_bar.tscn" id="39_f88y7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_en4ot"]
 atlas = ExtResource("18_ydo1h")
@@ -568,10 +569,10 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -13.0
-offset_top = -5.0
+offset_left = -12.9999
+offset_top = -8.0
 offset_right = 456.0
-offset_bottom = 207.0
+offset_bottom = 204.0
 grow_horizontal = 0
 grow_vertical = 0
 rotation = 3.14127
@@ -639,8 +640,14 @@ horizontal_alignment = 2
 anchors_preset = 0
 anchor_top = 0.0
 anchor_bottom = 0.0
-offset_left = 95.0
-offset_top = 34.0
-offset_right = 673.0
-offset_bottom = 64.0
+offset_left = 123.0
+offset_top = 37.0
+offset_right = 701.0
+offset_bottom = 67.0
 grow_vertical = 1
+
+[node name="RageBar" parent="." instance=ExtResource("39_f88y7")]
+offset_left = 47.0
+offset_top = 348.0
+offset_right = 747.0
+offset_bottom = 398.0

@@ -116,6 +116,7 @@ func die():
 		$Voice.play()
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
+		GlobalVar.enemy_killed_count += 1
 		
 	decide_what_to_drop()
 
