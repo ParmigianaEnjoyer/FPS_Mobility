@@ -41,8 +41,6 @@ func set_ammo_type():
 	var probabilita = calcola_probabilita()
 	var random_number = randf()  # Genera un numero casuale tra 0 e 2
 	
-	print(probabilita)
-	print(random_number)
 	if probabilita[0]==0 and probabilita[1]==0 and probabilita[2]==0:
 		queue_free()
 	else:

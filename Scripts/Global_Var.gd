@@ -6,7 +6,7 @@ var player_health = 100
 var diff := 1  #variabile globale difficoltà
 
 var livello := 0 #livello attuale
-var heart_inventory := 5
+var heart_inventory := 0
 
 #VARIABILI PER LE MUNIZIONI
 #capienza massima delle munizioni totali

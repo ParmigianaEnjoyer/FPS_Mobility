@@ -24,7 +24,6 @@ func _process(delta):
 		mesh.visible = false
 		#ray.get_collider().player_health -= damage
 		ray.get_collider().take_damage(damage)
-		print(GlobalVar.player_health)
 		queue_free()
 
 

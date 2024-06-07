@@ -140,15 +140,16 @@ func decide_what_to_drop():
 	var probabilita = calcola_prob()
 	var random_number = randf()
 	
+	print(probabilita)
+	print(random_number)
+	
 	if probabilita[0] == 0 and probabilita[1] == 0:
 		pass
 	else: 
 		if random_number < probabilita[0]:
 			ammo_drop()
-		elif random_number < probabilita[1]:
-			heart_drop()
 		else:
-			pass
+			heart_drop()
 
 
 func calcola_prob():
