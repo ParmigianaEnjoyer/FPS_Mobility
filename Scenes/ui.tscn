@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=75 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
@@ -37,7 +37,9 @@
 [ext_resource type="Texture2D" uid="uid://cll5wv3bap8i0" path="res://RadialMenu/cartoons-looney-tunes-yosemite-sam-and-pistol-pack.png" id="33_t7tww"]
 [ext_resource type="Texture2D" uid="uid://dy7smtlscesai" path="res://RadialMenu/Default_draw_a_simple_machine_gun_in_looney_tunes_and_disney_c_3.png" id="34_by1hv"]
 [ext_resource type="Texture2D" uid="uid://covipb6od6lq" path="res://RadialMenu/ddd77234556339caf227a92fd1d06e8f.png" id="35_6csrc"]
+[ext_resource type="PackedScene" uid="uid://digy2akgnqruj" path="res://Rage_Bar/ragebar.tscn" id="38_fxqqn"]
 [ext_resource type="PackedScene" uid="uid://ctv8ctxgyrqbw" path="res://Health_Bar/healthbar.tscn" id="38_ss4bu"]
+[ext_resource type="Texture2D" uid="uid://cpoulqs446ipt" path="res://Health_Bar/health-red 32px.png" id="39_1nfen"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_en4ot"]
 atlas = ExtResource("18_ydo1h")
@@ -635,6 +637,11 @@ scale = Vector2(3, 3)
 text = "150"
 horizontal_alignment = 2
 
+[node name="Ragebar" parent="." instance=ExtResource("38_fxqqn")]
+offset_top = 869.0
+offset_right = 679.0
+offset_bottom = 919.0
+
 [node name="HealthBar" parent="." instance=ExtResource("38_ss4bu")]
 anchors_preset = 0
 anchor_top = 0.0
@@ -644,3 +651,16 @@ offset_top = 34.0
 offset_right = 673.0
 offset_bottom = 64.0
 grow_vertical = 1
+
+[node name="TextureRect" type="TextureRect" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -108.0
+offset_top = -58.0
+offset_right = -68.0
+offset_bottom = -18.0
+grow_vertical = 2
+scale = Vector2(3, 3)
+texture = ExtResource("39_1nfen")

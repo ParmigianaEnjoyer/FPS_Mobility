@@ -1,14 +1,14 @@
+AnimatedSprite2D
+TextureRect
+ProgressBar
 AnimationPlayer
 Timer
 CollisionShape3D
 AnimatedSprite3D
-AnimatedSprite2D
 Sprite3D
 Area3D
-ProgressBar
 Sprite2D
 AudioStreamPlayer
 Label
-TextureRect
 Control
 AudioStreamPlayer3D
