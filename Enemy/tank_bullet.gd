@@ -22,15 +22,14 @@ func _process(delta):
 
 	if ray.is_colliding() and ray.get_collider().is_in_group("player"):
 		mesh.visible = false
-		#ray.get_collider().player_health -= damage
 		ray.get_collider().take_damage(damage)
 		queue_free()
 
 
-func _on_timer_timeout():
-	queue_free()
-
-
 func calculate_bullet_lifetime(the_bullet_range):
 	if SPEED != 0:
-		return the_bullet_range / SPEED
+		return float(the_bullet_range / SPEED)
+
+
+func _on_timer_timeout():
+	queue_free()

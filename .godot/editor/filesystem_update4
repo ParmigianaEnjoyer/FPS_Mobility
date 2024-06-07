@@ -16,3 +16,5 @@ res://radial_menu_item.tscn
 res://radial_menu.tscn
 res://Health_Bar/healthbar.tscn
 res://Health_Bar/healthbar.gd
+res://Enemy/tank_bullet.tscn
+res://Enemy/tank_enemy.tscn

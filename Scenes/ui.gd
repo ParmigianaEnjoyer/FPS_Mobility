@@ -394,13 +394,13 @@ func heal():
 	const HEALING_AMOUNT = 20
 	
 	if Input.is_action_just_pressed("heal") and GlobalVar.player_health < 100 and GlobalVar.heart_inventory > 0:
-		
 		GlobalVar.heart_inventory -= 1
-		var count = 0
-		var condizione = true
 		
 		if GlobalVar.player_health <= 100-HEALING_AMOUNT:
 			GlobalVar.player_health += HEALING_AMOUNT
 		else:
 			GlobalVar.player_healt = 100
 		healthbar.health = GlobalVar.player_health
+	
+	else:
+		pass
