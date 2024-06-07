@@ -37,6 +37,8 @@ func _process(_delta):
 	
 	if !radial_menu:
 		
+		heal()
+		
 		match current_weapon:
 			"hammer":
 				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
@@ -382,5 +384,23 @@ func set_HUI_ammo(type):
 		$HUI_ammo/ammo_icon.visible = false
 
 
+
+#GESTIONE DELLA SALUTE -------------------------------------------------------------------------------------------------#
 func update_heart_label():
 	$HUI_hearts/hearts_counter.text = str(GlobalVar.heart_inventory)
+
+
+func heal():
+	const HEALING_AMOUNT = 20
+	
+	if Input.is_action_just_pressed("heal") and GlobalVar.player_health < 100 and GlobalVar.heart_inventory > 0:
+		
+		GlobalVar.heart_inventory -= 1
+		var count = 0
+		var condizione = true
+		
+		if GlobalVar.player_health <= 100-HEALING_AMOUNT:
+			GlobalVar.player_health += HEALING_AMOUNT
+		else:
+			GlobalVar.player_healt = 100
+		healthbar.health = GlobalVar.player_health

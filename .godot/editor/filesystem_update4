@@ -11,3 +11,8 @@ res://Enemy/tank_enemy.gd
 res://Drops/ammo_drop.gd
 res://Enemy/bullet.gd
 res://Enemy/tank_bullet.gd
+res://RadialMenu.gd
+res://radial_menu_item.tscn
+res://radial_menu.tscn
+res://Health_Bar/healthbar.tscn
+res://Health_Bar/healthbar.gd
