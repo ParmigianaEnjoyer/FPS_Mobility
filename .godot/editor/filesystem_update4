@@ -1,4 +1,10 @@
+res://Enemy/enemy.tscn
+res://Scripts/Global_Var.gd
+res://Drops/heart_drop.gd
+res://Scenes/ui.tscn
+res://Scenes/ui.gd
 res://Drops/ammo_drop.tscn
 res://Drops/heart_drop.tscn
 res://Scenes/Player.tscn
-res://Enemy/enemy.tscn
+res://Enemy/enemy.gd
+res://Enemy/tank_enemy.gd

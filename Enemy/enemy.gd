@@ -116,8 +116,48 @@ func die():
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
 		
+	decide_what_to_drop()
+
+
+func ammo_drop():
 	#DROP DELLE MUNIZIONI
-	ammo_instance = ammo.instantiate()
-	ammo_instance.position = ray.global_position
+	ammo_instance = ammo.instantiate() 
+	ammo_instance.position = $".".global_position
 	#instance.transform.basis = ray.global_transform.basis
 	get_parent().add_child(ammo_instance)
+
+
+func heart_drop():
+	#DROP DEL CUORE (CURA)
+	heart_instance = heart.instantiate()
+	heart_instance.position = ray.global_position
+	#instance.transform.basis = ray.global_transform.basis
+	get_parent().add_child(heart_instance)	
+
+
+func decide_what_to_drop():
+	var probabilita = calcola_prob()
+	var random_number = randf()
+	
+	if probabilita[0] == 0 and probabilita[1] == 0:
+		pass
+	else: 
+		if random_number < probabilita[0]:
+			ammo_drop()
+		elif random_number < probabilita[1]:
+			heart_drop()
+		else:
+			pass
+
+
+func calcola_prob():
+	var count_munizioni_totali_attuali = GlobalVar.ammo_storage_total[GlobalVar.ammo_type.PISTOL_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.MACHINEGUN_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.SHOTGUN_BULLET]
+	const COUNT_MUNIZIONI_TOTALI_MAX = GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.PISTOL_BULLET] + GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.MACHINEGUN_BULLET] + GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.SHOTGUN_BULLET]
+	
+	var perc_ammo = float(count_munizioni_totali_attuali) / float(COUNT_MUNIZIONI_TOTALI_MAX)
+	var perc_heart = float(GlobalVar.player_health) / 100.0
+	
+	var prob_ammo = 1.0 - perc_ammo
+	var prob_heart = 1.0 - perc_heart
+	
+	return [prob_ammo, prob_heart]

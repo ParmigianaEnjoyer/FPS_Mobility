@@ -33,6 +33,7 @@ func _ready():
 func _process(_delta):
 	
 	set_HUI_ammo(GlobalVar.current_bullet_type)
+	update_heart_label()
 	
 	if !radial_menu:
 		
@@ -379,3 +380,7 @@ func set_HUI_ammo(type):
 		ammo_magazine_label.text = "\u221E"
 		ammo_storage_label.text = ""
 		$HUI_ammo/ammo_icon.visible = false
+
+
+func update_heart_label():
+	$HUI_hearts/hearts_counter.text = str(GlobalVar.heart_inventory)
