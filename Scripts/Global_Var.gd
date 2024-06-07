@@ -45,3 +45,5 @@ var ammo_storage_total := {
 	ammo_type.SHOTGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.SHOTGUN_BULLET],
 	ammo_type.MACHINEGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.MACHINEGUN_BULLET]
 }
+
+var enemy_killed_count = 0
