@@ -555,11 +555,12 @@ frame_progress = 0.915366
 
 [node name="hearts_counter" type="Label" parent="HUI_hearts"]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 47.5
-offset_right = 89.0
-offset_bottom = 70.5
+offset_left = 28.5
+offset_top = 50.5
+offset_right = 68.5
+offset_bottom = 73.5
 text = "  0"
+horizontal_alignment = 2
 
 [node name="HUI_ammo" type="TextureRect" parent="."]
 anchors_preset = 3
@@ -635,11 +636,11 @@ text = "150"
 horizontal_alignment = 2
 
 [node name="HealthBar" parent="." instance=ExtResource("38_ss4bu")]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = -597.0
-offset_top = -238.0
-offset_right = -19.0
-offset_bottom = -208.0
-grow_horizontal = 0
+anchors_preset = 0
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = 95.0
+offset_top = 34.0
+offset_right = 673.0
+offset_bottom = 64.0
+grow_vertical = 1

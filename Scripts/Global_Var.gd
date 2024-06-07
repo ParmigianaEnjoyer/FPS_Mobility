@@ -6,6 +6,7 @@ var player_health = 100
 var diff := 1  #variabile globale difficoltà
 
 var livello := 0 #livello attuale
+var heart_inventory := 1	#numero di cuori (cure) nell'inventario
 
 #VARIABILI PER LE MUNIZIONI
 #capienza massima delle munizioni totali
@@ -44,13 +45,3 @@ var ammo_storage_total := {
 	ammo_type.SHOTGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.SHOTGUN_BULLET],
 	ammo_type.MACHINEGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.MACHINEGUN_BULLET]
 }
-
-
-## Called when the node enters the scene tree for the first time.
-#func _ready():
-	#pass # Replace with function body.
-#
-#
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(_delta):
-	#pass

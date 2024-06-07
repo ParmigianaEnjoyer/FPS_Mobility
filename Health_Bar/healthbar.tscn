@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://ctv8ctxgyrqbw"]
+[gd_scene load_steps=7 format=3 uid="uid://ctv8ctxgyrqbw"]
 
 [ext_resource type="Script" path="res://Health_Bar/healthbar.gd" id="1_ryhjt"]
 
@@ -31,6 +31,14 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="Animation" id="Animation_cgsax"]
+resource_name = "healing"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dhoip"]
+_data = {
+"healing": SubResource("Animation_cgsax")
+}
+
 [node name="HealthBar" type="ProgressBar"]
 z_index = 1
 anchors_preset = 2
@@ -62,5 +70,10 @@ show_percentage = false
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.4
 one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dhoip")
+}
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

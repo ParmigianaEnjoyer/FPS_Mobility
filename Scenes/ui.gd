@@ -33,8 +33,11 @@ func _ready():
 func _process(_delta):
 	
 	set_HUI_ammo(GlobalVar.current_bullet_type)
+	update_heart_label()
 	
 	if !radial_menu:
+		
+		heal()
 		
 		match current_weapon:
 			"hammer":
@@ -379,3 +382,25 @@ func set_HUI_ammo(type):
 		ammo_magazine_label.text = "\u221E"
 		ammo_storage_label.text = ""
 		$HUI_ammo/ammo_icon.visible = false
+
+
+
+#GESTIONE DELLA SALUTE -------------------------------------------------------------------------------------------------#
+func update_heart_label():
+	$HUI_hearts/hearts_counter.text = str(GlobalVar.heart_inventory)
+
+
+func heal():
+	const HEALING_AMOUNT = 20
+	
+	if Input.is_action_just_pressed("heal") and GlobalVar.player_health < 100 and GlobalVar.heart_inventory > 0:
+		GlobalVar.heart_inventory -= 1
+		
+		if GlobalVar.player_health <= 100-HEALING_AMOUNT:
+			GlobalVar.player_health += HEALING_AMOUNT
+		else:
+			GlobalVar.player_healt = 100
+		healthbar.health = GlobalVar.player_health
+	
+	else:
+		pass

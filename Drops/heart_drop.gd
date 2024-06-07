@@ -4,20 +4,21 @@ extends Area3D
 const HEALTL_VALUE = 20.0
 const MAX_QUANTITY = 5
 
-var quantity = 0	#mettere globale
-
 
 func _ready():
-	if quantity == MAX_QUANTITY:
+	if GlobalVar.heart_inventory == MAX_QUANTITY:
 		queue_free()
-	
-	decide_to_drop()
-
+	else:
+		decide_to_drop()
 
 
 func decide_to_drop():
 	var prob_drop = calcola_probabilita()
 	var random_number = randf()
+	
+	print("PROB DEL CUORE")
+	print(prob_drop)
+	print(random_number)
 	
 	if random_number < prob_drop:
 		pass
@@ -34,6 +35,7 @@ func calcola_probabilita():
 
 func _on_body_entered(body):
 	if body.is_in_group("player"):
-		if quantity < MAX_QUANTITY:
-			quantity += 1
+		
+		if GlobalVar.heart_inventory < MAX_QUANTITY:
+			GlobalVar.heart_inventory += 1
 	queue_free()
