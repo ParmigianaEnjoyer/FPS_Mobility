@@ -1,0 +1,69 @@
+[gd_scene load_steps=10 format=3 uid="uid://yjs2gyvqd1hm"]
+
+[ext_resource type="Texture2D" uid="uid://hnego52i7fxs" path="res://Rage_Bar/skull/sprite_0.png" id="1_qik0t"]
+[ext_resource type="Texture2D" uid="uid://vxwfgpqxf581" path="res://Rage_Bar/skull/sprite_1.png" id="2_g5s2d"]
+[ext_resource type="Texture2D" uid="uid://d1pe4rqblcsa6" path="res://Rage_Bar/skull/sprite_2.png" id="3_hsjf4"]
+[ext_resource type="Texture2D" uid="uid://xjy05agliclm" path="res://Rage_Bar/skull/sprite_3.png" id="4_0vuhe"]
+[ext_resource type="Texture2D" uid="uid://dhffietg6mej8" path="res://Rage_Bar/skull/sprite_4.png" id="5_i4ae7"]
+[ext_resource type="Texture2D" uid="uid://cmjeks55ytdrq" path="res://Rage_Bar/skull/sprite_5.png" id="6_g16d1"]
+[ext_resource type="Texture2D" uid="uid://b43o457sntsag" path="res://Rage_Bar/skull/sprite_6.png" id="7_ucig3"]
+[ext_resource type="Texture2D" uid="uid://cgxydkur6ox5c" path="res://Rage_Bar/skull/sprite_7.png" id="8_iuvic"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kjhxs"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qik0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_g5s2d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_hsjf4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0vuhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_i4ae7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_g16d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ucig3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iuvic")
+}],
+"loop": true,
+"name": &"animated",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_qik0t")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[node name="RageBar" type="ProgressBar"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 52.0
+offset_top = 411.0
+offset_right = 752.0
+offset_bottom = 461.0
+grow_vertical = 2
+rotation = -1.5708
+show_percentage = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-15, 25)
+rotation = 1.5708
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_kjhxs")
+autoplay = "default"
