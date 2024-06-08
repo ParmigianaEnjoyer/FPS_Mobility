@@ -1,6 +1,7 @@
 extends Control
 
 @onready var cam = get_parent()
+@onready var ragebar = $"../ui/Ragebar"
 
 var time_scale_target = 1.0
 var interpolation = 1.0
@@ -11,7 +12,7 @@ func _ready():
 	hide()
 
 func _input(event):
-	if event.is_action_pressed("radial_menu") and !get_tree().paused:
+	if event.is_action_pressed("radial_menu") and !get_tree().paused and !GlobalVar.rage_mode:
 		$AnimationPlayer.play("zoom")
 		get_node("../ui/Weapon").visible = false
 		
