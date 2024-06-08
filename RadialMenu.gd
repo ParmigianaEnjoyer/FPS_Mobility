@@ -1,7 +1,6 @@
 extends Control
 
 @onready var cam = get_parent()
-@onready var ragebar = $"../ui/Ragebar"
 
 var time_scale_target = 1.0
 var interpolation = 1.0

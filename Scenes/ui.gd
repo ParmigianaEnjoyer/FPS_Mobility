@@ -401,7 +401,7 @@ func heal():
 		if GlobalVar.player_health <= 100-HEALING_AMOUNT:
 			GlobalVar.player_health += HEALING_AMOUNT
 		else:
-			GlobalVar.player_healt = 100
+			GlobalVar.player_health = 100
 		healthbar.health = GlobalVar.player_health
 	
 	else:
