@@ -12,11 +12,18 @@ func _ready():
 
 func _process(_delta):
 	$".".value = GlobalVar.enemy_killed_count
+	var somma_munizioni = GlobalVar.ammo_storage_total[GlobalVar.ammo_type.PISTOL_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.MACHINEGUN_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.SHOTGUN_BULLET]
+	
+	print(somma_munizioni)
 	
 	if reached_rage_point() and !GlobalVar.rage_mode:
 		timer.start(RAGE_TIMER)
 		GlobalVar.rage_mode = true
 		$AnimatedSprite2D.play("animated")
+		
+	if somma_munizioni == 0:
+		timer.stop()
+		init_points()
 
 
 func init_points():

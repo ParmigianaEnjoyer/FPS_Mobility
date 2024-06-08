@@ -11,9 +11,9 @@ var heart_inventory := 1	#numero di cuori (cure) nell'inventario
 #VARIABILI PER LE MUNIZIONI
 #capienza massima delle munizioni totali
 const AMMO_MAX_STORAGE := {
-	ammo_type.PISTOL_BULLET: 2,	#100
-	ammo_type.SHOTGUN_BULLET: 2,	#30
-	ammo_type.MACHINEGUN_BULLET: 22,	#150
+	ammo_type.PISTOL_BULLET: 100,	#100
+	ammo_type.SHOTGUN_BULLET: 30,	#30
+	ammo_type.MACHINEGUN_BULLET: 150,	#150
 }
 
 #capienza massima di caricatori
