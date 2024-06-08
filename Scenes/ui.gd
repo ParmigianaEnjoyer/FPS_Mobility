@@ -22,6 +22,7 @@ var sparks_particles = load("res://Scenes/sparks.tscn")
 var shooted_count = 0 		#variabile che conta i colpi sparati
 var radial_menu = false		#check if radial menu is on or not
 
+var rage_mode_on = false	#variabile che serve a far capire alla assalto che è finita la rage e reimpostare la giusta animazione
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -412,6 +413,7 @@ func heal():
 #GESTIONE DELLA RAGE MODE --------------------------------------------------------------------------------------------------#
 func rage_mode():
 	if GlobalVar.rage_mode:
+		rage_mode_on = true
 		
 		match current_weapon:
 			"hammer":
@@ -466,9 +468,11 @@ func rage_mode():
 							use_ammo(GlobalVar.current_bullet_type)
 						else:
 							reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
-				#if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
-					#shooted_count = 0
-					#$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+							
+	elif current_weapon == "machinegun" and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and rage_mode_on:
+		shooted_count = 0
+		$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+		rage_mode_on = false
 
 
 func switch_weapon_randomly(actual_weapon):
