@@ -82,7 +82,7 @@ show_percentage = false
 script = ExtResource("1_q50so")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-15, 25)
+position = Vector2(-17.0001, 24.9999)
 rotation = 1.5708
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_kjhxs")
