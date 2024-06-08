@@ -47,3 +47,5 @@ var ammo_storage_total := {
 }
 
 var enemy_killed_count = 0
+
+var rage_mode

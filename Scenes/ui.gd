@@ -14,6 +14,7 @@ extends CanvasLayer
 @onready var ammo_magazine_label = $HUI_ammo/ammo_magazine
 @onready var ammo_storage_label = $HUI_ammo/ammo_stroage_total
 @onready var healthbar = $HealthBar
+@onready var ragebar = $RageBar
 
 var blood_particles = load("res://Scenes/blood.tscn")
 var sparks_particles = load("res://Scenes/sparks.tscn")
@@ -37,6 +38,7 @@ func _process(_delta):
 	
 	if !radial_menu:
 		
+		rage_mode()
 		heal()
 		
 		match current_weapon:
@@ -399,8 +401,89 @@ func heal():
 		if GlobalVar.player_health <= 100-HEALING_AMOUNT:
 			GlobalVar.player_health += HEALING_AMOUNT
 		else:
-			GlobalVar.player_healt = 100
+			GlobalVar.player_health = 100
 		healthbar.health = GlobalVar.player_health
 	
 	else:
 		pass
+
+
+
+#GESTIONE DELLA RAGE MODE --------------------------------------------------------------------------------------------------#
+func rage_mode():
+	if GlobalVar.rage_mode:
+		
+		match current_weapon:
+			"hammer":
+				switch_weapon_randomly(current_weapon)
+			"pistol":
+				if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
+					switch_weapon_randomly(current_weapon)
+				else:
+					if cooldown_timer.is_stopped() and reload_time.is_stopped():
+						if magazine_has_ammo(GlobalVar.current_bullet_type):
+							use_ammo(GlobalVar.current_bullet_type)
+							cooldown_timer.start(1.0 / fire_rate)	
+							$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
+							$Shoot.play()
+							shoot(current_weapon)
+						else:
+							reload(GlobalVar.current_bullet_type, $Weapon/Pistol_AnimatedSprite2D)
+					
+			"shotgun":
+				if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
+					switch_weapon_randomly(current_weapon)
+				else:
+					if cooldown_timer.is_stopped():
+						use_ammo(GlobalVar.current_bullet_type)
+						cooldown_timer.start(1.0 / fire_rate)
+						$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
+						$Shoot.play()
+						shoot(current_weapon)
+						$Reload.play()
+						reload(GlobalVar.current_bullet_type, $Weapon/Shotgun_AnimatedSprite2D)
+					
+			"machinegun":
+				if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
+					switch_weapon_randomly(current_weapon)
+				else:
+					if cooldown_timer.is_stopped() and reload_time.is_stopped():
+						if magazine_has_ammo(GlobalVar.current_bullet_type):
+							cooldown_timer.start(1.0 / fire_rate)
+							shooted_count += 1
+							#si alternano tre suoni differenti per la machinegun
+							match shooted_count % 3:
+								0:
+									$Shoot.stream = preload("res://Machinegun/minigun.ogg")
+								1:
+									$Shoot.stream = preload("res://Machinegun/minigun2.ogg")
+								2:
+									$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
+									
+							$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
+							$Shoot.play()
+							shoot(current_weapon)
+							use_ammo(GlobalVar.current_bullet_type)
+						else:
+							reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
+				#if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
+					#shooted_count = 0
+					#$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+
+
+func switch_weapon_randomly(actual_weapon):
+	var number = randi() % 3
+	var next_weapon = ""
+	
+	match number:
+		0:
+			next_weapon = "pistol"
+		1:
+			next_weapon = "shotgun"
+		2:
+			next_weapon = "machinegun"
+	
+	if next_weapon == actual_weapon:
+		switch_weapon_randomly(actual_weapon)
+	else:
+		switch_weapon(number)
