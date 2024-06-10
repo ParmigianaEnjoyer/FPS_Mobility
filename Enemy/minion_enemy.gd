@@ -1,14 +1,15 @@
 extends CharacterBody3D
 
-const SPEED = 6.0
+const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 40.0
-const ATTACK_RANGE = 20.0
-const ATTACK_COOLDOWN = 0.5	#secondi che separano un attacco dall'altro
+const ATTACK_RANGE = 3.0
+const ATTACK_COOLDOWN = 1	#secondi che separano un attacco dall'altro
+const WAIT_BEFORE_FOLLOW_AGAIN = 1.5 		#tempo che il nemico aspetta se il player si allontana prima di seguirlo nuovamente
 
 @export var max_hitpoints := 1 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
-@export var damage = 10 * GlobalVar.diff
+@export var damage = 1 * GlobalVar.diff
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -18,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var ray = $RayCast3D
 @onready var timer = $CooldownTimer
 @onready var d_timer = $DamageTimer
+@onready var move_again_timer = $MoveAgainTimer
 
 var player
 var provoked = false		#l'enemy è stato provocato? 
@@ -50,20 +52,28 @@ func _process(_delta):
 	if !dead and provoked and !attacking:
 		$AnimatedSprite3D.play("walk")
 		navigation_agent_3d.target_position = player.global_position
-	else: if dead:
+	elif dead:
 		if !stop:
 			$AnimatedSprite3D.play("die")
 			stop = true
+	
+	if !move_again_timer.is_stopped() and !attacking:
+		$AnimatedSprite3D.play("default")
 
 
 func _physics_process(delta):
 		
 	if !dead:
 		var next_position = navigation_agent_3d.get_next_path_position()
+		
 		ray.look_at(player.global_position)
 		# Add the gravity.
 		if not is_on_floor():
 			velocity.y -= gravity * delta
+			
+		## Handle jump.
+		#if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+			#velocity.y = JUMP_VELOCITY
 		
 		var direction = global_position.direction_to(next_position)
 		var distance = global_position.distance_to(player.global_position)
@@ -73,9 +83,10 @@ func _physics_process(delta):
 			provoked = true
 			
 		if provoked and distance <= ATTACK_RANGE:
-			attacking = true
 			if ray.is_colliding() and ray.get_collider().is_in_group("player"):
+				attacking = true
 				attack()
+				move_again_timer.start(WAIT_BEFORE_FOLLOW_AGAIN)
 		else:
 			attacking = false
 		
@@ -86,7 +97,7 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-		if !attacking: 
+		if !attacking and move_again_timer.is_stopped(): 
 			move_and_slide()
 
 
@@ -95,6 +106,8 @@ func attack():
 		timer.start(ATTACK_COOLDOWN)
 		$AnimatedSprite3D.play("shoot")
 		instance = bullet.instantiate()
+		instance.damage = damage
+		instance.SPEED = 10
 		instance.position = ray.global_position
 		instance.transform.basis = ray.global_transform.basis
 		get_parent().add_child(instance)
