@@ -72,12 +72,13 @@ func _physics_process(delta):
 		if distance <= AGGRO_RANGE:
 			provoked = true
 			
-		if provoked and distance <= ATTACK_RANGE:
+		if (provoked and distance <= float(ATTACK_RANGE * 0.75)) or attacking:
 			attacking = true
 			if ray.is_colliding() and ray.get_collider().is_in_group("player"):
+				attacking = true
 				attack()
-		else:
-			attacking = false
+			elif !ray.is_colliding() or (ray.is_colliding() and !ray.get_collider().is_in_group("player")):
+				attacking = false
 		
 		if direction:
 			velocity.x = direction.x * SPEED

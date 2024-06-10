@@ -5,7 +5,7 @@ const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 40.0
 const ATTACK_RANGE = 20.0
-const ATTACK_COOLDOWN = 0.5	#secondi che separano un attacco dall'altro
+const ATTACK_COOLDOWN = 1	#secondi che separano un attacco dall'altro
 
 @export var max_hitpoints := 1 * GlobalVar.diff	#400
 @export var fire_rate = 2.0 		#numero di colpi sparati in un secondo
@@ -77,12 +77,13 @@ func _physics_process(delta):
 		if distance <= AGGRO_RANGE:
 			provoked = true
 			
-		if provoked and distance <= ATTACK_RANGE:
+		if (provoked and distance <= float(ATTACK_RANGE * 0.75)) or attacking:
 			attacking = true
 			if ray.is_colliding() and ray.get_collider().is_in_group("player"):
+				attacking = true
 				attack()
-		else:
-			attacking = false
+			elif !ray.is_colliding() or (ray.is_colliding() and !ray.get_collider().is_in_group("player")):
+				attacking = false
 		
 		if direction:
 			velocity.x = direction.x * SPEED
@@ -97,7 +98,7 @@ func _physics_process(delta):
 
 func attack():
 	if timer.is_stopped():
-		timer.start(0.5)
+		timer.start(ATTACK_COOLDOWN)
 		$AnimatedSprite3D.play("shoot")
 		instance = bullet.instantiate()
 		instance.position = ray.global_position
