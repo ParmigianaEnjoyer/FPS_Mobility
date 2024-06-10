@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=3 uid="uid://bk16ctw6m5y5o"]
+
+[ext_resource type="Texture2D" uid="uid://b5k1ifwk6ojwp" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 1.png" id="1_l3y4j"]
+[ext_resource type="Script" path="res://Enemy/minion_enemy.gd" id="1_mqrhw"]
+[ext_resource type="Texture2D" uid="uid://bagg3nmtc1sao" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 6.png" id="2_mmmy3"]
+[ext_resource type="Texture2D" uid="uid://c86h4lomyl3ou" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 7.png" id="3_u1ymt"]
+[ext_resource type="Texture2D" uid="uid://5haxw1urusub" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 8.png" id="4_yqgqj"]
+[ext_resource type="Texture2D" uid="uid://brymgei6fedf8" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 4.png" id="5_8r602"]
+[ext_resource type="Texture2D" uid="uid://boj5bjg8noist" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 5.png" id="6_0c800"]
+[ext_resource type="Texture2D" uid="uid://20406xakbgb5" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 2.png" id="7_8s70e"]
+[ext_resource type="Texture2D" uid="uid://bt2arj5ryl5su" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 3.png" id="8_to3ye"]
+[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="10_w5wcm"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_htuqw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_l3y4j")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mmmy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_u1ymt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yqgqj")
+}],
+"loop": false,
+"name": &"die",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8r602")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0c800")
+}],
+"loop": false,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_8s70e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_to3ye")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_astqm"]
+radius = 0.433663
+height = 1.74661
+
+[node name="Minion_enemy" type="CharacterBody3D" groups=["enemy"]]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_mqrhw")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.895973, 0.0663693)
+target_position = Vector3(0, 0, -2)
+collision_mask = 3
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.6, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_htuqw")
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88046, 0)
+shape = SubResource("CapsuleShape3D_astqm")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("10_w5wcm")
+
+[node name="MoveAgainTimer" type="Timer" parent="."]
+one_shot = true
