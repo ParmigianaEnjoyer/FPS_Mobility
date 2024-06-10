@@ -88,7 +88,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"walk",
-"speed": 3.0
+"speed": 4.0
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1wgqk"]
@@ -104,7 +104,7 @@ script = ExtResource("1_2fivp")
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.6393, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_ed35f")
-animation = &"shoot"
+animation = &"walk"
 autoplay = "default"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
