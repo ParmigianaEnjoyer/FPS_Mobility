@@ -123,7 +123,7 @@ func die():
 func ammo_drop():
 	#DROP DELLE MUNIZIONI
 	ammo_instance = ammo.instantiate() 
-	ammo_instance.position = $".".global_position
+	ammo_instance.position = ray.global_position
 	#instance.transform.basis = ray.global_transform.basis
 	get_parent().add_child(ammo_instance)
 
@@ -139,10 +139,6 @@ func heart_drop():
 func decide_what_to_drop():
 	var probabilita = calcola_prob()
 	var random_number = randf()
-	
-	
-	print(probabilita)
-	print(random_number)
 	
 	if probabilita[0] == 0 and probabilita[1] == 0:
 		pass

@@ -41,9 +41,9 @@ var ammo_magazine := {
 
 #Capienza attuale delle munizioni totali
 var ammo_storage_total := {
-	ammo_type.PISTOL_BULLET: AMMO_MAX_STORAGE[ammo_type.PISTOL_BULLET],
-	ammo_type.SHOTGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.SHOTGUN_BULLET],
-	ammo_type.MACHINEGUN_BULLET: AMMO_MAX_STORAGE[ammo_type.MACHINEGUN_BULLET]
+	ammo_type.PISTOL_BULLET: 50,		#50,
+	ammo_type.SHOTGUN_BULLET: 15,		#15
+	ammo_type.MACHINEGUN_BULLET: 75		#75
 }
 
 var enemy_killed_count = 0
