@@ -16,10 +16,6 @@ func decide_to_drop():
 	var prob_drop = calcola_probabilita()
 	var random_number = randf()
 	
-	print("PROB DEL CUORE")
-	print(prob_drop)
-	print(random_number)
-	
 	if random_number < prob_drop:
 		pass
 	else:

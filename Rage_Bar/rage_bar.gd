@@ -3,8 +3,9 @@ extends ProgressBar
 @onready var timer = $Timer
 
 
-const RAGE_POINT = 2 #20
+const RAGE_POINT = 20
 const RAGE_TIMER = 20.0
+
 
 func _ready():
 	init_points()
@@ -13,8 +14,6 @@ func _ready():
 func _process(_delta):
 	$".".value = GlobalVar.enemy_killed_count
 	var somma_munizioni = GlobalVar.ammo_storage_total[GlobalVar.ammo_type.PISTOL_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.MACHINEGUN_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.SHOTGUN_BULLET]
-	
-	print(somma_munizioni)
 	
 	if reached_rage_point() and !GlobalVar.rage_mode:
 		timer.start(RAGE_TIMER)
@@ -32,7 +31,6 @@ func init_points():
 	$".".value = 0
 	$".".max_value = RAGE_POINT
 	$AnimatedSprite2D.play("default")
-	
 
 
 func reached_rage_point():

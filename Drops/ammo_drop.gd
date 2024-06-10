@@ -41,20 +41,23 @@ func set_ammo_type():
 	var probabilita = calcola_probabilita()
 	var random_number = randf()  # Genera un numero casuale tra 0 e 2
 	
+	
 	if probabilita[0]==0 and probabilita[1]==0 and probabilita[2]==0:
 		queue_free()
 	else:
-		if random_number < probabilita[2]:
-			type = ammo_type.PISTOL_BULLET
-			sprite.texture = load("res://Pistol/ammo_pistol.png")
+		if random_number < probabilita[0]:
 			
-		elif random_number < probabilita[1]:
+			type = ammo_type.SHOTGUN_BULLET
+			sprite.texture = load("res://Shotgun/ammo_shotgun.png")
+			
+		elif random_number < (probabilita[1]+probabilita[0]):
 			type = ammo_type.MACHINEGUN_BULLET
 			sprite.texture = load("res://Machinegun/ammo_machinegun.png")
 			
+			
 		else:
-			type = ammo_type.SHOTGUN_BULLET
-			sprite.texture = load("res://Shotgun/ammo_shotgun.png")
+			type = ammo_type.PISTOL_BULLET
+			sprite.texture = load("res://Pistol/ammo_pistol.png")
 
 
 func calcola_probabilita():
