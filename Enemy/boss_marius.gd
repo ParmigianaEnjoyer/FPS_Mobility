@@ -6,7 +6,7 @@ const AGGRO_RANGE = 100.0
 const ATTACK_RANGE = 30.0
 const ATTACK_COOLDOWN = 2	#secondi che separano un attacco dall'altro
 
-@export var max_hitpoints := 1 * GlobalVar.diff	#100
+@export var max_hitpoints := 1000 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
 @export var damage = 10 * GlobalVar.diff
 
@@ -19,6 +19,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var ray = $RayCast3D
 @onready var timer = $CooldownTimer
 @onready var d_timer = $DamageTimer
+@onready var healthbar = $HealthBar
 
 var player
 var provoked = false		#l'enemy è stato provocato? 
@@ -45,9 +46,13 @@ func _ready() -> void:
 	ray.target_position.z = (ATTACK_RANGE * -1) - 1
 	$AnimatedSprite3D.play("default")
 	player = get_tree().get_first_node_in_group("player")
+	#healthbar.init_health(max_hitpoints)
+	$HealthBar/TextureRect.visible = false
+	healthbar.init_health(hitpoints / 10)
 
 
 func _process(_delta):
+	print(hitpoints)
 	if !dead and provoked and !attacking:
 		$AnimatedSprite3D.play("walk")
 		navigation_agent_3d.target_position = player.global_position
