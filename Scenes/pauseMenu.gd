@@ -30,7 +30,13 @@ func _on_ricomincia_pressed():
 	resume()
 	hide()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	get_tree().reload_current_scene()
+	if GlobalVar.livello == 0:
+		GlobalVar.reset_richiesto = true
+		get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn")
+	elif GlobalVar.livello == 1:
+		GlobalVar.reset_richiesto = true
+		get_tree().change_scene_to_file("res://Scenes/FirstLevel.tscn")
+		
 
 func _on_esci_pressed():
 	resume()
