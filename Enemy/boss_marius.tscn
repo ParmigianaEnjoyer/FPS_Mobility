@@ -1,0 +1,96 @@
+[gd_scene load_steps=12 format=3 uid="uid://dkm34hpiyarjj"]
+
+[ext_resource type="Texture2D" uid="uid://cs8sufojpgies" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 8.png" id="1_56ux6"]
+[ext_resource type="Texture2D" uid="uid://cvfovdma4051s" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 3.png" id="2_tt4b4"]
+[ext_resource type="Texture2D" uid="uid://dnm1th7orvhjn" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 4.png" id="3_wt4ia"]
+[ext_resource type="Texture2D" uid="uid://cim8l33qxkr20" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 5.png" id="4_q7fii"]
+[ext_resource type="Texture2D" uid="uid://cw48fbgtknlob" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 6.png" id="5_nxpef"]
+[ext_resource type="Texture2D" uid="uid://sw7ckoiq3b5f" path="res://Enemy/Sprite Boss MOOSHnGUN/Boss_default .png" id="6_0syfx"]
+[ext_resource type="Texture2D" uid="uid://bly2opt2r3por" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 7.png" id="7_aqr52"]
+[ext_resource type="Texture2D" uid="uid://cye66iagest3e" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 1.png" id="8_7wlrk"]
+[ext_resource type="Texture2D" uid="uid://tp7eob4w8eeo" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 2.png" id="9_cjvx1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dfksu"]
+radius = 4.79052
+height = 19.6228
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbq4v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_56ux6")
+}],
+"loop": false,
+"name": &"attack_fury",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tt4b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wt4ia")
+}],
+"loop": false,
+"name": &"attack_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q7fii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nxpef")
+}],
+"loop": true,
+"name": &"attack_right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0syfx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aqr52")
+}],
+"loop": false,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7wlrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cjvx1")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[node name="Boss_Marius" type="CharacterBody3D"]
+collision_layer = 5
+collision_mask = 5
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.408, 0, 0, 0, 1, 0, 4.02224, 0)
+shape = SubResource("CapsuleShape3D_dfksu")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CollisionShape3D"]
+transform = Transform3D(0.925926, 0, 0, 0, 2.27273, 0, 0, 0, 0.925926, 0, 14.4838, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_dbq4v")
+autoplay = "default"
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.52491, 0)
+target_position = Vector3(0, 0, -20)
+collision_mask = 3
