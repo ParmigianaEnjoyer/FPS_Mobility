@@ -16,4 +16,5 @@ func _on_indietro_pressed():
 
 
 func _on_inizia_pressed():
+	GlobalVar.reset_richiesto = true
 	get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn")

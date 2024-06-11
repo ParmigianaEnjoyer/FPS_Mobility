@@ -3,6 +3,8 @@ extends Node
 
 var player_health = 100
 
+var reset_richiesto = false
+
 var diff := 1  #variabile globale difficoltà
 
 var livello := 0 #livello attuale
@@ -49,3 +51,4 @@ var ammo_storage_total := {
 var enemy_killed_count = 0
 
 var rage_mode
+
