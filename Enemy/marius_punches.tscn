@@ -39,8 +39,8 @@ script = ExtResource("1_2ocn6")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.157355, -0.525548, 0)
 sprite_frames = SubResource("SpriteFrames_dcxue")
-frame = 1
-frame_progress = 0.420822
+autoplay = "default"
+frame_progress = 0.296301
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

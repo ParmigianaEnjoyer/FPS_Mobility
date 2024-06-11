@@ -104,7 +104,7 @@ func attack():
 		match punches_count % 2:
 			0: $AnimatedSprite3D.play("attack_left")
 			1: $AnimatedSprite3D.play("attack_right")
-		
+			
 		instance = bullet.instantiate()
 		instance.position = ray.global_position
 		instance.transform.basis = ray.global_transform.basis
