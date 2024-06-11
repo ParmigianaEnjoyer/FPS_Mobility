@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dan2hf8qp5ov3"]
+
+[ext_resource type="Script" path="res://Enemy/marius_punches.gd" id="1_2ocn6"]
+[ext_resource type="Texture2D" uid="uid://flr3r8ok7w65" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_12.png" id="1_5pf74"]
+[ext_resource type="Texture2D" uid="uid://b65xmc2qackdj" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_20.png" id="2_tkg10"]
+[ext_resource type="Texture2D" uid="uid://1ao883qslxcd" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_31.png" id="3_uap45"]
+[ext_resource type="Texture2D" uid="uid://dyqd50u3au8nf" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_42.png" id="4_upjvw"]
+[ext_resource type="Texture2D" uid="uid://cgnafd7817w8l" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_47.png" id="5_jqeav"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcxue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5pf74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tkg10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uap45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_upjvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jqeav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_icx0q"]
+radius = 0.327669
+
+[node name="Marius_punches" type="Node3D"]
+script = ExtResource("1_2ocn6")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.157355, -0.525548, 0)
+sprite_frames = SubResource("SpriteFrames_dcxue")
+autoplay = "default"
+frame_progress = 0.296301
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(3.68007, 0, 0, 0, 3.68007, 0, 0, 0, 3.68007, 0, 0.0823418, 0)
+shape = SubResource("SphereShape3D_icx0q")
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+autostart = true
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

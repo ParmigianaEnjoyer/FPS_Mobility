@@ -1,0 +1,147 @@
+[gd_scene load_steps=15 format=3 uid="uid://dkm34hpiyarjj"]
+
+[ext_resource type="Texture2D" uid="uid://cs8sufojpgies" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 8.png" id="1_56ux6"]
+[ext_resource type="Script" path="res://Enemy/boss_marius.gd" id="1_atwfe"]
+[ext_resource type="PackedScene" uid="uid://ctv8ctxgyrqbw" path="res://Health_Bar/healthbar.tscn" id="2_imit3"]
+[ext_resource type="Texture2D" uid="uid://cvfovdma4051s" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 3.png" id="2_tt4b4"]
+[ext_resource type="Texture2D" uid="uid://dnm1th7orvhjn" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 4.png" id="3_wt4ia"]
+[ext_resource type="Texture2D" uid="uid://cim8l33qxkr20" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 5.png" id="4_q7fii"]
+[ext_resource type="Texture2D" uid="uid://cw48fbgtknlob" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 6.png" id="5_nxpef"]
+[ext_resource type="Texture2D" uid="uid://sw7ckoiq3b5f" path="res://Enemy/Sprite Boss MOOSHnGUN/Boss_default .png" id="6_0syfx"]
+[ext_resource type="Texture2D" uid="uid://bly2opt2r3por" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 7.png" id="7_aqr52"]
+[ext_resource type="Texture2D" uid="uid://cye66iagest3e" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 1.png" id="8_7wlrk"]
+[ext_resource type="Texture2D" uid="uid://tp7eob4w8eeo" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 2.png" id="9_cjvx1"]
+[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="11_6yw3i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dbq4v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_56ux6")
+}],
+"loop": false,
+"name": &"attack_fury",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_tt4b4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wt4ia")
+}],
+"loop": false,
+"name": &"attack_left",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_q7fii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nxpef")
+}],
+"loop": false,
+"name": &"attack_right",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_0syfx")
+}],
+"loop": false,
+"name": &"default",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_aqr52")
+}],
+"loop": false,
+"name": &"die",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_7wlrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cjvx1")
+}],
+"loop": false,
+"name": &"walk",
+"speed": 3.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dfksu"]
+radius = 2.91947
+height = 16.4739
+
+[node name="Boss_Marius" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_atwfe")
+
+[node name="HealthBar" parent="." instance=ExtResource("2_imit3")]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -697.0
+offset_top = 106.0
+offset_right = 1087.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 1
+scale = Vector2(0.8, 1.52)
+
+[node name="Label" type="Label" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = -46.0526
+offset_bottom = -23.0526
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "Marius, il Campione"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.925926, 0, 0, 0, 0.927273, 0, 0, 0, 0.925926, 0, 8.7422, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_dbq4v")
+animation = &"attack_right"
+autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.408, 0, 0, 0, 1, 0, 3.24308, 0.244237)
+shape = SubResource("CapsuleShape3D_dfksu")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.52491, 0)
+target_position = Vector3(0, 0, -20)
+collision_mask = 3
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("11_6yw3i")
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="PunchTimer" type="Timer" parent="Timers"]
+one_shot = true
+
+[node name="SpecialAttackTimer" type="Timer" parent="Timers"]
+one_shot = true

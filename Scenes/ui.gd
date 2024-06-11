@@ -26,14 +26,16 @@ var rage_mode_on = false	#variabile che serve a far capire alla assalto che è f
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	randomize()
-	switch_weapon(3)		#all'inizio viene impostato il martello come arma
-	healthbar.init_health(GlobalVar.player_health)
+	reset()
 
 
 func reset():
-	_ready()
+	GlobalVar.player_health = 100
+	randomize()
+	switch_weapon(3)		#all'inizio viene impostato il martello come arma
+	healthbar.init_health(GlobalVar.player_health)
 	GlobalVar.reset_richiesto = false
+
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
