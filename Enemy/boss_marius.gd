@@ -33,10 +33,11 @@ var ammo = load("res://Drops/ammo_drop.tscn")
 var ammo_instance
 var heart = load("res://Drops/heart_drop.tscn")
 var heart_instance
-
+var prova = 100
 var hitpoints = max_hitpoints:
 	set(value):
 		hitpoints = value
+		prova -= 1
 		if hitpoints <= 0:
 			die()
 		provoked = true
@@ -48,11 +49,10 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("player")
 	#healthbar.init_health(max_hitpoints)
 	$HealthBar/TextureRect.visible = false
-	healthbar.init_health(hitpoints / 10)
+	healthbar.init_health(float(max_hitpoints / 10))
 
 
 func _process(_delta):
-	print(hitpoints)
 	if !dead and provoked and !attacking:
 		$AnimatedSprite3D.play("walk")
 		navigation_agent_3d.target_position = player.global_position
@@ -114,6 +114,7 @@ func attack():
 func take_damage():
 	if !dead:
 		$Voice.play()
+		healthbar.health = float(hitpoints / 10)
 
 
 func die():
