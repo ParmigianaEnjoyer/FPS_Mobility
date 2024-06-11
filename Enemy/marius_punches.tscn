@@ -1,0 +1,50 @@
+[gd_scene load_steps=8 format=3 uid="uid://dan2hf8qp5ov3"]
+
+[ext_resource type="Script" path="res://Enemy/marius_punches.gd" id="1_2ocn6"]
+[ext_resource type="Texture2D" uid="uid://flr3r8ok7w65" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_12.png" id="1_5pf74"]
+[ext_resource type="Texture2D" uid="uid://b65xmc2qackdj" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_20.png" id="2_tkg10"]
+[ext_resource type="Texture2D" uid="uid://1ao883qslxcd" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_31.png" id="3_uap45"]
+[ext_resource type="Texture2D" uid="uid://dyqd50u3au8nf" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_42.png" id="4_upjvw"]
+[ext_resource type="Texture2D" uid="uid://cgnafd7817w8l" path="res://Enemy/Sprite Boss MOOSHnGUN/Attacco Boss/Senza-nome-2024-06-10-22_00_47.png" id="5_jqeav"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dcxue"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5pf74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tkg10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uap45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_upjvw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_jqeav")
+}],
+"loop": true,
+"name": &"default",
+"speed": 30.0
+}]
+
+[node name="Marius_punches" type="Node3D"]
+script = ExtResource("1_2ocn6")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.157355, -0.525548, 0)
+sprite_frames = SubResource("SpriteFrames_dcxue")
+frame = 1
+frame_progress = 0.420822
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(79.4091, 0, 0, 0, 88.7368, 0, 0, 0, 0.5, 0.00655925, 0.0845744, 0.0274124)
+target_position = Vector3(0, 0, -0.8)
+collision_mask = 3
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true

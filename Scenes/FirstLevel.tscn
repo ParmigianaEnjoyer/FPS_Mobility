@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=59 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="ArrayMesh" uid="uid://c553qa57bkh7c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_large.obj" id="1_c1hrc"]
 [ext_resource type="Script" path="res://Scenes/FirstLevel.gd" id="1_k3n5a"]
@@ -29,6 +29,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c603l5upwrba" path="res://Models/OBJ format/cliff_cave_stone.obj" id="16_m3qqq"]
 [ext_resource type="ArrayMesh" uid="uid://c86566rkw7o8c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass.obj" id="17_0sehw"]
 [ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="28_182nf"]
+[ext_resource type="PackedScene" uid="uid://dkm34hpiyarjj" path="res://Enemy/boss_marius.tscn" id="30_unvxn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1756,3 +1757,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -157.826, 8.98291, -5.64676)
 
 [node name="Enemy" parent="." instance=ExtResource("28_182nf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -86.6683, 9.11814, -6.24669)
+
+[node name="Boss_Marius" parent="." instance=ExtResource("30_unvxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.7413, 8.92274, 4.06898)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkm34hpiyarjj"]
+[gd_scene load_steps=14 format=3 uid="uid://dkm34hpiyarjj"]
 
 [ext_resource type="Texture2D" uid="uid://cs8sufojpgies" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 8.png" id="1_56ux6"]
 [ext_resource type="Script" path="res://Enemy/boss_marius.gd" id="1_atwfe"]
@@ -10,10 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://bly2opt2r3por" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 7.png" id="7_aqr52"]
 [ext_resource type="Texture2D" uid="uid://cye66iagest3e" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 1.png" id="8_7wlrk"]
 [ext_resource type="Texture2D" uid="uid://tp7eob4w8eeo" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 2.png" id="9_cjvx1"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dfksu"]
-radius = 4.79052
-height = 19.6228
+[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="11_6yw3i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbq4v"]
 animations = [{
@@ -43,7 +40,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("5_nxpef")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack_right",
 "speed": 3.0
 }, {
@@ -75,6 +72,10 @@ animations = [{
 "speed": 3.0
 }]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dfksu"]
+radius = 2.91947
+height = 16.4739
+
 [node name="Boss_Marius" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 5
 collision_mask = 5
@@ -82,17 +83,28 @@ script = ExtResource("1_atwfe")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.408, 0, 0, 0, 1, 0, 4.02224, 0)
-shape = SubResource("CapsuleShape3D_dfksu")
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="CollisionShape3D"]
-transform = Transform3D(0.925926, 0, 0, 0, 2.27273, 0, 0, 0, 0.925926, 0, 14.4838, 0)
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.925926, 0, 0, 0, 0.927273, 0, 0, 0, 0.925926, 0, 8.7422, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_dbq4v")
+animation = &"attack_right"
 autoplay = "default"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.408, 0, 0, 0, 1, 0, 3.24308, 0.244237)
+shape = SubResource("CapsuleShape3D_dfksu")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.52491, 0)
 target_position = Vector3(0, 0, -20)
 collision_mask = 3
+
+[node name="CooldownTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="DamageTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="Voice" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("11_6yw3i")

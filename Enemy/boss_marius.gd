@@ -2,14 +2,15 @@ extends CharacterBody3D
 
 const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
-const AGGRO_RANGE = 40.0
-const ATTACK_RANGE = 20.0
+const AGGRO_RANGE = 100.0
+const ATTACK_RANGE = 30.0
 const ATTACK_COOLDOWN = 2	#secondi che separano un attacco dall'altro
 
 @export var max_hitpoints := 1 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
 @export var damage = 10 * GlobalVar.diff
 
+var punches_count = 0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
@@ -25,7 +26,7 @@ var attacking = false
 var dead = false
 var stop = false
 
-var bullet = load("res://Enemy/bullet.tscn")
+var bullet = load("res://Enemy/marius_punches.tscn")
 var instance
 var ammo = load("res://Drops/ammo_drop.tscn")
 var ammo_instance
@@ -93,7 +94,12 @@ func _physics_process(delta):
 func attack():
 	if timer.is_stopped():
 		timer.start(ATTACK_COOLDOWN)
-		$AnimatedSprite3D.play("shoot")
+		
+		punches_count += 1
+		match punches_count % 2:
+			0: $AnimatedSprite3D.play("attack_left")
+			1: $AnimatedSprite3D.play("attack_right")
+		
 		instance = bullet.instantiate()
 		instance.position = ray.global_position
 		instance.transform.basis = ray.global_transform.basis
