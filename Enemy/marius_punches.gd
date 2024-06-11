@@ -5,8 +5,11 @@ var SPEED = 20.0
 @onready var animation = $AnimatedSprite3D
 @onready var lifetime = $Timer
 
+var is_special_attack = false
 var damage = 25
 var bullet_range = 25
+var x = 0.0
+var z = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,7 +19,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += transform.basis * Vector3(0, 0, -SPEED) * delta
+	if !is_special_attack:
+		position += transform.basis * Vector3(0, 0, -SPEED) * delta
+	else: 
+		position += transform.basis * Vector3(x * SPEED, 0, z * SPEED) * delta
 	#ray.force_raycast_update()
 #
 	#if ray.is_colliding() and ray.get_collider().is_in_group("player"):
@@ -24,6 +30,7 @@ func _process(delta):
 		##ray.get_collider().player_health -= damage
 		#ray.get_collider().take_damage(damage)
 		#queue_free()
+
 
 
 func _on_timer_timeout():
@@ -39,4 +46,3 @@ func _on_area_3d_body_entered(body):
 	if body.is_in_group("player"):
 		body.take_damage(damage)
 		queue_free()
-	

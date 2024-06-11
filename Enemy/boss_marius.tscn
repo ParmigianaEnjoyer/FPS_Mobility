@@ -120,3 +120,6 @@ stream = ExtResource("11_6yw3i")
 
 [node name="PunchTimer" type="Timer" parent="Timers"]
 one_shot = true
+
+[node name="SpecialAttackTimer" type="Timer" parent="Timers"]
+one_shot = true

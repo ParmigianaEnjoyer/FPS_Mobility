@@ -4,7 +4,8 @@ const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
 const AGGRO_RANGE = 100.0
 const ATTACK_RANGE = 30.0
-const ATTACK_COOLDOWN = 2	#secondi che separano un attacco dall'altro
+const ATTACK_COOLDOWN = 1.5	#secondi che separano un attacco dall'altro
+const SPECIAL_ATTACK_COOLDOWN = 0.5
 
 @export var max_hitpoints := 1000 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
@@ -20,13 +21,15 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var timer = $CooldownTimer
 @onready var d_timer = $DamageTimer
 @onready var healthbar = $HealthBar
+@onready var specialtimer = $Timers/SpecialAttackTimer
 
+var is_special_attack = false
 var player
 var provoked = false		#l'enemy è stato provocato? 
 var attacking = false
 var dead = false
 var stop = false
-
+var count = 0
 var bullet = load("res://Enemy/marius_punches.tscn")
 var instance
 var ammo = load("res://Drops/ammo_drop.tscn")
@@ -41,6 +44,10 @@ var hitpoints = max_hitpoints:
 		if hitpoints <= 0:
 			die()
 		provoked = true
+var special1 = false
+var special2 = false
+var special3 = false
+var special4 = false
 
 
 func _ready() -> void:
@@ -78,12 +85,17 @@ func _physics_process(delta):
 		if distance <= AGGRO_RANGE:
 			provoked = true
 			
-		if (provoked and distance <= float(ATTACK_RANGE * 0.75)) or attacking:
+		print(count)
+		print(is_special_attack)
+		
+		if ((provoked and distance <= float(ATTACK_RANGE * 0.75)) or attacking) and !is_special_attack:
 			if ray.is_colliding() and ray.get_collider().is_in_group("player"):
 				attacking = true
 				attack()
 			elif !ray.is_colliding() or (ray.is_colliding() and !ray.get_collider().is_in_group("player")):
 				attacking = false
+		
+		check_special()
 		
 		if direction:
 			velocity.x = direction.x * SPEED
@@ -111,10 +123,94 @@ func attack():
 		get_parent().add_child(instance)
 
 
+func special_attack():
+		if specialtimer.is_stopped() and count <= 5:
+			specialtimer.start(SPECIAL_ATTACK_COOLDOWN)
+			count += 1
+			
+			$AnimatedSprite3D.play("attack_fury")
+			
+			#punches_count += 1
+			#match punches_count % 2:
+				#0: $AnimatedSprite3D.play("attack_left")
+				#1: $AnimatedSprite3D.play("attack_right")
+			
+			for i in range(0, 9, 1):
+				var x = 1
+				var z = 1
+				match i:
+					0: 
+						x = 0
+						z = -1
+					1: 
+						x = -1
+						z = -1
+					2: 
+						x = -1
+						z = 0
+					3: 
+						x = -1
+						z = +1
+					4: 
+						x = 0
+						z = +1
+					5: 
+						x = +1
+						z = +1
+					6: 
+						x = +1
+						z = 0
+					7: 
+						x = +1
+						z = -1
+				instance = bullet.instantiate()
+				instance.is_special_attack = true
+				instance.x = x
+				instance.z = z
+				instance.position = ray.global_position
+				instance.transform.basis = ray.global_transform.basis
+				get_parent().add_child(instance)
+
+
+func check_special():
+	if healthbar.value <= 75 and !special1:
+		is_special_attack = true
+		special_attack()
+		
+		if count == 5:
+			special1 = true
+		
+	if healthbar.value <= 55 and !special2:
+		is_special_attack = true
+		special_attack()
+		
+		if count == 5:
+			special2 = true
+		
+	if healthbar.value <= 25 and !special3:
+		is_special_attack = true
+		special_attack()
+		
+		if count == 5:
+			special3 = true
+		
+	if healthbar.value <= 10 and !special4:
+		is_special_attack = true
+		special_attack()
+		
+		if count == 5:
+			special4 = true
+		
+	if count == 5:
+		count = 0
+		is_special_attack = false
+
+
 func take_damage():
 	if !dead:
 		$Voice.play()
 		healthbar.health = float(hitpoints / 10)
+		print(healthbar.value)
 
 
 func die():
