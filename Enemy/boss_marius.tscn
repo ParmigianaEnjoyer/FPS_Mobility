@@ -83,10 +83,32 @@ collision_mask = 5
 script = ExtResource("1_atwfe")
 
 [node name="HealthBar" parent="." instance=ExtResource("2_imit3")]
-offset_left = 90.0
-offset_top = -966.0
-offset_right = 1874.0
-offset_bottom = -936.0
+anchors_preset = 5
+anchor_left = 0.5
+anchor_top = 0.0
+anchor_right = 0.5
+anchor_bottom = 0.0
+offset_left = -697.0
+offset_top = 106.0
+offset_right = 1087.0
+offset_bottom = 136.0
+grow_horizontal = 2
+grow_vertical = 1
+scale = Vector2(0.8, 1.52)
+
+[node name="Label" type="Label" parent="HealthBar"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = -46.0526
+offset_bottom = -23.0526
+grow_horizontal = 2
+scale = Vector2(2, 2)
+text = "Marius, il Campione"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
