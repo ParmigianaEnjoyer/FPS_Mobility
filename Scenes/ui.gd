@@ -31,8 +31,15 @@ func _ready():
 	healthbar.init_health(GlobalVar.player_health)
 
 
+func reset():
+	_ready()
+	GlobalVar.reset_richiesto = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
+	
+	if GlobalVar.reset_richiesto == true:
+		reset()
 	
 	set_HUI_ammo(GlobalVar.current_bullet_type)
 	update_heart_label()

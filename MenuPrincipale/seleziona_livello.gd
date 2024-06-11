@@ -12,10 +12,12 @@ func _process(delta):
 
 
 func _on_tutorial_livello_0_pressed():
+	GlobalVar.reset_richiesto = true
 	get_tree().change_scene_to_file("res://Scenes/Tutorial.tscn") #fa partire il tutorial
 
 
 func _on_livello_1_pressed():
+	GlobalVar.reset_richiesto = true
 	get_tree().change_scene_to_file("res://Scenes/FirstLevel.tscn") #fa partire il primo livello
 
 
