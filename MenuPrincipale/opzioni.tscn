@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmber8g345dhv"]
+[gd_scene load_steps=6 format=3 uid="uid://bmber8g345dhv"]
 
+[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_vlve1"]
 [ext_resource type="Script" path="res://MenuPrincipale/opzioni.gd" id="1_xwknx"]
+[ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_oj126"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="4_nfwrq"]
 [ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="5_nvr3w"]
 
@@ -11,11 +13,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_vlve1")
 script = ExtResource("1_xwknx")
 
 [node name="Sfondo" type="Node2D" parent="."]
 position = Vector2(831, 353)
-scale = Vector2(2, 2)
+scale = Vector2(1.98931, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sfondo"]
+position = Vector2(65.5524, 91)
+scale = Vector2(0.794832, 0.837909)
+texture = ExtResource("3_oj126")
 
 [node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
 position = Vector2(353.5, 30.5)
