@@ -46,6 +46,11 @@ func _process(_delta):
 	set_HUI_ammo(GlobalVar.current_bullet_type)
 	update_heart_label()
 	
+	if DialogueManager.is_dialogue_active:
+		$Weapon.visible = false
+	else:
+		$Weapon.visible = true
+	
 	if !radial_menu:
 		
 		rage_mode()

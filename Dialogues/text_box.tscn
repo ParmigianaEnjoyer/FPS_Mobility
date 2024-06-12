@@ -1,8 +1,42 @@
-[gd_scene format=3 uid="uid://cm75bsht6tn2g"]
+[gd_scene load_steps=4 format=3 uid="uid://cm75bsht6tn2g"]
+
+[ext_resource type="Script" path="res://Dialogues/text_box.gd" id="1_gvnnh"]
+[ext_resource type="Texture2D" uid="uid://djq2ifgm2kbce" path="res://Dialogues/dialogue_panel.png" id="1_rjpbw"]
+[ext_resource type="FontFile" uid="uid://b12l5xhxnhf40" path="res://Dialogues/Pokemon Solid.ttf" id="2_yntr2"]
 
 [node name="TextBox" type="MarginContainer"]
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 161.0
+offset_top = -198.0
+offset_right = 250.0
+offset_bottom = -165.0
+grow_vertical = 0
+scale = Vector2(2.69562, 2.05033)
+script = ExtResource("1_gvnnh")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 layout_mode = 2
+texture = ExtResource("1_rjpbw")
+region_rect = Rect2(0, 0, 400, 160)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yntr2")
+theme_override_font_sizes/font_size = 12
+text = "Ciao a tutti"
+vertical_alignment = 1
+
+[node name="LetterDisplayTimer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
