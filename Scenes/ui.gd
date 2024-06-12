@@ -46,7 +46,7 @@ func _process(_delta):
 	set_HUI_ammo(GlobalVar.current_bullet_type)
 	update_heart_label()
 	
-	if DialogueManager.is_dialogue_active:
+	if DialogueManager.is_dialogue_active || !GlobalVar.sparare_sbloccato:
 		$Weapon.visible = false
 	elif !radial_menu:
 		$Weapon.visible = true
