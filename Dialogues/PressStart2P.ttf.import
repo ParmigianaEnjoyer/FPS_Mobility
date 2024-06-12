@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://b12l5xhxnhf40"
-path="res://.godot/imported/Pokemon Solid.ttf-cecb75c0fe406967523d3e73961ccbbf.fontdata"
+uid="uid://d05o6cmrfmgrh"
+path="res://.godot/imported/PressStart2P.ttf-4ccc1a05bf8dbd5c2eabbe6c05c7508d.fontdata"
 
 [deps]
 
-source_file="res://Dialogues/Pokemon Solid.ttf"
-dest_files=["res://.godot/imported/Pokemon Solid.ttf-cecb75c0fe406967523d3e73961ccbbf.fontdata"]
+source_file="res://Dialogues/PressStart2P.ttf"
+dest_files=["res://.godot/imported/PressStart2P.ttf-4ccc1a05bf8dbd5c2eabbe6c05c7508d.fontdata"]
 
 [params]
 
