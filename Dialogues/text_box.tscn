@@ -1,17 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://cm75bsht6tn2g"]
+[gd_scene load_steps=5 format=3 uid="uid://cm75bsht6tn2g"]
 
 [ext_resource type="Script" path="res://Dialogues/text_box.gd" id="1_gvnnh"]
 [ext_resource type="Texture2D" uid="uid://djq2ifgm2kbce" path="res://Dialogues/dialogue_panel.png" id="1_rjpbw"]
+[ext_resource type="Texture2D" uid="uid://dt1b72i7gwtkd" path="res://Dialogues/Gargamel.png" id="3_tqpn7"]
 [ext_resource type="FontVariation" uid="uid://blhvo8k7tcjjf" path="res://Dialogues/PixelFont.tres" id="3_wxons"]
 
 [node name="TextBox" type="MarginContainer"]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 161.0
-offset_top = -198.0
-offset_right = 250.0
-offset_bottom = -165.0
+offset_left = 201.0
+offset_top = -283.0
+offset_right = 362.0
+offset_bottom = -163.0
 grow_vertical = 0
 scale = Vector2(0.997219, 1)
 script = ExtResource("1_gvnnh")
@@ -23,7 +24,7 @@ region_rect = Rect2(0, 0, 400, 160)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 50
+theme_override_constants/margin_left = 110
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
@@ -36,5 +37,10 @@ theme_override_font_sizes/font_size = 20
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Gargamel" type="Sprite2D" parent="."]
+position = Vector2(30.0837, 92)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_tqpn7")
 
 [connection signal="timeout" from="LetterDisplayTimer" to="." method="_on_letter_display_timer_timeout"]
