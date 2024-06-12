@@ -36,34 +36,53 @@ position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_5xxqs")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -111.0
-offset_right = 6.0
-offset_bottom = -33.0
+offset_left = 90.0
+offset_top = 99.0
+offset_right = 130.0
+offset_bottom = 139.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Label" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.623
+anchor_bottom = 0.204
+offset_left = -114.0
+offset_top = -91.0
+offset_right = 17.0
+offset_bottom = -68.0
 text = "Volume generale"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="master" type="HSlider" parent="VBoxContainer"]
+[node name="master" type="HSlider" parent="Control"]
 layout_mode = 2
+offset_left = -100.5
+offset_top = -48.5
+offset_right = 30.5
+offset_bottom = -32.5
 max_value = 1.0
 step = 0.001
 script = ExtResource("1_yt2yu")
 bus_name = "Master"
 
-[node name="Indietro" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Indietro" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.174
+offset_left = -103.0
+offset_top = -24.5
+offset_right = 28.0
+offset_bottom = -1.5
 text = "Indietro"
 
-[connection signal="pressed" from="VBoxContainer/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="Control/Indietro" to="." method="_on_indietro_pressed"]

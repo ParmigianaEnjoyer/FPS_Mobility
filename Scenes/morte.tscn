@@ -35,32 +35,56 @@ position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_1dmmg")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -100.0
-offset_top = -135.0
-offset_right = -25.0
-offset_bottom = -42.0
+offset_left = 94.0
+offset_top = 56.0
+offset_right = 134.0
+offset_bottom = 96.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="SeiMorto" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.27
+anchor_bottom = 0.114
+offset_left = -174.0
+offset_top = -240.0
+offset_right = -99.0
+offset_bottom = -217.0
 scale = Vector2(3, 3)
-
-[node name="SeiMorto" type="Label" parent="VBoxContainer"]
-layout_mode = 2
 text = "Sei morto"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Riprova" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Riprova" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.425
+anchor_bottom = 0.165
+offset_left = -86.5
+offset_top = -50.0
+offset_right = -11.5
+offset_bottom = -27.0
 text = "Riprova"
 
-[node name="Indietro" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Indietro" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.425
+anchor_bottom = 0.165
+offset_left = -86.5
+offset_top = -10.0
+offset_right = -11.5
+offset_bottom = 13.0
 text = "Indietro"
 
-[connection signal="pressed" from="VBoxContainer/Riprova" to="." method="_on_riprova_pressed"]
-[connection signal="pressed" from="VBoxContainer/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="Control/Riprova" to="." method="_on_riprova_pressed"]
+[connection signal="pressed" from="Control/Indietro" to="." method="_on_indietro_pressed"]
