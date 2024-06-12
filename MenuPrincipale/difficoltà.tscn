@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhkobmng3regd"]
+[gd_scene load_steps=6 format=3 uid="uid://dhkobmng3regd"]
 
+[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_iprix"]
 [ext_resource type="Script" path="res://MenuPrincipale/difficoltà.gd" id="1_vcun8"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="2_7404x"]
+[ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_4tqov"]
 [ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="3_kiu5e"]
 
 [node name="Difficoltà" type="Control"]
@@ -11,18 +13,24 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_iprix")
 script = ExtResource("1_vcun8")
 
-[node name="Sfondo" type="Node2D" parent="."]
+[node name="Sfondo2" type="Node2D" parent="."]
 position = Vector2(831, 353)
-scale = Vector2(2, 2)
+scale = Vector2(1.98931, 2)
 
-[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
+[node name="Sprite2D" type="Sprite2D" parent="Sfondo2"]
+position = Vector2(65.5524, 91)
+scale = Vector2(0.794832, 0.837909)
+texture = ExtResource("3_4tqov")
+
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo2"]
 position = Vector2(353.5, 30.5)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_7404x")
 
-[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
+[node name="Mooshy" type="Sprite2D" parent="Sfondo2"]
 position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_kiu5e")

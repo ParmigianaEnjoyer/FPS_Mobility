@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://djk2p8hfq0e6a"]
+[gd_scene load_steps=8 format=3 uid="uid://djk2p8hfq0e6a"]
 
+[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_0totv"]
 [ext_resource type="Shader" path="res://Shaders/pauseMenu.gdshader" id="1_0ybut"]
 [ext_resource type="Script" path="res://Scenes/pauseMenu.gd" id="1_tegjv"]
 
@@ -74,6 +75,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_0totv")
 script = ExtResource("1_tegjv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
