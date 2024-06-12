@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://dbfqepa7t1aw"]
+[gd_scene load_steps=5 format=3 uid="uid://dbfqepa7t1aw"]
 
 [ext_resource type="Script" path="res://Enemy/tank_bullet.gd" id="1_3mig2"]
 
@@ -13,6 +13,9 @@ material = SubResource("StandardMaterial3D_7dd63")
 radius = 0.2
 height = 0.4
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_stjqb"]
+radius = 0.215548
+
 [node name="Tank_bullet" type="Node3D"]
 script = ExtResource("1_3mig2")
 
@@ -21,6 +24,7 @@ mesh = SubResource("SphereMesh_5su4h")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 0.5, 0, 0, 0.144233)
+visible = false
 target_position = Vector3(0, 0, -0.8)
 collision_mask = 3
 
@@ -28,4 +32,10 @@ collision_mask = 3
 wait_time = 2.0
 one_shot = true
 
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_stjqb")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
