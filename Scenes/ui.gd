@@ -48,7 +48,7 @@ func _process(_delta):
 	
 	if DialogueManager.is_dialogue_active:
 		$Weapon.visible = false
-	else:
+	elif !radial_menu:
 		$Weapon.visible = true
 	
 	if !radial_menu and !DialogueManager.is_dialogue_active:
