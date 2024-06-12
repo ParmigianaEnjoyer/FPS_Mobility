@@ -1,16 +1,19 @@
 extends Node3D
 
 
-const Garagamels_lines: Array[String] = [
-	"We, wewewewee, wewe. We, wewewewee, wewe. We, wewewewee, wewe. We, wewewewee, wewe. We, wewewewee, wewe.
-	We, wewewewee, wewe.
-	We, wewewewee, wewe.We, wewewewee, wewe.
-	We, wewewewee, wewe.",
-	"Che vuoi!!",
-	"Non so che cosa scrivere mannaggia alla madonna!",
-	"Non so che cosa scrivere mannaggia alla madonna! Forse puoi darmi una mano..."
-] 
+const DIALOGO_1: Array[String] = [
+	#"Mooshy...",
+	#"Mooshy...",
+	#"MOOSHY !!!",
+	#"Sei vivo, non posso crederci!
+	#Ehm...cioè, certo che posso crederci, dopotutto sono stato io a darti vita.",
+	#"Non c'è tempo per parlare, presto!
+	#L'armata dei cinghiali è riuscita a sfondare la grande porta. Saranno qui a momenti!",
+	"Riesci a muoverti? Sai come si fa?"
+]
+var dialogo_1_finito = false
 
+var message_on_screen = false
 
 enum ammo_type {
 	PISTOL_BULLET, 
@@ -20,6 +23,12 @@ enum ammo_type {
 }
 
 func _ready():
+	
+	GlobalVar.movimento_sbloccato = false
+	GlobalVar.sparare_sbloccato = false
+	GlobalVar.curarsi_sbloccato = false
+	GlobalVar.radial_sbloccato = false
+	
 	GlobalVar.livello = 0
 	GlobalVar.player_health = 100
 	GlobalVar.ammo_storage_total = {
@@ -34,7 +43,23 @@ func _ready():
 	}
 	GlobalVar.current_bullet_type = ammo_type.HAMMER
 	GlobalVar.heart_inventory = 1
-	
-	
-	DialogueManager.start_dialog(Garagamels_lines)
 
+
+func _process(delta):
+	print(dialogo_1_finito)
+	if !dialogo_1_finito:
+		tutorial_movimento()
+	else:
+		if !message_on_screen:
+			DialogueManager.show_command_label("Premi W, A, S, D, MAIUSC e SPACE per muoverti, correre e saltare.")
+			message_on_screen = true
+		
+		if Input.is_action_pressed("down") || Input.is_action_pressed("sprint") ||Input.is_action_pressed("jump") ||Input.is_action_pressed("up") ||Input.is_action_pressed("right") ||Input.is_action_pressed("left"): 
+			GlobalVar.movimento_sbloccato = true
+
+
+func tutorial_movimento():
+	if !DialogueManager.is_dialogue_finished:
+		DialogueManager.start_dialog(DIALOGO_1)
+	else:
+		dialogo_1_finito = true

@@ -11,7 +11,7 @@ func _ready():
 	hide()
 
 func _input(event):
-	if event.is_action_pressed("radial_menu") and !get_tree().paused and !GlobalVar.rage_mode and !DialogueManager.is_dialogue_active:
+	if event.is_action_pressed("radial_menu") and !get_tree().paused and !GlobalVar.rage_mode and !DialogueManager.is_dialogue_active and GlobalVar.radial_sbloccato:
 		$AnimationPlayer.play("zoom")
 		get_node("../ui/Weapon").visible = false
 		

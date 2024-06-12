@@ -52,3 +52,7 @@ var enemy_killed_count = 0
 
 var rage_mode
 
+var movimento_sbloccato = true
+var radial_sbloccato = true
+var sparare_sbloccato = true
+var curarsi_sbloccato = true

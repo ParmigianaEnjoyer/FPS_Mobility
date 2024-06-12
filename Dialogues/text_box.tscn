@@ -24,7 +24,7 @@ region_rect = Rect2(0, 0, 400, 160)
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 110
+theme_override_constants/margin_left = 130
 theme_override_constants/margin_top = 50
 theme_override_constants/margin_right = 50
 theme_override_constants/margin_bottom = 50
