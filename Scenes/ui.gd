@@ -51,7 +51,7 @@ func _process(_delta):
 	else:
 		$Weapon.visible = true
 	
-	if !radial_menu:
+	if !radial_menu and !DialogueManager.is_dialogue_active:
 		
 		rage_mode()
 		heal()
