@@ -35,33 +35,51 @@ position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_nvr3w")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -187.0
-offset_right = 6.0
-offset_bottom = -14.0
+offset_left = 89.0
+offset_top = 65.0
+offset_right = 129.0
+offset_bottom = 105.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Controlli" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Controlli" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.275
+offset_left = -107.0
+offset_top = -88.0
+offset_right = 28.0
+offset_bottom = -65.0
 text = "Controlli"
 
-[node name="Audio" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Audio" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.275
+offset_left = -107.0
+offset_top = -34.0
+offset_right = 28.0
+offset_bottom = -11.0
 text = "Audio"
 
-[node name="Indietro" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Indietro" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.275
+offset_left = -107.0
+offset_top = 20.0
+offset_right = 28.0
+offset_bottom = 43.0
 text = "Indietro"
 
-[connection signal="pressed" from="VBoxContainer/Controlli" to="." method="_on_controlli_pressed"]
-[connection signal="pressed" from="VBoxContainer/Audio" to="." method="_on_audio_pressed"]
-[connection signal="pressed" from="VBoxContainer/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="Control/Controlli" to="." method="_on_controlli_pressed"]
+[connection signal="pressed" from="Control/Audio" to="." method="_on_audio_pressed"]
+[connection signal="pressed" from="Control/Indietro" to="." method="_on_indietro_pressed"]

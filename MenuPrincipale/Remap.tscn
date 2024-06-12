@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbo5ylnmupkpj"]
+[gd_scene load_steps=8 format=3 uid="uid://cbo5ylnmupkpj"]
 
 [ext_resource type="Script" path="res://MenuPrincipale/Remap.gd" id="1_lcu2s"]
 [ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_qn3x5"]
@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_axlfm"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="4_n41ao"]
 [ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="5_6m8w0"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tybob"]
+line_spacing = 4.0
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,203 +39,309 @@ position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_6m8w0")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="TastoIndietro" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -258.0
-offset_top = -237.0
-offset_right = -123.0
-offset_bottom = 2.0
+offset_left = 32.0
+offset_top = 310.0
+offset_right = 72.0
+offset_bottom = 350.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Avanti" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Indietro" type="Button" parent="TastoIndietro"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.886
+anchor_bottom = 0.186
+offset_left = -59.0
+offset_top = -0.5
+offset_right = 11.0
+offset_bottom = 22.5
+text = "Indietro"
+
+[node name="Labels" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+
+[node name="Avanti" type="Label" parent="Labels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.335
+offset_left = -126.0
+offset_top = -160.0
+offset_right = -76.0
+offset_bottom = -137.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Avanti"
+label_settings = SubResource("LabelSettings_tybob")
+horizontal_alignment = 1
 
-[node name="Sinistra" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Sinistra" type="Label" parent="Labels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.33
+offset_left = -126.0
+offset_top = -130.0
+offset_right = -67.0
+offset_bottom = -107.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Sinistra"
+horizontal_alignment = 1
 
-[node name="Indietro" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Indietro" type="Label" parent="Labels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.29
+offset_left = -126.0
+offset_top = -100.0
+offset_right = -64.0
+offset_bottom = -77.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Indietro"
+horizontal_alignment = 1
 
-[node name="Destra" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Destra" type="Label" parent="Labels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.341
+offset_left = -126.0
+offset_top = -70.0
+offset_right = -74.0
+offset_bottom = -47.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Destra"
+horizontal_alignment = 1
 
-[node name="Corri" type="Label" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Corri" type="Label" parent="Labels"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.335
+offset_left = -126.0
+offset_top = -40.0
+offset_right = -87.0
+offset_bottom = -17.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Corri"
+horizontal_alignment = 1
 
-[node name="Salta" type="Label" parent="VBoxContainer"]
+[node name="Salta" type="Label" parent="Labels"]
 layout_mode = 2
+offset_left = -126.0
+offset_top = -10.0
+offset_right = -87.0
+offset_bottom = 13.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Salta"
 
-[node name="RuotaArmi" type="Label" parent="VBoxContainer"]
+[node name="RuotaArmi" type="Label" parent="Labels"]
 layout_mode = 2
+offset_left = -126.0
+offset_top = 20.0
+offset_right = 2.0
+offset_bottom = 43.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Ruota delle armi"
 
-[node name="Spara" type="Label" parent="VBoxContainer"]
+[node name="Spara" type="Label" parent="Labels"]
 layout_mode = 2
+offset_left = -126.0
+offset_top = 50.0
+offset_right = -81.0
+offset_bottom = 73.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Spara"
 
-[node name="Cura" type="Label" parent="VBoxContainer"]
+[node name="Cura" type="Label" parent="Labels"]
 layout_mode = 2
+offset_left = -126.0
+offset_top = 80.0
+offset_right = -89.0
+offset_bottom = 103.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Cura"
 
-[node name="EsciDaLivello" type="Label" parent="VBoxContainer"]
+[node name="EsciDaLivello" type="Label" parent="Labels"]
 layout_mode = 2
+offset_left = -126.0
+offset_top = 110.0
+offset_right = -19.0
+offset_bottom = 133.0
 size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Esci dal livello"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="ResetTasti" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 103.0
-offset_top = -169.0
-offset_right = 143.0
-offset_bottom = -65.0
+offset_left = -86.0
+offset_top = -20.0
+offset_right = -46.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="ActionButton" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="ActionButton" type="Button" parent="ResetTasti"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.521
+anchor_bottom = 0.53
+offset_left = 88.0
+offset_top = -160.0
+offset_right = 88.0
+offset_bottom = -160.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "up"
 
-[node name="ActionButton2" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton2" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = -130.0
+offset_right = 88.0
+offset_bottom = -130.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "left"
 
-[node name="ActionButton3" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton3" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = -100.0
+offset_right = 88.0
+offset_bottom = -100.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "down"
 
-[node name="ActionButton4" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton4" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = -70.0
+offset_right = 88.0
+offset_bottom = -70.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "right"
 
-[node name="ActionButton5" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton5" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = -40.0
+offset_right = 88.0
+offset_bottom = -40.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "sprint"
 
-[node name="ActionButton6" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton6" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = -10.0
+offset_right = 88.0
+offset_bottom = -10.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "jump"
 
-[node name="ActionButton7" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton7" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = 20.0
+offset_right = 88.0
+offset_bottom = 20.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "radial_menu"
 
-[node name="ActionButton8" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton8" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = 50.0
+offset_right = 88.0
+offset_bottom = 50.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "shoot"
 
-[node name="ActionButton10" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton10" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = 80.0
+offset_right = 88.0
+offset_bottom = 80.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "heal"
 
-[node name="ActionButton9" type="Button" parent="VBoxContainer2"]
+[node name="ActionButton9" type="Button" parent="ResetTasti"]
 layout_mode = 2
+offset_left = 88.0
+offset_top = 110.0
+offset_right = 88.0
+offset_bottom = 110.0
 size_flags_horizontal = 0
 size_flags_vertical = 0
 toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "exit"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -55.0
-offset_top = -243.0
-offset_right = 15.0
-offset_bottom = -203.0
-grow_horizontal = 2
-grow_vertical = 0
-scale = Vector2(2, 2)
-
-[node name="Indietro" type="Button" parent="VBoxContainer3"]
-layout_mode = 2
-text = "Indietro"
-
-[connection signal="toggled" from="VBoxContainer2/ActionButton" to="VBoxContainer2/ActionButton" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton2" to="VBoxContainer2/ActionButton2" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton3" to="VBoxContainer2/ActionButton3" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton4" to="VBoxContainer2/ActionButton4" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton5" to="VBoxContainer2/ActionButton5" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton6" to="VBoxContainer2/ActionButton6" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton7" to="VBoxContainer2/ActionButton7" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton8" to="VBoxContainer2/ActionButton8" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton10" to="VBoxContainer2/ActionButton10" method="_on_toggled"]
-[connection signal="toggled" from="VBoxContainer2/ActionButton9" to="VBoxContainer2/ActionButton9" method="_on_toggled"]
-[connection signal="pressed" from="VBoxContainer3/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="TastoIndietro/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="toggled" from="ResetTasti/ActionButton" to="ResetTasti/ActionButton" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton2" to="ResetTasti/ActionButton2" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton3" to="ResetTasti/ActionButton3" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton4" to="ResetTasti/ActionButton4" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton5" to="ResetTasti/ActionButton5" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton6" to="ResetTasti/ActionButton6" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton7" to="ResetTasti/ActionButton7" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton8" to="ResetTasti/ActionButton8" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton10" to="ResetTasti/ActionButton10" method="_on_toggled"]
+[connection signal="toggled" from="ResetTasti/ActionButton9" to="ResetTasti/ActionButton9" method="_on_toggled"]

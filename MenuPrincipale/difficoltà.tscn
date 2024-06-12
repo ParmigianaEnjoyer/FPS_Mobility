@@ -35,38 +35,62 @@ position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_kiu5e")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -187.0
-offset_right = 6.0
-offset_bottom = -14.0
+offset_left = 91.0
+offset_top = 133.0
+offset_right = 131.0
+offset_bottom = 173.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Facile" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Facile" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -109.0
+offset_top = -167.0
+offset_right = 26.0
+offset_bottom = -144.0
 text = "Facile"
 
-[node name="Medio" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Medio" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -109.0
+offset_top = -113.0
+offset_right = 26.0
+offset_bottom = -90.0
 text = "Medio"
 
-[node name="Difficile" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Difficile" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -109.0
+offset_top = -59.0
+offset_right = 26.0
+offset_bottom = -36.0
 text = "Difficile"
 
-[node name="Indietro" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Indietro" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -109.0
+offset_top = -5.0
+offset_right = 26.0
+offset_bottom = 18.0
 text = "Indietro"
 
-[connection signal="pressed" from="VBoxContainer/Facile" to="." method="_on_facile_pressed"]
-[connection signal="pressed" from="VBoxContainer/Medio" to="." method="_on_medio_pressed"]
-[connection signal="pressed" from="VBoxContainer/Difficile" to="." method="_on_difficile_pressed"]
-[connection signal="pressed" from="VBoxContainer/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="Control/Facile" to="." method="_on_facile_pressed"]
+[connection signal="pressed" from="Control/Medio" to="." method="_on_medio_pressed"]
+[connection signal="pressed" from="Control/Difficile" to="." method="_on_difficile_pressed"]
+[connection signal="pressed" from="Control/Indietro" to="." method="_on_indietro_pressed"]
