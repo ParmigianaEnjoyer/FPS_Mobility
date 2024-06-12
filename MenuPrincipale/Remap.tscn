@@ -1,7 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://cbo5ylnmupkpj"]
+[gd_scene load_steps=7 format=3 uid="uid://cbo5ylnmupkpj"]
 
 [ext_resource type="Script" path="res://MenuPrincipale/Remap.gd" id="1_lcu2s"]
+[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_qn3x5"]
 [ext_resource type="Script" path="res://MenuPrincipale/ActionButton.gd" id="1_yl88g"]
+[ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_axlfm"]
+[ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="4_n41ao"]
+[ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="5_6m8w0"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -10,7 +14,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_qn3x5")
 script = ExtResource("1_lcu2s")
+
+[node name="Sfondo" type="Node2D" parent="."]
+position = Vector2(831, 353)
+scale = Vector2(1.98931, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sfondo"]
+position = Vector2(65.5524, 91)
+scale = Vector2(0.794832, 0.837909)
+texture = ExtResource("3_axlfm")
+
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
+position = Vector2(353.5, 30.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_n41ao")
+
+[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
+position = Vector2(-295, 184.5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_6m8w0")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -19,10 +43,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -288.0
-offset_top = -233.0
-offset_right = -153.0
-offset_bottom = 6.0
+offset_left = -258.0
+offset_top = -237.0
+offset_right = -123.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -75,6 +99,12 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 text = "Spara"
 
+[node name="Cura" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "Cura"
+
 [node name="EsciDaLivello" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -88,13 +118,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 42.0
-offset_top = -125.0
-offset_right = 82.0
-offset_bottom = -21.0
+offset_left = 103.0
+offset_top = -169.0
+offset_right = 143.0
+offset_bottom = -65.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.52, 1.52)
+scale = Vector2(2, 2)
 
 [node name="ActionButton" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
@@ -160,6 +190,14 @@ toggle_mode = true
 script = ExtResource("1_yl88g")
 action = "shoot"
 
+[node name="ActionButton10" type="Button" parent="VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+toggle_mode = true
+script = ExtResource("1_yl88g")
+action = "heal"
+
 [node name="ActionButton9" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 0
@@ -175,13 +213,13 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -111.0
-offset_top = -278.0
-offset_right = -41.0
-offset_bottom = -238.0
+offset_left = -55.0
+offset_top = -243.0
+offset_right = 15.0
+offset_bottom = -203.0
 grow_horizontal = 2
 grow_vertical = 0
-scale = Vector2(1.5, 1.5)
+scale = Vector2(2, 2)
 
 [node name="Indietro" type="Button" parent="VBoxContainer3"]
 layout_mode = 2
@@ -195,5 +233,6 @@ text = "Indietro"
 [connection signal="toggled" from="VBoxContainer2/ActionButton6" to="VBoxContainer2/ActionButton6" method="_on_toggled"]
 [connection signal="toggled" from="VBoxContainer2/ActionButton7" to="VBoxContainer2/ActionButton7" method="_on_toggled"]
 [connection signal="toggled" from="VBoxContainer2/ActionButton8" to="VBoxContainer2/ActionButton8" method="_on_toggled"]
+[connection signal="toggled" from="VBoxContainer2/ActionButton10" to="VBoxContainer2/ActionButton10" method="_on_toggled"]
 [connection signal="toggled" from="VBoxContainer2/ActionButton9" to="VBoxContainer2/ActionButton9" method="_on_toggled"]
 [connection signal="pressed" from="VBoxContainer3/Indietro" to="." method="_on_indietro_pressed"]

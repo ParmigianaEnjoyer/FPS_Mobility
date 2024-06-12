@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://vqlr2ybj600k"]
+[gd_scene load_steps=6 format=3 uid="uid://vqlr2ybj600k"]
 
 [ext_resource type="Script" path="res://MenuPrincipale/seleziona_livello.gd" id="1_e846b"]
+[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_oev41"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="2_n20ms"]
 [ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="3_qb52n"]
+[ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_sw3sh"]
 
 [node name="SelezionaLivello" type="Control"]
 layout_mode = 3
@@ -11,7 +13,27 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_oev41")
 script = ExtResource("1_e846b")
+
+[node name="Sfondo2" type="Node2D" parent="."]
+position = Vector2(831, 353)
+scale = Vector2(1.98931, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sfondo2"]
+position = Vector2(65.5524, 91)
+scale = Vector2(0.794832, 0.837909)
+texture = ExtResource("3_sw3sh")
+
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo2"]
+position = Vector2(353.5, 30.5)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_n20ms")
+
+[node name="Mooshy" type="Sprite2D" parent="Sfondo2"]
+position = Vector2(-295, 184.5)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("3_qb52n")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -20,9 +42,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -318.0
+offset_left = -310.0
 offset_top = -183.0
-offset_right = -173.0
+offset_right = -165.0
 offset_bottom = 23.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -60,9 +82,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = 31.0
-offset_top = -183.0
+offset_top = -181.0
 offset_right = 177.0
-offset_bottom = 23.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -90,20 +112,6 @@ text = "Livello 10"
 [node name="Indietro" type="Button" parent="VBoxContainer2"]
 layout_mode = 2
 text = "Indietro"
-
-[node name="Sfondo" type="Node2D" parent="."]
-position = Vector2(831, 353)
-scale = Vector2(1.98931, 2)
-
-[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
-position = Vector2(353.5, 30.5)
-scale = Vector2(0.4, 0.4)
-texture = ExtResource("2_n20ms")
-
-[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
-position = Vector2(-295, 184.5)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("3_qb52n")
 
 [connection signal="pressed" from="VBoxContainer/Tutorial_Livello0" to="." method="_on_tutorial_livello_0_pressed"]
 [connection signal="pressed" from="VBoxContainer/Livello1" to="." method="_on_livello_1_pressed"]

@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4hfurc006vye"]
+[gd_scene load_steps=7 format=3 uid="uid://b4hfurc006vye"]
 
+[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_4x8c0"]
 [ext_resource type="Script" path="res://MenuPrincipale/audio.gd" id="1_65c2d"]
 [ext_resource type="Script" path="res://MenuPrincipale/AudioSlider.gd" id="1_yt2yu"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="2_ecxhj"]
 [ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="3_5xxqs"]
+[ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_7h01w"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -12,11 +14,17 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_4x8c0")
 script = ExtResource("1_65c2d")
 
 [node name="Sfondo" type="Node2D" parent="."]
 position = Vector2(831, 353)
-scale = Vector2(2, 2)
+scale = Vector2(1.98931, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="Sfondo"]
+position = Vector2(65.5524, 91)
+scale = Vector2(0.794832, 0.837909)
+texture = ExtResource("3_7h01w")
 
 [node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
 position = Vector2(353.5, 30.5)
@@ -35,9 +43,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -137.0
+offset_left = -125.0
 offset_top = -111.0
-offset_right = -6.0
+offset_right = 6.0
 offset_bottom = -33.0
 grow_horizontal = 2
 grow_vertical = 2
