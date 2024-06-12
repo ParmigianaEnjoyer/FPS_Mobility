@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://1vt5hbw8nw3l"]
+[gd_scene load_steps=5 format=3 uid="uid://1vt5hbw8nw3l"]
 
 [ext_resource type="Script" path="res://Scenes/schermata_iniziale.gd" id="1_1781k"]
 [ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_jgh43"]
 [ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_kgk8n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qp42r"]
+font_size = 18
 
 [node name="SchermataIniziale" type="Control"]
 layout_mode = 3
@@ -23,65 +26,89 @@ position = Vector2(65.5524, 91)
 scale = Vector2(0.794832, 0.837909)
 texture = ExtResource("3_kgk8n")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -951.0
-offset_top = -280.0
-offset_right = 736.0
-offset_bottom = -75.0
+offset_left = 56.0
+offset_top = 37.0
+offset_right = 96.0
+offset_bottom = 77.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(1.12135, 2.66842)
 
-[node name="Storia" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "Il regno dei cinghiali è un vasto dominio in espansione che cerca sempre nuove frontiere di avanzamento tecnologico, ciò però ha portato ad una carenza di cibo per sfamare il popolo. 
-Il Re Denti Fieri ha puntato i suoi occhi sul sostentamento che può fornire il regno dei funghi di MooshValley e vuole conquistarlo per sfamare se e  il popolo con le case di MoohValley. 
-La guerra si scatenò sul calmo e rigoglioso regno di MooshValley, intere città venivano distrutte e soppiantate dalla tecnologia. 
-Stremati dall’avanzata dei cinghiali Gargamel e il Re di MooshValley, decidono di creare una contromisura per far capire ai cinghiali che non dovevano toccare questo paradiso per la natura, il nome di questa 
-macchina di difesa era Mooshy, un golem fungo costruito con la magia oscura con lo scopo di combattere gli invasori e andarli a sconfiggere alla radice, al centro del loro regno nella città di Boartropoly.
-"
-horizontal_alignment = 1
-
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="Storia" type="Label" parent="Control"]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 141.0
-offset_top = -345.0
-offset_right = 211.0
-offset_bottom = -305.0
-grow_vertical = 0
+anchors_preset = -1
+anchor_right = 0.395
+anchor_bottom = 4.0
+offset_left = -957.0
+offset_top = -292.0
+offset_right = 832.0
+offset_bottom = -158.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Il regno dei cinghiali è un vasto dominio in espansione che cerca sempre nuove frontiere di avanzamento tecnologico, ciò però ha portato ad una carenza di cibo per sfamare il popolo. Il Re Denti Fieri ha puntato i suoi occhi sul sostentamento che può fornire il regno dei funghi di MooshValley e vuole conquistarlo per sfamare se e  il popolo con le case di MoohValley. La guerra si scatenò sul calmo e rigoglioso regno di MooshValley, intere città venivano distrutte e soppiantate dalla tecnologia. Stremati dall’avanzata dei cinghiali Gargamel e il Re di MooshValley, decidono di creare una contromisura per far capire ai cinghiali che non dovevano toccare questo paradiso per la natura, il nome di questa macchina di difesa era Mooshy, un golem fungo costruito con la magia oscura con lo scopo di combattere gli invasori e andarli a sconfiggere alla radice, al centro del loro regno nella città di Boartropoly.
+"
+label_settings = SubResource("LabelSettings_qp42r")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -567.0
+offset_top = 155.0
+offset_right = -527.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Indietro" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Indietro" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.701
+anchor_bottom = 0.165
+offset_left = -9.5
+offset_top = 58.0
+offset_right = 60.5
+offset_bottom = 81.0
 text = "Indietro"
 
-[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+[node name="Control3" type="Control" parent="."]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -420.0
-offset_top = -345.0
-offset_right = -292.0
-offset_bottom = -305.0
-grow_horizontal = 0
-grow_vertical = 0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 505.0
+offset_top = 155.0
+offset_right = 545.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Inizia" type="Button" parent="VBoxContainer3"]
-layout_mode = 2
+[node name="Inizia" type="Button" parent="Control3"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.695
+anchor_bottom = 0.225
+offset_left = -85.0
+offset_top = 57.5
+offset_right = 43.0
+offset_bottom = 80.5
 text = "Inizia massacro"
 
-[connection signal="pressed" from="VBoxContainer2/Indietro" to="." method="_on_indietro_pressed"]
-[connection signal="pressed" from="VBoxContainer3/Inizia" to="." method="_on_inizia_pressed"]
+[connection signal="pressed" from="Control2/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="Control3/Inizia" to="." method="_on_inizia_pressed"]

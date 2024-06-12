@@ -81,7 +81,7 @@ func _ready():
 
 
 
-func _process(delta):
+func _process(_delta):
 	if !dialogo_1_finito:
 		tutorial_movimento()
 	elif !dialogo_2_finito:

@@ -35,84 +35,157 @@ position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_qb52n")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -310.0
-offset_top = -183.0
-offset_right = -165.0
-offset_bottom = 23.0
+offset_left = 214.0
+offset_top = 12.0
+offset_right = 254.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Tutorial_Livello0" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Tutorial_Livello0" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.629
+anchor_bottom = 0.311
+offset_left = -303.5
+offset_top = -162.5
+offset_right = -158.5
+offset_bottom = -139.5
 text = "Tutorial - Livello 0"
 
-[node name="Livello1" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Livello1" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -290.0
+offset_top = -109.0
+offset_right = -145.0
+offset_bottom = -86.0
 text = "Livello 1"
 
-[node name="Livello2" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Livello2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -290.0
+offset_top = -55.0
+offset_right = -145.0
+offset_bottom = -32.0
 text = "Livello 2"
 
-[node name="Livello3" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Livello3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -290.0
+offset_top = -1.0
+offset_right = -145.0
+offset_bottom = 22.0
 text = "Livello 3"
 
-[node name="Livello4" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Livello4" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -290.0
+offset_top = 53.0
+offset_right = -145.0
+offset_bottom = 76.0
 text = "Livello 4"
 
-[node name="Livello5" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Livello5" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = -290.0
+offset_top = 107.0
+offset_right = -145.0
+offset_bottom = 130.0
 text = "Livello 5"
 
-[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+[node name="Control2" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 31.0
-offset_top = -181.0
-offset_right = 177.0
-offset_bottom = 25.0
+offset_left = -18.0
+offset_top = 12.0
+offset_right = 22.0
+offset_bottom = 52.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Livello6" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Livello6" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = 51.0
+offset_top = -161.0
+offset_right = 197.0
+offset_bottom = -138.0
 text = "         Livello 6         "
 
-[node name="Livello7" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Livello7" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = 51.0
+offset_top = -107.0
+offset_right = 197.0
+offset_bottom = -84.0
 text = "Livello 7"
 
-[node name="Livello8" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Livello8" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = 51.0
+offset_top = -53.0
+offset_right = 197.0
+offset_bottom = -30.0
 text = "Livello 8"
 
-[node name="Livello9" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Livello9" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = 51.0
+offset_top = 1.0
+offset_right = 197.0
+offset_bottom = 24.0
 text = "Livello 9"
 
-[node name="Livello10" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Livello10" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = 51.0
+offset_top = 55.0
+offset_right = 197.0
+offset_bottom = 78.0
 text = "Livello 10"
 
-[node name="Indietro" type="Button" parent="VBoxContainer2"]
-layout_mode = 2
+[node name="Indietro" type="Button" parent="Control2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.21
+offset_left = 51.0
+offset_top = 109.0
+offset_right = 197.0
+offset_bottom = 132.0
 text = "Indietro"
 
-[connection signal="pressed" from="VBoxContainer/Tutorial_Livello0" to="." method="_on_tutorial_livello_0_pressed"]
-[connection signal="pressed" from="VBoxContainer/Livello1" to="." method="_on_livello_1_pressed"]
-[connection signal="pressed" from="VBoxContainer2/Indietro" to="." method="_on_indietro_pressed"]
+[connection signal="pressed" from="Control/Tutorial_Livello0" to="." method="_on_tutorial_livello_0_pressed"]
+[connection signal="pressed" from="Control/Livello1" to="." method="_on_livello_1_pressed"]
+[connection signal="pressed" from="Control2/Indietro" to="." method="_on_indietro_pressed"]

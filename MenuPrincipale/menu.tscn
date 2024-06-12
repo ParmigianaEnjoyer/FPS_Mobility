@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bghqy5yu6oma3"]
 
-[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_l6cub"]
+[ext_resource type="Theme" uid="uid://sk0j2rw4yk00" path="res://TemaButtons.tres" id="1_l6cub"]
 [ext_resource type="Script" path="res://MenuPrincipale/menu.gd" id="1_pv73s"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="3_bo3hl"]
 [ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_mgk0v"]
@@ -18,68 +18,99 @@ scale = Vector2(1.00166, 1)
 theme = ExtResource("1_l6cub")
 script = ExtResource("1_pv73s")
 
-[node name="Sfondo" type="Node2D" parent="."]
+[node name="Sfondo2" type="Node2D" parent="."]
 position = Vector2(831, 353)
 scale = Vector2(1.98931, 2)
 
-[node name="Sprite2D" type="Sprite2D" parent="Sfondo"]
+[node name="Sprite2D" type="Sprite2D" parent="Sfondo2"]
 position = Vector2(65.5524, 91)
 scale = Vector2(0.794832, 0.837909)
 texture = ExtResource("3_mgk0v")
 
-[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo"]
+[node name="NpcModelMoosHnGun4" type="Sprite2D" parent="Sfondo2"]
 position = Vector2(353.5, 30.5)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("3_bo3hl")
 
-[node name="Mooshy" type="Sprite2D" parent="Sfondo"]
+[node name="Mooshy" type="Sprite2D" parent="Sfondo2"]
 position = Vector2(-295, 184.5)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_lpg0l")
 
-[node name="Logo" type="Sprite2D" parent="Sfondo"]
-position = Vector2(66.5, -72.5)
+[node name="Logo" type="Sprite2D" parent="Sfondo2"]
+position = Vector2(61.0357, -72.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_s2ukn")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Control" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -129.0
-offset_top = -187.0
-offset_right = 6.0
-offset_bottom = -51.0
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Inizia" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Inizia" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.389
+offset_left = -53.6911
+offset_top = -107.0
+offset_right = 81.3089
+offset_bottom = -84.0
 theme = ExtResource("1_l6cub")
 text = "Inizia"
 
-[node name="Difficoltà" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Difficoltà" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.389
+offset_left = -53.6911
+offset_top = -53.0
+offset_right = 81.3089
+offset_bottom = -30.0
 text = "Difficoltà"
 
-[node name="SelezionaLivello" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="SelezionaLivello" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.701
+anchor_bottom = 0.467
+offset_left = -68.6662
+offset_top = 1.0
+offset_right = 66.3338
+offset_bottom = 24.0
 text = "Seleziona Livello"
 
-[node name="Opzioni" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Opzioni" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.389
+offset_left = -53.6911
+offset_top = 55.0
+offset_right = 81.3089
+offset_bottom = 78.0
 text = "Opzioni"
 
-[node name="Esci" type="Button" parent="VBoxContainer"]
-layout_mode = 2
+[node name="Esci" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 0.389
+offset_left = -53.6911
+offset_top = 109.0
+offset_right = 81.3089
+offset_bottom = 132.0
 text = "Esci"
 
-[connection signal="pressed" from="VBoxContainer/Inizia" to="." method="_on_inizia_pressed"]
-[connection signal="pressed" from="VBoxContainer/Difficoltà" to="." method="_on_difficoltà_pressed"]
-[connection signal="pressed" from="VBoxContainer/SelezionaLivello" to="." method="_on_seleziona_livello_pressed"]
-[connection signal="pressed" from="VBoxContainer/Opzioni" to="." method="_on_opzioni_pressed"]
-[connection signal="pressed" from="VBoxContainer/Esci" to="." method="_on_esci_pressed"]
+[connection signal="pressed" from="Control/Inizia" to="." method="_on_inizia_pressed"]
+[connection signal="pressed" from="Control/Difficoltà" to="." method="_on_difficoltà_pressed"]
+[connection signal="pressed" from="Control/SelezionaLivello" to="." method="_on_seleziona_livello_pressed"]
+[connection signal="pressed" from="Control/Opzioni" to="." method="_on_opzioni_pressed"]
+[connection signal="pressed" from="Control/Esci" to="." method="_on_esci_pressed"]
