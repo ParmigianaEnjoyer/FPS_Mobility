@@ -13,13 +13,20 @@ func pause():
 	
 func _input(event):
 	if event.is_action_pressed("exit") and !get_tree().paused:
+		if DialogueManager.is_dialogue_active:
+			DialogueManager.text_box.visible = false
+			
 		show()
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		pause()
+		
 	elif event.is_action_pressed("exit") and get_tree().paused:
 		resume()
 		hide()
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+		
+		if DialogueManager.is_dialogue_active:
+			DialogueManager.text_box.visible = true
 
 func _on_riprendi_pressed():
 	resume()

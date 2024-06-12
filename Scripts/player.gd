@@ -49,11 +49,11 @@ func _physics_process(delta):
 			velocity.y -= gravity * delta * fall_multiplier		#quando sto cadendo dal salto vado più veloce
 
 	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and GlobalVar.movimento_sbloccato:
 		velocity.y = sqrt(jump_height * 2.0 * gravity)
 	
 	# Handle Sprint.
-	if Input.is_action_pressed("sprint"):
+	if Input.is_action_pressed("sprint") and GlobalVar.movimento_sbloccato:
 		speed = SPRINT_SPEED
 	else:
 		speed = WALK_SPEED
@@ -82,8 +82,8 @@ func _physics_process(delta):
 	camera.fov = lerp(camera.fov, target_fov, delta * 8.0)
 	
 	
-	
-	move_and_slide()
+	if GlobalVar.movimento_sbloccato:
+		move_and_slide()
 
 
 func _headbob(time) -> Vector3:

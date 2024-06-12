@@ -46,21 +46,26 @@ func _process(_delta):
 	set_HUI_ammo(GlobalVar.current_bullet_type)
 	update_heart_label()
 	
-	if !radial_menu:
+	if DialogueManager.is_dialogue_active || !GlobalVar.sparare_sbloccato:
+		$Weapon.visible = false
+	elif !radial_menu:
+		$Weapon.visible = true
+	
+	if !radial_menu and !DialogueManager.is_dialogue_active:
 		
 		rage_mode()
 		heal()
 		
 		match current_weapon:
 			"hammer":
-				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped():
+				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped() and GlobalVar.sparare_sbloccato:
 						cooldown_timer.start(1.0 / fire_rate)
 						$Weapon/Hammer_AnimatedSprite2D.play("hammer_shoot")
 						$Shoot.play()
 						shoot(current_weapon)
 				
 			"pistol":
-				if Input.is_action_pressed("shoot"):
+				if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
 					if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
 						no_ammo_animation()
 						$Weapon/Shotgun_AnimatedSprite2D.play("pistol_idle")
@@ -76,7 +81,7 @@ func _process(_delta):
 								reload(GlobalVar.current_bullet_type, $Weapon/Pistol_AnimatedSprite2D)
 					
 			"shotgun":
-				if Input.is_action_pressed("shoot"):
+				if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
 					if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
 						no_ammo_animation()
 						$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_idle")
@@ -91,7 +96,7 @@ func _process(_delta):
 							reload(GlobalVar.current_bullet_type, $Weapon/Shotgun_AnimatedSprite2D)
 					
 			"machinegun":
-				if Input.is_action_pressed("shoot"):
+				if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
 					if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
 						no_ammo_animation()
 						$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
@@ -115,7 +120,7 @@ func _process(_delta):
 								use_ammo(GlobalVar.current_bullet_type)
 							else:
 								reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
-				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing():
+				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and GlobalVar.sparare_sbloccato:
 					shooted_count = 0
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 
@@ -405,7 +410,7 @@ func update_heart_label():
 func heal():
 	const HEALING_AMOUNT = 20
 	
-	if Input.is_action_just_pressed("heal") and GlobalVar.player_health < 100 and GlobalVar.heart_inventory > 0:
+	if Input.is_action_just_pressed("heal") and GlobalVar.player_health < 100 and GlobalVar.heart_inventory > 0 and GlobalVar.curarsi_sbloccato:
 		GlobalVar.heart_inventory -= 1
 		
 		if GlobalVar.player_health <= 100-HEALING_AMOUNT:

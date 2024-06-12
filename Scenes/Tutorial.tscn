@@ -1,8 +1,7 @@
-[gd_scene load_steps=64 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=61 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="Script" path="res://Scenes/Tutorial.gd" id="1_2ob7c"]
 [ext_resource type="PackedScene" uid="uid://bq5ymk6t7cbxd" path="res://Scenes/Player.tscn" id="1_gai3q"]
-[ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="2_t7qx0"]
 [ext_resource type="ArrayMesh" uid="uid://biu32ggrgola" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight.obj" id="3_jr28v"]
 [ext_resource type="ArrayMesh" uid="uid://c4ml1jomxgaw7" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/neutral/wall_straight_gate.obj" id="4_duct8"]
 [ext_resource type="ArrayMesh" uid="uid://bdrvbjrtm2u6w" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/buildings/red/building_tower_A_red.obj" id="5_ysp3m"]
@@ -28,8 +27,6 @@
 [ext_resource type="ArrayMesh" uid="uid://ckapobtdgpet2" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_medium.obj" id="23_k3wpn"]
 [ext_resource type="ArrayMesh" uid="uid://0sm2nm8pogt8" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_C_grass_trees.obj" id="24_6ho14"]
 [ext_resource type="ArrayMesh" uid="uid://b0igsbtye4b24" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_B_grass_trees.obj" id="25_bh0nj"]
-[ext_resource type="PackedScene" uid="uid://cwoblwvdisygl" path="res://Enemy/tank_enemy.tscn" id="28_bjpuj"]
-[ext_resource type="PackedScene" uid="uid://bk16ctw6m5y5o" path="res://Enemy/minion_enemy.tscn" id="30_1oopi"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -139,7 +136,7 @@ data = PackedVector3Array(0, -1, -1.1547, 0, 0, -1.1547, -1, -1, -0.5774, -1, -1
 script = ExtResource("1_2ob7c")
 
 [node name="Player" parent="." instance=ExtResource("1_gai3q")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9934, 8.98291, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58.2038, 8.92249, 39.7931)
 collision_layer = 3
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
@@ -148,9 +145,6 @@ shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_g2h84")
-
-[node name="Enemy" parent="." instance=ExtResource("2_t7qx0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10608, 8.92274, 0.251575)
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0332985, -1.90735e-06, -0.104948)
@@ -1319,9 +1313,3 @@ mesh = ExtResource("24_6ho14")
 [node name="MeshInstance3D18" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Fuori mura"]
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 30, 0, -30, 0, -1.31134e-06, 234.261, 8.53871, -104.978)
 mesh = ExtResource("24_6ho14")
-
-[node name="Tank_enemy" parent="." instance=ExtResource("28_bjpuj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.7909, 8.86465, 23.0062)
-
-[node name="Minion_enemy" parent="." instance=ExtResource("30_1oopi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.3702, 8.9586, -24.5037)
