@@ -95,6 +95,24 @@ var orda_spawnata3: bool
 
 var message_on_screen: bool
 
+
+const DIALOGO_FINALE: Array[String] = [
+	"... ... ...
+	ehi... li hai ammazzati tutti vero?",
+	"Ben fatto Mooshy! Sei davvero fortissimo.",
+	"Non pensare che sia finita qui, questo è solo l'inizio.
+	Di questo passo, anche col tuo aiuto, non riusciremo a difenderci per sempre... dobbiamo cambiare strategia.",
+	"MOOSHY!!
+	Non ti ho dato la vita per difendere MooshValley... ma per attaccare i nemici cinghiali ed eliminarli una volta per tutte.",
+	"Usciamo dalla città e dirigiamoci verso la vecchia cava, una volta attraversata ci ritroveremo nell'Antica Foresta.
+	Proprio al centro di essa, i cinghiali hanno eretto un campo base... sarà il nostro primo obiettivo.",
+	"FORZA MOOSHY! ANDIAMO! RIPRENDIAMOCI LA NOSTRA LIBERTÀ!!",
+	"..."
+]
+var dialogo_finale_finito: bool
+var finale1: bool
+var finale2: bool
+
 enum ammo_type {
 	PISTOL_BULLET, 
 	SHOTGUN_BULLET,
@@ -137,8 +155,14 @@ func _ready():
 	orda_spawnata1 = false
 	orda_spawnata2 = false
 	orda_spawnata3 = false
-
+	
+	dialogo_finale_finito = false
+	finale1 = false
+	finale2 = false
+	
 	message_on_screen = false
+	
+	
 	
 	GlobalVar.livello = 0
 	GlobalVar.player_health = 100
@@ -167,10 +191,12 @@ func _process(_delta):
 	elif !dialogo_4_finito:
 		tutorial_cura()
 	elif !dialogo_6_finito:
-
 		orda()
-	else:
+	elif !dialogo_finale_finito:
+		parte_finale()
 		pass
+
+
 
 func tutorial_movimento():
 	if !parte1_finita:
@@ -466,3 +492,31 @@ func _spawn_orda_3():
 			add_child(soldier)
 		
 	orda_spawnata3 = true
+
+
+func parte_finale():
+	if !finale1:
+		if !message_on_screen: 
+			DialogueManager.show_command_label("Premi Q per proseguire...")
+			message_on_screen = true
+			
+			if !DialogueManager.is_dialogue_finished:
+				DialogueManager.start_dialog(DIALOGO_FINALE)
+
+		if DialogueManager.is_dialogue_finished:
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			finale1 = true
+	
+	if finale1 and !finale2:
+		GlobalVar.radial_sbloccato = true
+		
+		if !message_on_screen:
+			DialogueManager.show_command_label("CONGRATULAZIONI, LIVELLO 0 COMPLETATO")
+			message_on_screen = true
+			
+			await wait(5.0)
+			
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			finale2 = true
