@@ -163,7 +163,7 @@ func _ready():
 	message_on_screen = false
 	
 	
-	
+	GlobalVar.num_nemici_morti_nel_livello = 0
 	GlobalVar.livello = 0
 	GlobalVar.player_health = 100
 	GlobalVar.ammo_storage_total = {
@@ -182,6 +182,7 @@ func _ready():
 
 
 func _process(_delta):
+
 	if !dialogo_1_finito:
 		tutorial_movimento()
 	elif !dialogo_2_finito:
@@ -323,7 +324,7 @@ func tutorial_cura():
 			DialogueManager.show_command_label("Elimina i soldati nemici che hanno invaso MooshValley.")
 			message_on_screen = true
 		
-		if GlobalVar.enemy_killed_count == 2:
+		if GlobalVar.num_nemici_morti_nel_livello == 2:
 			DialogueManager.end_command_label()
 			message_on_screen = false
 			parte9_finita = true
@@ -413,12 +414,12 @@ func orda():
 	if parte13_finita and !parte14_finita:
 		if !orda_spawnata1:
 			_spawn_orda()
-		if orda_spawnata1 and !orda_spawnata2 and GlobalVar.enemy_killed_count == 10:
+		if orda_spawnata1 and !orda_spawnata2 and GlobalVar.num_nemici_morti_nel_livello == 10:
 			_spawn_orda_2()
-		if orda_spawnata2 and !orda_spawnata3 and GlobalVar.enemy_killed_count == 18:
+		if orda_spawnata2 and !orda_spawnata3 and GlobalVar.num_nemici_morti_nel_livello == 18:
 			_spawn_orda_3()
 		
-		if GlobalVar.enemy_killed_count == 30:
+		if GlobalVar.num_nemici_morti_nel_livello == 26:
 			parte14_finita = true
 			dialogo_6_finito = true
 
@@ -520,3 +521,6 @@ func parte_finale():
 			DialogueManager.end_command_label()
 			message_on_screen = false
 			finale2 = true
+			get_tree().change_scene_to_file("res://Scenes/FirstLevel.tscn")
+
+
