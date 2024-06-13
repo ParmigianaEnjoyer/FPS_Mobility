@@ -6,7 +6,7 @@ var SPEED = 100.0
 @onready var ray = $RayCast3D
 @onready var lifetime = $Timer
 
-var damage = 5
+var damage = 2.5
 var bullet_range = 20
 
 # Called when the node enters the scene tree for the first time.

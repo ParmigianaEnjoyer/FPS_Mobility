@@ -150,7 +150,7 @@ func switch_weapon(to):
 		current_weapon = "pistol"
 		fire_rate = 1.8
 		fire_range = -20.0
-		weapon_damage = 10.0
+		weapon_damage = 17.0
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.PISTOL_BULLET
 		
 		set_projectile_particles(0.35, -0.35, 1.0, 0.015, 0.015, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100), 100.0, 100.0, 0.0)
@@ -178,7 +178,7 @@ func switch_weapon(to):
 		current_weapon = "machinegun"
 		fire_rate = 5.0
 		fire_range = -30.0
-		weapon_damage = 10.0
+		weapon_damage = 20.0
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.MACHINEGUN_BULLET
 		set_projectile_particles(0.0, -0.35, 1.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100), 100.0, 100.0, 0.0)
 		
@@ -205,7 +205,7 @@ func switch_weapon(to):
 		current_weapon = "shotgun"
 		fire_range = -11
 		fire_rate = 0.75
-		weapon_damage = 7	#danno di un singolo proiettile
+		weapon_damage = 10	#danno di un singolo proiettile
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.SHOTGUN_BULLET
 		
 		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100.0) , 100.0, 100.0, 5.0)
@@ -426,7 +426,7 @@ func update_heart_label():
 
 
 func heal():
-	const HEALING_AMOUNT = 20
+	const HEALING_AMOUNT = 40
 	
 	if Input.is_action_just_pressed("heal") and GlobalVar.player_health < 100 and GlobalVar.heart_inventory > 0 and GlobalVar.curarsi_sbloccato:
 		GlobalVar.heart_inventory -= 1

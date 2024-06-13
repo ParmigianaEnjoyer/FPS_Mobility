@@ -3,96 +3,97 @@ extends Node3D
 @onready var soldier_scene = preload("res://Enemy/enemy.tscn")
 @onready var tank_scene = preload("res://Enemy/tank_enemy.tscn")
 @onready var minion_scene = preload("res://Enemy/minion_enemy.tscn")
-@onready var dead_enemies = 0
 
 const DIALOGO_1: Array[String] = [
-	"Mooshy...",
-	"Mooshy...",
-	"MOOSHY !!!",
-	"Sei vivo, non posso crederci!
-	Ehm...cioè, certo che posso crederci, dopotutto sono stato io a darti vita.",
-	"Benvenuto al mondo Mooshy! Io sono Garghamel, lo Gnomo Stregone di MooshValley e... bhe... tuo creatore.",
-	"Non c'è tempo per parlare, presto!
-	L'armata dei cinghiali è riuscita a sfondare la grande porta. Saranno qui a momenti!",
+	#"Mooshy...",
+	#"Mooshy...",
+	#"MOOSHY !!!",
+	#"Sei vivo, non posso crederci!
+	#Ehm...cioè, certo che posso crederci, dopotutto sono stato io a darti vita.",
+	#"Benvenuto al mondo Mooshy! Io sono Garghamel, lo Gnomo Stregone di MooshValley e... bhe... tuo creatore.",
+	#"Non c'è tempo per parlare, presto!
+	#L'armata dei cinghiali è riuscita a sfondare la grande porta. Saranno qui a momenti!",
 	"Riesci a muoverti? Sai come si fa?"
 ]
-var dialogo_1_finito = false
-var parte1_finita = false
-var parte2_finita = false
+var dialogo_1_finito: bool
+var parte1_finita: bool
+var parte2_finita: bool
 
 const DIALOGO_2: Array[String] = [
-	"Incredibile...",
-	"Ehm...cioè, come volevasi dimostrare, riesci a muoverti.
-	Dopotitto sono stato io a darti vita.",
-	"MOOSHY !!!
-	Per combattere l'armata dei cinghiali ti serviranno delle armi...",
-	"I cinghiali usano armi da fuoco... Tieni questo martello!
-	Certo sarà difficile colpire qualcuno da distanza ravvicinata, ma almeno non dovrai preoccuparti delle munizioni.",
+	#"Incredibile...",
+	#"Ehm...cioè, come volevasi dimostrare, riesci a muoverti.
+	#Dopotitto sono stato io a darti vita.",
+	#"MOOSHY !!!
+	#Per combattere l'armata dei cinghiali ti serviranno delle armi...",
+	#"I cinghiali usano armi da fuoco... Tieni questo martello!
+	#Certo sarà difficile colpire qualcuno da distanza ravvicinata, ma almeno non dovrai preoccuparti delle munizioni.",
 	"Eh eh..."
 ]
-var dialogo_2_finito = false
-var parte3_finita = false
-var parte4_finita = false
+var dialogo_2_finito: bool
+var parte3_finita: bool
+var parte4_finita: bool
 
 const DIALOGO_3: Array[String] = [
-	"EHI!!! ATTENTO CON QUEL COSO!!!",
-	"Fantastico Mooshy...sembri più forte di quanto mi aspettassi.
-	Che sia davvero tu l'unica speranza di MooshValley?",
-	"MOOSHY !!!
-	Puoi essere anche fortissimo, ma i cinghiali sono abili soldati...e hanno armi da fuoco...",
-	"...",
-	"MA TRANQUILLO!!! 
-	Tramite la mia magia sono riuscito a rubare loro alcune armi, ma sono troppo pensanti per me...sono uno gnomo ricordi?",
+	#"EHI!!! ATTENTO CON QUEL COSO!!!",
+	#"Fantastico Mooshy...sembri più forte di quanto mi aspettassi.
+	#Che sia davvero tu l'unica speranza di MooshValley?",
+	#"MOOSHY !!!
+	#Puoi essere anche fortissimo, ma i cinghiali sono abili soldati...e hanno armi da fuoco...",
+	#"...",
+	#"MA TRANQUILLO!!! 
+	#Tramite la mia magia sono riuscito a rubare loro alcune armi, ma sono troppo pensanti per me...sono uno gnomo ricordi?",
 	"Prendile tu!! 
 	Avanti... prova a sparare."
 ]
-var dialogo_3_finito = false
-var parte5_finita = false
-var parte6_finita = false
-var parte7_finita = false
+var dialogo_3_finito: bool
+var parte5_finita: bool
+var parte6_finita: bool
+var parte7_finita: bool
 
 
 const DIALOGO_4: Array[String] = [
-	"Fantastico Mooshy!! Impari in fretta.",
-	"Usa quelle armi contro i soldati nemici, e ricorda di dosare bene le munizioni.
-	Ma tranquillo, se dovessi averne bisogno, potrai raccoglierne altre dai nemici che sconfiggi.",
-	"...",
-	"MOOSHY!! PRESTO!!",
+	#"Fantastico Mooshy!! Impari in fretta.",
+	#"Usa quelle armi contro i soldati nemici, e ricorda di dosare bene le munizioni.
+	#Ma tranquillo, se dovessi averne bisogno, potrai raccoglierne altre dai nemici che sconfiggi.",
+	#"...",
+	#"MOOSHY!! PRESTO!!",
 	"I soldati di DentiFieri sono arrivati fino a qui.
 	Avanti!! Falli fuori."
 ]
 const DIALOGO_5: Array[String] = [
-	"Ben fatto Mosshy!! Li hai fatti fuori entrambi.",
-	"I cinghiali potranno anche essere creature spregevoli, ma hanno anche loro un cuore.",
-	"...",
-	"Strappalo dal loro cadavere e assorbi la linfa vitale racchiusa al proprio interno per curarti quando ne avrai bisogno.",
+	#"Ben fatto Mosshy!! Li hai fatti fuori entrambi.",
+	#"I cinghiali potranno anche essere creature spregevoli, ma hanno anche loro un cuore.",
+	#"...",
+	#"Strappalo dal loro cadavere e assorbi la linfa vitale racchiusa al proprio interno per curarti quando ne avrai bisogno.",
 	"Dopotutto, sei un fungo!! Eh eh..."
 ]
-var dialogo_4_finito = false
-var parte8_finita = false
-var parte9_finita = false
-var parte10_finita = false
-var spawnati = false
-var parte11_finita = false
+var dialogo_4_finito: bool
+var parte8_finita: bool
+var parte9_finita: bool
+var parte10_finita: bool
+var spawnati: bool
+var parte11_finita: bool
 
 
 const DIALOGO_6: Array[String] = [
-	"Perfetto!! Adesso sei pronto per combattere.",
-	"...",
-	"Mosshy... lascia che ti dica un'ultima cosa.
-	Tu sei stato creato dalla magia oscura, il tuo corpo è intrinseco di linfa malvagia...",
-	"Ogni volta che eliminerai un nemico, accumulerai sete di sangue, che ti condurrà alla follia e a incontrollabili attacchi di furia sanguinaria.",
-	"ADESSO VA!!!",
+	#"Perfetto!! Adesso sei pronto per combattere.",
+	#"...",
+	#"Mosshy... lascia che ti dica un'ultima cosa.
+	#Tu sei stato creato dalla magia oscura, il tuo corpo è intrinseco di linfa malvagia...",
+	#"Ogni volta che eliminerai un nemico, accumulerai sete di sangue, che ti condurrà alla follia e a incontrollabili attacchi di furia sanguinaria.",
+	#"ADESSO VA!!!",
 	"Combatti i soldati di DentiFieri!! Elimina tutti i cinghiali!!
 	SALVA MOOSHVALLEY !!"
 ]
-var dialogo_6_finito = false
-var parte12_finita = false
-var parte13_finita = false
-var parte14_finita = false
-var orda_spawnata = false
+var dialogo_6_finito: bool
+var parte12_finita: bool
+var parte13_finita: bool
+var parte14_finita: bool
+var orda_spawnata1: bool
+var orda_spawnata2: bool
+var orda_spawnata3: bool
 
-var message_on_screen = false
+var message_on_screen: bool
 
 enum ammo_type {
 	PISTOL_BULLET, 
@@ -109,12 +110,42 @@ func _ready():
 	GlobalVar.radial_sbloccato = false
 	GlobalVar.rage_sbloccato = false
 	
+	dialogo_1_finito = false
+	parte1_finita = false
+	parte2_finita = false
+	
+	dialogo_2_finito = false
+	parte3_finita = false
+	parte4_finita = false
+	
+	dialogo_3_finito = false
+	parte5_finita = false
+	parte6_finita = false
+	parte7_finita = false
+	
+	dialogo_4_finito = false
+	parte8_finita = false
+	parte9_finita = false
+	parte10_finita = false
+	spawnati = false
+	parte11_finita = false
+	
+	dialogo_6_finito = false
+	parte12_finita = false
+	parte13_finita = false
+	parte14_finita = false
+	orda_spawnata1 = false
+	orda_spawnata2 = false
+	orda_spawnata3 = false
+
+	message_on_screen = false
+	
 	GlobalVar.livello = 0
 	GlobalVar.player_health = 100
 	GlobalVar.ammo_storage_total = {
-		ammo_type.PISTOL_BULLET: 50,		#50,
-		ammo_type.SHOTGUN_BULLET: 15,		#15
-		ammo_type.MACHINEGUN_BULLET: 75		#75
+		ammo_type.PISTOL_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.PISTOL_BULLET],		#50,
+		ammo_type.SHOTGUN_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.SHOTGUN_BULLET],		#15
+		ammo_type.MACHINEGUN_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.MACHINEGUN_BULLET]		#75
 	}
 	GlobalVar.ammo_magazine = {
 		ammo_type.PISTOL_BULLET: 15,
@@ -122,7 +153,7 @@ func _ready():
 		ammo_type.MACHINEGUN_BULLET: 25
 	}
 	GlobalVar.current_bullet_type = ammo_type.HAMMER
-	GlobalVar.heart_inventory = 1
+	GlobalVar.heart_inventory = 0
 
 
 
@@ -157,11 +188,12 @@ func tutorial_movimento():
 	
 	if parte1_finita and !parte2_finita:
 		if !message_on_screen:
-			DialogueManager.show_command_label("Premi W, A, S, D, MAIUSC e SPACE per muoverti, correre e saltare.")
+			DialogueManager.show_command_label("Premi 'W', 'A', 'S', 'D', 'MAIUSC' e 'SPACE' per muoverti, correre e saltare.")
 			message_on_screen = true
 		
 		if Input.is_action_pressed("down") || Input.is_action_pressed("sprint") ||Input.is_action_pressed("jump") ||Input.is_action_pressed("up") ||Input.is_action_pressed("right") ||Input.is_action_pressed("left"): 
 			GlobalVar.movimento_sbloccato = true
+			await wait(4.0)
 			DialogueManager.end_command_label()
 			message_on_screen = false
 			parte2_finita = true
@@ -329,6 +361,7 @@ func orda():
 		if !message_on_screen: 
 			DialogueManager.show_command_label("Premi Q per proseguire...")
 			message_on_screen = true
+			GlobalVar.rage_sbloccato = true
 			
 			if !DialogueManager.is_dialogue_finished:
 				DialogueManager.start_dialog(DIALOGO_6)
@@ -343,7 +376,7 @@ func orda():
 			_spawn_primi_nemici()
 		
 		if !message_on_screen:
-			DialogueManager.show_command_label("Sopravvivi all'orda.")
+			DialogueManager.show_command_label("Sopravvivi alle orde.")
 			message_on_screen = true
 			await wait(5.0)
 			DialogueManager.end_command_label()
@@ -352,10 +385,14 @@ func orda():
 			DialogueManager.is_dialogue_finished = false
 	
 	if parte13_finita and !parte14_finita:
-		if !orda_spawnata:
+		if !orda_spawnata1:
 			_spawn_orda()
+		if orda_spawnata1 and !orda_spawnata2 and GlobalVar.enemy_killed_count == 10:
+			_spawn_orda_2()
+		if orda_spawnata2 and !orda_spawnata3 and GlobalVar.enemy_killed_count == 18:
+			_spawn_orda_3()
 		
-		if GlobalVar.enemy_killed_count == 10:
+		if GlobalVar.enemy_killed_count == 30:
 			parte14_finita = true
 			dialogo_6_finito = true
 
@@ -376,10 +413,56 @@ func _spawn_orda():
 			minion.position = spawn_position
 			add_child(minion)
 		elif i < 8:
+			#var tank = tank_scene.instantiate()
+			#var spawn_position = $SpawnHolder.get_child(i).position
+			
+			var soldier = soldier_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
+			
+			soldier.position = spawn_position
+			add_child(soldier)
+			
+	orda_spawnata1 = true
+
+
+func _spawn_orda_2():
+	
+	for i in range(8):
+		if i < 2:
+			var minion = minion_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
+			
+			minion.position = spawn_position
+			add_child(minion)
+		elif i < 6:
+			var soldier = soldier_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
+			
+			soldier.position = spawn_position
+			add_child(soldier)
+		elif i < 8:
 			var tank = tank_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
 			tank.position = spawn_position
 			add_child(tank)
+	
+	orda_spawnata2 = true
+
+
+func _spawn_orda_3():
+	for i in range(8):
+		if i < 4:
+			var minion = minion_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
 			
-	orda_spawnata = true
+			minion.position = spawn_position
+			add_child(minion)
+		elif i < 8:
+			var soldier = soldier_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
+			
+			soldier.position = spawn_position
+			add_child(soldier)
+		
+	orda_spawnata3 = true
