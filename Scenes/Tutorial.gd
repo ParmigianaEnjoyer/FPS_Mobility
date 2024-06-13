@@ -5,14 +5,14 @@ extends Node3D
 @onready var minion_scene = preload("res://Enemy/minion_enemy.tscn")
 
 const DIALOGO_1: Array[String] = [
-	#"Mooshy...",
-	#"Mooshy...",
-	#"MOOSHY !!!",
-	#"Sei vivo, non posso crederci!
-	#Ehm...cioè, certo che posso crederci, dopotutto sono stato io a darti vita.",
-	#"Benvenuto al mondo Mooshy! Io sono Garghamel, lo Gnomo Stregone di MooshValley e... bhe... tuo creatore.",
-	#"Non c'è tempo per parlare, presto!
-	#L'armata dei cinghiali è riuscita a sfondare la grande porta. Saranno qui a momenti!",
+	"Mooshy...",
+	"Mooshy...",
+	"MOOSHY !!!",
+	"Sei vivo, non posso crederci!
+	Ehm...cioè, certo che posso crederci, dopotutto sono stato io a darti vita.",
+	"Benvenuto al mondo Mooshy! Io sono Garghamel, lo Gnomo Stregone di MooshValley e... bhe... tuo creatore.",
+	"Non c'è tempo per parlare, presto!
+	L'armata dei cinghiali è riuscita a sfondare la grande porta. Saranno qui a momenti!",
 	"Riesci a muoverti? Sai come si fa?"
 ]
 var dialogo_1_finito: bool
@@ -20,13 +20,13 @@ var parte1_finita: bool
 var parte2_finita: bool
 
 const DIALOGO_2: Array[String] = [
-	#"Incredibile...",
-	#"Ehm...cioè, come volevasi dimostrare, riesci a muoverti.
-	#Dopotitto sono stato io a darti vita.",
-	#"MOOSHY !!!
-	#Per combattere l'armata dei cinghiali ti serviranno delle armi...",
-	#"I cinghiali usano armi da fuoco... Tieni questo martello!
-	#Certo sarà difficile colpire qualcuno da distanza ravvicinata, ma almeno non dovrai preoccuparti delle munizioni.",
+	"Incredibile...",
+	"Ehm...cioè, come volevasi dimostrare, riesci a muoverti.
+	Dopotitto sono stato io a darti vita.",
+	"MOOSHY !!!
+	Per combattere l'armata dei cinghiali ti serviranno delle armi...",
+	"I cinghiali usano armi da fuoco... Tieni questo martello!
+	Certo sarà difficile colpire qualcuno da distanza ravvicinata, ma almeno non dovrai preoccuparti delle munizioni.",
 	"Eh eh..."
 ]
 var dialogo_2_finito: bool
@@ -34,14 +34,14 @@ var parte3_finita: bool
 var parte4_finita: bool
 
 const DIALOGO_3: Array[String] = [
-	#"EHI!!! ATTENTO CON QUEL COSO!!!",
-	#"Fantastico Mooshy...sembri più forte di quanto mi aspettassi.
-	#Che sia davvero tu l'unica speranza di MooshValley?",
-	#"MOOSHY !!!
-	#Puoi essere anche fortissimo, ma i cinghiali sono abili soldati...e hanno armi da fuoco...",
-	#"...",
-	#"MA TRANQUILLO!!! 
-	#Tramite la mia magia sono riuscito a rubare loro alcune armi, ma sono troppo pensanti per me...sono uno gnomo ricordi?",
+	"EHI!!! ATTENTO CON QUEL COSO!!!",
+	"Fantastico Mooshy...sembri più forte di quanto mi aspettassi.
+	Che sia davvero tu l'unica speranza di MooshValley?",
+	"MOOSHY !!!
+	Puoi essere anche fortissimo, ma i cinghiali sono abili soldati...e hanno armi da fuoco...",
+	"...",
+	"MA TRANQUILLO!!! 
+	Tramite la mia magia sono riuscito a rubare loro alcune armi, ma sono troppo pensanti per me...sono uno gnomo ricordi?",
 	"Prendile tu!! 
 	Avanti... prova a sparare."
 ]
@@ -52,19 +52,19 @@ var parte7_finita: bool
 
 
 const DIALOGO_4: Array[String] = [
-	#"Fantastico Mooshy!! Impari in fretta.",
-	#"Usa quelle armi contro i soldati nemici, e ricorda di dosare bene le munizioni.
-	#Ma tranquillo, se dovessi averne bisogno, potrai raccoglierne altre dai nemici che sconfiggi.",
-	#"...",
-	#"MOOSHY!! PRESTO!!",
+	"Fantastico Mooshy!! Impari in fretta.",
+	"Usa quelle armi contro i soldati nemici, e ricorda di dosare bene le munizioni.
+	Ma tranquillo, se dovessi averne bisogno, potrai raccoglierne altre dai nemici che sconfiggi.",
+	"...",
+	"MOOSHY!! PRESTO!!",
 	"I soldati di DentiFieri sono arrivati fino a qui.
 	Avanti!! Falli fuori."
 ]
 const DIALOGO_5: Array[String] = [
-	#"Ben fatto Mosshy!! Li hai fatti fuori entrambi.",
-	#"I cinghiali potranno anche essere creature spregevoli, ma hanno anche loro un cuore.",
-	#"...",
-	#"Strappalo dal loro cadavere e assorbi la linfa vitale racchiusa al proprio interno per curarti quando ne avrai bisogno.",
+	"Ben fatto Mosshy!! Li hai fatti fuori entrambi.",
+	"I cinghiali potranno anche essere creature spregevoli, ma hanno anche loro un cuore.",
+	"...",
+	"Strappalo dal loro cadavere e assorbi la linfa vitale racchiusa al proprio interno per curarti quando ne avrai bisogno.",
 	"Dopotutto, sei un fungo!! Eh eh..."
 ]
 var dialogo_4_finito: bool
@@ -76,12 +76,12 @@ var parte11_finita: bool
 
 
 const DIALOGO_6: Array[String] = [
-	#"Perfetto!! Adesso sei pronto per combattere.",
-	#"...",
-	#"Mosshy... lascia che ti dica un'ultima cosa.
-	#Tu sei stato creato dalla magia oscura, il tuo corpo è intrinseco di linfa malvagia...",
-	#"Ogni volta che eliminerai un nemico, accumulerai sete di sangue, che ti condurrà alla follia e a incontrollabili attacchi di furia sanguinaria.",
-	#"ADESSO VA!!!",
+	"Perfetto!! Adesso sei pronto per combattere.",
+	"...",
+	"Mosshy... lascia che ti dica un'ultima cosa.
+	Tu sei stato creato dalla magia oscura, il tuo corpo è intrinseco di linfa malvagia...",
+	"Ogni volta che eliminerai un nemico, accumulerai sete di sangue, che ti condurrà alla follia e a incontrollabili attacchi di furia sanguinaria.",
+	"ADESSO VA!!!",
 	"Combatti i soldati di DentiFieri!! Elimina tutti i cinghiali!!
 	SALVA MOOSHVALLEY !!"
 ]
