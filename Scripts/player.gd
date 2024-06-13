@@ -94,11 +94,15 @@ func _headbob(time) -> Vector3:
 
 
 func take_damage(damage):
-	GlobalVar.player_health -= damage
-	$Voice.play()
-	
-	$ui/HealthBar.health = GlobalVar.player_health
-	
-	if GlobalVar.player_health <= 0:		#aggiorna la vita, se arriva a 0 o meno chiude il gioco
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		get_tree().change_scene_to_file("res://Scenes/morte.tscn")
+	if !GlobalVar.curarsi_sbloccato and GlobalVar.player_health <= 20:
+		GlobalVar.player_health = 20 
+	else:
+		GlobalVar.player_health -= damage
+		$Voice.play()
+		
+		$ui/HealthBar.health = GlobalVar.player_health
+
+			
+		if GlobalVar.player_health <= 0:		#aggiorna la vita, se arriva a 0 o meno chiude il gioco
+			Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+			get_tree().change_scene_to_file("res://Scenes/morte.tscn")

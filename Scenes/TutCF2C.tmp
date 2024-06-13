@@ -1314,28 +1314,4 @@ mesh = ExtResource("24_6ho14")
 transform = Transform3D(-1.31134e-06, 0, 30, 0, 30, 0, -30, 0, -1.31134e-06, 234.261, 8.53871, -104.978)
 mesh = ExtResource("24_6ho14")
 
-[node name="SpawnHolder" type="Node3D" parent="."]
-
-[node name="Spawner1" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0432, 8.92274, -7.32757)
-
-[node name="Spawner2" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0432, 8.92274, 8.23476)
-
-[node name="Spawner3" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8249, 8.92274, 8.23476)
-
-[node name="Spawner4" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.8249, 8.92274, -10.0319)
-
-[node name="Spawner5" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5269, 8.92274, -6.39943)
-
-[node name="Spawner6" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.5269, 8.92274, 3.76592)
-
-[node name="Spawner7" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4946, 8.92274, 40.4424)
-
-[node name="Spawner8" type="Node3D" parent="SpawnHolder"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.049, 8.92274, -37.5929)
+[node name="Timers" type="Node" parent="."]
