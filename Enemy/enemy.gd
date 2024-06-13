@@ -8,7 +8,6 @@ const ATTACK_COOLDOWN = 0.5	#secondi che separano un attacco dall'altro
 
 @export var max_hitpoints := 100 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
-@export var damage = 10 * GlobalVar.diff
 
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -115,6 +114,7 @@ func die():
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
 		GlobalVar.enemy_killed_count += 1
+		GlobalVar.num_nemici_morti_nel_livello += 1
 		
 	if !GlobalVar.curarsi_sbloccato:
 		heart_drop()

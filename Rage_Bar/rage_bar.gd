@@ -4,7 +4,7 @@ extends ProgressBar
 
 
 const RAGE_POINT = 20
-const RAGE_TIMER = 20.0
+const RAGE_TIMER = 10.0
 
 
 func _ready():
