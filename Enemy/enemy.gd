@@ -2,11 +2,11 @@ extends CharacterBody3D
 
 const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
-const AGGRO_RANGE = 40.0
+const AGGRO_RANGE = 80.0
 const ATTACK_RANGE = 20.0
 const ATTACK_COOLDOWN = 0.5	#secondi che separano un attacco dall'altro
 
-@export var max_hitpoints := 1 * GlobalVar.diff	#100
+@export var max_hitpoints := 100 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
 @export var damage = 10 * GlobalVar.diff
 
@@ -71,7 +71,10 @@ func _physics_process(delta):
 			
 		if distance <= AGGRO_RANGE:
 			provoked = true
-			
+		
+		if distance > ATTACK_RANGE:
+			attacking = false
+		
 		if (provoked and distance <= float(ATTACK_RANGE * 0.75)) or attacking:
 			if ray.is_colliding() and ray.get_collider().is_in_group("player"):
 				attacking = true

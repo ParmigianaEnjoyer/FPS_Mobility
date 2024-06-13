@@ -2,12 +2,12 @@ extends CharacterBody3D
 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
-const AGGRO_RANGE = 40.0
+const AGGRO_RANGE = 80.0
 const ATTACK_RANGE = 3.0
 const ATTACK_COOLDOWN = 1	#secondi che separano un attacco dall'altro
 const WAIT_BEFORE_FOLLOW_AGAIN = 1.5 		#tempo che il nemico aspetta se il player si allontana prima di seguirlo nuovamente
 
-@export var max_hitpoints := 1 * GlobalVar.diff	#100
+@export var max_hitpoints := 50 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
 @export var damage = 1 * GlobalVar.diff
 
@@ -57,7 +57,7 @@ func _process(_delta):
 			$AnimatedSprite3D.play("die")
 			stop = true
 	
-	if !move_again_timer.is_stopped() and !attacking:
+	if !move_again_timer.is_stopped() and !attacking and !dead:
 		$AnimatedSprite3D.play("default")
 
 
@@ -82,6 +82,9 @@ func _physics_process(delta):
 		if distance <= AGGRO_RANGE:
 			provoked = true
 			
+		if distance > ATTACK_RANGE:
+			attacking = false
+		
 		if (provoked and distance <= float(ATTACK_RANGE * 0.75)) or attacking:
 			attacking = true
 			if ray.is_colliding() and ray.get_collider().is_in_group("player"):

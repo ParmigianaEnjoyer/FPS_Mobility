@@ -130,7 +130,10 @@ func _process(_delta):
 								use_ammo(GlobalVar.current_bullet_type)
 							else:
 								reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
-				if (Input.is_action_just_released("shoot") or DialogueManager.is_dialogue_finished) and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and GlobalVar.sparare_sbloccato:
+				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and GlobalVar.sparare_sbloccato:
+					shooted_count = 0
+					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+				if !DialogueManager.is_dialogue_active and !Input.is_action_pressed("shoot"):
 					shooted_count = 0
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 

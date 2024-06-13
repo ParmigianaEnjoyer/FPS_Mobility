@@ -76,6 +76,21 @@ var spawnati = false
 var parte11_finita = false
 
 
+const DIALOGO_6: Array[String] = [
+	#"Perfetto!! Adesso sei pronto per combattere.",
+	#"...",
+	#"Mosshy... lascia che ti dica un'ultima cosa.
+	#Tu sei stato creato dalla magia oscura, il tuo corpo è intrinseco di linfa malvagia...",
+	#"Ogni volta che eliminerai un nemico, accumulerai sete di sangue, che ti condurrà alla follia e a incontrollabili attacchi di furia sanguinaria.",
+	#"ADESSO VA!!!",
+	"Combatti i soldati di DentiFieri!! Elimina tutti i cinghiali!!
+	SALVA MOOSHVALLEY !!"
+]
+var dialogo_6_finito = false
+var parte12_finita = false
+var parte13_finita = false
+var parte14_finita = false
+var orda_spawnata = false
 
 var message_on_screen = false
 
@@ -116,12 +131,18 @@ func _process(_delta):
 	elif !dialogo_2_finito:
 		tutorial_martello()
 	elif !dialogo_3_finito:
+		print("is_active: " + str(DialogueManager.is_dialogue_active))
+		print("is_finished: " + str(DialogueManager.is_dialogue_finished))
 		tutorial_armi()
 	elif !dialogo_4_finito:
+		print("is_active: " + str(DialogueManager.is_dialogue_active))
+		print("is_finished: " + str(DialogueManager.is_dialogue_finished))
 		tutorial_cura()
+	elif !dialogo_6_finito:
+
+		orda()
 	else:
 		pass
-
 
 func tutorial_movimento():
 	if !parte1_finita:
@@ -173,7 +194,7 @@ func tutorial_martello():
 			message_on_screen = true
 		
 		if Input.is_action_pressed("shoot"): 
-			await wait()
+			await wait(1.5)
 			
 			DialogueManager.end_command_label()
 			message_on_screen = false
@@ -216,7 +237,7 @@ func tutorial_armi():
 			message_on_screen = true
 		
 		if Input.is_action_pressed("shoot"):
-			await wait()
+			await wait(1.5)
 			
 			DialogueManager.end_command_label()
 			message_on_screen = false
@@ -287,11 +308,11 @@ func tutorial_cura():
 			dialogo_4_finito = true
 
 
-func wait():
+func wait(param):
 	var timer = Timer.new()
 	add_child(timer)
 	timer.one_shot = true
-	timer.start(1.5)
+	timer.start(param)
 	await timer.timeout
 	timer.queue_free()
 
@@ -304,3 +325,64 @@ func _spawn_primi_nemici():
 		soldier.position = spawn_position
 		add_child(soldier)
 	spawnati = true
+
+
+func orda():
+	if !parte12_finita:
+		if !message_on_screen: 
+			DialogueManager.show_command_label("Premi Q per proseguire...")
+			message_on_screen = true
+			
+			if !DialogueManager.is_dialogue_finished:
+				DialogueManager.start_dialog(DIALOGO_6)
+			
+		if DialogueManager.is_dialogue_finished:
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			parte12_finita = true
+			
+	if parte12_finita and !parte13_finita:
+		if !spawnati:
+			_spawn_primi_nemici()
+		
+		if !message_on_screen:
+			DialogueManager.show_command_label("Sopravvivi all'orda.")
+			message_on_screen = true
+			await wait(5.0)
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			parte13_finita = true
+			DialogueManager.is_dialogue_finished = false
+	
+	if parte13_finita and !parte14_finita:
+		if !orda_spawnata:
+			_spawn_orda()
+		
+		if GlobalVar.enemy_killed_count == 10:
+			parte14_finita = true
+			dialogo_6_finito = true
+
+
+
+func _spawn_orda():
+	for i in range(8):
+		if i < 2:
+			var soldier = soldier_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
+			
+			soldier.position = spawn_position
+			add_child(soldier)
+		elif i < 6:
+			var minion = minion_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
+			
+			minion.position = spawn_position
+			add_child(minion)
+		elif i < 8:
+			var tank = tank_scene.instantiate()
+			var spawn_position = $SpawnHolder.get_child(i).position
+			
+			tank.position = spawn_position
+			add_child(tank)
+			
+	orda_spawnata = true
