@@ -43,6 +43,11 @@ func _process(_delta):
 	if GlobalVar.reset_richiesto == true:
 		reset()
 	
+	if !GlobalVar.rage_sbloccato:
+		ragebar.visible = false
+	else:
+		ragebar.visible = true
+	
 	if !GlobalVar.sparare_sbloccato:
 		$HUI_ammo.visible = false
 	else:

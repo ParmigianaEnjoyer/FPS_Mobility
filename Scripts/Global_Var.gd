@@ -56,3 +56,4 @@ var movimento_sbloccato = true
 var radial_sbloccato = true
 var sparare_sbloccato = true
 var curarsi_sbloccato = true
+var rage_sbloccato = true
