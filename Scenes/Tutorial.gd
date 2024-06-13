@@ -62,10 +62,10 @@ const DIALOGO_4: Array[String] = [
 	Avanti!! Falli fuori."
 ]
 const DIALOGO_5: Array[String] = [
-	"Ben fatto Mosshy!! Li hai fatti fuori entrambi.",
-	"I cinghiali potranno anche essere creature spregevoli, ma hanno anche loro un cuore.",
-	"...",
-	"Strappalo dal loro cadavere e assorbi la linfa vitale racchiusa al proprio interno per curarti quando ne avrai bisogno.",
+	#"Ben fatto Mosshy!! Li hai fatti fuori entrambi.",
+	#"I cinghiali potranno anche essere creature spregevoli, ma hanno anche loro un cuore.",
+	#"...",
+	#"Strappalo dal loro cadavere e assorbi la linfa vitale racchiusa al proprio interno per curarti quando ne avrai bisogno.",
 	"Dopotutto, sei un fungo!! Eh eh..."
 ]
 var dialogo_4_finito = false
