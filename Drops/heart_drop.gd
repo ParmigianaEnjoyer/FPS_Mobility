@@ -16,7 +16,9 @@ func decide_to_drop():
 	var prob_drop = calcola_probabilita()
 	var random_number = randf()
 	
-	if random_number < prob_drop:
+	if !GlobalVar.curarsi_sbloccato:
+		pass
+	elif random_number < prob_drop:
 		pass
 	else:
 		queue_free()

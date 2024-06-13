@@ -8,7 +8,7 @@ var reset_richiesto = false
 var diff := 1.0  #variabile globale difficoltà
 
 var livello := 0 #livello attuale
-var heart_inventory := 1	#numero di cuori (cure) nell'inventario
+var heart_inventory := 0	#numero di cuori (cure) nell'inventario
 
 #VARIABILI PER LE MUNIZIONI
 #capienza massima delle munizioni totali

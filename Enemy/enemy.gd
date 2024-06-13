@@ -113,7 +113,10 @@ func die():
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
 		GlobalVar.enemy_killed_count += 1
 		
-	decide_what_to_drop()
+	if !GlobalVar.curarsi_sbloccato:
+		heart_drop()
+	else:
+		decide_what_to_drop()
 
 
 func ammo_drop():

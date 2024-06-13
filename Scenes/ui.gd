@@ -43,6 +43,16 @@ func _process(_delta):
 	if GlobalVar.reset_richiesto == true:
 		reset()
 	
+	if !GlobalVar.sparare_sbloccato:
+		$HUI_ammo.visible = false
+	else:
+		$HUI_ammo.visible = true
+	
+	if !GlobalVar.curarsi_sbloccato:
+		$HUI_hearts.visible = false
+	else:
+		$HUI_hearts.visible = true
+		
 	set_HUI_ammo(GlobalVar.current_bullet_type)
 	update_heart_label()
 	
@@ -120,7 +130,7 @@ func _process(_delta):
 								use_ammo(GlobalVar.current_bullet_type)
 							else:
 								reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
-				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and GlobalVar.sparare_sbloccato:
+				if (Input.is_action_just_released("shoot") or DialogueManager.is_dialogue_finished) and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and GlobalVar.sparare_sbloccato:
 					shooted_count = 0
 					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 
