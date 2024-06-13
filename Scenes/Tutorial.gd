@@ -131,12 +131,8 @@ func _process(_delta):
 	elif !dialogo_2_finito:
 		tutorial_martello()
 	elif !dialogo_3_finito:
-		print("is_active: " + str(DialogueManager.is_dialogue_active))
-		print("is_finished: " + str(DialogueManager.is_dialogue_finished))
 		tutorial_armi()
 	elif !dialogo_4_finito:
-		print("is_active: " + str(DialogueManager.is_dialogue_active))
-		print("is_finished: " + str(DialogueManager.is_dialogue_finished))
 		tutorial_cura()
 	elif !dialogo_6_finito:
 
