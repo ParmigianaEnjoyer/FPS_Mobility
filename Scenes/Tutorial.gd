@@ -168,14 +168,14 @@ func _ready():
 	GlobalVar.livello = 0
 	GlobalVar.player_health = 100
 	GlobalVar.ammo_storage_total = {
-		ammo_type.PISTOL_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.PISTOL_BULLET],		#50,
-		ammo_type.SHOTGUN_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.SHOTGUN_BULLET],		#15
-		ammo_type.MACHINEGUN_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.MACHINEGUN_BULLET]		#75
+		GlobalVar.ammo_type.PISTOL_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.PISTOL_BULLET],		#50,
+		GlobalVar.ammo_type.SHOTGUN_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.SHOTGUN_BULLET],		#15
+		GlobalVar.ammo_type.MACHINEGUN_BULLET: GlobalVar.AMMO_MAX_STORAGE[GlobalVar.ammo_type.MACHINEGUN_BULLET]		#75
 	}
 	GlobalVar.ammo_magazine = {
-		ammo_type.PISTOL_BULLET: 15,
-		ammo_type.SHOTGUN_BULLET: 1,
-		ammo_type.MACHINEGUN_BULLET: 25
+		GlobalVar.ammo_type.PISTOL_BULLET: GlobalVar.AMMO_MAX_MAGAZINE[GlobalVar.ammo_type.PISTOL_BULLET],
+		GlobalVar.ammo_type.SHOTGUN_BULLET: GlobalVar.AMMO_MAX_MAGAZINE[GlobalVar.ammo_type.SHOTGUN_BULLET],
+		GlobalVar.ammo_type.MACHINEGUN_BULLET: GlobalVar.AMMO_MAX_MAGAZINE[GlobalVar.ammo_type.MACHINEGUN_BULLET]
 	}
 	GlobalVar.current_bullet_type = ammo_type.HAMMER
 	GlobalVar.heart_inventory = 0

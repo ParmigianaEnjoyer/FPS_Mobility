@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=62 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="ArrayMesh" uid="uid://c553qa57bkh7c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_large.obj" id="1_c1hrc"]
 [ext_resource type="Script" path="res://Scenes/FirstLevel.gd" id="1_k3n5a"]
@@ -29,7 +29,6 @@
 [ext_resource type="ArrayMesh" uid="uid://c603l5upwrba" path="res://Models/OBJ format/cliff_cave_stone.obj" id="16_m3qqq"]
 [ext_resource type="ArrayMesh" uid="uid://c86566rkw7o8c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass.obj" id="17_0sehw"]
 [ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="28_182nf"]
-[ext_resource type="PackedScene" uid="uid://dkm34hpiyarjj" path="res://Enemy/boss_marius.tscn" id="30_unvxn"]
 [ext_resource type="PackedScene" uid="uid://cwoblwvdisygl" path="res://Enemy/tank_enemy.tscn" id="32_gwfbs"]
 [ext_resource type="PackedScene" uid="uid://ciwpu1gailxb2" path="res://Scenes/staccionata.tscn" id="33_80lkh"]
 [ext_resource type="PackedScene" uid="uid://bk16ctw6m5y5o" path="res://Enemy/minion_enemy.tscn" id="34_wmo0w"]
@@ -1674,62 +1673,6 @@ transform = Transform3D(13.2757, 0, -21.1838, 0, 25, 0, 21.1838, 0, 13.2757, 285
 mesh = ExtResource("12_pps6r")
 skeleton = NodePath("../../../Montains")
 
-[node name="BossWall" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 177.021, 6.74368, 0.695618)
-visible = false
-layers = 512
-mesh = ExtResource("14_iw0yv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall"]
-collision_layer = 512
-collision_mask = 512
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5479, 294.113, -100.759)
-shape = SubResource("BoxShape3D_cguvn")
-
-[node name="BossWall2" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 116.343, 6.74368, 0)
-visible = false
-layers = 512
-mesh = ExtResource("14_iw0yv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall2"]
-collision_layer = 512
-collision_mask = 512
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5479, 294.113, -100.759)
-shape = SubResource("BoxShape3D_cguvn")
-
-[node name="BossWall3" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
-transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 153.732, 6.74368, 43.9009)
-visible = false
-layers = 512
-mesh = ExtResource("14_iw0yv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall3"]
-collision_layer = 512
-collision_mask = 512
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5479, 294.113, -100.759)
-shape = SubResource("BoxShape3D_cguvn")
-
-[node name="BossWall4" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
-transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 147.606, 6.74368, -35.008)
-visible = false
-layers = 512
-mesh = ExtResource("14_iw0yv")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall4"]
-collision_layer = 512
-collision_mask = 512
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/BossWall4/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5479, 294.113, -100.759)
-shape = SubResource("BoxShape3D_cguvn")
-
 [node name="Area_InizioOrde" type="Area3D" parent="Map/NavigationRegion3D/FirstLevel"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.202, 13.9126, 13.4614)
 
@@ -1739,9 +1682,6 @@ shape = SubResource("BoxShape3D_r8df5")
 
 [node name="Player" parent="." instance=ExtResource("14_u4cdd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -165.927, 8.92249, -3.93783)
-
-[node name="Boss_Marius" parent="." instance=ExtResource("30_unvxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.7413, 8.92274, 4.06898)
 
 [node name="Accampamento" type="Node3D" parent="."]
 
@@ -1814,5 +1754,70 @@ visible = false
 [node name="Staccionata2" parent="." instance=ExtResource("33_80lkh")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -47, 8.921, -21.572)
 visible = false
+
+[node name="SpawnHolder" type="Node3D" parent="."]
+
+[node name="Spwan0" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.01332, 30.9431, 7.25454)
+
+[node name="Spwan1" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10884, 30.9431, -9.1265)
+
+[node name="Spwan2" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.4695, 30.9431, 0.668929)
+
+[node name="Spwan3" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.6342, 30.9431, 0.668929)
+
+[node name="Spwan4" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.6342, 30.9431, 2.01429)
+
+[node name="Spwan5" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -40.203, 30.9431, 2.01429)
+
+[node name="Spwan6" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.5887, 30.9431, -31.9809)
+
+[node name="Spwan7" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.3304, 30.9431, -31.9809)
+
+[node name="Spwan8" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.553, 15.7714, -41.0373)
+
+[node name="Spwan9" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.342, 12.1904, -11.3811)
+
+[node name="Spwan10" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.342, 12.1904, -6.24201)
+
+[node name="Spwan11" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.5388, 12.1904, -3.53728)
+
+[node name="Spwan12" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.6115, 12.1904, -3.53728)
+
+[node name="Spwan13" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.6115, 12.1904, 6.08033)
+
+[node name="Spwan14" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.9741, 12.1488, 0.254866)
+
+[node name="Spwan15" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46.9572, 12.1488, 0.254866)
+
+[node name="Spwan16" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.204, 9.98642, 38.3024)
+
+[node name="Spwan17" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.0267, 12.4389, 41.4563)
+
+[node name="Spwan18" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.9268, 12.1598, 31.5381)
+
+[node name="Spwan19" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0263, 14.6641, -17.9732)
+
+[node name="Spwan20" type="Node3D" parent="SpawnHolder"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9418, 11.0813, -4.25088)
 
 [connection signal="body_entered" from="Map/NavigationRegion3D/FirstLevel/Area_InizioOrde" to="." method="_on_area_3d_body_entered"]
