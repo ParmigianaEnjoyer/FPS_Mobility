@@ -378,7 +378,7 @@ func _spawn_primi_nemici():
 	for i in range(2):
 		var soldier = soldier_scene.instantiate()
 		var spawn_position = $SpawnHolder.get_child(i).position
-		
+		soldier.AGGRO_RANGE = 80
 		soldier.position = spawn_position
 		add_child(soldier)
 	spawnati = true
@@ -432,12 +432,14 @@ func _spawn_orda():
 			var soldier = soldier_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			soldier.AGGRO_RANGE = 80
 			soldier.position = spawn_position
 			add_child(soldier)
 		elif i < 6:
 			var minion = minion_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			minion.AGGRO_RANGE = 80
 			minion.position = spawn_position
 			add_child(minion)
 		elif i < 8:
@@ -447,6 +449,7 @@ func _spawn_orda():
 			var soldier = soldier_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			soldier.AGGRO_RANGE = 80
 			soldier.position = spawn_position
 			add_child(soldier)
 			
@@ -460,18 +463,21 @@ func _spawn_orda_2():
 			var minion = minion_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			minion.AGGRO_RANGE = 80
 			minion.position = spawn_position
 			add_child(minion)
 		elif i < 6:
 			var soldier = soldier_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			soldier.AGGRO_RANGE = 80
 			soldier.position = spawn_position
 			add_child(soldier)
 		elif i < 8:
 			var tank = tank_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			tank.AGGRO_RANGE = 80
 			tank.position = spawn_position
 			add_child(tank)
 	
@@ -484,12 +490,14 @@ func _spawn_orda_3():
 			var minion = minion_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			minion.AGGRO_RANGE = 80
 			minion.position = spawn_position
 			add_child(minion)
 		elif i < 8:
 			var soldier = soldier_scene.instantiate()
 			var spawn_position = $SpawnHolder.get_child(i).position
 			
+			soldier.AGGRO_RANGE = 80
 			soldier.position = spawn_position
 			add_child(soldier)
 		
