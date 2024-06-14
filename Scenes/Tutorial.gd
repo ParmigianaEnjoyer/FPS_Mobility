@@ -160,6 +160,8 @@ func _ready():
 	finale1 = false
 	finale2 = false
 	
+	if message_on_screen:
+		DialogueManager.end_command_label()
 	message_on_screen = false
 	
 	
@@ -522,5 +524,3 @@ func parte_finale():
 			message_on_screen = false
 			finale2 = true
 			get_tree().change_scene_to_file("res://Scenes/FirstLevel.tscn")
-
-

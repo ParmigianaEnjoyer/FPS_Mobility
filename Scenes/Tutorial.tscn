@@ -1236,7 +1236,7 @@ mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D22" type="MeshInstance3D" parent="NavigationRegion3D/Map/MappaTutorial/Terreno/Percorso"]
-transform = Transform3D(-7.37206, 0, -1.75812, 0, 20, 0, 7.37206, 0, -1.75812, -16.5125, 0.703907, -12.871)
+transform = Transform3D(-7.37206, 0, -1.75812, 0, 20, 0, 7.37206, 0, -1.75812, -16.276, 0.703907, -12.871)
 mesh = ExtResource("22_mt2si")
 skeleton = NodePath("../..")
 

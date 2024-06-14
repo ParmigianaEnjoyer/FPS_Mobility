@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 const SPEED = 6.0
 const JUMP_VELOCITY = 4.5
-const AGGRO_RANGE = 80.0
+const AGGRO_RANGE = 50.0
 const ATTACK_RANGE = 20.0
 const ATTACK_COOLDOWN = 0.5	#secondi che separano un attacco dall'altro
 
@@ -113,8 +113,7 @@ func die():
 		$Voice.play()
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
-		set_collision_layer_value(3, false)
-		set_collision_mask_value(3, false)
+
 		GlobalVar.enemy_killed_count += 1
 		GlobalVar.num_nemici_morti_nel_livello += 1
 		
