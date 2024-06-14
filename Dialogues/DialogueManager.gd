@@ -24,6 +24,7 @@ func start_dialog(lines: Array[String]):
 	_show_text_box()
 	
 	is_dialogue_active = true
+	GlobalVar.movimento_sbloccato = false
 	is_dialogue_finished = false
 
 
@@ -48,6 +49,7 @@ func _unhandled_input(event):
 		if current_line_index >= dialog_lines.size():
 			is_dialogue_active = false
 			is_dialogue_finished = true
+			GlobalVar.movimento_sbloccato = true
 			current_line_index = 0
 			return
 			
