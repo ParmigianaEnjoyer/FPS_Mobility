@@ -61,9 +61,9 @@ func set_ammo_type():
 
 
 func calcola_probabilita():
-	var percentuale_shotgun = float(GlobalVar.ammo_storage_total[ammo_type.SHOTGUN_BULLET]) / float(GlobalVar.AMMO_MAX_STORAGE[ammo_type.SHOTGUN_BULLET] / 2.0)
-	var percentuale_pistol = float(GlobalVar.ammo_storage_total[ammo_type.PISTOL_BULLET]) / float(GlobalVar.AMMO_MAX_STORAGE[ammo_type.PISTOL_BULLET] / 2.0)
-	var percentuale_machinegun = float(GlobalVar.ammo_storage_total[ammo_type.MACHINEGUN_BULLET]) / float(GlobalVar.AMMO_MAX_STORAGE[ammo_type.MACHINEGUN_BULLET] / 2.0)
+	var percentuale_shotgun = float(GlobalVar.ammo_storage_total[ammo_type.SHOTGUN_BULLET]) / float(GlobalVar.AMMO_MAX_STORAGE[ammo_type.SHOTGUN_BULLET] / 1.5)
+	var percentuale_pistol = float(GlobalVar.ammo_storage_total[ammo_type.PISTOL_BULLET]) / float(GlobalVar.AMMO_MAX_STORAGE[ammo_type.PISTOL_BULLET] / 1.5)
+	var percentuale_machinegun = float(GlobalVar.ammo_storage_total[ammo_type.MACHINEGUN_BULLET]) / float(GlobalVar.AMMO_MAX_STORAGE[ammo_type.MACHINEGUN_BULLET] / 1.5)
 	
 	var prob_shotgun = 1.0 - percentuale_shotgun
 	if prob_shotgun < 0:
