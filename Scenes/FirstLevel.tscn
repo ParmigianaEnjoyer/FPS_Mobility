@@ -434,8 +434,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -446,8 +446,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D8"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D8/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -458,8 +458,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D9"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D9/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -470,8 +470,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D10"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D10/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -482,8 +482,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D11"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D11/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -494,8 +494,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D12"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D12/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -506,8 +506,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D13"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D13/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -518,8 +518,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D14"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D14/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")
@@ -530,8 +530,8 @@ mesh = ExtResource("3_7owqi")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D15"]
-collision_layer = 5
-collision_mask = 5
+collision_layer = 13
+collision_mask = 13
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Ground/MeshInstance3D15/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ssbt4")

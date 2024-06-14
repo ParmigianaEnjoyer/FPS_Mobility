@@ -130,6 +130,8 @@ func die():
 		$Voice.play()
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
+		set_collision_layer_value(3, false)
+		set_collision_mask_value(3, false)
 		GlobalVar.enemy_killed_count += 1
 		GlobalVar.num_nemici_morti_nel_livello += 1
 		
