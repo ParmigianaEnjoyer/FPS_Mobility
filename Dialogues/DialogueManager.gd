@@ -13,7 +13,7 @@ var text_box_position: Vector2
 var is_dialogue_active = false
 var is_dialogue_finished = false
 var can_advance_line = false
-
+var label_on = false
 
 func start_dialog(lines: Array[String]):
 	if is_dialogue_active or get_tree().paused:
@@ -58,7 +58,17 @@ func show_command_label(n_string):
 	command_label = command_label_scene.instantiate()
 	command_label.stringa = n_string
 	get_tree().root.add_child(command_label)
+	label_on = true
 
 
 func end_command_label():
 	command_label.end()
+	label_on = false
+
+
+func restart():
+	is_dialogue_active = false
+	is_dialogue_finished = false
+	can_advance_line = false
+	if label_on:
+		end_command_label()

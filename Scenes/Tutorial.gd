@@ -160,10 +160,9 @@ func _ready():
 	finale1 = false
 	finale2 = false
 	
-	if message_on_screen:
-		DialogueManager.end_command_label()
-	message_on_screen = false
+	DialogueManager.restart()
 	
+	message_on_screen = false
 	
 	GlobalVar.num_nemici_morti_nel_livello = 0
 	GlobalVar.livello = 0
