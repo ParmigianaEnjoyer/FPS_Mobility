@@ -160,8 +160,9 @@ func _ready():
 	finale1 = false
 	finale2 = false
 	
-	message_on_screen = false
+	DialogueManager.restart()
 	
+	message_on_screen = false
 	
 	GlobalVar.num_nemici_morti_nel_livello = 0
 	GlobalVar.livello = 0
@@ -522,5 +523,3 @@ func parte_finale():
 			message_on_screen = false
 			finale2 = true
 			get_tree().change_scene_to_file("res://Scenes/FirstLevel.tscn")
-
-

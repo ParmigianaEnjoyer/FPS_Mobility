@@ -150,7 +150,7 @@ func switch_weapon(to):
 		current_weapon = "pistol"
 		fire_rate = 1.8
 		fire_range = -20.0
-		weapon_damage = 17.0
+		weapon_damage = 35.0
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.PISTOL_BULLET
 		
 		set_projectile_particles(0.35, -0.35, 1.0, 0.015, 0.015, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100), 100.0, 100.0, 0.0)
