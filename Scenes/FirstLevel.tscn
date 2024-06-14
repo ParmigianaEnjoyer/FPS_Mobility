@@ -29,10 +29,9 @@
 [ext_resource type="ArrayMesh" uid="uid://c603l5upwrba" path="res://Models/OBJ format/cliff_cave_stone.obj" id="16_m3qqq"]
 [ext_resource type="ArrayMesh" uid="uid://c86566rkw7o8c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/tiles/base/hex_grass.obj" id="17_0sehw"]
 [ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="28_182nf"]
-[ext_resource type="PackedScene" uid="uid://jy003xost4j2" path="res://Drops/heart_drop.tscn" id="30_7dlcq"]
 [ext_resource type="PackedScene" uid="uid://dkm34hpiyarjj" path="res://Enemy/boss_marius.tscn" id="30_unvxn"]
-[ext_resource type="PackedScene" uid="uid://cspch3ukrvrt" path="res://Drops/ammo_drop.tscn" id="31_2f447"]
 [ext_resource type="PackedScene" uid="uid://cwoblwvdisygl" path="res://Enemy/tank_enemy.tscn" id="32_gwfbs"]
+[ext_resource type="PackedScene" uid="uid://ciwpu1gailxb2" path="res://Scenes/staccionata.tscn" id="33_80lkh"]
 [ext_resource type="PackedScene" uid="uid://bk16ctw6m5y5o" path="res://Enemy/minion_enemy.tscn" id="34_wmo0w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
@@ -124,6 +123,9 @@ data = PackedVector3Array(0.5465, 1.0571, -0.4294, 0.5465, 1.1226, 0.2767, 0.534
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cguvn"]
 size = Vector3(28.0957, 589.226, 1790.25)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_r8df5"]
+size = Vector3(1, 8.2533, 119.997)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_k3n5a")
@@ -1673,7 +1675,8 @@ mesh = ExtResource("12_pps6r")
 skeleton = NodePath("../../../Montains")
 
 [node name="BossWall" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
-transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 177.859, 6.74368, 0)
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 177.021, 6.74368, 0.695618)
+visible = false
 layers = 512
 mesh = ExtResource("14_iw0yv")
 
@@ -1687,6 +1690,7 @@ shape = SubResource("BoxShape3D_cguvn")
 
 [node name="BossWall2" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 116.343, 6.74368, 0)
+visible = false
 layers = 512
 mesh = ExtResource("14_iw0yv")
 
@@ -1700,6 +1704,7 @@ shape = SubResource("BoxShape3D_cguvn")
 
 [node name="BossWall3" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
 transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 153.732, 6.74368, 43.9009)
+visible = false
 layers = 512
 mesh = ExtResource("14_iw0yv")
 
@@ -1713,6 +1718,7 @@ shape = SubResource("BoxShape3D_cguvn")
 
 [node name="BossWall4" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel"]
 transform = Transform3D(-4.37114e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.37114e-09, 147.606, 6.74368, -35.008)
+visible = false
 layers = 512
 mesh = ExtResource("14_iw0yv")
 
@@ -1724,6 +1730,13 @@ collision_mask = 512
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.5479, 294.113, -100.759)
 shape = SubResource("BoxShape3D_cguvn")
 
+[node name="Area_InizioOrde" type="Area3D" parent="Map/NavigationRegion3D/FirstLevel"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 124.202, 13.9126, 13.4614)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Area_InizioOrde"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.81129, -0.863235, 12.8669)
+shape = SubResource("BoxShape3D_r8df5")
+
 [node name="Player" parent="." instance=ExtResource("14_u4cdd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -165.927, 8.92249, -3.93783)
 
@@ -1731,24 +1744,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -165.927, 8.92249, -3.93783)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.7413, 8.92274, 4.06898)
 
 [node name="Accampamento" type="Node3D" parent="."]
-
-[node name="heart_drop" parent="Accampamento" instance=ExtResource("30_7dlcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8878, 10.0417, -2.05217)
-
-[node name="heart_drop2" parent="Accampamento" instance=ExtResource("30_7dlcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.9358, 10.0488, -1.85946)
-
-[node name="heart_drop3" parent="Accampamento" instance=ExtResource("30_7dlcq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.9394, 10.1638, 2.6535)
-
-[node name="ammo_drop" parent="Accampamento" instance=ExtResource("31_2f447")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.6148, 10.0085, -4.45127)
-
-[node name="ammo_drop2" parent="Accampamento" instance=ExtResource("31_2f447")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.7125, 9.99562, 2.18419)
-
-[node name="ammo_drop3" parent="Accampamento" instance=ExtResource("31_2f447")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.7401, 9.86674, 4.67262)
 
 [node name="Tank_enemy" parent="Accampamento" instance=ExtResource("32_gwfbs")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -68.4139, 8.99644, 11.226)
@@ -1791,3 +1786,33 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -83.8911, 8.92274, -21.7414)
 
 [node name="Minion_enemy5" parent="Accampamento" instance=ExtResource("34_wmo0w")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54.1703, 8.92274, 0.625751)
+
+[node name="Risorse_sui_tronchi" type="Node3D" parent="."]
+
+[node name="Risorsa1" type="Node3D" parent="Risorse_sui_tronchi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.8865, 10.1057, -2.23016)
+
+[node name="Risorsa2" type="Node3D" parent="Risorse_sui_tronchi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -85.7416, 10.3296, 2.2419)
+
+[node name="Risorsa3" type="Node3D" parent="Risorse_sui_tronchi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.8216, 10.3296, 4.56928)
+
+[node name="Risorsa4" type="Node3D" parent="Risorse_sui_tronchi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.8816, 10.3296, 2.77812)
+
+[node name="Risorsa5" type="Node3D" parent="Risorse_sui_tronchi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.071, 10.3296, -1.81301)
+
+[node name="Risorsa6" type="Node3D" parent="Risorse_sui_tronchi"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.6125, 10.3296, -4.52031)
+
+[node name="Staccionata" parent="." instance=ExtResource("33_80lkh")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -47, 8.921, 43.578)
+visible = false
+
+[node name="Staccionata2" parent="." instance=ExtResource("33_80lkh")]
+transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -47, 8.921, -21.572)
+visible = false
+
+[connection signal="body_entered" from="Map/NavigationRegion3D/FirstLevel/Area_InizioOrde" to="." method="_on_area_3d_body_entered"]

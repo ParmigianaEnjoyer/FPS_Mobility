@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://ciwpu1gailxb2"]
+
+[ext_resource type="Script" path="res://Scenes/staccionata.gd" id="1_1n2gu"]
+[ext_resource type="Texture2D" uid="uid://csrlb0k4u21c7" path="res://wooden-fence-illustration-free-png.png" id="1_copnt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e1kcl"]
+size = Vector3(130.299, 6.10632, 1)
+
+[node name="Staccionata" type="Node3D"]
+script = ExtResource("1_1n2gu")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.53391, 0)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.89216, 2.53391, 0)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6751, 2.53391, 0)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.472, 2.53391, 0)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -35.4208, 2.53391, 0)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -44.1663, 2.53391, 0)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -53.0794, 2.53391, 0)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -62.0501, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.91899, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8233, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D11" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.7222, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D12" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.6483, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D13" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5322, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D14" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.3644, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="Sprite3D15" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.2095, 2.56439, -0.024128)
+texture = ExtResource("1_copnt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 77.0568, 0, 0, 0, 1, -0.095, 38.2016, 0)
+collision_layer = 512
+collision_mask = 512
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01413, 2.55316, 0)
+shape = SubResource("BoxShape3D_e1kcl")

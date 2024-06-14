@@ -38,7 +38,7 @@ scale_curve = SubResource("CurveTexture_p1q64")
 size = Vector3(0.1, 0.1, 0.5)
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
-collision_mask = 3
+collision_mask = 515
 script = ExtResource("1_752mt")
 
 [node name="ui" parent="." instance=ExtResource("2_effl7")]
