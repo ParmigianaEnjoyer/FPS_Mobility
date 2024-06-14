@@ -5,15 +5,13 @@ extends Node3D
 @onready var minion_scene = preload("res://Enemy/minion_enemy.tscn")
 
 const DIALOGO_1: Array[String] = [
-	"Mooshy...",
-	"Mooshy...",
-	"MOOSHY !!!",
-	"Sei vivo, non posso crederci!
-	Ehm...cioè, certo che posso crederci, dopotutto sono stato io a darti vita.",
-	"Benvenuto al mondo Mooshy! Io sono Garghamel, lo Gnomo Stregone di MooshValley e... bhe... tuo creatore.",
-	"Non c'è tempo per parlare, presto!
-	L'armata dei cinghiali è riuscita a sfondare la grande porta. Saranno qui a momenti!",
-	"Riesci a muoverti? Sai come si fa?"
+	"Mooshy! sei arrivato?",
+	"Ti starai chiedendo come faccia a parlarti anche se non ci sono...
+	Telepatia, ovvio.",
+	"Ti trovi all'ingresso dell'Antica Foresta, segui il sentiero, più avanti troverai un piccolo accampamento pieno di soldati nemici.",
+	"FALLI FUORI!!
+	E sta attento a non farti mangaire.",
+	"Eh eh...",
 ]
 var dialogo_1_finito: bool
 

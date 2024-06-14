@@ -3,7 +3,7 @@ extends CharacterBody3D
 
 const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
-const AGGRO_RANGE = 50.0
+var AGGRO_RANGE = 50.0
 const ATTACK_RANGE = 40.0
 const ATTACK_COOLDOWN = 1	#secondi che separano un attacco dall'altro
 
