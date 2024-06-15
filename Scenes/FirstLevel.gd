@@ -19,7 +19,7 @@ const DIALOGO_1: Array[String] = [
 	Telepatia, ovvio.",
 	"Ti trovi all'ingresso dell'Antica Foresta, segui il sentiero, più avanti troverai un piccolo accampamento pieno di soldati nemici.",
 	"FALLI FUORI!!
-	E sta attento a non farti mangaire.",
+	E sta attento a non farti mangiare.",
 	"Eh eh...",
 ]
 
@@ -61,6 +61,13 @@ const DIALOGO_4: Array[String] = [
 	Fagli pentire di essere nato. Eh eh..."
 ]
 
+const DIALOGO_5: Array[String] = [
+	"AHAH!! GRANDE MOOSHY!!
+	Più grandi sono e più rumore fanno quando cadono, giusto? Eh eh...",
+	"Hai liberato l'Antica Foresta, ottimo lavoro!
+	Ora, prosegui verso il lago MooshLake. Troverai tanti cinghiali pronti a morire per causa tua.",
+	"Eh eh..."
+]
 
 enum ammo_type {
 	PISTOL_BULLET, 
@@ -118,10 +125,7 @@ func _ready():
 
 
 
-func _process(delta):
-	parte1_finita = true
-	parte2_finita = true
-	parte3_finita = true
+func _process(_delta):
 	if !parte1_finita:
 		if !message_on_screen: 
 			DialogueManager.show_command_label("Premi Q per proseguire...")
@@ -173,14 +177,13 @@ func _process(delta):
 				DialogueManager.is_dialogue_finished = false
 	
 	if parte3_finita and !parte4_finita:
-		#if !orda1_spawnata:
-			#_spawn_orda(1)
-		#if orda1_spawnata and !orda2_spawnata and GlobalVar.num_nemici_morti_nel_livello == 34:
-			#_spawn_orda(2)
-		#if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello == 53:
-			#_spawn_orda(3)
+		if !orda1_spawnata:
+			_spawn_orda(1)
+		if orda1_spawnata and !orda2_spawnata and GlobalVar.num_nemici_morti_nel_livello == 34:
+			_spawn_orda(2)
+		if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello == 53:
+			_spawn_orda(3)
 			parte4_finita = true
-			GlobalVar.num_nemici_morti_nel_livello = 72
 	
 	if parte4_finita and !parte5_finita and GlobalVar.num_nemici_morti_nel_livello == 72:
 		
@@ -224,15 +227,33 @@ func _process(delta):
 			GlobalVar.is_boss_dead = true
 	
 	if parte6_finita:
+		$StaccionataBoss/Staccionata3.disattiva()
+		$StaccionataBoss/Staccionata4.disattiva()
+		$StaccionataBoss/Staccionata5.disattiva()
+		$StaccionataBoss/Staccionata6.disattiva()
+		$StaccionataBoss/Staccionata7.disattiva()
 		if !message_on_screen:
-			DialogueManager.show_command_label("CONGRATULAZIONI, HAI COMPLETATO LA DEMO DI MOOSHnGUN")
+			DialogueManager.show_command_label("Premi Q per proseguire...")
 			message_on_screen = true
 			
-			await wait(10.0)
-			
+			if !DialogueManager.is_dialogue_finished:
+				DialogueManager.start_dialog(DIALOGO_5)
+
+		if DialogueManager.is_dialogue_finished:
 			DialogueManager.end_command_label()
 			message_on_screen = false
-			get_tree().change_scene_to_file("res://MenuPrincipale/menu.tscn")
+			parte5_finita = true
+			DialogueManager.is_dialogue_finished = false
+		
+			if !message_on_screen:
+				DialogueManager.show_command_label("CONGRATULAZIONI, HAI COMPLETATO LA DEMO DI MOOSHnGUN")
+				message_on_screen = true
+				
+				await wait(10.0)
+				
+				DialogueManager.end_command_label()
+				message_on_screen = false
+				get_tree().change_scene_to_file("res://MenuPrincipale/menu.tscn")
 
 
 
