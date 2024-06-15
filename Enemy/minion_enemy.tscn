@@ -64,6 +64,7 @@ height = 1.74661
 
 [node name="Minion_enemy" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 13
+collision_mask = 513
 script = ExtResource("1_mqrhw")
 
 [node name="RayCast3D" type="RayCast3D" parent="."]

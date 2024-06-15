@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=64 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="ArrayMesh" uid="uid://c553qa57bkh7c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_large.obj" id="1_c1hrc"]
 [ext_resource type="Script" path="res://Scenes/FirstLevel.gd" id="1_k3n5a"]
@@ -125,6 +125,27 @@ size = Vector3(28.0957, 589.226, 1790.25)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r8df5"]
 size = Vector3(1, 8.2533, 119.997)
+
+[sub_resource type="Animation" id="Animation_gfbrs"]
+resource_name = "addio_monumento"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Map/NavigationRegion3D/FirstLevel/Monument:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -6, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_44hmg"]
+_data = {
+"addio_monumento": SubResource("Animation_gfbrs")
+}
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_k3n5a")
@@ -1837,10 +1858,15 @@ transform = Transform3D(-0.31851, 0, 0.385423, 0, 0.5, 0, -0.385423, 0, -0.31851
 [node name="Staccionata7" parent="StaccionataBoss" instance=ExtResource("33_80lkh")]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -43.633, 9.08614, -25.8526)
 
-[node name="Manus_spawn" type="Node3D" parent="."]
+[node name="Marius_spawn" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.3018, 10.3067, 19.1671)
 
 [node name="Player_TP" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.9171, 10.7018, 25.8078)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_44hmg")
+}
 
 [connection signal="body_entered" from="Map/NavigationRegion3D/FirstLevel/Area_InizioOrde" to="." method="_on_area_3d_body_entered"]

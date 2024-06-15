@@ -519,7 +519,6 @@ func parte_finale():
 			finale1 = true
 	
 	if finale1 and !finale2:
-		GlobalVar.radial_sbloccato = true
 		
 		if !message_on_screen:
 			DialogueManager.show_command_label("CONGRATULAZIONI, LIVELLO 0 COMPLETATO")

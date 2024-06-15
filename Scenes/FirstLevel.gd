@@ -31,6 +31,9 @@ var orda1_spawnata: bool
 var orda2_spawnata: bool
 var orda3_spawnata: bool
 var parte5_finita: bool
+var parte6_finita: bool
+var marius_spawnato: bool
+var marius
 
 const DIALOGO_2: Array[String] = [
 	"Ben fatto Mooshy!",
@@ -85,9 +88,13 @@ func _ready():
 	area_attraversata = false
 	parte4_finita = false
 	parte5_finita = false
+	parte6_finita = false
 	orda1_spawnata = false
 	orda2_spawnata = false
 	orda3_spawnata = false
+	if marius_spawnato:
+		marius.queue_free()
+		marius_spawnato = false
 	
 	DialogueManager.restart()
 	GlobalVar.num_nemici_morti_nel_livello = 0
@@ -109,6 +116,9 @@ func _ready():
 
 
 func _process(delta):
+	parte1_finita = true
+	parte2_finita = true
+	parte3_finita = true
 	if !parte1_finita:
 		if !message_on_screen: 
 			DialogueManager.show_command_label("Premi Q per proseguire...")
@@ -134,7 +144,7 @@ func _process(delta):
 					DialogueManager.start_dialog(DIALOGO_2)
 				
 			if DialogueManager.is_dialogue_finished:
-				sawn_risorse_su_tronchi()
+				spawn_risorse_su_tronchi()
 				$Staccionata.disattiva()
 				$Staccionata2.disattiva()
 				DialogueManager.end_command_label()
@@ -160,18 +170,19 @@ func _process(delta):
 				DialogueManager.is_dialogue_finished = false
 	
 	if parte3_finita and !parte4_finita:
-		if !orda1_spawnata:
-			_spawn_orda(1)
-		if orda1_spawnata and !orda2_spawnata and GlobalVar.num_nemici_morti_nel_livello == 34:
-			_spawn_orda(2)
-		if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello == 53:
-			_spawn_orda(3)
+		#if !orda1_spawnata:
+			#_spawn_orda(1)
+		#if orda1_spawnata and !orda2_spawnata and GlobalVar.num_nemici_morti_nel_livello == 34:
+			#_spawn_orda(2)
+		#if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello == 53:
+			#_spawn_orda(3)
 			parte4_finita = true
+			GlobalVar.num_nemici_morti_nel_livello = 72
 	
 	if parte4_finita and !parte5_finita and GlobalVar.num_nemici_morti_nel_livello == 72:
 		
 		#Il player viene teletrasportato
-		player.global_position = $Player_TP.global_position
+		player.position = $Player_TP.position
 		
 		#Vengono attivate le "mura" del boss
 		$StaccionataBoss/Staccionata3.attiva()
@@ -179,7 +190,12 @@ func _process(delta):
 		$StaccionataBoss/Staccionata5.attiva()
 		$StaccionataBoss/Staccionata6.attiva()
 		$StaccionataBoss/Staccionata7.attiva()
-		if !message_on_screen: 
+
+		if !message_on_screen:
+			$AnimationPlayer.play("addio_monumento")
+			if !$AnimationPlayer.is_playing():
+				$Map/NavigationRegion3D/FirstLevel/Monument.queue_free()
+				$Map/NavigationRegion3D.bake_navigation_mesh()
 			DialogueManager.show_command_label("Premi Q per proseguire...")
 			message_on_screen = true
 			
@@ -189,12 +205,37 @@ func _process(delta):
 		if DialogueManager.is_dialogue_finished:
 			DialogueManager.end_command_label()
 			message_on_screen = false
-			parte3_finita = true
+			parte5_finita = true
 			DialogueManager.is_dialogue_finished = false
 
+	if parte5_finita and !parte6_finita:
+		if !marius_spawnato:
+			#Viene spawnato Marius
+			marius = marius_scene.instantiate()
+			var spawn_position = $Marius_spawn.position
+			marius.position = spawn_position
+			add_child(marius)
+			marius_spawnato = true
+		
+		#FAR SPAWNARE MUNIZIONI E CURE (OPPURE MINIONS)
+		
+		if marius_spawnato and marius.max_hitpoints <= 0:
+			parte6_finita = true
+	
+	if parte6_finita:
+		if !message_on_screen:
+			DialogueManager.show_command_label("CONGRATULAZIONI, HAI COMPLETATO LA DEMO DI MOOSHnGUN")
+			message_on_screen = true
+			
+			await wait(5.0)
+			
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			get_tree().change_scene_to_file("res://MenuPrincipale/menu.tscn")
 
 
-func sawn_risorse_su_tronchi():
+
+func spawn_risorse_su_tronchi():
 	if !risorse_spawnate:
 		for i in range(6):
 			if i < 2:
@@ -302,3 +343,12 @@ func _spawn_orda(n_orda):
 					add_child(tank)
 					
 			orda3_spawnata = true
+
+
+func wait(param):
+	var timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.start(param)
+	await timer.timeout
+	timer.queue_free()

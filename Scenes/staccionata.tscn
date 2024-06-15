@@ -7,6 +7,7 @@
 size = Vector3(130.299, 6.10632, 1)
 
 [node name="Staccionata" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 script = ExtResource("1_1n2gu")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]

@@ -7,7 +7,7 @@ const ATTACK_RANGE = 30.0
 const ATTACK_COOLDOWN = 2.0	#secondi che separano un attacco dall'altro
 const SPECIAL_ATTACK_COOLDOWN = 0.5
 
-@export var max_hitpoints := 1000 * GlobalVar.diff	#100
+@export var max_hitpoints := 2000 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
 @export var damage = 10 * GlobalVar.diff
 
@@ -210,7 +210,7 @@ func take_damage():
 	if !dead:
 		voice.stream = preload("res://Enemy/minecraft-villager-damage_E_major.wav")
 		voice.play()
-		healthbar.health = float(hitpoints / 10)
+		healthbar.health = float(hitpoints / 20)
 
 
 func die():
