@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkm34hpiyarjj"]
+[gd_scene load_steps=14 format=3 uid="uid://dkm34hpiyarjj"]
 
 [ext_resource type="Texture2D" uid="uid://cs8sufojpgies" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 8.png" id="1_56ux6"]
 [ext_resource type="Script" path="res://Enemy/boss_marius.gd" id="1_atwfe"]
@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://bly2opt2r3por" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 7.png" id="7_aqr52"]
 [ext_resource type="Texture2D" uid="uid://cye66iagest3e" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 1.png" id="8_7wlrk"]
 [ext_resource type="Texture2D" uid="uid://tp7eob4w8eeo" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 2.png" id="9_cjvx1"]
-[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="11_6yw3i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbq4v"]
 animations = [{
@@ -136,7 +135,6 @@ one_shot = true
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
 visible = false
-stream = ExtResource("11_6yw3i")
 
 [node name="Timers" type="Node" parent="."]
 

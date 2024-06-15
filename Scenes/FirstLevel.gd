@@ -5,6 +5,7 @@ extends Node3D
 @onready var minion_scene = preload("res://Enemy/minion_enemy.tscn")
 @onready var heart_scene = preload("res://Drops/heart_drop.tscn")
 @onready var ammo_scene = preload("res://Drops/ammo_drop.tscn")
+@onready var marius_scene = preload("res://Enemy/boss_marius.tscn")
 
 var message_on_screen: bool
 var risorse_spawnate: bool
@@ -135,7 +136,7 @@ func _process(delta):
 				message_on_screen = true
 				
 				if !DialogueManager.is_dialogue_finished:
-					DialogueManager.start_dialog(DIALOGO_1)
+					DialogueManager.start_dialog(DIALOGO_3)
 
 			if DialogueManager.is_dialogue_finished:
 				DialogueManager.end_command_label()

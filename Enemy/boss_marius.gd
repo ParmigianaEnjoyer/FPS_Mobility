@@ -23,6 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var healthbar = $HealthBar
 @onready var specialtimer = $Timers/SpecialAttackTimer
 @onready var punchtimer = $Timers/PunchTimer
+@onready var voice = $Voice
 
 var is_special_attack = false
 var player
@@ -52,6 +53,8 @@ var special4 = false
 
 
 func _ready() -> void:
+	voice.stream = preload("res://Enemy/Sprite Boss MOOSHnGUN/IntroBoss.ogg")
+	voice.play()
 	ray.target_position.z = (ATTACK_RANGE * -1) - 1
 	$AnimatedSprite3D.play("default")
 	player = get_tree().get_first_node_in_group("player")
@@ -205,7 +208,8 @@ func check_special():
 
 func take_damage():
 	if !dead:
-		$Voice.play()
+		voice.stream = preload("res://Enemy/minecraft-villager-damage_E_major.wav")
+		voice.play()
 		healthbar.health = float(hitpoints / 10)
 
 
