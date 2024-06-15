@@ -7,7 +7,7 @@ const ATTACK_RANGE = 30.0
 const ATTACK_COOLDOWN = 2.0	#secondi che separano un attacco dall'altro
 const SPECIAL_ATTACK_COOLDOWN = 0.5
 
-@export var max_hitpoints := 1000 * GlobalVar.diff	#100
+@export var max_hitpoints := 2000 * GlobalVar.diff	#100
 @export var fire_rate = 2.0 		#numero di colpidsparati in un secondo
 @export var damage = 10 * GlobalVar.diff
 
@@ -23,6 +23,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var healthbar = $HealthBar
 @onready var specialtimer = $Timers/SpecialAttackTimer
 @onready var punchtimer = $Timers/PunchTimer
+@onready var voice = $Voice
 
 var is_special_attack = false
 var player
@@ -52,6 +53,8 @@ var special4 = false
 
 
 func _ready() -> void:
+	voice.stream = preload("res://Enemy/Sprite Boss MOOSHnGUN/IntroBoss.ogg")
+	voice.play()
 	ray.target_position.z = (ATTACK_RANGE * -1) - 1
 	$AnimatedSprite3D.play("default")
 	player = get_tree().get_first_node_in_group("player")
@@ -205,8 +208,9 @@ func check_special():
 
 func take_damage():
 	if !dead:
-		$Voice.play()
-		healthbar.health = float(hitpoints / 10)
+		voice.stream = preload("res://Enemy/minecraft-villager-damage_E_major.wav")
+		voice.play()
+		healthbar.health = float(hitpoints / 20)
 
 
 func die():

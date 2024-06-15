@@ -49,7 +49,7 @@ func _process(_delta):
 	if !dead and provoked and !attacking:
 		$AnimatedSprite3D.play("walk")
 		navigation_agent_3d.target_position = player.global_position
-	else: if dead:
+	elif dead:
 		if !stop:
 			$AnimatedSprite3D.play("die")
 			stop = true
@@ -88,6 +88,9 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 			velocity.z = move_toward(velocity.z, 0, SPEED)
 		
+		if GlobalVar.is_boss_dead:
+			die()
+		
 		if !attacking: 
 			move_and_slide()
 
@@ -116,6 +119,8 @@ func die():
 
 		GlobalVar.enemy_killed_count += 1
 		GlobalVar.num_nemici_morti_nel_livello += 1
+		if GlobalVar.enemy_in_bossfight > 0:
+			GlobalVar.enemy_in_bossfight -= 1 
 		
 	if !GlobalVar.curarsi_sbloccato:
 		heart_drop()

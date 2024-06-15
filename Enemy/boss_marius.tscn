@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cs8sufojpgies" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 8.png" id="1_56ux6"]
 [ext_resource type="Script" path="res://Enemy/boss_marius.gd" id="1_atwfe"]
+[ext_resource type="FontVariation" uid="uid://blhvo8k7tcjjf" path="res://Dialogues/PixelFont.tres" id="2_f1jui"]
 [ext_resource type="PackedScene" uid="uid://ctv8ctxgyrqbw" path="res://Health_Bar/healthbar.tscn" id="2_imit3"]
 [ext_resource type="Texture2D" uid="uid://cvfovdma4051s" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 3.png" id="2_tt4b4"]
 [ext_resource type="Texture2D" uid="uid://dnm1th7orvhjn" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 4.png" id="3_wt4ia"]
@@ -11,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bly2opt2r3por" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 7.png" id="7_aqr52"]
 [ext_resource type="Texture2D" uid="uid://cye66iagest3e" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 1.png" id="8_7wlrk"]
 [ext_resource type="Texture2D" uid="uid://tp7eob4w8eeo" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 2.png" id="9_cjvx1"]
-[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="11_6yw3i"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbq4v"]
 animations = [{
@@ -79,8 +79,26 @@ height = 16.4739
 
 [node name="Boss_Marius" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 13
-collision_mask = 13
+collision_mask = 513
 script = ExtResource("1_atwfe")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -304.0
+offset_top = 63.0
+offset_bottom = 86.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+theme_override_colors/font_color = Color(0.807771, 0.858717, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("2_f1jui")
+theme_override_font_sizes/font_size = 14
+text = "Marius, il Campione"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HealthBar" parent="." instance=ExtResource("2_imit3")]
 anchors_preset = 5
@@ -95,20 +113,6 @@ offset_bottom = 136.0
 grow_horizontal = 2
 grow_vertical = 1
 scale = Vector2(0.8, 1.52)
-
-[node name="Label" type="Label" parent="HealthBar"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -154.0
-offset_top = -46.0526
-offset_bottom = -23.0526
-grow_horizontal = 2
-scale = Vector2(2, 2)
-text = "Marius, il Campione"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 
@@ -136,7 +140,7 @@ one_shot = true
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
 visible = false
-stream = ExtResource("11_6yw3i")
+area_mask = 513
 
 [node name="Timers" type="Node" parent="."]
 

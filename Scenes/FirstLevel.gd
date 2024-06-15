@@ -5,6 +5,9 @@ extends Node3D
 @onready var minion_scene = preload("res://Enemy/minion_enemy.tscn")
 @onready var heart_scene = preload("res://Drops/heart_drop.tscn")
 @onready var ammo_scene = preload("res://Drops/ammo_drop.tscn")
+@onready var marius_scene = preload("res://Enemy/boss_marius.tscn")
+@onready var player = $Player
+@onready var timer_spawn = $BossfightTimer
 
 var message_on_screen: bool
 var risorse_spawnate: bool
@@ -16,7 +19,7 @@ const DIALOGO_1: Array[String] = [
 	Telepatia, ovvio.",
 	"Ti trovi all'ingresso dell'Antica Foresta, segui il sentiero, più avanti troverai un piccolo accampamento pieno di soldati nemici.",
 	"FALLI FUORI!!
-	E sta attento a non farti mangaire.",
+	E sta attento a non farti mangiare.",
 	"Eh eh...",
 ]
 
@@ -28,6 +31,10 @@ var parte4_finita: bool
 var orda1_spawnata: bool
 var orda2_spawnata: bool
 var orda3_spawnata: bool
+var parte5_finita: bool
+var parte6_finita: bool
+var marius_spawnato: bool
+var marius
 
 const DIALOGO_2: Array[String] = [
 	"Ben fatto Mooshy!",
@@ -47,6 +54,20 @@ const DIALOGO_3: Array[String] = [
 	"Annientali..."
 ]
 
+const DIALOGO_4: Array[String] = [
+	"CAVOLO MOOSHY!!!
+	CHE STRAGE!",
+	"Occhi aperti, ne arriva uno grosso!
+	Fagli pentire di essere nato. Eh eh..."
+]
+
+const DIALOGO_5: Array[String] = [
+	"AHAH!! GRANDE MOOSHY!!
+	Più grandi sono e più rumore fanno quando cadono, giusto? Eh eh...",
+	"Hai liberato l'Antica Foresta, ottimo lavoro!
+	Ora, prosegui verso il lago MooshLake. Troverai tanti cinghiali pronti a morire per causa tua.",
+	"Eh eh..."
+]
 
 enum ammo_type {
 	PISTOL_BULLET, 
@@ -60,6 +81,12 @@ func _ready():
 	$Staccionata.attiva()
 	$Staccionata2.attiva()
 	
+	$StaccionataBoss/Staccionata3.disattiva()
+	$StaccionataBoss/Staccionata4.disattiva()
+	$StaccionataBoss/Staccionata5.disattiva()
+	$StaccionataBoss/Staccionata6.disattiva()
+	$StaccionataBoss/Staccionata7.disattiva()
+	
 	message_on_screen = false
 	risorse_spawnate = false
 	dialogo_1_finito = false
@@ -68,10 +95,17 @@ func _ready():
 	parte3_finita = false
 	area_attraversata = false
 	parte4_finita = false
+	parte5_finita = false
+	parte6_finita = false
 	orda1_spawnata = false
 	orda2_spawnata = false
 	orda3_spawnata = false
+	if marius_spawnato:
+		marius.queue_free()
+		marius_spawnato = false
 	
+	GlobalVar.is_boss_dead = false
+	GlobalVar.enemy_in_bossfight = 0
 	DialogueManager.restart()
 	GlobalVar.num_nemici_morti_nel_livello = 0
 	GlobalVar.livello = 1
@@ -91,8 +125,7 @@ func _ready():
 
 
 
-func _process(delta):
-	print(GlobalVar.num_nemici_morti_nel_livello)
+func _process(_delta):
 	if !parte1_finita:
 		if !message_on_screen: 
 			DialogueManager.show_command_label("Premi Q per proseguire...")
@@ -118,7 +151,7 @@ func _process(delta):
 					DialogueManager.start_dialog(DIALOGO_2)
 				
 			if DialogueManager.is_dialogue_finished:
-				sawn_risorse_su_tronchi()
+				spawn_risorse_su_tronchi()
 				$Staccionata.disattiva()
 				$Staccionata2.disattiva()
 				DialogueManager.end_command_label()
@@ -135,7 +168,7 @@ func _process(delta):
 				message_on_screen = true
 				
 				if !DialogueManager.is_dialogue_finished:
-					DialogueManager.start_dialog(DIALOGO_1)
+					DialogueManager.start_dialog(DIALOGO_3)
 
 			if DialogueManager.is_dialogue_finished:
 				DialogueManager.end_command_label()
@@ -148,15 +181,83 @@ func _process(delta):
 			_spawn_orda(1)
 		if orda1_spawnata and !orda2_spawnata and GlobalVar.num_nemici_morti_nel_livello == 34:
 			_spawn_orda(2)
-		if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello >= 53:
+		if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello == 53:
 			_spawn_orda(3)
 			parte4_finita = true
-	else:
-		pass
+	
+	if parte4_finita and !parte5_finita and GlobalVar.num_nemici_morti_nel_livello == 72:
+		
+		#Il player viene teletrasportato
+		player.position = $Player_TP.position
+		
+		#Vengono attivate le "mura" del boss
+		$StaccionataBoss/Staccionata3.attiva()
+		$StaccionataBoss/Staccionata4.attiva()
+		$StaccionataBoss/Staccionata5.attiva()
+		$StaccionataBoss/Staccionata6.attiva()
+		$StaccionataBoss/Staccionata7.attiva()
+
+		if !message_on_screen:
+			$AnimationPlayer.play("addio_monumento")
+			DialogueManager.show_command_label("Premi Q per proseguire...")
+			message_on_screen = true
+			
+			if !DialogueManager.is_dialogue_finished:
+				DialogueManager.start_dialog(DIALOGO_4)
+
+		if DialogueManager.is_dialogue_finished:
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			parte5_finita = true
+			DialogueManager.is_dialogue_finished = false
+
+	if parte5_finita and !parte6_finita:
+		if !marius_spawnato:
+			#Viene spawnato Marius
+			marius = marius_scene.instantiate()
+			var spawn_position = $Marius_spawn.position
+			marius.position = spawn_position
+			add_child(marius)
+			marius_spawnato = true
+		
+		spawn_enemy_during_bossfight()
+		
+		if marius_spawnato and marius.dead:
+			parte6_finita = true
+			GlobalVar.is_boss_dead = true
+	
+	if parte6_finita:
+		$StaccionataBoss/Staccionata3.disattiva()
+		$StaccionataBoss/Staccionata4.disattiva()
+		$StaccionataBoss/Staccionata5.disattiva()
+		$StaccionataBoss/Staccionata6.disattiva()
+		$StaccionataBoss/Staccionata7.disattiva()
+		if !message_on_screen:
+			DialogueManager.show_command_label("Premi Q per proseguire...")
+			message_on_screen = true
+			
+			if !DialogueManager.is_dialogue_finished:
+				DialogueManager.start_dialog(DIALOGO_5)
+
+		if DialogueManager.is_dialogue_finished:
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			parte5_finita = true
+			DialogueManager.is_dialogue_finished = false
+		
+			if !message_on_screen:
+				DialogueManager.show_command_label("CONGRATULAZIONI, HAI COMPLETATO LA DEMO DI MOOSHnGUN")
+				message_on_screen = true
+				
+				await wait(10.0)
+				
+				DialogueManager.end_command_label()
+				message_on_screen = false
+				get_tree().change_scene_to_file("res://MenuPrincipale/menu.tscn")
 
 
 
-func sawn_risorse_su_tronchi():
+func spawn_risorse_su_tronchi():
 	if !risorse_spawnate:
 		for i in range(6):
 			if i < 2:
@@ -264,3 +365,39 @@ func _spawn_orda(n_orda):
 					add_child(tank)
 					
 			orda3_spawnata = true
+
+
+func wait(param):
+	var timer = Timer.new()
+	add_child(timer)
+	timer.one_shot = true
+	timer.start(param)
+	await timer.timeout
+	timer.queue_free()
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "addio_monumento":
+		$Map/NavigationRegion3D/FirstLevel/Monument.queue_free()
+		$Map/NavigationRegion3D.bake_navigation_mesh()
+
+
+func spawn_enemy_during_bossfight():
+	if timer_spawn.is_stopped():
+		timer_spawn.start(30.0)
+
+		for i in range(5):
+			if GlobalVar.enemy_in_bossfight < 5:
+				var tipo = randi() % 2
+				var enemy
+				if tipo == 0:
+					enemy = soldier_scene.instantiate()
+				else:
+					enemy = minion_scene.instantiate()
+				enemy.AGGRO_RANGE = 80
+				var spawn_position = $SpawnHolder_Bossfight.get_child(i).position
+				enemy.position = spawn_position
+				add_child(enemy)
+				GlobalVar.enemy_in_bossfight += 1
+			else: 
+				pass

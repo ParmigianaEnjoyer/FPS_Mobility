@@ -132,7 +132,8 @@ func die():
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
 		GlobalVar.enemy_killed_count += 1
 		GlobalVar.num_nemici_morti_nel_livello += 1
-		
+		if GlobalVar.enemy_in_bossfight > 0:
+			GlobalVar.enemy_in_bossfight -= 1 
 	decide_what_to_drop()
 
 
