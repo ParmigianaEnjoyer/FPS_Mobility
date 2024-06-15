@@ -6,6 +6,7 @@ extends Node3D
 @onready var heart_scene = preload("res://Drops/heart_drop.tscn")
 @onready var ammo_scene = preload("res://Drops/ammo_drop.tscn")
 @onready var marius_scene = preload("res://Enemy/boss_marius.tscn")
+@onready var player = $Player
 
 var message_on_screen: bool
 var risorse_spawnate: bool
@@ -29,6 +30,7 @@ var parte4_finita: bool
 var orda1_spawnata: bool
 var orda2_spawnata: bool
 var orda3_spawnata: bool
+var parte5_finita: bool
 
 const DIALOGO_2: Array[String] = [
 	"Ben fatto Mooshy!",
@@ -48,6 +50,13 @@ const DIALOGO_3: Array[String] = [
 	"Annientali..."
 ]
 
+const DIALOGO_4: Array[String] = [
+	"CAVOLO MOOSHY!!!
+	CHE STRAGE!",
+	"Occhi aperti, ne arriva uno grosso!
+	Fagli pentire di essere nato. Eh eh..."
+]
+
 
 enum ammo_type {
 	PISTOL_BULLET, 
@@ -61,6 +70,12 @@ func _ready():
 	$Staccionata.attiva()
 	$Staccionata2.attiva()
 	
+	$StaccionataBoss/Staccionata3.disattiva()
+	$StaccionataBoss/Staccionata4.disattiva()
+	$StaccionataBoss/Staccionata5.disattiva()
+	$StaccionataBoss/Staccionata6.disattiva()
+	$StaccionataBoss/Staccionata7.disattiva()
+	
 	message_on_screen = false
 	risorse_spawnate = false
 	dialogo_1_finito = false
@@ -69,6 +84,7 @@ func _ready():
 	parte3_finita = false
 	area_attraversata = false
 	parte4_finita = false
+	parte5_finita = false
 	orda1_spawnata = false
 	orda2_spawnata = false
 	orda3_spawnata = false
@@ -93,7 +109,6 @@ func _ready():
 
 
 func _process(delta):
-	print(GlobalVar.num_nemici_morti_nel_livello)
 	if !parte1_finita:
 		if !message_on_screen: 
 			DialogueManager.show_command_label("Premi Q per proseguire...")
@@ -149,11 +164,33 @@ func _process(delta):
 			_spawn_orda(1)
 		if orda1_spawnata and !orda2_spawnata and GlobalVar.num_nemici_morti_nel_livello == 34:
 			_spawn_orda(2)
-		if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello >= 53:
+		if orda2_spawnata and !orda3_spawnata and GlobalVar.num_nemici_morti_nel_livello == 53:
 			_spawn_orda(3)
 			parte4_finita = true
-	else:
-		pass
+	
+	if parte4_finita and !parte5_finita and GlobalVar.num_nemici_morti_nel_livello == 72:
+		
+		#Il player viene teletrasportato
+		player.global_position = $Player_TP.global_position
+		
+		#Vengono attivate le "mura" del boss
+		$StaccionataBoss/Staccionata3.attiva()
+		$StaccionataBoss/Staccionata4.attiva()
+		$StaccionataBoss/Staccionata5.attiva()
+		$StaccionataBoss/Staccionata6.attiva()
+		$StaccionataBoss/Staccionata7.attiva()
+		if !message_on_screen: 
+			DialogueManager.show_command_label("Premi Q per proseguire...")
+			message_on_screen = true
+			
+			if !DialogueManager.is_dialogue_finished:
+				DialogueManager.start_dialog(DIALOGO_4)
+
+		if DialogueManager.is_dialogue_finished:
+			DialogueManager.end_command_label()
+			message_on_screen = false
+			parte3_finita = true
+			DialogueManager.is_dialogue_finished = false
 
 
 

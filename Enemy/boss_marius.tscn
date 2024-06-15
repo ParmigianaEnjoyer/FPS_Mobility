@@ -135,6 +135,7 @@ one_shot = true
 
 [node name="Voice" type="AudioStreamPlayer3D" parent="."]
 visible = false
+area_mask = 513
 
 [node name="Timers" type="Node" parent="."]
 
