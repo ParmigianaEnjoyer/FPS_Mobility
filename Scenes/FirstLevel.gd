@@ -7,6 +7,7 @@ extends Node3D
 @onready var ammo_scene = preload("res://Drops/ammo_drop.tscn")
 @onready var marius_scene = preload("res://Enemy/boss_marius.tscn")
 @onready var player = $Player
+@onready var timer_spawn = $BossfightTimer
 
 var message_on_screen: bool
 var risorse_spawnate: bool
@@ -96,6 +97,8 @@ func _ready():
 		marius.queue_free()
 		marius_spawnato = false
 	
+	GlobalVar.is_boss_dead = false
+	GlobalVar.enemy_in_bossfight = 0
 	DialogueManager.restart()
 	GlobalVar.num_nemici_morti_nel_livello = 0
 	GlobalVar.livello = 1
@@ -193,9 +196,6 @@ func _process(delta):
 
 		if !message_on_screen:
 			$AnimationPlayer.play("addio_monumento")
-			if !$AnimationPlayer.is_playing():
-				$Map/NavigationRegion3D/FirstLevel/Monument.queue_free()
-				$Map/NavigationRegion3D.bake_navigation_mesh()
 			DialogueManager.show_command_label("Premi Q per proseguire...")
 			message_on_screen = true
 			
@@ -217,17 +217,18 @@ func _process(delta):
 			add_child(marius)
 			marius_spawnato = true
 		
-		#FAR SPAWNARE MUNIZIONI E CURE (OPPURE MINIONS)
+		spawn_enemy_during_bossfight()
 		
-		if marius_spawnato and marius.max_hitpoints <= 0:
+		if marius_spawnato and marius.dead:
 			parte6_finita = true
+			GlobalVar.is_boss_dead = true
 	
 	if parte6_finita:
 		if !message_on_screen:
 			DialogueManager.show_command_label("CONGRATULAZIONI, HAI COMPLETATO LA DEMO DI MOOSHnGUN")
 			message_on_screen = true
 			
-			await wait(5.0)
+			await wait(10.0)
 			
 			DialogueManager.end_command_label()
 			message_on_screen = false
@@ -352,3 +353,30 @@ func wait(param):
 	timer.start(param)
 	await timer.timeout
 	timer.queue_free()
+
+
+func _on_animation_player_animation_finished(anim_name):
+	if anim_name == "addio_monumento":
+		$Map/NavigationRegion3D/FirstLevel/Monument.queue_free()
+		$Map/NavigationRegion3D.bake_navigation_mesh()
+
+
+func spawn_enemy_during_bossfight():
+	if timer_spawn.is_stopped():
+		timer_spawn.start(30.0)
+
+		for i in range(5):
+			if GlobalVar.enemy_in_bossfight < 5:
+				var tipo = randi() % 2
+				var enemy
+				if tipo == 0:
+					enemy = soldier_scene.instantiate()
+				else:
+					enemy = minion_scene.instantiate()
+				enemy.AGGRO_RANGE = 80
+				var spawn_position = $SpawnHolder_Bossfight.get_child(i).position
+				enemy.position = spawn_position
+				add_child(enemy)
+				GlobalVar.enemy_in_bossfight += 1
+			else: 
+				pass

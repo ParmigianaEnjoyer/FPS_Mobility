@@ -58,3 +58,5 @@ var radial_sbloccato = true
 var sparare_sbloccato = true
 var curarsi_sbloccato = true
 var rage_sbloccato = true
+var enemy_in_bossfight = 0
+var is_boss_dead = false
