@@ -3,6 +3,8 @@ extends Node
 
 var player_health = 100
 
+var key_dialogo = InputMap.action_get_events("advance_dialogue")[0].as_text().replace(' (Physical)','')
+
 var reset_richiesto = false
 
 var diff := 1.0  #variabile globale difficoltà

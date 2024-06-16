@@ -1343,4 +1343,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.049, 8.92274, -37.5929)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("28_tlaq5")
+volume_db = -30.0
 bus = &"Musica"

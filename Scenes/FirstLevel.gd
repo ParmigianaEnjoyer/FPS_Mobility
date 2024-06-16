@@ -256,6 +256,7 @@ func _process(_delta):
 				
 				DialogueManager.end_command_label()
 				message_on_screen = false
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 				get_tree().change_scene_to_file("res://MenuPrincipale/menu.tscn")
 
 

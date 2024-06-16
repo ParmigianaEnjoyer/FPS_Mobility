@@ -206,7 +206,7 @@ func _process(_delta):
 func tutorial_movimento():
 	if !parte1_finita:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
@@ -235,7 +235,7 @@ func tutorial_movimento():
 func tutorial_martello():
 	if !parte3_finita:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
@@ -266,7 +266,7 @@ func tutorial_martello():
 func tutorial_armi():
 	if !parte5_finita:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
@@ -309,7 +309,7 @@ func tutorial_armi():
 func tutorial_cura():
 	if !parte8_finita:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
@@ -336,7 +336,7 @@ func tutorial_cura():
 			
 	if parte9_finita and !parte10_finita:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
@@ -390,7 +390,7 @@ func _spawn_primi_nemici():
 func orda():
 	if !parte12_finita:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			GlobalVar.rage_sbloccato = true
 			
@@ -510,7 +510,7 @@ func _spawn_orda_3():
 func parte_finale():
 	if !finale1:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
