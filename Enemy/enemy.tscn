@@ -1,9 +1,8 @@
-[gd_scene load_steps=22 format=3 uid="uid://cyo2lshl3153j"]
+[gd_scene load_steps=24 format=3 uid="uid://cyo2lshl3153j"]
 
 [ext_resource type="Script" path="res://Enemy/enemy.gd" id="1_2fivp"]
 [ext_resource type="Texture2D" uid="uid://c0ib8jrw1rxn8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 1.png" id="2_32s2d"]
 [ext_resource type="Texture2D" uid="uid://bm5eamnupu6ls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 6.png" id="3_3hfdf"]
-[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="3_8l4c8"]
 [ext_resource type="Texture2D" uid="uid://dordi8kghg7qx" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 7.png" id="4_2cskc"]
 [ext_resource type="Texture2D" uid="uid://c1otyfhf5wy5o" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 2.png" id="4_4p2gh"]
 [ext_resource type="Texture2D" uid="uid://cml68yj85j0ur" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 5.png" id="4_db2o4"]
@@ -11,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://pqj8n5yfq7x8" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 3.png" id="5_6fmn6"]
 [ext_resource type="Texture2D" uid="uid://0ja4wiev5fls" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 4.png" id="5_7ioyl"]
 [ext_resource type="Texture2D" uid="uid://cojunuudwfk44" path="res://Enemy/soldier_sprites/NPC_model_MOOSHnGUN 8.png" id="5_r7or4"]
+[ext_resource type="AudioStream" uid="uid://c11tyly78ohox" path="res://Enemy/CorsaEnemy.wav" id="12_dq4ws"]
+[ext_resource type="AudioStream" uid="uid://dskxk8p5d3ln1" path="res://Enemy/DannoEnemy.mp3" id="13_opbo1"]
+[ext_resource type="AudioStream" uid="uid://bueiabuo121d0" path="res://Enemy/MorteEnemy.mp3" id="14_kpd05"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_443id"]
 atlas = ExtResource("2_32s2d")
@@ -113,10 +115,6 @@ autoplay = "default"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47743, 0)
 shape = SubResource("CapsuleShape3D_1wgqk")
 
-[node name="Voice" type="AudioStreamPlayer3D" parent="."]
-visible = false
-stream = ExtResource("3_8l4c8")
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 1.3, 0)
 target_position = Vector3(0, 0, -11)
@@ -131,3 +129,18 @@ one_shot = true
 
 [node name="Bullet" parent="." instance=ExtResource("4_ycsmr")]
 visible = false
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("12_dq4ws")
+bus = &"Suoni"
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("13_opbo1")
+bus = &"Suoni"
+
+[node name="Die" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("14_kpd05")
+bus = &"Suoni"

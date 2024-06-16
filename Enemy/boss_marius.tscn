@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dkm34hpiyarjj"]
+[gd_scene load_steps=20 format=3 uid="uid://dkm34hpiyarjj"]
 
 [ext_resource type="Texture2D" uid="uid://cs8sufojpgies" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 8.png" id="1_56ux6"]
 [ext_resource type="Script" path="res://Enemy/boss_marius.gd" id="1_atwfe"]
@@ -12,6 +12,11 @@
 [ext_resource type="Texture2D" uid="uid://bly2opt2r3por" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 7.png" id="7_aqr52"]
 [ext_resource type="Texture2D" uid="uid://cye66iagest3e" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 1.png" id="8_7wlrk"]
 [ext_resource type="Texture2D" uid="uid://tp7eob4w8eeo" path="res://Enemy/Sprite Boss MOOSHnGUN/Senza nome 2.png" id="9_cjvx1"]
+[ext_resource type="AudioStream" uid="uid://d1sq4xridysp2" path="res://Enemy/IntroBoss.ogg" id="13_4t6ww"]
+[ext_resource type="AudioStream" uid="uid://dskxk8p5d3ln1" path="res://Enemy/DannoEnemy.mp3" id="14_877mi"]
+[ext_resource type="AudioStream" uid="uid://c3qxke15lwjed" path="res://Enemy/WalkBoss_1.wav" id="15_2cux7"]
+[ext_resource type="AudioStream" uid="uid://byimcdrjg87hc" path="res://Enemy/MorteBoss_1.wav" id="15_t4h7y"]
+[ext_resource type="AudioStream" uid="uid://ca4c2lrbylvhf" path="res://Enemy/AttaccoBoss_1.wav" id="16_jcwgl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dbq4v"]
 animations = [{
@@ -138,10 +143,6 @@ one_shot = true
 [node name="DamageTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Voice" type="AudioStreamPlayer3D" parent="."]
-visible = false
-area_mask = 513
-
 [node name="Timers" type="Node" parent="."]
 
 [node name="PunchTimer" type="Timer" parent="Timers"]
@@ -149,3 +150,28 @@ one_shot = true
 
 [node name="SpecialAttackTimer" type="Timer" parent="Timers"]
 one_shot = true
+
+[node name="Intro" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("13_4t6ww")
+bus = &"Suoni"
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("14_877mi")
+bus = &"Suoni"
+
+[node name="Die" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("15_t4h7y")
+bus = &"Suoni"
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("15_2cux7")
+bus = &"Suoni"
+
+[node name="Shoot" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("16_jcwgl")
+bus = &"Suoni"

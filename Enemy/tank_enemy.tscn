@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cwoblwvdisygl"]
+[gd_scene load_steps=16 format=3 uid="uid://cwoblwvdisygl"]
 
 [ext_resource type="Script" path="res://Enemy/tank_enemy.gd" id="1_vp55n"]
 [ext_resource type="Texture2D" uid="uid://3vdv8ekt7cle" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 1.png" id="2_8ts7m"]
@@ -8,9 +8,11 @@
 [ext_resource type="Texture2D" uid="uid://blexphfsne2ah" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 5.png" id="6_gt6wo"]
 [ext_resource type="Texture2D" uid="uid://cth6dmoco3kmk" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 4.png" id="7_xtxm1"]
 [ext_resource type="Texture2D" uid="uid://d5vu77rxaa5" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 2.png" id="8_xxnpq"]
-[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="9_0xui4"]
 [ext_resource type="Texture2D" uid="uid://bxe5ffh50vk83" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 3.png" id="9_6kpvb"]
 [ext_resource type="PackedScene" uid="uid://dbfqepa7t1aw" path="res://Enemy/tank_bullet.tscn" id="11_qibie"]
+[ext_resource type="AudioStream" uid="uid://c11tyly78ohox" path="res://Enemy/CorsaEnemy.wav" id="12_sype8"]
+[ext_resource type="AudioStream" uid="uid://dskxk8p5d3ln1" path="res://Enemy/DannoEnemy.mp3" id="13_x8h13"]
+[ext_resource type="AudioStream" uid="uid://bueiabuo121d0" path="res://Enemy/MorteEnemy.mp3" id="14_ds4y5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0twep"]
 animations = [{
@@ -81,10 +83,6 @@ autoplay = "default"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.19512, 0)
 shape = SubResource("CapsuleShape3D_g6g2q")
 
-[node name="Voice" type="AudioStreamPlayer3D" parent="."]
-visible = false
-stream = ExtResource("9_0xui4")
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0208902, 2.1937, 0.0361221)
 target_position = Vector3(0, 0, -11)
@@ -98,3 +96,18 @@ one_shot = true
 one_shot = true
 
 [node name="Tank_bullet" parent="." instance=ExtResource("11_qibie")]
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("12_sype8")
+bus = &"Suoni"
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("13_x8h13")
+bus = &"Suoni"
+
+[node name="Die" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("14_ds4y5")
+bus = &"Suoni"

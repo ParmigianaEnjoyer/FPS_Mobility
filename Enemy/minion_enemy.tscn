@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bk16ctw6m5y5o"]
+[gd_scene load_steps=15 format=3 uid="uid://bk16ctw6m5y5o"]
 
 [ext_resource type="Texture2D" uid="uid://b5k1ifwk6ojwp" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 1.png" id="1_l3y4j"]
 [ext_resource type="Script" path="res://Enemy/minion_enemy.gd" id="1_mqrhw"]
@@ -9,7 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://boj5bjg8noist" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 5.png" id="6_0c800"]
 [ext_resource type="Texture2D" uid="uid://20406xakbgb5" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 2.png" id="7_8s70e"]
 [ext_resource type="Texture2D" uid="uid://bt2arj5ryl5su" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 3.png" id="8_to3ye"]
-[ext_resource type="AudioStream" uid="uid://dnx5kryuck61h" path="res://Enemy/minecraft-villager-damage_E_major.wav" id="10_w5wcm"]
+[ext_resource type="AudioStream" uid="uid://c11tyly78ohox" path="res://Enemy/CorsaEnemy.wav" id="11_ih0ts"]
+[ext_resource type="AudioStream" uid="uid://dskxk8p5d3ln1" path="res://Enemy/DannoEnemy.mp3" id="12_aystn"]
+[ext_resource type="AudioStream" uid="uid://bueiabuo121d0" path="res://Enemy/MorteEnemy.mp3" id="13_adbeu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_htuqw"]
 animations = [{
@@ -91,9 +93,20 @@ one_shot = true
 [node name="DamageTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Voice" type="AudioStreamPlayer3D" parent="."]
-visible = false
-stream = ExtResource("10_w5wcm")
-
 [node name="MoveAgainTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Walk" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("11_ih0ts")
+bus = &"Suoni"
+
+[node name="Hit" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("12_aystn")
+bus = &"Suoni"
+
+[node name="Die" type="AudioStreamPlayer3D" parent="."]
+visible = false
+stream = ExtResource("13_adbeu")
+bus = &"Suoni"
