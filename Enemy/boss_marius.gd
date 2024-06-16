@@ -53,8 +53,7 @@ var special4 = false
 
 
 func _ready() -> void:
-	voice.stream = preload("res://Enemy/Sprite Boss MOOSHnGUN/IntroBoss.ogg")
-	voice.play()
+	$Intro.play()
 	ray.target_position.z = (ATTACK_RANGE * -1) - 1
 	$AnimatedSprite3D.play("default")
 	player = get_tree().get_first_node_in_group("player")
@@ -70,6 +69,7 @@ func _process(_delta):
 	else: if dead:
 		if !stop:
 			$AnimatedSprite3D.play("die")
+			$Walk.stop()
 			stop = true
 
 
@@ -117,6 +117,8 @@ func attack():
 		match punches_count % 2:
 			0: $AnimatedSprite3D.play("attack_left")
 			1: $AnimatedSprite3D.play("attack_right")
+		$Walk.stop()
+		$Shoot.play()
 		instance = bullet.instantiate()
 		instance.position = ray.global_position
 		instance.transform.basis = ray.global_transform.basis
@@ -129,7 +131,8 @@ func special_attack():
 			count += 1
 			
 			$AnimatedSprite3D.play("attack_fury")
-			
+			$Walk.stop()
+			$Shoot.play()
 			#punches_count += 1
 			#match punches_count % 2:
 				#0: $AnimatedSprite3D.play("attack_left")
@@ -208,15 +211,15 @@ func check_special():
 
 func take_damage():
 	if !dead:
-		voice.stream = preload("res://Enemy/minecraft-villager-damage_E_major.wav")
-		voice.play()
+		$Hit.play()
 		healthbar.health = float(hitpoints / 20)
 
 
 func die():
 	if !dead:
 		dead = true  # Corrected variable scope
-		$Voice.play()
+		$Die.play()
+		$Walk.stop()
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
 		set_collision_layer_value(3, false)

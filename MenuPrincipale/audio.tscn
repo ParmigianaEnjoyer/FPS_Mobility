@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://b4hfurc006vye"]
 
-[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_4x8c0"]
+[ext_resource type="Theme" uid="uid://sk0j2rw4yk00" path="res://TemaButtons.tres" id="1_4x8c0"]
 [ext_resource type="Script" path="res://MenuPrincipale/audio.gd" id="1_65c2d"]
 [ext_resource type="Script" path="res://MenuPrincipale/AudioSlider.gd" id="1_yt2yu"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="2_ecxhj"]
@@ -51,38 +51,86 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(2, 2)
 
-[node name="Label" type="Label" parent="Control"]
+[node name="Master" type="Label" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.623
 anchor_bottom = 0.204
-offset_left = -114.0
-offset_top = -91.0
-offset_right = 17.0
-offset_bottom = -68.0
+offset_left = -210.0
+offset_top = -150.5
+offset_right = -79.0
+offset_bottom = -127.5
 text = "Volume generale"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="master" type="HSlider" parent="Control"]
 layout_mode = 2
-offset_left = -100.5
-offset_top = -48.5
-offset_right = 30.5
-offset_bottom = -32.5
+offset_left = -23.5
+offset_top = -142.0
+offset_right = 107.5
+offset_bottom = -126.0
 max_value = 1.0
 step = 0.001
 script = ExtResource("1_yt2yu")
 bus_name = "Master"
+
+[node name="Suoni" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.623
+anchor_bottom = 0.204
+offset_left = -210.0
+offset_top = -100.0
+offset_right = -79.0
+offset_bottom = -77.0
+text = "Suoni"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="suoni" type="HSlider" parent="Control"]
+layout_mode = 2
+offset_left = -23.5
+offset_top = -92.5
+offset_right = 107.5
+offset_bottom = -76.5
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_yt2yu")
+bus_name = "Suoni"
+
+[node name="Musica" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.623
+anchor_bottom = 0.204
+offset_left = -210.0
+offset_top = -50.0
+offset_right = -79.0
+offset_bottom = -27.0
+text = "Musica"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="musica" type="HSlider" parent="Control"]
+layout_mode = 2
+offset_left = -23.5
+offset_top = -43.0
+offset_right = 107.5
+offset_bottom = -27.0
+max_value = 1.0
+step = 0.001
+script = ExtResource("1_yt2yu")
+bus_name = "Musica"
 
 [node name="Indietro" type="Button" parent="Control"]
 layout_mode = 1
 anchors_preset = -1
 anchor_bottom = 0.174
 offset_left = -103.0
-offset_top = -24.5
+offset_top = 30.0
 offset_right = 28.0
-offset_bottom = -1.5
+offset_bottom = 53.0
 text = "Indietro"
 
 [connection signal="pressed" from="Control/Indietro" to="." method="_on_indietro_pressed"]

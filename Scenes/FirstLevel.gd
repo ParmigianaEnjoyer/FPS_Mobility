@@ -133,6 +133,7 @@ func _process(_delta):
 			
 			if !DialogueManager.is_dialogue_finished:
 				DialogueManager.start_dialog(DIALOGO_1)
+				$Music.play()
 
 		if DialogueManager.is_dialogue_finished:
 			DialogueManager.end_command_label()
@@ -204,6 +205,8 @@ func _process(_delta):
 			
 			if !DialogueManager.is_dialogue_finished:
 				DialogueManager.start_dialog(DIALOGO_4)
+				$Music.stop()
+				$MusicBoss.play()
 
 		if DialogueManager.is_dialogue_finished:
 			DialogueManager.end_command_label()

@@ -122,6 +122,8 @@ enum ammo_type {
 
 func _ready():
 	
+	$Music.play()
+	
 	GlobalVar.movimento_sbloccato = false
 	GlobalVar.sparare_sbloccato = false
 	GlobalVar.curarsi_sbloccato = false
@@ -193,6 +195,7 @@ func _process(_delta):
 	elif !dialogo_4_finito:
 		tutorial_cura()
 	elif !dialogo_6_finito:
+		$Music.play()
 		orda()
 	elif !dialogo_finale_finito:
 		parte_finale()

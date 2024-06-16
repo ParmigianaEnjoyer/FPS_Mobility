@@ -98,7 +98,7 @@ func take_damage(damage):
 		GlobalVar.player_health = 20 
 	else:
 		GlobalVar.player_health -= damage
-		$Voice.play()
+		$Hit.play()
 		
 		$ui/HealthBar.health = GlobalVar.player_health
 

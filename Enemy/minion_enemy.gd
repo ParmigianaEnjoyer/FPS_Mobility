@@ -51,10 +51,12 @@ func _ready() -> void:
 func _process(_delta):
 	if !dead and provoked and !attacking:
 		$AnimatedSprite3D.play("walk")
+		$Walk.play()
 		navigation_agent_3d.target_position = player.global_position
 	elif dead:
 		if !stop:
 			$AnimatedSprite3D.play("die")
+			$Walk.stop()
 			stop = true
 	
 	if !move_again_timer.is_stopped() and !attacking and !dead:
@@ -111,6 +113,7 @@ func attack():
 	if timer.is_stopped():
 		timer.start(ATTACK_COOLDOWN)
 		$AnimatedSprite3D.play("shoot")
+		$Walk.stop()
 		instance = bullet.instantiate()
 		instance.damage = damage
 		instance.SPEED = 10
@@ -121,13 +124,14 @@ func attack():
 
 func take_damage():
 	if !dead:
-		$Voice.play()
+		$Hit.play()
 
 
 func die():
 	if !dead:
 		dead = true  # Corrected variable scope
-		$Voice.play()
+		$Die.play()
+		$Walk.stop()
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)#disattivo le collisioni così posso attraversarlo quando muore
 		GlobalVar.enemy_killed_count += 1

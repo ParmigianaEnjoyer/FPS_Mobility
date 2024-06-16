@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=66 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="ArrayMesh" uid="uid://c553qa57bkh7c" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_large.obj" id="1_c1hrc"]
 [ext_resource type="Script" path="res://Scenes/FirstLevel.gd" id="1_k3n5a"]
@@ -31,6 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://cyo2lshl3153j" path="res://Enemy/enemy.tscn" id="28_182nf"]
 [ext_resource type="PackedScene" uid="uid://cwoblwvdisygl" path="res://Enemy/tank_enemy.tscn" id="32_gwfbs"]
 [ext_resource type="PackedScene" uid="uid://ciwpu1gailxb2" path="res://Scenes/staccionata.tscn" id="33_80lkh"]
+[ext_resource type="AudioStream" uid="uid://bhvixtw8q1i2m" path="res://Scenes/MusicaLivello1.ogg" id="33_g36jd"]
+[ext_resource type="AudioStream" uid="uid://cxdgq55ejwhrx" path="res://Enemy/MusicaBoss.ogg" id="34_5l5yt"]
 [ext_resource type="PackedScene" uid="uid://bk16ctw6m5y5o" path="res://Enemy/minion_enemy.tscn" id="34_wmo0w"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
@@ -1888,6 +1890,14 @@ transform = Transform3D(0.999012, -0.0444389, 0, 0.0444389, 0.999012, 0, 0, 0, 1
 
 [node name="BossfightTimer" type="Timer" parent="."]
 one_shot = true
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("33_g36jd")
+bus = &"Musica"
+
+[node name="MusicBoss" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("34_5l5yt")
+bus = &"Musica"
 
 [connection signal="body_entered" from="Map/NavigationRegion3D/FirstLevel/Area_InizioOrde" to="." method="_on_area_3d_body_entered"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

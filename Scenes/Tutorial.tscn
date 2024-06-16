@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://db2h3t17k37pe"]
+[gd_scene load_steps=62 format=3 uid="uid://db2h3t17k37pe"]
 
 [ext_resource type="Script" path="res://Scenes/Tutorial.gd" id="1_2ob7c"]
 [ext_resource type="PackedScene" uid="uid://bq5ymk6t7cbxd" path="res://Scenes/Player.tscn" id="1_gai3q"]
@@ -27,6 +27,7 @@
 [ext_resource type="ArrayMesh" uid="uid://ckapobtdgpet2" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/trees_A_medium.obj" id="23_k3wpn"]
 [ext_resource type="ArrayMesh" uid="uid://0sm2nm8pogt8" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_C_grass_trees.obj" id="24_6ho14"]
 [ext_resource type="ArrayMesh" uid="uid://b0igsbtye4b24" path="res://addons/kaykit_medieval_hexagon_pack/Assets/obj/decoration/nature/mountain_B_grass_trees.obj" id="25_bh0nj"]
+[ext_resource type="AudioStream" uid="uid://ep1edcecdwo" path="res://Scenes/MusicaTutorial.ogg" id="28_tlaq5"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_5lq0h"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -1339,3 +1340,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 32.4946, 8.92274, 40.4424)
 
 [node name="Spawner8" type="Node3D" parent="SpawnHolder"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29.049, 8.92274, -37.5929)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("28_tlaq5")
+bus = &"Musica"
