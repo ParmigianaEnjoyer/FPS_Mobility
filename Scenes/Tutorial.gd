@@ -122,6 +122,7 @@ enum ammo_type {
 
 func _ready():
 	MusicaMenu.stop()
+	$Music.play()
 	GlobalVar.key_dialogo = InputMap.action_get_events("advance_dialogue")[0].as_text().replace(' (Physical)','')
 	GlobalVar.key_avanti = InputMap.action_get_events("up")[0].as_text().replace(' (Physical)','')
 	GlobalVar.key_indietro = InputMap.action_get_events("down")[0].as_text().replace(' (Physical)','')
@@ -133,7 +134,6 @@ func _ready():
 	GlobalVar.key_pausa = InputMap.action_get_events("exit")[0].as_text().replace(' (Physical)','')
 	GlobalVar.key_inventario = InputMap.action_get_events("radial_menu")[0].as_text().replace(' (Physical)','')
 	GlobalVar.key_cura = InputMap.action_get_events("heal")[0].as_text().replace(' (Physical)','')
-	$Music.play()
 	
 	GlobalVar.movimento_sbloccato = false
 	GlobalVar.sparare_sbloccato = false
@@ -206,7 +206,6 @@ func _process(_delta):
 	elif !dialogo_4_finito:
 		tutorial_cura()
 	elif !dialogo_6_finito:
-		$Music.play()
 		orda()
 	elif !dialogo_finale_finito:
 		parte_finale()

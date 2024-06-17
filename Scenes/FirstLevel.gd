@@ -78,6 +78,7 @@ enum ammo_type {
 
 func _ready():
 	MusicaMenu.stop()
+	$Music.play()
 	GlobalVar.key_dialogo = InputMap.action_get_events("advance_dialogue")[0].as_text().replace(' (Physical)','')
 	
 	$Staccionata.attiva()
@@ -135,7 +136,6 @@ func _process(_delta):
 			
 			if !DialogueManager.is_dialogue_finished:
 				DialogueManager.start_dialog(DIALOGO_1)
-				$Music.play()
 
 		if DialogueManager.is_dialogue_finished:
 			DialogueManager.end_command_label()
