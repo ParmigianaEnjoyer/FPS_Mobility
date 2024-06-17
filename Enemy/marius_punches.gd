@@ -19,6 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if GlobalVar.is_boss_dead:
+		queue_free()
 	if timer2.is_stopped():
 		lifetime.start(calculate_bullet_lifetime(bullet_range))
 		animation.visible = true

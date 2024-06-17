@@ -26,7 +26,8 @@ func decide_to_drop():
 
 func calcola_probabilita():
 	var percentuale_salute = float(GlobalVar.player_health) / 100.0
-	var prob_drop = 1.0 - percentuale_salute
+	var percentuale_cure = float(GlobalVar.heart_inventory) / 5.0
+	var prob_drop = ((1.0 - percentuale_salute) * 0.5) + ((1.0 - percentuale_cure) * 0.5)
 	
 	return prob_drop
 

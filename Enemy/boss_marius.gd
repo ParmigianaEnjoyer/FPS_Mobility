@@ -23,7 +23,6 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 @onready var healthbar = $HealthBar
 @onready var specialtimer = $Timers/SpecialAttackTimer
 @onready var punchtimer = $Timers/PunchTimer
-@onready var voice = $Voice
 
 var is_special_attack = false
 var player
@@ -138,9 +137,9 @@ func special_attack():
 				#0: $AnimatedSprite3D.play("attack_left")
 				#1: $AnimatedSprite3D.play("attack_right")
 			
-			for i in range(0, 9, 1):
-				var x = 1
-				var z = 1
+			for i in range(0, 9):
+				var x = -1
+				var z = -1
 				match i:
 					0: 
 						x = 0

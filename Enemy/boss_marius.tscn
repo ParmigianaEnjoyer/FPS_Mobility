@@ -84,7 +84,7 @@ height = 16.4739
 
 [node name="Boss_Marius" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 13
-collision_mask = 513
+collision_mask = 512
 script = ExtResource("1_atwfe")
 
 [node name="Label" type="Label" parent="."]
@@ -154,6 +154,7 @@ one_shot = true
 [node name="Intro" type="AudioStreamPlayer3D" parent="."]
 visible = false
 stream = ExtResource("13_4t6ww")
+volume_db = 10.0
 bus = &"Suoni"
 
 [node name="Hit" type="AudioStreamPlayer3D" parent="."]
@@ -174,4 +175,5 @@ bus = &"Suoni"
 [node name="Shoot" type="AudioStreamPlayer3D" parent="."]
 visible = false
 stream = ExtResource("16_jcwgl")
+volume_db = -5.0
 bus = &"Suoni"

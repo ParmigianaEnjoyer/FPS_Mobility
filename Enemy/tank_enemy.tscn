@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwoblwvdisygl"]
+[gd_scene load_steps=25 format=3 uid="uid://cwoblwvdisygl"]
 
 [ext_resource type="Script" path="res://Enemy/tank_enemy.gd" id="1_vp55n"]
 [ext_resource type="Texture2D" uid="uid://3vdv8ekt7cle" path="res://Enemy/tank_enemy_sprites/NPC_model_MOOSHnGUN 1.png" id="2_8ts7m"]
@@ -15,11 +15,43 @@
 [ext_resource type="AudioStream" uid="uid://bueiabuo121d0" path="res://Enemy/MorteEnemy.mp3" id="14_ds4y5"]
 [ext_resource type="AudioStream" uid="uid://n2m52nrpcdbn" path="res://Enemy/tank_shoot.wav" id="14_jgkhr"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_4cwhp"]
+atlas = ExtResource("2_8ts7m")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o6k5r"]
+atlas = ExtResource("3_ktbix")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2wceo"]
+atlas = ExtResource("4_sy7kf")
+region = Rect2(0, 67, 799, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yvgo2"]
+atlas = ExtResource("5_ngk00")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gljtn"]
+atlas = ExtResource("6_gt6wo")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obksk"]
+atlas = ExtResource("7_xtxm1")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4idug"]
+atlas = ExtResource("8_xxnpq")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7p5m"]
+atlas = ExtResource("9_6kpvb")
+region = Rect2(0, 67, 800, 1000)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_0twep"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_8ts7m")
+"texture": SubResource("AtlasTexture_4cwhp")
 }],
 "loop": false,
 "name": &"default",
@@ -27,13 +59,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_ktbix")
+"texture": SubResource("AtlasTexture_o6k5r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_sy7kf")
+"texture": SubResource("AtlasTexture_2wceo")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_ngk00")
+"texture": SubResource("AtlasTexture_yvgo2")
 }],
 "loop": false,
 "name": &"die",
@@ -41,10 +73,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_gt6wo")
+"texture": SubResource("AtlasTexture_gljtn")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_xtxm1")
+"texture": SubResource("AtlasTexture_obksk")
 }],
 "loop": false,
 "name": &"shoot",
@@ -52,10 +84,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_xxnpq")
+"texture": SubResource("AtlasTexture_4idug")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_6kpvb")
+"texture": SubResource("AtlasTexture_t7p5m")
 }],
 "loop": false,
 "name": &"walk",
@@ -75,7 +107,6 @@ script = ExtResource("1_vp55n")
 transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 4, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_0twep")
-animation = &"die"
 autoplay = "default"
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
@@ -116,4 +147,5 @@ bus = &"Suoni"
 [node name="Shoot" type="AudioStreamPlayer3D" parent="."]
 visible = false
 stream = ExtResource("14_jgkhr")
+volume_db = -10.0
 bus = &"Suoni"
