@@ -983,6 +983,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.59399, 0, -0.556583)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.450117, 2.85458, 0.0608979)
 shape = SubResource("BoxShape3D_7wtir")
 
+[node name="MeshInstance3D16" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel/Platform"]
+transform = Transform3D(-0.350929, 0, -12.7193, 0, 32.8413, 0, 12.5165, 0, -0.356616, 178.206, 8.91922, -34.9887)
+mesh = ExtResource("10_bt1w7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Platform/MeshInstance3D16"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Platform/MeshInstance3D16/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nqd2p")
+
+[node name="MeshInstance3D17" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel/Platform"]
+transform = Transform3D(-0.350929, 0, -12.7193, 0, 32.8413, 0, 12.5165, 0, -0.356616, 176.892, 6.56797, -50.2479)
+mesh = ExtResource("10_bt1w7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Map/NavigationRegion3D/FirstLevel/Platform/MeshInstance3D17"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Map/NavigationRegion3D/FirstLevel/Platform/MeshInstance3D17/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_nqd2p")
+
 [node name="Central Trees" type="Node3D" parent="Map/NavigationRegion3D/FirstLevel"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Map/NavigationRegion3D/FirstLevel/Central Trees"]

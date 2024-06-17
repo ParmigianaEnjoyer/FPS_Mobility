@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmber8g345dhv"]
 
-[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_vlve1"]
+[ext_resource type="Theme" uid="uid://sk0j2rw4yk00" path="res://TemaButtons.tres" id="1_vlve1"]
 [ext_resource type="Script" path="res://MenuPrincipale/opzioni.gd" id="1_xwknx"]
 [ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_oj126"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="4_nfwrq"]
