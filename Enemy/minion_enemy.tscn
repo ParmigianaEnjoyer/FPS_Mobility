@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bk16ctw6m5y5o"]
+[gd_scene load_steps=23 format=3 uid="uid://bk16ctw6m5y5o"]
 
 [ext_resource type="Texture2D" uid="uid://b5k1ifwk6ojwp" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 1.png" id="1_l3y4j"]
 [ext_resource type="Script" path="res://Enemy/minion_enemy.gd" id="1_mqrhw"]
@@ -14,6 +14,34 @@
 [ext_resource type="AudioStream" uid="uid://bueiabuo121d0" path="res://Enemy/MorteEnemy.mp3" id="13_adbeu"]
 [ext_resource type="AudioStream" uid="uid://dxwcogwgxsu8i" path="res://Enemy/minion_shoot.wav" id="13_rsnas"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbd3t"]
+atlas = ExtResource("2_mmmy3")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3ffh"]
+atlas = ExtResource("3_u1ymt")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8tgj"]
+atlas = ExtResource("4_yqgqj")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iwsru"]
+atlas = ExtResource("6_0c800")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wsrq1"]
+atlas = ExtResource("5_8r602")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ru4jb"]
+atlas = ExtResource("7_8s70e")
+region = Rect2(0, 67, 800, 1000)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmadj"]
+atlas = ExtResource("8_to3ye")
+region = Rect2(0, 67, 800, 1000)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_htuqw"]
 animations = [{
 "frames": [{
@@ -26,13 +54,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mmmy3")
+"texture": SubResource("AtlasTexture_lbd3t")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_u1ymt")
+"texture": SubResource("AtlasTexture_h3ffh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_yqgqj")
+"texture": SubResource("AtlasTexture_l8tgj")
 }],
 "loop": false,
 "name": &"die",
@@ -40,10 +68,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_0c800")
+"texture": SubResource("AtlasTexture_iwsru")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_8r602")
+"texture": SubResource("AtlasTexture_wsrq1")
 }],
 "loop": false,
 "name": &"shoot",
@@ -51,10 +79,10 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("7_8s70e")
+"texture": SubResource("AtlasTexture_ru4jb")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_to3ye")
+"texture": SubResource("AtlasTexture_lmadj")
 }],
 "loop": false,
 "name": &"walk",
@@ -79,7 +107,6 @@ collision_mask = 3
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 1.6, 0)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_htuqw")
-animation = &"die"
 autoplay = "default"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
