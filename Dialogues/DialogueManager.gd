@@ -5,7 +5,7 @@ extends Node
 
 var dialog_lines: Array[String] = []
 var current_line_index = 0
-
+var no_dialogue_here = false
 var text_box
 var command_label
 var text_box_position: Vector2
@@ -16,7 +16,7 @@ var can_advance_line = false
 var label_on = false
 
 func start_dialog(lines: Array[String]):
-	if is_dialogue_active or get_tree().paused:
+	if is_dialogue_active or get_tree().paused or no_dialogue_here:
 		return
 	
 	dialog_lines = lines
@@ -42,7 +42,7 @@ func _on_text_box_finished_displaying():
 
 
 func _unhandled_input(event):
-	if event.is_action_pressed("advance_dialogue") and is_dialogue_active and can_advance_line:
+	if event.is_action_pressed("advance_dialogue") and is_dialogue_active and can_advance_line and !no_dialogue_here:
 		text_box.queue_free()
 		
 		current_line_index += 1
@@ -69,6 +69,7 @@ func end_command_label():
 
 
 func restart():
+	no_dialogue_here = false
 	is_dialogue_active = false
 	is_dialogue_finished = false
 	can_advance_line = false

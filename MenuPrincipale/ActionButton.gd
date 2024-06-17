@@ -9,6 +9,7 @@ func _init():
 func _ready():
 	set_process_unhandled_input(false)
 	update_key_text()
+	DialogueManager.no_dialogue_here = true
 
 func _toggled(button_pressed):
 	set_process_unhandled_input(button_pressed)
