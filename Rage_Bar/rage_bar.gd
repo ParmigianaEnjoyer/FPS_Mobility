@@ -1,10 +1,11 @@
 extends ProgressBar
 
 @onready var timer = $Timer
+@onready var rage_song = $AudioStreamPlayer
 
 
 const RAGE_POINT = 20
-const RAGE_TIMER = 10.0
+const RAGE_TIMER = 15.0
 
 
 func _ready():
@@ -16,11 +17,13 @@ func _process(_delta):
 	var somma_munizioni = GlobalVar.ammo_storage_total[GlobalVar.ammo_type.PISTOL_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.MACHINEGUN_BULLET] + GlobalVar.ammo_storage_total[GlobalVar.ammo_type.SHOTGUN_BULLET]
 	
 	if reached_rage_point() and !GlobalVar.rage_mode:
+		rage_song.play()
 		timer.start(RAGE_TIMER)
 		GlobalVar.rage_mode = true
 		$AnimatedSprite2D.play("animated")
 		
 	if somma_munizioni == 0:
+		rage_song.stop()
 		timer.stop()
 		init_points()
 
@@ -45,4 +48,5 @@ func reached_rage_point():
 
 
 func _on_timer_timeout():
+	rage_song.stop()
 	init_points()

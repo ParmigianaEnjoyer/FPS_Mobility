@@ -149,7 +149,7 @@ func switch_weapon(to):
 		
 		current_weapon = "pistol"
 		fire_rate = 1.8
-		fire_range = -20.0
+		fire_range = -25.0
 		weapon_damage = 35.0
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.PISTOL_BULLET
 		
@@ -205,7 +205,7 @@ func switch_weapon(to):
 		current_weapon = "shotgun"
 		fire_range = -11
 		fire_rate = 0.75
-		weapon_damage = 10	#danno di un singolo proiettile
+		weapon_damage = 15	#danno di un singolo proiettile
 		GlobalVar.current_bullet_type = GlobalVar.ammo_type.SHOTGUN_BULLET
 		
 		set_projectile_particles(0.0, -0.35, 0.0, 0.015, 0.0, 0.0, fire_range, calculate_bullet_lifetime(fire_range, 100.0) , 100.0, 100.0, 5.0)

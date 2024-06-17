@@ -1893,12 +1893,12 @@ one_shot = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_g36jd")
-volume_db = -30.0
+volume_db = -25.0
 bus = &"Musica"
 
 [node name="MusicBoss" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_5l5yt")
-volume_db = -30.0
+volume_db = -25.0
 bus = &"Musica"
 
 [connection signal="body_entered" from="Map/NavigationRegion3D/FirstLevel/Area_InizioOrde" to="." method="_on_area_3d_body_entered"]

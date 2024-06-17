@@ -115,4 +115,5 @@ bus = &"Suoni"
 [node name="Shoot" type="AudioStreamPlayer3D" parent="."]
 visible = false
 stream = ExtResource("13_rsnas")
+volume_db = -10.0
 bus = &"Suoni"

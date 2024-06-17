@@ -90,6 +90,12 @@ func _ready():
 	$StaccionataBoss/Staccionata6.disattiva()
 	$StaccionataBoss/Staccionata7.disattiva()
 	
+	GlobalVar.movimento_sbloccato = true
+	GlobalVar.radial_sbloccato = true
+	GlobalVar.sparare_sbloccato = true
+	GlobalVar.curarsi_sbloccato = true
+	GlobalVar.rage_sbloccato = true
+
 	message_on_screen = false
 	risorse_spawnate = false
 	dialogo_1_finito = false
@@ -107,6 +113,7 @@ func _ready():
 		marius.queue_free()
 		marius_spawnato = false
 	
+	GlobalVar.rage_mode = false
 	GlobalVar.is_boss_dead = false
 	GlobalVar.enemy_in_bossfight = 0
 	DialogueManager.restart()
@@ -129,6 +136,25 @@ func _ready():
 
 
 func _process(_delta):
+
+	parte1_finita = true
+	parte2_finita = true
+	parte3_finita = true
+	parte4_finita = true
+	GlobalVar.num_nemici_morti_nel_livello = 72
+
+	if GlobalVar.rage_mode:
+		$Music.volume_db = -80
+		$MusicBoss.volume_db = -80
+	else:
+		$Music.volume_db = -25
+		$MusicBoss.volume_db = -25
+		
+	if GlobalVar.rage_mode and $MusicBoss.playing:
+		$MusicBoss.stream_paused = true
+	else:
+		$MusicBoss.stream_paused = false
+
 	if !parte1_finita:
 		if !message_on_screen: 
 			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
@@ -189,7 +215,8 @@ func _process(_delta):
 			parte4_finita = true
 	
 	if parte4_finita and !parte5_finita and GlobalVar.num_nemici_morti_nel_livello == 72:
-		
+		if !$MusicBoss.playing:
+			$MusicBoss.play()
 		#Il player viene teletrasportato
 		player.position = $Player_TP.position
 		
@@ -208,7 +235,7 @@ func _process(_delta):
 			if !DialogueManager.is_dialogue_finished:
 				DialogueManager.start_dialog(DIALOGO_4)
 				$Music.stop()
-				$MusicBoss.play()
+
 
 		if DialogueManager.is_dialogue_finished:
 			DialogueManager.end_command_label()

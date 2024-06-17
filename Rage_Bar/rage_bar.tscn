@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://yjs2gyvqd1hm"]
+[gd_scene load_steps=14 format=3 uid="uid://yjs2gyvqd1hm"]
 
 [ext_resource type="Script" path="res://Rage_Bar/rage_bar.gd" id="1_q50so"]
 [ext_resource type="Texture2D" uid="uid://hnego52i7fxs" path="res://Rage_Bar/skull/sprite_0.png" id="1_qik0t"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cmjeks55ytdrq" path="res://Rage_Bar/skull/sprite_5.png" id="6_g16d1"]
 [ext_resource type="Texture2D" uid="uid://b43o457sntsag" path="res://Rage_Bar/skull/sprite_6.png" id="7_ucig3"]
 [ext_resource type="Texture2D" uid="uid://cgxydkur6ox5c" path="res://Rage_Bar/skull/sprite_7.png" id="8_iuvic"]
+[ext_resource type="AudioStream" uid="uid://bn3cvty7dp8qj" path="res://Rage_Bar/rage_mode_song.ogg" id="10_yhgyj"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d3yci"]
 bg_color = Color(0.144063, 0.144063, 0.144063, 1)
@@ -91,5 +92,9 @@ autoplay = "default"
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_yhgyj")
+volume_db = -23.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
