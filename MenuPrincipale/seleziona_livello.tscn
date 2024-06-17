@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://vqlr2ybj600k"]
 
 [ext_resource type="Script" path="res://MenuPrincipale/seleziona_livello.gd" id="1_e846b"]
-[ext_resource type="Theme" uid="uid://ccaecbltae2m5" path="res://TemaButtons.tres" id="1_oev41"]
+[ext_resource type="Theme" uid="uid://sk0j2rw4yk00" path="res://TemaButtons.tres" id="1_oev41"]
 [ext_resource type="Texture2D" uid="uid://ckq4crtj4sx0b" path="res://MenuPrincipale/Immagini/Decorazioni/NPC_model_MOOSHnGUN 4.png" id="2_n20ms"]
 [ext_resource type="Texture2D" uid="uid://x21bpgvc88mm" path="res://MenuPrincipale/Immagini/Decorazioni/Mooshy.png" id="3_qb52n"]
 [ext_resource type="Texture2D" uid="uid://bqa0tsbyj5eem" path="res://MenuPrincipale/Immagini/Logi/sfondo.png" id="3_sw3sh"]

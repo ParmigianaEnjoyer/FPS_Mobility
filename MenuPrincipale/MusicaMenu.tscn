@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://w1xes10b7klt"]
+
+[ext_resource type="AudioStream" uid="uid://ccstvstek4hns" path="res://MenuPrincipale/MusicaMenu.ogg" id="1_24vfy"]
+[ext_resource type="Script" path="res://MenuPrincipale/MusicaMenu.gd" id="2_teif0"]
+
+[node name="MusicaMenu" type="AudioStreamPlayer"]
+stream = ExtResource("1_24vfy")
+volume_db = -30.0
+script = ExtResource("2_teif0")

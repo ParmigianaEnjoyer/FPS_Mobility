@@ -77,6 +77,8 @@ enum ammo_type {
 }
 
 func _ready():
+	MusicaMenu.stop()
+	GlobalVar.key_dialogo = InputMap.action_get_events("advance_dialogue")[0].as_text().replace(' (Physical)','')
 	
 	$Staccionata.attiva()
 	$Staccionata2.attiva()
@@ -128,7 +130,7 @@ func _ready():
 func _process(_delta):
 	if !parte1_finita:
 		if !message_on_screen: 
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
@@ -145,7 +147,7 @@ func _process(_delta):
 		if GlobalVar.num_nemici_morti_nel_livello == 14:
 			
 			if !message_on_screen: 
-				DialogueManager.show_command_label("Premi Q per proseguire...")
+				DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 				message_on_screen = true
 				
 				if !DialogueManager.is_dialogue_finished:
@@ -165,7 +167,7 @@ func _process(_delta):
 		$Staccionata2.attiva()
 		if !parte3_finita:
 			if !message_on_screen: 
-				DialogueManager.show_command_label("Premi Q per proseguire...")
+				DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 				message_on_screen = true
 				
 				if !DialogueManager.is_dialogue_finished:
@@ -200,7 +202,7 @@ func _process(_delta):
 
 		if !message_on_screen:
 			$AnimationPlayer.play("addio_monumento")
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:
@@ -236,7 +238,7 @@ func _process(_delta):
 		$StaccionataBoss/Staccionata6.disattiva()
 		$StaccionataBoss/Staccionata7.disattiva()
 		if !message_on_screen:
-			DialogueManager.show_command_label("Premi Q per proseguire...")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_dialogo+" per proseguire...")
 			message_on_screen = true
 			
 			if !DialogueManager.is_dialogue_finished:

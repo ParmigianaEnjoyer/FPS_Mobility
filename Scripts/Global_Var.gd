@@ -4,6 +4,16 @@ extends Node
 var player_health = 100
 
 var key_dialogo = InputMap.action_get_events("advance_dialogue")[0].as_text().replace(' (Physical)','')
+var key_avanti = InputMap.action_get_events("up")[0].as_text().replace(' (Physical)','')
+var key_indietro = InputMap.action_get_events("down")[0].as_text().replace(' (Physical)','')
+var key_sinistra = InputMap.action_get_events("left")[0].as_text().replace(' (Physical)','')
+var key_destra = InputMap.action_get_events("right")[0].as_text().replace(' (Physical)','')
+var key_salta = InputMap.action_get_events("jump")[0].as_text().replace(' (Physical)','')
+var key_corri = InputMap.action_get_events("sprint")[0].as_text().replace(' (Physical)','')
+var key_spara = InputMap.action_get_events("shoot")[0].as_text().replace(' (Physical)','')
+var key_pausa = InputMap.action_get_events("exit")[0].as_text().replace(' (Physical)','')
+var key_inventario = InputMap.action_get_events("radial_menu")[0].as_text().replace(' (Physical)','')
+var key_cura = InputMap.action_get_events("heal")[0].as_text().replace(' (Physical)','')
 
 var reset_richiesto = false
 

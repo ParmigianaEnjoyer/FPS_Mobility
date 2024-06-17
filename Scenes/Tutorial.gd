@@ -121,7 +121,18 @@ enum ammo_type {
 }
 
 func _ready():
-	
+	MusicaMenu.stop()
+	GlobalVar.key_dialogo = InputMap.action_get_events("advance_dialogue")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_avanti = InputMap.action_get_events("up")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_indietro = InputMap.action_get_events("down")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_sinistra = InputMap.action_get_events("left")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_destra = InputMap.action_get_events("right")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_salta = InputMap.action_get_events("jump")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_corri = InputMap.action_get_events("sprint")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_spara = InputMap.action_get_events("shoot")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_pausa = InputMap.action_get_events("exit")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_inventario = InputMap.action_get_events("radial_menu")[0].as_text().replace(' (Physical)','')
+	GlobalVar.key_cura = InputMap.action_get_events("heal")[0].as_text().replace(' (Physical)','')
 	$Music.play()
 	
 	GlobalVar.movimento_sbloccato = false
@@ -219,7 +230,7 @@ func tutorial_movimento():
 	
 	if parte1_finita and !parte2_finita:
 		if !message_on_screen:
-			DialogueManager.show_command_label("Premi 'W', 'A', 'S', 'D', 'MAIUSC' e 'SPACE' per muoverti, correre e saltare.")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_avanti+", "+GlobalVar.key_sinistra+", "+GlobalVar.key_indietro+", "+GlobalVar.key_destra+", "+GlobalVar.key_corri+" e "+GlobalVar.key_salta+" per muoverti, correre e saltare.")
 			message_on_screen = true
 		
 		if Input.is_action_pressed("down") || Input.is_action_pressed("sprint") ||Input.is_action_pressed("jump") ||Input.is_action_pressed("up") ||Input.is_action_pressed("right") ||Input.is_action_pressed("left"): 
@@ -250,7 +261,7 @@ func tutorial_martello():
 		GlobalVar.sparare_sbloccato = true
 		
 		if !message_on_screen:
-			DialogueManager.show_command_label("Fai 'click' sul tasto sinistro del mouse per attaccare col martello.")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_spara+" per attaccare col martello.")
 			message_on_screen = true
 		
 		if Input.is_action_pressed("shoot"): 
@@ -281,7 +292,7 @@ func tutorial_armi():
 		GlobalVar.radial_sbloccato = true
 		
 		if !message_on_screen:
-			DialogueManager.show_command_label("Premi il tasto 'TAB⇆' per aprire l'inventario delle armi e cambiare arma.")
+			DialogueManager.show_command_label("Premi il tasto "+GlobalVar.key_inventario+" per aprire l'inventario delle armi e cambiare arma.")
 			message_on_screen = true
 		
 		if GlobalVar.current_bullet_type != GlobalVar.ammo_type.HAMMER:
@@ -354,10 +365,10 @@ func tutorial_cura():
 			get_tree().get_first_node_in_group("player").take_damage(10)
 		
 		if !message_on_screen and GlobalVar.heart_inventory == 0:
-			DialogueManager.show_command_label("Raccogli i cuori dai cadaveri dei cinghiali e premi 'E' per curarti.")
+			DialogueManager.show_command_label("Raccogli i cuori dai cadaveri dei cinghiali e premi "+GlobalVar.key_cura+" per curarti.")
 			message_on_screen = true
 		elif !message_on_screen and GlobalVar.heart_inventory > 0:
-			DialogueManager.show_command_label("Premi 'E' per curarti.")
+			DialogueManager.show_command_label("Premi "+GlobalVar.key_cura+" per curarti.")
 			message_on_screen = true
 		
 		if Input.is_action_pressed("heal"):	
