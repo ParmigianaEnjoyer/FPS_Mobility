@@ -106,6 +106,7 @@ func attack():
 		timer.start(ATTACK_COOLDOWN)
 		$AnimatedSprite3D.play("shoot")
 		$Walk.stop()
+		$Shoot.play()
 		instance = bullet.instantiate()
 		instance.position = ray.global_position
 		instance.transform.basis = ray.global_transform.basis
