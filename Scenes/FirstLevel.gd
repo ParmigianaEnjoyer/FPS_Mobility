@@ -136,9 +136,6 @@ func _ready():
 
 
 func _process(_delta):
-
-	parte1_finita = true
-
 	if GlobalVar.rage_mode:
 		$Music.volume_db = -80
 		$MusicBoss.volume_db = -80
