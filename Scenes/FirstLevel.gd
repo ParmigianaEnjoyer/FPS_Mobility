@@ -138,10 +138,6 @@ func _ready():
 func _process(_delta):
 
 	parte1_finita = true
-	parte2_finita = true
-	parte3_finita = true
-	parte4_finita = true
-	GlobalVar.num_nemici_morti_nel_livello = 72
 
 	if GlobalVar.rage_mode:
 		$Music.volume_db = -80

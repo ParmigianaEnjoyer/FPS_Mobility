@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://bk16ctw6m5y5o"]
+[gd_scene load_steps=24 format=3 uid="uid://bk16ctw6m5y5o"]
 
 [ext_resource type="Texture2D" uid="uid://b5k1ifwk6ojwp" path="res://Enemy/minion_sprites/NPC_model_MOOSHnGUN 1.png" id="1_l3y4j"]
 [ext_resource type="Script" path="res://Enemy/minion_enemy.gd" id="1_mqrhw"]
@@ -13,6 +13,10 @@
 [ext_resource type="AudioStream" uid="uid://dskxk8p5d3ln1" path="res://Enemy/DannoEnemy.mp3" id="12_aystn"]
 [ext_resource type="AudioStream" uid="uid://bueiabuo121d0" path="res://Enemy/MorteEnemy.mp3" id="13_adbeu"]
 [ext_resource type="AudioStream" uid="uid://dxwcogwgxsu8i" path="res://Enemy/minion_shoot.wav" id="13_rsnas"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76rl0"]
+atlas = ExtResource("1_l3y4j")
+region = Rect2(0, 67, 800, 1000)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lbd3t"]
 atlas = ExtResource("2_mmmy3")
@@ -46,7 +50,7 @@ region = Rect2(0, 67, 800, 1000)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_l3y4j")
+"texture": SubResource("AtlasTexture_76rl0")
 }],
 "loop": false,
 "name": &"default",
