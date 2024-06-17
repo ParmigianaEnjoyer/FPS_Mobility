@@ -331,10 +331,13 @@ func show_blood(raycast):
 
 
 func show_sparks(raycast):
-	var collision_point = raycast.get_collision_point()
-	var sparks = sparks_particles.instantiate()
-	sparks.position = collision_point
-	add_child(sparks)
+	if current_weapon != "hammer":
+		var collision_point = raycast.get_collision_point()
+		var sparks = sparks_particles.instantiate()
+		sparks.position = collision_point
+		add_child(sparks)
+	else:
+		pass
 
 
 func calculate_bullet_lifetime(the_range, velocity):		#funzione che calcola il tempo di vita del proiettile
