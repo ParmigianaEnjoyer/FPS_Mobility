@@ -71,76 +71,77 @@ func _process(_delta):
 		rage_mode()
 		heal()
 		
-		match current_weapon:
-			"hammer":
-				if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped() and GlobalVar.sparare_sbloccato:
-						cooldown_timer.start(1.0 / fire_rate)
-						$Weapon/Hammer_AnimatedSprite2D.play("hammer_shoot")
-						$Shoot.play()
-						shoot(current_weapon)
-				
-			"pistol":
-				if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
-					if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
-						no_ammo_animation()
-						$Weapon/Shotgun_AnimatedSprite2D.play("pistol_idle")
-					else:
-						if cooldown_timer.is_stopped() and reload_time.is_stopped():
-							if magazine_has_ammo(GlobalVar.current_bullet_type):
-								use_ammo(GlobalVar.current_bullet_type)
-								cooldown_timer.start(1.0 / fire_rate)	
-								$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
-								$Shoot.play()
-								shoot(current_weapon)
-							else:
-								reload(GlobalVar.current_bullet_type, $Weapon/Pistol_AnimatedSprite2D)
-					
-			"shotgun":
-				if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
-					if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
-						no_ammo_animation()
-						$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_idle")
-					else:
-						if cooldown_timer.is_stopped():
-							use_ammo(GlobalVar.current_bullet_type)
+		if !GlobalVar.rage_mode:
+			match current_weapon:
+				"hammer":
+					if Input.is_action_pressed("shoot") and cooldown_timer.is_stopped() and GlobalVar.sparare_sbloccato:
 							cooldown_timer.start(1.0 / fire_rate)
-							$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
+							$Weapon/Hammer_AnimatedSprite2D.play("hammer_shoot")
 							$Shoot.play()
 							shoot(current_weapon)
-							$Reload.play()
-							reload(GlobalVar.current_bullet_type, $Weapon/Shotgun_AnimatedSprite2D)
 					
-			"machinegun":
-				if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
-					if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
-						no_ammo_animation()
-						$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
-					else:
-						if cooldown_timer.is_stopped() and reload_time.is_stopped():
-							if magazine_has_ammo(GlobalVar.current_bullet_type):
+				"pistol":
+					if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
+						if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
+							no_ammo_animation()
+							$Weapon/Shotgun_AnimatedSprite2D.play("pistol_idle")
+						else:
+							if cooldown_timer.is_stopped() and reload_time.is_stopped():
+								if magazine_has_ammo(GlobalVar.current_bullet_type):
+									use_ammo(GlobalVar.current_bullet_type)
+									cooldown_timer.start(1.0 / fire_rate)	
+									$Weapon/Pistol_AnimatedSprite2D.play("pistol_shoot")
+									$Shoot.play()
+									shoot(current_weapon)
+								else:
+									reload(GlobalVar.current_bullet_type, $Weapon/Pistol_AnimatedSprite2D)
+						
+				"shotgun":
+					if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
+						if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
+							no_ammo_animation()
+							$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_idle")
+						else:
+							if cooldown_timer.is_stopped():
+								use_ammo(GlobalVar.current_bullet_type)
 								cooldown_timer.start(1.0 / fire_rate)
-								shooted_count += 1
-								#si alternano tre suoni differenti per la machinegun
-								match shooted_count % 3:
-									0:
-										$Shoot.stream = preload("res://Machinegun/minigun.ogg")
-									1:
-										$Shoot.stream = preload("res://Machinegun/minigun2.ogg")
-									2:
-										$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
-										
-								$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
+								$Weapon/Shotgun_AnimatedSprite2D.play("shotgun_shoot")
 								$Shoot.play()
 								shoot(current_weapon)
-								use_ammo(GlobalVar.current_bullet_type)
-							else:
-								reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
-				if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and GlobalVar.sparare_sbloccato:
-					shooted_count = 0
-					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
-				if !DialogueManager.is_dialogue_active and !Input.is_action_pressed("shoot"):
-					shooted_count = 0
-					$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+								$Reload.play()
+								reload(GlobalVar.current_bullet_type, $Weapon/Shotgun_AnimatedSprite2D)
+						
+				"machinegun":
+					if Input.is_action_pressed("shoot") and GlobalVar.sparare_sbloccato:
+						if storage_has_ammo(GlobalVar.current_bullet_type) == false and magazine_has_ammo(GlobalVar.current_bullet_type) == false:
+							no_ammo_animation()
+							$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+						else:
+							if cooldown_timer.is_stopped() and reload_time.is_stopped():
+								if magazine_has_ammo(GlobalVar.current_bullet_type):
+									cooldown_timer.start(1.0 / fire_rate)
+									shooted_count += 1
+									#si alternano tre suoni differenti per la machinegun
+									match shooted_count % 3:
+										0:
+											$Shoot.stream = preload("res://Machinegun/minigun.ogg")
+										1:
+											$Shoot.stream = preload("res://Machinegun/minigun2.ogg")
+										2:
+											$Shoot.stream = preload("res://Machinegun/minigun3.ogg")
+											
+									$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_shoot")
+									$Shoot.play()
+									shoot(current_weapon)
+									use_ammo(GlobalVar.current_bullet_type)
+								else:
+									reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
+					if Input.is_action_just_released("shoot") and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and GlobalVar.sparare_sbloccato:
+						shooted_count = 0
+						$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
+					if !DialogueManager.is_dialogue_active and !Input.is_action_pressed("shoot"):
+						shooted_count = 0
+						$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 
 
 func switch_weapon(to):
@@ -504,8 +505,9 @@ func rage_mode():
 						else:
 							reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
 							
-	elif current_weapon == "machinegun" and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and rage_mode_on:
+	if current_weapon == "machinegun" and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and !rage_mode_on:
 		shooted_count = 0
+		print("idle")
 		$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 		rage_mode_on = false
 
