@@ -114,6 +114,7 @@ func attack():
 		timer.start(ATTACK_COOLDOWN)
 		$AnimatedSprite3D.play("shoot")
 		$Walk.stop()
+		$Shoot.play()
 		instance = bullet.instantiate()
 		instance.damage = damage
 		instance.SPEED = 10
