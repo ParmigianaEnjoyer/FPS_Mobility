@@ -4,7 +4,7 @@ extends ProgressBar
 @onready var rage_song = $AudioStreamPlayer
 
 
-const RAGE_POINT = 1
+const RAGE_POINT = 20
 const RAGE_TIMER = 15.0
 
 
