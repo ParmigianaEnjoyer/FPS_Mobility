@@ -1730,7 +1730,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.1772, 8.92274, -8.29895)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.5001, 8.92274, -17.125)
 
 [node name="Enemy6" parent="Accampamento" instance=ExtResource("28_182nf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.7103, 8.92274, 1.7184)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60.7103, 8.92274, -7.35488)
 
 [node name="Enemy7" parent="Accampamento" instance=ExtResource("28_182nf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.9843, 8.92274, -10.8538)
@@ -1893,12 +1893,10 @@ one_shot = true
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("33_g36jd")
-volume_db = -25.0
 bus = &"Musica"
 
 [node name="MusicBoss" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("34_5l5yt")
-volume_db = -25.0
 bus = &"Musica"
 
 [connection signal="body_entered" from="Map/NavigationRegion3D/FirstLevel/Area_InizioOrde" to="." method="_on_area_3d_body_entered"]
