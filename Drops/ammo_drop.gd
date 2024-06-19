@@ -30,6 +30,7 @@ func _on_body_entered(body):
 	
 	if body.is_in_group("player"):
 		if GlobalVar.ammo_storage_total[type] <= (GlobalVar.AMMO_MAX_STORAGE[type] - AMMO_AMOUNT[type]):
+			AmmoPickUp.play()
 			GlobalVar.ammo_storage_total[type] += AMMO_AMOUNT[type]
 		else: 
 			GlobalVar.ammo_storage_total[type] = GlobalVar.AMMO_MAX_STORAGE[type]

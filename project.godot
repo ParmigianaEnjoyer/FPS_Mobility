@@ -20,6 +20,8 @@ config/icon="res://icon.svg"
 GlobalVar="*res://Scripts/Global_Var.gd"
 DialogueManager="*res://Dialogues/DialogueManager.gd"
 MusicaMenu="*res://MenuPrincipale/MusicaMenu.tscn"
+AmmoPickUp="*res://Drops/AmmoPickUp.tscn"
+HealPickUp="*res://Drops/heal_pick_up.tscn"
 
 [display]
 

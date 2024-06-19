@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbutw6n03ojf3"]
+
+[ext_resource type="AudioStream" uid="uid://bjtxt61nld74t" path="res://Drops/AmmoPickUp.wav" id="1_ycoci"]
+
+[node name="AmmoPickUp" type="AudioStreamPlayer"]
+stream = ExtResource("1_ycoci")
+bus = &"Suoni"
