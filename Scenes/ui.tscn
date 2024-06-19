@@ -1,6 +1,7 @@
-[gd_scene load_steps=74 format=3 uid="uid://coo3gvcxegtbs"]
+[gd_scene load_steps=75 format=3 uid="uid://coo3gvcxegtbs"]
 
 [ext_resource type="AudioStream" uid="uid://blaqhkb57g183" path="res://Hammer/classic-double-swoosh_F#_minor-[AudioTrimmer.com].wav" id="1_a5q3o"]
+[ext_resource type="AudioStream" uid="uid://bbnp8txr3gmdx" path="res://Scenes/Heal.wav" id="1_ccmb6"]
 [ext_resource type="Texture2D" uid="uid://cmj5krura2vs3" path="res://Shotgun/1.png" id="1_xrb6w"]
 [ext_resource type="Texture2D" uid="uid://bmu2vlftmndox" path="res://Shotgun/2.png" id="2_b4fel"]
 [ext_resource type="Texture2D" uid="uid://bovclgljydlh8" path="res://Shotgun/3.png" id="3_0461s"]
@@ -446,6 +447,10 @@ animations = [{
 }]
 
 [node name="ui" type="CanvasLayer"]
+
+[node name="Heal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_ccmb6")
+bus = &"Suoni"
 
 [node name="NoAmmo" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("29_u1or4")

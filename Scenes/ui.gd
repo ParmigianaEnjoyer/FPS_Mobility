@@ -434,6 +434,7 @@ func heal():
 	
 	if Input.is_action_just_pressed("heal") and GlobalVar.player_health < 100 and GlobalVar.heart_inventory > 0 and GlobalVar.curarsi_sbloccato:
 		GlobalVar.heart_inventory -= 1
+		$Heal.play()
 		
 		if GlobalVar.player_health <= 100-HEALING_AMOUNT:
 			GlobalVar.player_health += HEALING_AMOUNT

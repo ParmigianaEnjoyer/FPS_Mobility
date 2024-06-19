@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bq72pcrcriyi8"]
+
+[ext_resource type="AudioStream" uid="uid://cytr3mwnupvq7" path="res://Drops/HealPickUp.wav" id="1_23xxc"]
+
+[node name="HealPickUp" type="AudioStreamPlayer"]
+stream = ExtResource("1_23xxc")
+bus = &"Suoni"
