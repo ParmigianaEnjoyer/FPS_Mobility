@@ -506,9 +506,8 @@ func rage_mode():
 						else:
 							reload(GlobalVar.current_bullet_type, $Weapon/Machinegun_AnimatedSprite2D)
 							
-	if current_weapon == "machinegun" and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and !rage_mode_on:
+	elif current_weapon == "machinegun" and $Weapon/Machinegun_AnimatedSprite2D.is_playing() and rage_mode_on:
 		shooted_count = 0
-		print("idle")
 		$Weapon/Machinegun_AnimatedSprite2D.play("machinegun_idle")
 		rage_mode_on = false
 

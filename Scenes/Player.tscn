@@ -10,7 +10,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xc2g5"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ifqwj"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_63mwn"]
+size = Vector3(1, 2, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wcjg1"]
 albedo_color = Color(1, 0.988235, 0.494118, 1)
@@ -55,8 +56,8 @@ cast_shadow = 0
 mesh = SubResource("CapsuleMesh_xc2g5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00257874, 1.01111, 0)
-shape = SubResource("CapsuleShape3D_ifqwj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00294495, 0.970384, -0.00140381)
+shape = SubResource("BoxShape3D_63mwn")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.67939, 0)
