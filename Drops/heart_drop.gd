@@ -38,4 +38,4 @@ func _on_body_entered(body):
 		if GlobalVar.heart_inventory < MAX_QUANTITY:
 			HealPickUp.play()
 			GlobalVar.heart_inventory += 1
-	queue_free()
+		queue_free()
