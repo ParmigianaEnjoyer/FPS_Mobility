@@ -34,8 +34,8 @@ func _on_body_entered(body):
 			GlobalVar.ammo_storage_total[type] += AMMO_AMOUNT[type]
 		else: 
 			GlobalVar.ammo_storage_total[type] = GlobalVar.AMMO_MAX_STORAGE[type]
-		
-	queue_free()
+		queue_free()
+	
 
 
 func set_ammo_type():
