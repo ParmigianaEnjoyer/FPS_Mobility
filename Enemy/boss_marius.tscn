@@ -84,7 +84,7 @@ height = 16.4739
 
 [node name="Boss_Marius" type="CharacterBody3D" groups=["enemy"]]
 collision_layer = 13
-collision_mask = 512
+collision_mask = 513
 script = ExtResource("1_atwfe")
 
 [node name="Label" type="Label" parent="."]
