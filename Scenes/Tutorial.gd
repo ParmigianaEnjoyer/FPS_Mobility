@@ -61,7 +61,7 @@ const DIALOGO_4: Array[String] = [
 	Avanti!! Falli fuori."
 ]
 const DIALOGO_5: Array[String] = [
-	"Ben fatto Mosshy!! Li hai fatti fuori entrambi.",
+	"Ben fatto Mooshy!! Li hai fatti fuori entrambi.",
 	"I cinghiali potranno anche essere creature spregevoli, ma hanno anche loro un cuore.",
 	"...",
 	"Strappalo dal loro cadavere e assorbi la linfa vitale racchiusa al proprio interno per curarti quando ne avrai bisogno.",
@@ -78,7 +78,7 @@ var parte11_finita: bool
 const DIALOGO_6: Array[String] = [
 	"Perfetto!! Adesso sei pronto per combattere.",
 	"...",
-	"Mosshy... lascia che ti dica un'ultima cosa.
+	"Mooshy... lascia che ti dica un'ultima cosa.
 	Tu sei stato creato dalla magia oscura, il tuo corpo è intrinseco di linfa malvagia...",
 	"Ogni volta che eliminerai un nemico, accumulerai sete di sangue, che ti condurrà alla follia e a incontrollabili attacchi di furia sanguinaria.",
 	"ADESSO VA!!!",
