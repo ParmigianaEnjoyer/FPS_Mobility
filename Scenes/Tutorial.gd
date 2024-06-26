@@ -22,7 +22,7 @@ var parte2_finita: bool
 const DIALOGO_2: Array[String] = [
 	"Incredibile...",
 	"Ehm...cioè, come volevasi dimostrare, riesci a muoverti.
-	Dopotitto sono stato io a darti vita.",
+	Dopotutto sono stato io a darti vita.",
 	"MOOSHY !!!
 	Per combattere l'armata dei cinghiali ti serviranno delle armi...",
 	"I cinghiali usano armi da fuoco... Tieni questo martello!
